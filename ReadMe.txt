@@ -4,3 +4,4 @@ Your site is ready to be published at http://ielts.biomooc.com/
 
 v0.0.1 写作课第一课
 	2017.12.14 周四 写作
+v0.0.2 加入同义词替换列表，带句子
