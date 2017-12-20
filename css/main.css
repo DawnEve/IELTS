@@ -1,0 +1,22 @@
+div,body,h1,h2,h3,p{margin:0;padding:0;}
+.wrap{margin:0 auto; width:800px; }
+.current{background:#2eb398;color:white;}
+
+a{    font-weight: bold;
+    text-decoration: none;
+    color: #2eb398; padding:0 5px;}
+a:hover{text-decoration:underline}
+
+.version{font-size:10px;color:orange;}
+.wrap div{padding:5px; border:1px dashed #ccc; margin:20px 0;}
+.wrap div h2{border-bottom:1px solid #ccc; color:#ddd;}
+.wrap div h3{margin:10px 2px; padding:0 5px; background:#eee;}
+.wrap div h2 .note{color:black;}
+.listening{}
+.speaking{}
+.reading{}
+.writing{}
+
+/*for tables*/
+table { border-collapse:collapse; } 
+
