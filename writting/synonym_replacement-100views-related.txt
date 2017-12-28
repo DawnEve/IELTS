@@ -116,9 +116,11 @@ strengthen, boost
 
 17.减少：decline
 descend, collapse, relieve
+- reduce,
 
 18.大约：approximately
 nearly, around, estimated,roughly
+-about,some,
 
 19.趋势：trend
 tendency, inclination
@@ -131,45 +133,87 @@ result in, lead to
 
 22.产生，引起：create
 spark, yield, give rise to
+-induce,
+
+Last year 400,000 acres of land yielded a crop worth $1.75 billion.
+去年40万英亩的土地出产了价值17.5亿美元的粮食。
+It yielded a profit of at least $36 million. 
+它带来了至少三千六百万美元的利润。
+
+Doctors said surgery could induce a heart attack.
+医生们说手术可能导致心脏病。
 
 23.建立：establish
 found, institute
+-build,set up,
 
 24.要求：call for
 request, demand
+-claim,require,ask, 
 
 25.去除：eliminate
 remove, eradicate
+-wipe out, perish, vanish,
+
+Most of the butterflies perish in the first frosts of autumn.
+大多数蝴蝶在秋季初霜来临时死亡。
+
+Many kinds of animals have vanished from the earth.
+很多种动物已从地球上消灭。
 
 26.探讨：explore
 examine, identify
- 
+-probe, 
+
 27.表明，描绘：indicate
 depict, portray, illustrate
+-imply,
+
 
 28.满足…需求：meet the need of
 satisfy the requirement of, cater for the demand of
 
 29.足够：adequate
 enough, sufficient
+-abundant, plentiful, 
+
+There is an abundant supply of cheap labour.
+有丰富的廉价劳动力供应。
 
 30.解决：tackle
 resolve, address
+-curb,harness,solve,deal with,manage,handle,
 
 31.意识：awareness
 consciousness
+-notice,
 
 32.控制：curb
 regulate, censor
+-inhibit,restrain,control,prevent,
 
 33.解释：account for
 be responsible for, be attributed to
 
 34.投资：finance
 invest in,  subsidize
+-fund, provide financial aid, 
+The airport is being privately funded by a construction group.
+该机场正由一建筑集团私家资助。
 
 35.缓解：relieve
 ease, alleviate
+-lighten, lessen, moderate,
+
+to alleviate poverty 缩小贫困
+
+moderate 英 ['mɒd(ə)rət]  美 [ˈmɑdərɪt; (for v.,) ˈmɑdərˌeɪt] 
+adj. 稳健的，温和的；适度的，中等的；有节制的
+vi. 变缓和，变弱
+vt. 节制；减轻
+
+His fury moderated when he learned why she had done it.
+当他知道了她那样做的原因时，他的火气就消了。
 
 36.压力：stress
 pressure, strain
