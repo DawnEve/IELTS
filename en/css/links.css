@@ -1,0 +1,84 @@
+	div,p,a,span,h2{padding:0; margin:0; }
+	body{font-family:'微软雅黑'; }
+	.wrap{ margin:10px auto; width:1000px; }
+	.item{ margin:5px; padding:10px; border:1px solid #eee;}
+	.small{color: #eb7350;
+		line-height: 26px;
+	    white-space: nowrap;
+	    padding-right:20px;
+	    font-size:12px;
+	    text-decoration:none;
+    }
+
+.wrap h2{border-bottom:1px dashed #eee; margin-bottom:2px;}
+.wrap p span{font-size:15px;}
+
+.button {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAkCAYAAABIdFAMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHhJREFUeNo8zjsOxCAMBFB/KEAUFFR0Cbng3nQPw68ArZdAlOZppPFIBhH5EAB8b+Tlt9MYQ6i1BuqFaq1CKSVcxZ2Acs6406KUgpt5/LCKuVgz5BDCSb13ZO99ZOdcZGvt4mJjzMVKqcha68iIePB86GAiOv8CDADlIUQBs7MD3wAAAABJRU5ErkJggg%3D%3D") repeat-x scroll 0 0 transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 10px; 
+    padding: 5px 12px;
+    text-decoration: none;
+
+    
+	border-radius:10px;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 10px;
+	
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+}
+.button.red {    background-color: #FF0000;}/*e62727  E33100  2DAEBF*/
+.button.orange {    background-color: #ff5c00;}
+.button.yellow {    background-color: #FFB515;}
+.button.green {   background-color: #6ABF4D;  }
+.button.blue {    background-color: #2981e4;  }
+.button.purple {    background-color: #B400FF;}
+
+.button.pink {    background-color: #FF0097;}
+.button.black {   background-color: #333333;}
+
+.button.white {    background-color: #EEEEEE;    color: #555555;}
+
+
+
+
+
+/*sizes of button*/
+.small.button, .small.button:visited  { font-size: 9px}
+.button, .button:visited,
+.medium.button, .medium.button:visited { font-size: 13px;
+	font-weight: bold;
+	line-height: 1;
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+}
+
+.large.button, .large.button:visited { font-size: 14px;
+		padding: 8px 14px 9px; }
+
+.super.button, .super.button:visited { font-size: 34px;
+			padding: 8px 14px 9px; }
+
+
+
+
+
+
+.button:hover {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAyCAYAAACd+7GKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAClJREFUeNpi/v//vwMTAwPDfzjBgMpFI/7hFSOT9Y8qRuF3JLoHAQIMAHYtMmRA+CugAAAAAElFTkSuQmCC");
+}
+	
+    .footer{    margin-top: 50px;
+    padding: 20px 0;
+    background: #000;
+    color: #fff;
+    font-family: '微软雅黑';
+    text-align: center;
+    width: 100%;}
