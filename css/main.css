@@ -20,3 +20,5 @@ a:hover{text-decoration:underline}
 /*for tables*/
 table { border-collapse:collapse; } 
 
+.hide{display:none;}
+
