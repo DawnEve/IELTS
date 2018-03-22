@@ -14,3 +14,4 @@
 > v0.1.9-1 添加 BI商业内参 
 > v0.2.0 替换网址为 http://ielts.biomooc.com/en/links.html
 > v0.2.1 不能打开的调整到最后，添加读者文摘等。
+> en0.2.2 添加btn style。修改js地址。

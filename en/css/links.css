@@ -1,5 +1,5 @@
-	div,p,a,span,h2{padding:0; margin:0; }
-	body{font-family:'微软雅黑'; }
+div,p,a,span,h2{padding:0; margin:0; }
+body{font-family:'微软雅黑'; }
 	.wrap{ margin:10px auto; width:1000px; }
 	.item{ margin:5px; padding:10px; border:1px solid #eee;}
 	.small{color: #eb7350;
@@ -75,10 +75,47 @@
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAyCAYAAACd+7GKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAClJREFUeNpi/v//vwMTAwPDfzjBgMpFI/7hFSOT9Y8qRuF3JLoHAQIMAHYtMmRA+CugAAAAAElFTkSuQmCC");
 }
 	
-    .footer{    margin-top: 50px;
+.footer{    margin-top: 50px;
     padding: 20px 0;
     background: #000;
     color: #fff;
     font-family: '微软雅黑';
     text-align: center;
-    width: 100%;}
+    width: 100%;
+}
+
+
+
+
+/* 长方形有背景的btn风格 */
+/* btn style: http://www.gitnavi.com */
+.friends-link {
+    /*float: left;
+    width: 36%;
+    font-size: 0;
+    line-height: 1;
+    text-align: center;*/
+    margin-left: 4%;
+    margin-top: 10px;
+}
+.friends-link a {
+	text-align: center;
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 120px;
+    display: inline-block;
+    line-height: 1;
+}
+.friends-link a:hover {
+    background-color: #eb7350;/*#5F94BD*/
+    color: #fff;
+}
+.friends-link .btn {
+    box-sizing: border-box;
+    padding: 7px 1px;
+    color: #666;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(0,0,0,.2);
+}
+.friends-link .btn:hover {  text-decoration: none;}
