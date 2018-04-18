@@ -15,3 +15,13 @@
 > v0.2.0 替换网址为 http://ielts.biomooc.com/en/links.html
 > v0.2.1 不能打开的调整到最后，添加读者文摘等。
 > en0.2.2 添加btn style。修改js地址。
+> en0.2.3 修改btn字号为15;添加新媒体链接若干。
+	彭博社Bloomberg BNA provides resources that enable legal, tax, compliance, government affairs, and government contracting professionals to make more informed decisions, provide strategic advice, grow their businesses, and remain compliant.
+
+			
+
+			<p>
+				<a class="button red" target='_blank' href="xx">xx</a>
+				<span>xx</span>
+			</p>
+			
