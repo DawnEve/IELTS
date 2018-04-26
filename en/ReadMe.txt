@@ -17,6 +17,8 @@
 > en0.2.2 添加btn style。修改js地址。
 > en0.2.3 修改btn字号为15;添加新媒体链接若干。
 	彭博社Bloomberg BNA provides resources that enable legal, tax, compliance, government affairs, and government contracting professionals to make more informed decisions, provide strategic advice, grow their businesses, and remain compliant.
+> en0.2.4 添加链接SlashGear,hollywoodreporter,observer
+>
 
 			
 
