@@ -19,9 +19,6 @@
 	彭博社Bloomberg BNA provides resources that enable legal, tax, compliance, government affairs, and government contracting professionals to make more informed decisions, provide strategic advice, grow their businesses, and remain compliant.
 > en0.2.4 添加链接SlashGear,hollywoodreporter,observer
 > en0.2.5 添加链接independent,psychologytoday,sciencedaily,thebalance,zerohedge,thetrumpet,engadget,politics,
-
-			
-
 			<p>
 				<a class="button red" target='_blank' href="xx">xx</a>
 				<span>xx</span>
@@ -35,7 +32,7 @@
 英语 http://tieba.baidu.com/p/5618809403
 ====================================
 > en0.2.8 加自己的图，更新wechat句子。
--
+> en0.2.9 纠正主页的链接。
 
 
 
