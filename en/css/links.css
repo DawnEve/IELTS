@@ -85,6 +85,10 @@ body{font-family:'微软雅黑'; }
 }
 
 
+/*顶部小标题的链接*/
+h1 a{ color:#eb7350}
+h1 a:hover{color:#FFD1C3 }
+
 
 
 /* 长方形有背景的btn风格 */
