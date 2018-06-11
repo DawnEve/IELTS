@@ -43,8 +43,8 @@ https://www.gutenberg.org
 > en0.2.9 纠正主页的链接。
 > en0.2.10 更新wechat.html句子
 > en0.2.11 更新link，微调css。
-
-
+	更多杂志，付费下载： http://www.shangzazhi.com/tag/inc
+> en0.2.12 发现bug:微信上很窄。原因未知。
 
 
 
