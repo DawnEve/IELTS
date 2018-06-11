@@ -18,7 +18,7 @@ body{font-family:'微软雅黑'; }
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-size: 15px;
+    /*font-size: 15px;*/
     font-weight: bold;
     margin-right: 10px; 
     padding: 5px 12px;
@@ -52,9 +52,9 @@ body{font-family:'微软雅黑'; }
 
 
 /*sizes of button*/
-.small.button, .small.button:visited  { font-size: 9px}
+.small.button, .small.button:visited  { font-size: 80%}
 .button, .button:visited,
-.medium.button, .medium.button:visited { font-size: 15px;
+.medium.button, .medium.button:visited { font-size: 150%;
 	font-weight: bold;
 	line-height: 1;
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
@@ -91,41 +91,10 @@ h1 a:hover, .footer a:hover{color:#FFD1C3 }
 
 
 
-/* 长方形有背景的btn风格 */
-/* btn style: http://www.gitnavi.com */
-.friends-link {
-    /*float: left;
-    width: 36%;
-    font-size: 0;
-    line-height: 1;
-    text-align: center;*/
-    margin-left: 4%;
-    margin-top: 10px;
-}
-.friends-link a {
-	text-align: center;
-    margin-left: 5px;
-    margin-top: 5px;
-    width: 120px;
-    display: inline-block;
-    line-height: 1;
-}
-.friends-link a:hover {
-    background-color: #eb7350;/*#5F94BD*/
-    color: #fff;
-}
-.friends-link .btn {
-    box-sizing: border-box;
-    padding: 7px 1px;
-    color: #666;
-    font-size: 1.2em;
-    background-color: #fff;
-    box-shadow: 0 1px 6px rgba(0,0,0,.2);
-}
-.friends-link .btn:hover {  text-decoration: none;}
 
-
+/*片段*/
 p{margin:10px 0; }
+
 .comment{border:1px solid #e3e3e3; margin:20px 0;padding:10px; font-size:12px; color:#aaa;
     border-bottom-color: #e0e0e0;
     border-right-color: #ececec;
