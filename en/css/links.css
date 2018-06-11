@@ -85,9 +85,9 @@ body{font-family:'微软雅黑'; }
 }
 
 
-/*顶部小标题的链接*/
-h1 a{ color:#eb7350}
-h1 a:hover{color:#FFD1C3 }
+/*顶部小标题的链接,底部链接*/
+h1 a, .footer a{ color:#eb7350}
+h1 a:hover, .footer a:hover{color:#FFD1C3 }
 
 
 

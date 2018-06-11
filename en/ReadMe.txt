@@ -46,7 +46,7 @@ https://www.gutenberg.org
 	更多杂志，付费下载： http://www.shangzazhi.com/tag/inc
 > en0.2.12 发现bug:微信上很窄。原因未知。
 > en0.2.13 已经纠正，可能是尖括号的使用不配对。
-
+> en0.2.14 升级首页;添加底部超级链接。
 
 
 
