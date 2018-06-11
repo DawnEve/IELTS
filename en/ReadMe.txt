@@ -51,3 +51,9 @@ https://www.gutenberg.org
 > en0.2.16 按钮字体不设置px，大小用百分比。
 > en0.2.17 调整wechat.html中title字体为百分比。
 > en0.2.18 调按钮字体。
+> en0.2.19 更新wechat.html
+
+
+
+
+
