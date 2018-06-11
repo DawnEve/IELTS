@@ -30,10 +30,19 @@
 百度贴吧推广：
 郑州大学 http://tieba.baidu.com/p/5526056683
 英语 http://tieba.baidu.com/p/5618809403
+
+豆瓣
+https://www.douban.com/group/634506/
+
+
+英文电子书 
+http://www.kids4classics.com
+https://www.gutenberg.org
 ====================================
 > en0.2.8 加自己的图，更新wechat句子。
 > en0.2.9 纠正主页的链接。
 > en0.2.10 更新wechat.html句子
+> en0.2.11 更新link，微调css。
 
 
 
