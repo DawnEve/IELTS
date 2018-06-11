@@ -52,19 +52,19 @@ body{font-family:'微软雅黑'; }
 
 
 /*sizes of button*/
-.small.button, .small.button:visited  { font-size: 80%}
+.small.button, .small.button:visited  { font-size: 90%}
 .button, .button:visited,
-.medium.button, .medium.button:visited { font-size: 150%;
+.medium.button, .medium.button:visited { font-size: 100%;
 	font-weight: bold;
 	line-height: 1;
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
 }
 
-.large.button, .large.button:visited { font-size: 14px;
-		padding: 8px 14px 9px; }
+.large.button, .large.button:visited { font-size: 120%;
+	padding: 8px 14px 9px; }
 
-.super.button, .super.button:visited { font-size: 34px;
-			padding: 8px 14px 9px; }
+.super.button, .super.button:visited { font-size: 150%;
+	padding: 8px 14px 9px; }
 
 
 

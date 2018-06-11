@@ -49,5 +49,5 @@ https://www.gutenberg.org
 > en0.2.14 升级首页;添加底部超级链接。
 > en0.2.15 首页还是变窄,试试效果;
 > en0.2.16 按钮字体不设置px，大小用百分比。
-
+> en0.2.17 调整wechat.html中title字体为百分比。
 
