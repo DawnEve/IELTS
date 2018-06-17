@@ -30,9 +30,16 @@
 百度贴吧推广：
 郑州大学 http://tieba.baidu.com/p/5526056683
 英语 http://tieba.baidu.com/p/5618809403
+武汉大学 http://tieba.baidu.com/p/5746932166
+
+
 
 豆瓣
 https://www.douban.com/group/634506/
+
+cet:http://edu.sina.com.cn/zt_d/20180616etc/
+201806cet4:http://edu.sina.com.cn/cet/2018-06-16/doc-ihcyszsa2439886.shtml
+201806cet6:http://edu.sina.com.cn/cet/2018-06-16/doc-ihcyszsa4602721.shtml
 
 
 英文电子书 
@@ -53,6 +60,7 @@ https://www.gutenberg.org
 > en0.2.18 调按钮字体。
 > en0.2.19 更新wechat.html
 > en0.2.20 更新wechat.html-20180612
+> en0.2.20-1 小修补。
 
 
 
