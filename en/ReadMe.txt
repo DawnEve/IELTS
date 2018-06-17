@@ -61,6 +61,7 @@ https://www.gutenberg.org
 > en0.2.19 更新wechat.html
 > en0.2.20 更新wechat.html-20180612
 > en0.2.20-1 小修补。
+> en0.2.20-2 改错:1
 
 
 
