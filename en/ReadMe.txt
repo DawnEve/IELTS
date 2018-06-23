@@ -62,7 +62,7 @@ https://www.gutenberg.org
 > en0.2.20 更新wechat.html-20180612
 > en0.2.20-1 小修补。
 > en0.2.20-2 改错:1
-
+> en0.2.20-3 en/index.html新增js版单词计数代码。
 
 
 

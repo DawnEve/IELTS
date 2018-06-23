@@ -76,6 +76,51 @@
 	
 
 	
+
+	<div class=item>
+		<h2>单词计数( js版 )</h2>
+		<p>Aim: 获得当天的英文格式的日期，和输入文本的单词总数。</p>	
+		<p>Version: v1.0.1</p>	
+		<p>Usage: (1)chrome中按F12打开console，aa=`输入英文文章`(数字键最左端的键)，回车; (2)复制平行线之间的代码到console，回车;</p>	
+		<p>	code: 
+<pre>aa=`"The last time we looked at the polar ice sheets, Greenland was the dominant contributor. That's no longer the case."`
+<hr>
+//1.字符串分割成数组
+a2=aa.split(/[^a-zA-Z]+/) 
+//(23) ["", "The", "last", "time", "we", "looked", "at", "the", "polar", "ice", "sheets", "Greenland", "was", "the", "dominant", "contributor", "That", "s", "no", "longer", "the", "case", ""]
+
+//2.排除长度在2字母以内的数组元素
+i=a2.length //数组长度
+arr=[]
+while(i>0){
+	i-=1;
+	if(a2[i].length>2) arr[arr.length]=a2[i];
+}
+arr
+//(17) ["case", "the", "longer", "That", "contributor", "dominant", "the", "was", "Greenland", "sheets", "ice", "polar", "the", "looked", "time", "last", "The"]
+
+//3.整理日期June 23, 2018
+tmp=String(new Date()).split(/\s/)
+//(7) ["Sat", "Jun", "23", "2018", "19:30:00", "GMT+0800", "(中国标准时间)"]
+
+//4.输出结果
+tmp[1]+" "+tmp[2]+", "+tmp[3]+' | '+arr.length+" words"
+
+<hr>result:
+"Jun 23, 2018 | 17 words"
+</pre>
+		</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	
 	
 </div><!--end of wrapper-->
 
