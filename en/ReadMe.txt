@@ -19,10 +19,7 @@
 	彭博社Bloomberg BNA provides resources that enable legal, tax, compliance, government affairs, and government contracting professionals to make more informed decisions, provide strategic advice, grow their businesses, and remain compliant.
 > en0.2.4 添加链接SlashGear,hollywoodreporter,observer
 > en0.2.5 添加链接independent,psychologytoday,sciencedaily,thebalance,zerohedge,thetrumpet,engadget,politics,
-			<p>
-				<a class="button red" target='_blank' href="xx">xx</a>
-				<span>xx</span>
-			</p>
+
 斯里兰卡新闻 http://www.sundaytimes.lk
 > en0.2.6 添加微信公众号经典文章摘要: wechat.html
 > en0.2.7 做贴吧推广。加重 wechat.html分割线颜色。
@@ -63,7 +60,19 @@ https://www.gutenberg.org
 > en0.2.20-1 小修补。
 > en0.2.20-2 改错:1
 > en0.2.20-3 en/index.html新增js版单词计数代码。
+> en0.2.20-4 en/links.html新增很多链接。
 
 
 
+
+
+
+
+--------
+
+
+		<p>
+			<a class="button red" target='_blank' href="xx">xx</a>
+			<span>xx</span>
+		</p>
 
