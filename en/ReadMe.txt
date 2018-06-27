@@ -62,6 +62,7 @@ https://www.gutenberg.org
 > en0.2.20-3 en/index.html新增js版单词计数代码。
 > en0.2.20-4 en/links.html新增很多链接。
 > en0.2.20-5 en/index.html把单词计数包装成一个函数ielts.calc() Version: v1.0.2。
+> en0.2.20-6 en/links.html添加回到顶部。简化顶部为链接，指向index.html#exam.
 
 
 
