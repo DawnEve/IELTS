@@ -1,3 +1,13 @@
+广告词：
+
+英语读报，保鲜英文，备考英语。
+提倡阅读原版英语主流报刊杂志学英语，在上下文中学习单词、短语、句子、行文结构等。 
+
+想把英语用得地道新鲜？让BBC、CNN、路透社、华尔街日报、时代周刊、经济学人的记者告诉你答案。带你每天读读报，英语赞到不得了。无论是迎战高考四级六级专四专八考研托福托业雅思GRE，还是日常的英语交流，这里都有你用得到的点睛之笔。 
+
+英语读报QQ群：755650994 
+微信群(活跃)，参考 http://ielts.biomooc.com/en/
+
 > v0.1.8 add links to en/links.html	
 	> v0.1.8.1 en/links.html add links,add css
 	> v0.1.8.2 en/links.html modify css
@@ -30,15 +40,25 @@
 武汉大学 http://tieba.baidu.com/p/5746932166
 
 
-
+====================================
 豆瓣
+
+英语读报 - 日更 编辑部
 https://www.douban.com/group/634506/
+
+
+英语读报 坚持半年了 建个群聊
+https://www.douban.com/group/topic/119302559/
+
+
+英语读报 交流群，希望都有所收获
+https://www.douban.com/group/topic/119684209/
 
 cet:http://edu.sina.com.cn/zt_d/20180616etc/
 201806cet4:http://edu.sina.com.cn/cet/2018-06-16/doc-ihcyszsa2439886.shtml
 201806cet6:http://edu.sina.com.cn/cet/2018-06-16/doc-ihcyszsa4602721.shtml
 
-
+====================================
 英文电子书 
 http://www.kids4classics.com
 https://www.gutenberg.org
@@ -63,12 +83,12 @@ https://www.gutenberg.org
 > en0.2.20-4 en/links.html新增很多链接。
 > en0.2.20-5 en/index.html把单词计数包装成一个函数ielts.calc() Version: v1.0.2。
 > en0.2.20-6 en/links.html添加回到顶部。简化顶部为链接，指向index.html#exam.
+> en0.2.20-7 修改听说读写中的读、写；更新部分链接。
 
 
 
 
-
-
+https://cn.bing.com/translator/
 
 --------
 
