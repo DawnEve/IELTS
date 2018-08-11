@@ -85,6 +85,7 @@ https://www.gutenberg.org
 > en0.2.20-6 en/links.html添加回到顶部。简化顶部为链接，指向index.html#exam.
 > en0.2.20-7 修改听说读写中的读、写；更新部分链接。
 > en0.2.20-8 更新wechat.html，添加resouces.html
+> en0.2.20-9 更新wechat.html
 
 
 
