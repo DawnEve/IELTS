@@ -20,7 +20,7 @@
 		
 			<br>
 		<p> 英语读报QQ群: 755650994 </p>
-		<p> 微信群:邀请制。请联系微信 zy2013001 咨询。<span class=red>需付费10元(为过滤广告)</span>。 </p><br />
+		<p> 微信群:邀请制。请联系微信 zy2013001 咨询。需付费10元(为过滤广告)。 </p><br />
 	</div>
 
 	
@@ -99,7 +99,7 @@ New Scientist/The Economist/American Scientist/Scientific American/Science/Popul
 		<p>Aim: 获得当天的英文格式的日期，和输入文本的单词总数。</p>	
 		<p>Version: v1.0.2</p>	
 		<p>Usage 1: (1)chrome中按F12打开console，aa=`输入英文文章`(数字键最左端的键)，回车; (2)复制平行线之间的代码到console，回车;</p>	
-		<p>Usage 2: (1)chrome中按F12打开console，aa=`输入英文文章`(数字键最左端的键)，回车; <span class=red>(2)输入 ielts.calc(aa) ，回车;</span></p>	
+		<p>Usage 2: (1)chrome中按F12打开console，aa=`输入英文文章`(数字键最左端的键)，回车; <span class=red>(2)输入 ielts.calc(aa)  或者简写为 cp(`xxx`)，回车;</span></p>	
 		<p>	code: 
 <pre>aa=`"The last time we looked at the polar ice sheets, Greenland was the dominant contributor. That's no longer the case."`
 <hr>
@@ -152,6 +152,9 @@ ielts.calc=function(str){
 	//4.输出结果："Jun 23, 2018 | 17 words"
 	return(tmp[1]+" "+tmp[2]+", "+tmp[3]+' | '+arr.length+" words");
 }
+
+//简化函数名字为cp
+var cp=ielts.calc;
 </script>
 		</p>
 	</div>
