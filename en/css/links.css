@@ -1,6 +1,6 @@
 div,p,a,span,h2{padding:0; margin:0; }
 body{font-family:'微软雅黑'; }
-	.wrap{ margin:10px auto; width:1000px; }
+	.wrap{ margin:10px auto; max-width:1000px; }
 	.item{ margin:5px; padding:10px; border:1px solid #eee;}
 	.small{color: #eb7350;
 		line-height: 26px;
