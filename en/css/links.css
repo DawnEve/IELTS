@@ -54,7 +54,7 @@ body{font-family:'微软雅黑'; }
 /*sizes of button*/
 .small.button, .small.button:visited  { font-size: 90%}
 .button, .button:visited,
-.medium.button, .medium.button:visited { font-size: 100%;
+.medium.button, .medium.button:visited { font-size: 120%;
 	font-weight: bold;
 	line-height: 1;
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);

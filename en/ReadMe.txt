@@ -91,6 +91,7 @@ https://www.gutenberg.org
 > en0.2.20-12 更新wechat.html 2018.8.30
 > en0.2.20-13 更新max-width:
 > en0.2.20-14 en/links.html新增链接
+> en0.2.20-15 添加新频道：NEC 新概念英语
 
 
 
