@@ -93,7 +93,8 @@ https://www.gutenberg.org
 > en0.2.20-14 en/links.html新增链接
 > en0.2.20-15 添加新频道：NCE 新概念英语
 > en0.2.20-16 NCE3 改为utf8编码 
-
+	根据中文翻译成英文，与原文对比，重点学习翻译不好的语句、单词短语。注意同意替换。
+> en0.2.20-17 NCE3 lesson 1 A Puma at large 逃遁的美洲狮
 
 
 
