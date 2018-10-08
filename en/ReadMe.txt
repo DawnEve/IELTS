@@ -95,6 +95,7 @@ https://www.gutenberg.org
 > en0.2.20-16 NCE3 改为utf8编码 
 	根据中文翻译成英文，与原文对比，重点学习翻译不好的语句、单词短语。注意同意替换。
 > en0.2.20-17 NCE3 lesson 1 A Puma at large 逃遁的美洲狮
+> en0.2.20-18 NCE3 lesson 2 Thirteen equals one 十三等于一
 
 
 
