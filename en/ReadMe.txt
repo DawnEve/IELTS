@@ -99,6 +99,8 @@ https://www.gutenberg.org
 --change version suffix to NCE3 lesson X
 > en0.2.21-NCE3 lesson 3 An unknown goddess　无名女神
 > en0.2.21-NCE3 lesson 4 The double life of Alfred Bloggs 阿尔弗雷德.布洛格斯的双重生活
+	发送失败 NCE3 lesson 5 
+> en0.2.21-NCE3 lesson 6 Smash-and-grab 砸橱窗抢劫
 
 
 
