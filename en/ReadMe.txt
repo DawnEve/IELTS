@@ -102,6 +102,11 @@ https://www.gutenberg.org
 	发送失败 NCE3 lesson 5 
 > en0.2.21-NCE3 lesson 6 Smash-and-grab 砸橱窗抢劫
 > en0.2.22 添加py/，备份从wx上下载文件到mysql，并查询的jupyter代码。
+	todo: 现在保存到db的是临时链接，怎么替换为永久链接？
+		如果文章开头部分时间不标准，怎么办？
+> en0.2.23 2019了。
+
+
 
 
 https://cn.bing.com/translator/
