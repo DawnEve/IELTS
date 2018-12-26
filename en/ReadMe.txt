@@ -105,6 +105,7 @@ https://www.gutenberg.org
 	todo: 现在保存到db的是临时链接，怎么替换为永久链接？
 		如果文章开头部分时间不标准，怎么办？
 > en0.2.23 2019了。
+> en0.2.24 2019;return to zzu 开题. 
 
 
 
