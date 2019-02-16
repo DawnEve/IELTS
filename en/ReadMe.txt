@@ -106,6 +106,7 @@ https://www.gutenberg.org
 		如果文章开头部分时间不标准，怎么办？
 > en0.2.23 2019了。
 > en0.2.24 2019;return to zzu 开题. 
+> en0.2.25-1 调整FT简介和位置
 
 
 
