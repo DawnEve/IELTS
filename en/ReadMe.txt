@@ -48,7 +48,7 @@ https://www.douban.com/group/634506/
 
 
 英语读报 坚持半年了 建个群聊
-https://www.douban.com/group/topic/119302559/
+[被删除了]
 
 
 英语读报 交流群，希望都有所收获
@@ -107,6 +107,7 @@ https://www.gutenberg.org
 > en0.2.23 2019了。
 > en0.2.24 2019;return to zzu 开题. 
 > en0.2.25-1 调整FT简介和位置
+> en0.2.25-2 调整价格，添加支付二维码。
 
 
 
