@@ -49,16 +49,16 @@
 		<ol>
 			<li>微信订阅公众号: 英语读报, 可扫码关注，免费阅读。<br>
 				<img src="images/enNewspapers-v2.jpg"></li>
-			<li>微信群: 邀请制。请联系微信 zy2013001 咨询。<span class=red>精选句子、解疑微信群需付费15元/月，35元/三个月，全年订购优惠至120元/年</span><br>
+			<li>微信群: 邀请制。请联系微信 zy2013001 咨询。<span class=red>精选句子、解疑微信群需付费10元/月，25元/三个月，全年订购优惠至90元/年</span><br>
 				>> 本公众号花费包括：域名大约60RMB/year，期刊订阅（如FT: $10.75 per week）<br>
 				>> 欢迎小额资助，金额随意: <br>
 				<img src="images/zhifu-zfb.png">
 				<img src="images/zhifu-wx.png">
 				</li>
 			</li>
-			<li>豆瓣小组: <a target="_blank" href="https://www.douban.com/group/634506/">英语读报 - 日更 编辑部</a> </li>
-			<li>英语读报QQ群: 755650994</li>
-			<li>一直在建设的网站:  <a href="http://ielts.biomooc.com/en/">http://ielts.biomooc.com/en/</a></li>
+			<li>豆瓣小组: <a target="_blank" href="https://www.douban.com/group/634506/">英语读报 - 日更 编辑部</a> (occasionally) </li>
+			<li>英语读报QQ群: 755650994 (occasionally)</li>
+			<li>本网站(一直在建设):  <a href="http://ielts.biomooc.com/en/">http://ielts.biomooc.com/en/</a></li>
 			<li>知识星球: 英语读报 (obsolete)</li>
 		</ol>
 	</div>
@@ -135,35 +135,7 @@ tmp[1]+" "+tmp[2]+", "+tmp[3]+' | '+arr.length+" words"
 <hr>result:
 "Jun 23, 2018 | 17 words"
 </pre>
-<script>
-//全局只暴露一个变量
-var ielts={}
 
-//单词计数的函数
-ielts.calc=function(str){
-	var a2,i,arr,tmp;
-	//1.字符串分割成数组
-	a2=str.split(/[^a-zA-Z]+/) 
-
-	//2.排除长度在2字母以内的数组元素
-	i=a2.length //数组长度
-	arr=[]
-	while(i>0){
-		i-=1;
-		if(a2[i].length>2) arr[arr.length]=a2[i];
-	}
-
-	//3.整理日期June 23, 2018
-	tmp=String(new Date()).split(/\s/);
-	//(7) ["Sat", "Jun", "23", "2018", "19:30:00", "GMT+0800", "(中国标准时间)"]
-
-	//4.输出结果："Jun 23, 2018 | 17 words"
-	return(tmp[1]+" "+tmp[2]+", "+tmp[3]+' | '+arr.length+" words");
-}
-
-//简化函数名字为cp
-var cp=ielts.calc;
-</script>
 		</p>
 	</div>
 
@@ -190,6 +162,6 @@ var cp=ielts.calc;
 </div>
 
 
-
+<script type="text/javascript" src="js/ielts.js"></script>
 </body>
 </html>

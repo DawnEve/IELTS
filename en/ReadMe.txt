@@ -110,6 +110,7 @@ https://www.gutenberg.org
 > en0.2.25-2 调整价格，添加支付二维码。
 > en0.2.25-3 add to 微信精选
 > en0.2.25-4 before添加js输出最长三句话功能
+> en0.2.25-5 after添加js输出最长三句话功能
 
 
 
@@ -117,6 +118,9 @@ https://www.gutenberg.org
 https://cn.bing.com/translator/
 
 --------
+url: ielts.biomooc.com/en/
+local: ielts.dawneve.cc/en/
+
 
 
 		<p>
