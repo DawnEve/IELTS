@@ -1,3 +1,8 @@
+/********************
+*1. 基本功能
+*2. debug，添加显示最长n个句子
+********************/
+
 //全局只暴露一个变量
 var ielts={}
 
@@ -26,8 +31,9 @@ ielts.calc=function(str){
 
 //打印str中最长的n个句子
 ielts.long=function(str,n=3){
+	var s2,s3,s4,s5;
 	//1.分割获取句子
-	s2=str.split(/[.!?]+/) 
+	s2=str.split(/[.!?\n\r]+/)  //断句包括句号、感叹号、问号和换行符
 
 	//2.获取每个句子的单词长度
 	s3=[]
@@ -35,13 +41,20 @@ ielts.long=function(str,n=3){
 		s3.push(s2[i].split(/[^a-zA-Z]/).length)
 	}
 	//3.对句子长度arr排序
-	s4=s3.sort(function(a,b){ return b-a; })
+	//深度复制s4=s3;
+	s4=[];
+	for(var i=0;i<s3.length;i++){
+		s4[i]=s3[i];
+	}
+	//再对s4排序
+	s4.sort(function(a,b){ return b-a; })
 	//4.取出前n个
 	s5=s4.slice(0,n)
 	//5.输出最长的n个句子
 	for(var i=0; i<s2.length; i++){
 		if( s5.indexOf( s3[i] ) >=0){
-			console.log(s3[i], s2[i])
+			// console.log("s3[i]=",s3[i]," index: ", s5.indexOf( s3[i] )) //debug
+			console.log("[sentence "+i+"]"+ s3[i] + " words>", s2[i])
 		} 
 	}
 }
@@ -49,5 +62,6 @@ ielts.long=function(str,n=3){
 //简化函数名字为cp
 var cp=function(str){
 	console.log(ielts.calc(str));
-	ielts.long(str);
+	console.log("============5 Longest sentences:")
+	ielts.long(str,5);
 }
