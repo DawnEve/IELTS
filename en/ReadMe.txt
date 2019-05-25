@@ -118,12 +118,35 @@ https://www.gutenberg.org
 > en0.2.25-9 首页小幅改版2
 
 
+> en0.2.26 微调链接页
+	句子精选不一定每天，因为太消耗时间了
+> en0.2.26-2 添加浏览器logo图 favicon.ico
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 https://cn.bing.com/translator/
 
 --------
 url: ielts.biomooc.com/en/
 local: ielts.dawneve.cc/en/
+样式素材样式:
+http://bj.96weixin.com/
+
+英语句子解析与仿写
+https://www.sohu.com/a/248581597_290050
+
+
 
 
 
