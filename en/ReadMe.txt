@@ -121,6 +121,9 @@ https://www.gutenberg.org
 	句子精选不一定每天，因为太消耗时间了
 > en0.2.26-2 添加浏览器logo图 favicon.ico
 > en0.2.26-3 订阅超过1000人
+> en0.2.26-4 添加目录和统计信息(code,statistics 在 txtBlog/data/English/)
+	添加 js/tongji.js
+>
 
 
 
