@@ -54,7 +54,9 @@ body {
 .button.white {    background-color: #EEEEEE;    color: #555555;}
 
 
-
+/* links style*/
+a{ color: #44B549; text-decoration: none; }
+a:hover{ text-decoration: underline; }
 
 
 /*sizes of button*/

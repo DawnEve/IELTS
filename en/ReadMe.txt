@@ -124,7 +124,7 @@ https://www.gutenberg.org
 > en0.2.26-4 添加目录和统计信息(code,statistics 在 txtBlog/data/English/)
 	添加 js/tongji.js
 > en0.2.26-5 2019高考真题全国卷I阅读来源
-
+> en0.2.26-6 微调样式表
 
 
 
