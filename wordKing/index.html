@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+	<title>单词王v0.1 - DYI背单词神器(英语读报出品)</title>
+<style>
+body{background-color:#eee;}
+#cidian{width:80%;height:90%; position:fixed;right:0; top:0;}
+#cidian iframe{width:100%;height:100%; border-width:0;}
+
+#info{width:20%;height:105px; position:fixed;left:0; top:0; background:#fff;padding:5px;z-index:2;}
+#info a{color:white;}
+#info span{font-weight:bold; color:red;}
+#info b{background:black; color:white;padding:0 10px; display:block; text-align:center;}
+
+#wordlist{margin-top:100px;}
+#wordlist a{color:#0096ff;}
+#wordlist a:visited{color:#000;}
+#wordlist a:hover{color:#ff9600;}
+#wordlist span{color:#ccc; padding:0 10px;}
+
+@media screen and (max-width: 800px) {
+	#info{height:65px;}
+	#info div{display:none;}
+}
+@media screen and (min-width: 1000px) {
+	#info{height:90px;}
+}
+</style>
+</head>
+<body>
+
+
+
+<h4>Words list</h4>
+
+<div id=info>
+	<b><a target=_blank href="http://ielts.biomooc.com/en/" title="返回首页">单词王</a></b>
+	<div> 1.勾记住的 2.提交 3.粘到js known数组中，刷新屏蔽。 </div>
+	勾选 <span>0</span> /
+	<span>0</span> <button id='submit'>提交</button>
+</div>
+<div id=wordlist>
+序号/	记住了/	Word<br>
+</div>
+
+<div id=cidian>
+	<iframe name=view_window2></iframe>
+</div>
+
+<script src="words.js"></script>
+<script src="known.js"></script>
+<script>
+//tools 
+function $(s){
+	return document.getElementById(s);
+}
+/** 返回创建的dom元素
+* 只有第一个参数是必须的。
+* 其余2个参数可选。
+* v0.2 第二个参数如果是obj,则append
+*/
+function createElement(tag, json, innerHTML){
+	var json=json||{};
+	var dom=document.createElement(tag);
+	
+	if(json!=undefined){
+		for(var key in json){
+			dom.setAttribute(key,json[key]);
+		}
+	}
+	
+	if(innerHTML!=undefined){
+		if(typeof innerHTML=="object"){
+			dom.append(innerHTML)
+		}else{
+			dom.innerHTML=innerHTML;
+		}
+	}
+	return dom;
+}
+
+window.onload=function(){
+	//从单词列表删除已经记住的单词 words=words-known
+	//console.log('known:',known.length);
+	//console.log('words:',words.length);
+	for(var i=words.length-1;i>=0;i--){
+		if(known.indexOf( words[i] )!=-1){
+			words.splice(i, 1); //删除指定数组元素，返回值是删掉的数组
+			//console.log(wd);
+		}
+	}
+	//console.log('words-known:',words.length);
+	//乱序显示单词
+	words.sort(function(a, b){
+		return 0.5 - Math.random()
+	})
+	var oWord=$('wordlist');
+	
+	//显示单词
+	for (var w in words){
+		var oA=createElement("a", {
+			href:"https://fanyi.baidu.com/#en/zh/"+words[w],
+			target:"view_window2"
+		}, words[w]);
+		
+		oWord.append( createElement('span',{},w) );//序号
+		//序号
+		var oCheck=createElement('input',{name:words[w], type:'checkbox'});
+		oWord.append( createElement('span',{},oCheck) );
+		
+		oWord.append( oA ); //单词
+		oWord.append( createElement("br") );//换行符
+	}
+	
+	var	aInfo=$("info").getElementsByTagName('span');
+	aInfo[0].innerHTML=0;
+	aInfo[1].innerHTML=words.length;
+	//多选框的单击事件
+	var aInput=oWord.getElementsByTagName('input');
+	for(var i=0;i<aInput.length;i++){
+		aInput[i].onclick=function(){
+			if(this.checked){
+				aInfo[0].innerHTML=parseInt(aInfo[0].innerHTML)+1
+			}else{
+				aInfo[0].innerHTML=parseInt(aInfo[0].innerHTML)-1
+			}
+			/*
+			for(var j=0;j<aInput.length;j++){
+				if(aInput[j].checked){
+					checked++;
+				}
+			}*/
+		}
+	}
+	
+	//点击提交，打开新窗口，显示勾选单词列表
+	$("submit").onclick=function(){
+		var master=[];
+		for(var i=0;i<aInput.length;i++){
+			//勾选的
+			if(aInput[i].checked){
+				master.push(aInput[i].name)
+			}
+		}
+		//打开新窗口
+		var newWindowObi=window.open('', "_blank");
+		//console.log(this);
+		newWindowObi.document.write("//保存到同级目录下的known.js中<br>known=["+"<br>");
+		for(var i=0;i<master.length;i++){
+			newWindowObi.document.write("'"+master[i]+"',<br>");
+		}
+		newWindowObi.document.write("]");
+	}
+}
+
+</script>
+</body>
+</html>

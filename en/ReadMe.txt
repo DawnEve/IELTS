@@ -129,6 +129,7 @@ https://www.gutenberg.org
 > en0.2.26-8 添加2019.6六级考试阅读来源(第1/2套)
 > en0.2.26-9 修改部分ielts一级页面
 
+> en0.2.27-1 添加单词王记单词web app;
 
 
 
@@ -139,6 +140,16 @@ https://www.gutenberg.org
 
 
 
+
+
+长难句几个模仿对象：
+唐迟老师 https://mp.weixin.qq.com/s?__biz=MzI2MDU1MDM0MQ==&mid=2247488382&idx=1&sn=357e0070e04dfca2dc69186695907f1e
+唐迟老师 https://mp.weixin.qq.com/s?__biz=MzI2MDU1MDM0MQ==&mid=2247488563&idx=1&sn=9b395add55320f624fdce2131edb785b
+
+
+天下事有难易乎，
+为之，则难者亦易矣；
+不为，则易者亦难矣。
 
 
 

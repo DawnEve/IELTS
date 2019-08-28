@@ -1,8 +1,8 @@
 div,p,a,span,h2{padding:0; margin:0; }
-body{font-family: SimSun, Arial, "Arial Narrow", HELVETICA;}
+/*body{font-family: SimSun, Arial, "Arial Narrow", HELVETICA;}*/
 body {
     height: 100%;
-    font: 400 1em/1.8 'Microsoft Yahei', 'PingFang SC', 'Avenir', 'Segoe UI', 'Hiragino Sans GB', STHeiti, 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
+    /*font: 400 1em/1.8 'Microsoft Yahei', 'PingFang SC', 'Avenir', 'Segoe UI', 'Hiragino Sans GB', STHeiti, 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;*/
 }
 
 .wrap{ margin:10px auto; max-width:1000px; }
