@@ -130,6 +130,7 @@ https://www.gutenberg.org
 > en0.2.26-9 修改部分ielts一级页面
 
 > en0.2.27-1 添加单词王记单词web app;
+> en0.2.27-2 纠页面小错。
 
 
 
