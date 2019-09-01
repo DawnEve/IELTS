@@ -2,11 +2,25 @@ div,p,a,span,h2{padding:0; margin:0; }
 /*body{font-family: SimSun, Arial, "Arial Narrow", HELVETICA;}*/
 body {
     height: 100%;
+	background:#F6F8F9;
     /*font: 400 1em/1.8 'Microsoft Yahei', 'PingFang SC', 'Avenir', 'Segoe UI', 'Hiragino Sans GB', STHeiti, 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;*/
 }
 
 .wrap{ margin:10px auto; max-width:1000px; }
-.item{ margin:5px; padding:10px; border:1px solid #eee;}
+.item{ margin:10px 5px; 
+	padding:10px;
+	border:1px solid #eee; background:white;
+	border-radius:10px;
+	overflow:hidden;
+	
+	transition: box-shadow 0.35s;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+.item:hover{
+	transition:box-shadow .25s;
+	box-shadow:0 8px 17px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.19)
+}
+
 .small{color: #eb7350;
 	line-height: 26px;
 	white-space: nowrap;
@@ -16,7 +30,7 @@ body {
 }
 
 .hide{display:none;}
-.wrap h2{border-bottom:1px dashed #eee; margin-bottom:2px;}
+.wrap h2{border-bottom:1px dashed #eee; margin:0px; padding:0 10px;}
 .wrap p span{font-size:15px; }
 
 .button {
@@ -115,3 +129,21 @@ span.red{color:red}
 .grey{color:#ccc;}
 
 li img{height:140px;}
+
+/* 如果太窄，则不显示简介内容 */
+@media screen and (max-width: 800px) {
+	.wrap{width:100%;}
+	
+  .item p span {
+    display:none;
+  }
+  .item p span a.button{
+	  display:inline-block;
+  }
+  .button{
+	  border-radius:0px;
+  }
+}
+
+
+
