@@ -134,6 +134,7 @@ https://www.gutenberg.org
 > en0.2.27-3 响应式布局，阴影边框;
 
 > en0.2.28-0 微调en/links.html 
+> en0.2.28-1 改版每日英语，为统一格式，按照场景放句子
 
 
 
