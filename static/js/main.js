@@ -1,9 +1,9 @@
 
-//tools
+//tools fns
 function $(s){
 	return document.getElementById(s)
 }
-
+//ajax fn
 function ajax(options){
     //创建一个ajax对象
     var xhr = new XMLHttpRequest() || new ActiveXObject("Microsoft,XMLHTTP");
@@ -39,6 +39,7 @@ function ajax(options){
     }
 }
 
+
 //
 window.onload=function(){
 	//insert nav
@@ -48,32 +49,23 @@ window.onload=function(){
 		data:{},
 		success:function(text){
 			$('nav').innerHTML=text
-				//class="current"
-				var url=document.location.href
-				var aA=$('nav').getElementsByTagName('a');
-				for(var i=0; i<aA.length; i++){
-					if(aA[i].href==url){
-						aA[i].setAttribute('class',"current")
-						break;
-					}
+			//class="current"
+			var url=document.location.href
+			var aA=$('nav').getElementsByTagName('a');
+			if(url.search('.html')==-1){
+				aA[0].setAttribute('class',"current")
+				return '';
+			}
+			for(var i=0; i<aA.length; i++){
+				if(aA[i].href==url){
+					aA[i].setAttribute('class',"current")
+					break;
 				}
+			}
 		},
 		error: function(num){
 			console.log(text)
 		},
 		type: "text"
-	})
-
-	
+	})	
 }
-
-
-
-
-
-
-
-
-
-
-
