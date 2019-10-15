@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+	<title>听力王v0.3 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+<!--
+v0.3 键盘操作的AB复读机，加帮助文档。
+
+-->
+<style>
+#info{background:#ccc;padding:5px; text-align:center;}
+#info a{color:white;}
+#info span{font-weight:bold; color:red;}
+pre{color:#bbb;}
+
+.grey{color:#ddd;}
+#help{display:none;}
+#showHelp2{opacity:0}
+
+.version{font-size:smaller;}
+.red{color:red;}
+</style>
+</head>
+
+
+
+<body>
+<div id=info>
+	<b><a target=_blank href="/" title="返回首页">听力王</a><span class=version> v0.3</span></b>
+	<div>支持AB复读 听写神器</div>
+</div>
+
+
+<div id="waveform"></div>
+
+
+<br>
+<div>
+	<span id="time">CurrentTime: 0.00/Total time(0.00%)</span>
+	<br>
+	<span id="speed">Speed: 1.00</span>
+	<br>
+	<span id="path" class=grey>Path: music path</span>
+</div>
+
+<div id="div1" class=grey>Status: player status will be shown here.</div>
+
+<button id='showHelp'>Show Help</button>
+<button id='showHelp2'>doNothing</button>
+
+
+
+
+
+
+
+
+
+
+<pre id=help>
+<b>播放器使用说明：</b>
+1.下载mp3英语文件(比如from https://www.51voa.com/)
+到本地web服务器地址(如apache,nginx等)
+2.下载本html文件和wavesurfer.min.js文件到静态服务器环境，本文件修改 wavesurfer.load() 中的地址为上述mp3 文件的相对地址。
+3.chrome浏览器打开该页面，刷新后即可练习听写了。
+鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，后续可能会修复，也可能不会。
+
+建议键盘控制：
+(1)空格/Enter  开始播放、暂停，如果不好用，就多按几次空格 和 c字母；
+
+(2)AB复读功能:
+	a键记录位置A;
+	b键记录位置B, 暂停, 并开始AB复读;
+	c键continue播放，不再ab复读;
+	r键repeat，继续ab复读;
+	    该键只能在按下c之后，又想回到原AB复读时有效;
+	    如果没有指定A点则指向起点，如果没有指定B点则指向终点，所以，开头直接按r键就是无限循环；
+
+(3)左右箭头，前进后退2s;
+shift+左右箭头，前进后退2%;
+
+(4)上下箭头 播放速度，支持0.3-3倍速播放，每次增减0.05倍;
+</pre>
+
+
+
+
+
+
+
+
+
+<script src="wavesurfer.min.js"></script>
+<script>
+//"https://unpkg.com/wavesurfer.js"
+/*
+播放器 https://wavesurfer-js.org/
+方法 http://wavesurfer-js.org/docs/methods.html
+事件 http://wavesurfer-js.org/docs/events.html
+*/
+
+
+//tools 
+//默认保存2位小数，四舍五入
+function digital(num,n){
+	var n=n||2
+	//return Math.round(num*10**2)/10**2
+	return num.toFixed(n)
+}
+
+function $(s){
+	return document.getElementById(s);
+}
+
+
+var Mstatus={'on':1, 'showHelp':-1, }//播放状态
+var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: 'violet',
+    progressColor: 'purple',
+	scrollParent: true,
+});
+
+//控制台和web显示状态
+function show(text){
+	console.log(Mstatus)
+	$('div1').innerHTML='Status: '+text;
+}
+
+//交换变量的值
+function swap(a,b){
+	var tmp=a;
+	a=b;
+	b=tmp;
+}
+
+
+window.onload=function(){
+	var musicPath='002.mp3';
+	//wavesurfer.load('audio.wav');
+	wavesurfer.load(musicPath);
+	//wavesurfer.load('201910/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3');
+	//https://www.51voa.com/VOA_Special_English/us-officials-twin-births-drop-to-lowest-level-in--years-83068.html
+
+	wavesurfer.on('ready', function () {
+		Mstatus['duration']=wavesurfer.getDuration();
+		//wavesurfer.play();
+		//监视播放状态
+		setInterval(function(){
+			//进度: 显示时间、总时间和百分比
+			var tm=wavesurfer.getCurrentTime()
+			$('time').innerHTML='CurrentTime: '+digital(tm)+'s/'+ digital(Mstatus.duration)+'s('+ digital(tm/Mstatus.duration*100) +'%)'
+			//速度
+			var spd=wavesurfer.getPlaybackRate()
+			$('speed').innerHTML="Speed: "+ digital(spd);
+			//歌曲
+			$('path').innerHTML='Path: '+musicPath;
+		},500)//每0.5s刷新一次状态
+		show('ready now, press Enter or Space key to play')
+	});
+
+	wavesurfer.on('finish', function () {
+		Mstatus.on*=-1
+		show('finish now, press Enter or Space key to play again')
+	})
+
+	//wavesurfer.pause(), wavesurfer.skipForward(), wavesurfer.toggleMute()
+	$('showHelp').onclick=function(){
+		Mstatus.showHelp*=-1
+		if(Mstatus.showHelp>0){
+			$('help').style.display='block';
+		}else{
+			$('help').style.display='none';
+		}
+		//转移焦点
+		$('showHelp2').focus()
+	}
+	
+	//全键盘控制的播放器
+	document.onkeydown =function(event){
+		//获取键盘事件和数字
+		var evt = event ||window.event;
+		var key=event.which||event.keyCode;
+		console.log(key);//打印当前按键码
+		
+		//前进 后退，左右键
+		//if ([33,39].indexOf(key)!=-1){pre();}
+		if(key==39){ 
+			if(event.shiftKey==1){
+				//shift 则按照2%前进后退
+				forward( Mstatus.duration*0.02 );
+			}else{
+				forward(2);
+			}
+		}
+		else if(key==37){
+			if(event.shiftKey==1){
+				backward( Mstatus.duration*0.02 );
+			}else{
+				backward(2);
+			}
+		}
+		
+		//播放速度，上下键
+		else if(key==38){
+			if(wavesurfer.getPlaybackRate()<3)
+				wavesurfer.setPlaybackRate( wavesurfer.getPlaybackRate() +0.05 );
+		}
+		else if(key==40){
+			if(wavesurfer.getPlaybackRate()>0.25)
+				wavesurfer.setPlaybackRate( wavesurfer.getPlaybackRate() -0.05 );
+		}
+		
+		//空格32/回车13控制着暂停与否
+		else if( [32,13].indexOf(key)!=-1 ){
+			Mstatus.on*=-1
+			if(Mstatus.on>0){
+				wavesurfer.pause();
+				show('Pause')
+			}else{
+				wavesurfer.play();
+				show('Go on playing.')
+			}
+		}
+		
+		//ab复读，a记录a位置
+		else if(key==65){
+			Mstatus['pointA']=wavesurfer.getCurrentTime()
+			show('pointA:'+Mstatus['pointA'])
+		}
+		//ab复读，b记录b位置
+		else if(key==66){
+			Mstatus['pointB']=wavesurfer.getCurrentTime()
+			show('pointB:'+Mstatus['pointB'])
+			//暂停播放
+			wavesurfer.pause();
+			Mstatus['on']*=-1
+			//开始从a点到b点反复播放
+			show('[b] AB repeat mode now.')
+			repeatPlay()
+		}
+		//ab复读，r开始a到b播放repeat播放
+		else if(key==82){
+			//wavesurfer.play(Mstatus['pointA'],Mstatus['pointB'])
+			show('[r] AB repeat mode now.')
+			//开始播放
+			if(!(wavesurfer.isPlaying()) ){
+				wavesurfer.play();
+			}
+			repeatPlay();
+		}
+		//ab复读，按c则continue，不再ab复读
+		else if(key==67){
+			show('[c] continue to play')
+			clearInterval(Mstatus.timer1)
+			wavesurfer.play();
+		}
+	};
+}
+//end of window.onload
+
+
+//重复播放
+function repeatPlay(){
+	//清除定时器
+	if('timer1' in Mstatus){
+		clearInterval(Mstatus.timer1);
+	}
+	//如果没有定义a点，则a点为开头
+	if(!('pointA' in Mstatus)){
+		Mstatus['pointA']=0
+	}
+	//如果没有定义b点，则b点为结尾
+	if(!('pointB' in Mstatus)){
+		Mstatus['pointB']=Mstatus['duration']-0.01;//如果B点和终点完全相等，则会到终点停止
+	}
+	//如果a比b大呢？交换a和b
+	if(Mstatus['pointA']>Mstatus['pointB']){
+		swap(Mstatus['pointA'],Mstatus['pointB'])
+		/*var tmp=Mstatus['pointA'];
+		Mstatus['pointA']=Mstatus['pointB']
+		Mstatus['pointB']=tmp*/
+	}
+	//如果a和b之间的距离很小呢？比如完全一样，暂时无解，只能提醒用户按下c键继续了
+	if(Math.abs( Mstatus['pointA']-Mstatus['pointB'] )<0.1){
+		//暂停
+		wavesurfer.pause();
+		Mstatus.on*=-1;
+		//高亮提醒
+		show("<span class=red>Time between pointA and pointB is too short! Press C to continue.</span>")
+		return "";
+	}
+	
+	//开始播放
+	Mstatus.timer1=setInterval(function(){
+		var ct=wavesurfer.getCurrentTime();
+		if(ct<Mstatus['pointA'] || ct>=Mstatus['pointB']){
+			wavesurfer.play(Mstatus['pointA'],Mstatus['pointB'])
+			show('AB Repeat again.')
+		}
+	}, 300)
+}
+
+//向前5s
+function forward(n){
+	var n=n||2
+	var prevpage="#forward";
+	location = prevpage;
+	show('前进'+n+'s')
+	wavesurfer.skip(n)
+}
+
+//向后5s
+function backward(n){
+	var n=n||2
+	var nextpage="#backward";
+	location = nextpage;
+	show('后退'+n+'s')
+	wavesurfer.skip(-n)
+}
+
+</script>
+</body>
+</html>

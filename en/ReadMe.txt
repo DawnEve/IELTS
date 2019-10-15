@@ -135,14 +135,19 @@ https://www.gutenberg.org
 
 > en0.2.28-0 微调en/links.html 
 > en0.2.28-1 改版每日英语，为统一格式，按照场景放句子
+> en0.2.28-2 改版目录，统一js加载; 优化单词王; 新增听力王
+	(1)单词王改版：太慢了！每次显示前500个。
+	(index):3974 [Deprecation] Synchronous XMLHttpRequest on the main thread is deprecated because of its detrimental effects to the end user's experience. For more help, check https://xhr.spec.whatwg.org/.
+	(2)听力王，支持AB复读，听写练习神器！
+#
 
 
 
 
 
 
-
-
+The lion will often stalk its prey for hours.
+狮子经常悄然跟踪猎物达几个小时。
 
 
 
@@ -155,10 +160,6 @@ https://www.gutenberg.org
 为之，则难者亦易矣；
 不为，则易者亦难矣。
 
-
-
-
-https://cn.bing.com/translator/
 
 --------
 url: ielts.biomooc.com/en/

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>单词王v0.1-2 - DYI背单词神器(英语读报出品)</title>
+	<title>单词王v0.1-2 - DIY背单词神器(英语读报出品)</title>
 <!--
 v0.1-2 首页返回 首页 改为 帮助页。
  
@@ -35,11 +35,11 @@ body{background-color:#eee;}
 <body>
 
 
-
+<!--107行选择词典-->
 <h4>Words list</h4>
 
 <div id=info>
-	<b><a target=_blank href="http://ielts.biomooc.com/en/word.html" title="使用帮助">单词王</a></b>
+	<b><a target=_blank href="/en/word.html" title="使用帮助">单词王</a></b>
 	<div> 1.勾记住的 2.提交 3.粘到js known数组中，刷新屏蔽。 </div>
 	勾选 <span>0</span> /
 	<span>0</span> <button id='submit'>提交</button>
@@ -47,6 +47,7 @@ body{background-color:#eee;}
 <div id=wordlist>
 序号/	记住了/	Word<br>
 </div>
+仅显示前500个单词，每次刷新都随机显示。
 
 <div id=cidian>
 	<iframe name=view_window2></iframe>
@@ -84,6 +85,7 @@ function createElement(tag, json, innerHTML){
 	return dom;
 }
 
+var checked=0 //勾选的总单词数
 window.onload=function(){
 	//从单词列表删除已经记住的单词 words=words-known
 	//console.log('known:',known.length);
@@ -100,22 +102,26 @@ window.onload=function(){
 		return 0.5 - Math.random()
 	})
 	var oWord=$('wordlist');
+	var d=document.createDocumentFragment();
 	
 	//显示单词
-	for (var w in words){
+	for (var w in words.slice(0,500)){
 		var oA=createElement("a", {
 			href:"https://fanyi.baidu.com/#en/zh/"+words[w],
+			//href:"http://dict.youdao.com/w/eng/"+words[w],
+			//href:"https://cn.bing.com/dict/SerpHoverTrans?q="+words[w],
 			target:"view_window2"
 		}, words[w]);
 		
-		oWord.append( createElement('span',{},w) );//序号
+		d.append( createElement('span',{},w) );//序号
 		//序号
 		var oCheck=createElement('input',{name:words[w], type:'checkbox'});
-		oWord.append( createElement('span',{},oCheck) );
+		d.append( createElement('span',{},oCheck) );
 		
-		oWord.append( oA ); //单词
-		oWord.append( createElement("br") );//换行符
+		d.append( oA ); //单词
+		d.append( createElement("br") );//换行符
 	}
+	oWord.append(d)
 	
 	var	aInfo=$("info").getElementsByTagName('span');
 	aInfo[0].innerHTML=0;
@@ -124,17 +130,9 @@ window.onload=function(){
 	var aInput=oWord.getElementsByTagName('input');
 	for(var i=0;i<aInput.length;i++){
 		aInput[i].onclick=function(){
-			if(this.checked){
-				aInfo[0].innerHTML=parseInt(aInfo[0].innerHTML)+1
-			}else{
-				aInfo[0].innerHTML=parseInt(aInfo[0].innerHTML)-1
-			}
-			/*
-			for(var j=0;j<aInput.length;j++){
-				if(aInput[j].checked){
-					checked++;
-				}
-			}*/
+			//console.log(this)
+			checked+=this.checked?1:-1; //看几个勾选了
+			aInfo[0].innerHTML=checked;
 		}
 	}
 	
@@ -150,11 +148,11 @@ window.onload=function(){
 		//打开新窗口
 		var newWindowObi=window.open('', "_blank");
 		//console.log(this);
-		newWindowObi.document.write("//保存到同级目录下的known.js中<br>known=["+"<br>");
+		newWindowObi.document.write("//保存到同级目录下的known.js中<br>//known=["+"<br>");
 		for(var i=0;i<master.length;i++){
 			newWindowObi.document.write("'"+master[i]+"',<br>");
 		}
-		newWindowObi.document.write("]");
+		newWindowObi.document.write("//]");
 	}
 }
 
