@@ -2,17 +2,21 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.3.2 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.3.3 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 v0.3 键盘操作的AB复读机，加帮助文档。
 v0.3.1 完善帮助文档
 v0.3.2 修复bug1
+v0.3.3 美化顶部标题
 
 -->
 <style>
-#info{background:#ccc;padding:5px; text-align:center;}
-#info a{color:white;}
-#info span{font-weight:bold; color:red;}
+html,body,h2,#info{padding:0px; margin:0;}
+#info{text-align:center;}
+#info h2{display:block;padding:5px; background:#000; color:orange;}
+#info a{color:white; text-decoration:none;}
+#info a:hover{text-decoration:underline;}
+#info div{font-weight:bold;}
 pre{
 	border:1px dashed #000;
 	padding:5px;
@@ -32,7 +36,7 @@ pre{
 
 <body>
 <div id=info>
-	<b><a target=_blank href="/" title="返回首页">听力王</a><span class=version> v0.3</span></b>
+	<h2><a target=_blank href="/" title="返回首页">听力王</a><span class=version> v0.3</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -167,14 +171,15 @@ var wavesurfer = WaveSurfer.create({
 
 //控制台和web显示状态
 function show(text){
-	console.log(Mstatus)
 	$('div1').innerHTML='Status: '+text;
+	return '';
+	console.log(Mstatus)
 }
 
 
 window.onload=function(){
 	var musicPath='002.mp3';
-	//musicPath='dustbin/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3';
+	musicPath='dustbin/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3';
 	//wavesurfer.load('audio.wav');
 	//wavesurfer.load('201910/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3');
 	//https://www.51voa.com/VOA_Special_English/us-officials-twin-births-drop-to-lowest-level-in--years-83068.html
