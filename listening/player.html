@@ -2,16 +2,22 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.3 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.3.2 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 v0.3 键盘操作的AB复读机，加帮助文档。
+v0.3.1 完善帮助文档
+v0.3.2 修复bug1
 
 -->
 <style>
 #info{background:#ccc;padding:5px; text-align:center;}
 #info a{color:white;}
 #info span{font-weight:bold; color:red;}
-pre{color:#bbb;}
+pre{
+	border:1px dashed #000;
+	padding:5px;
+	background:#000;color:white;
+}
 
 .grey{color:#ddd;}
 #help{display:none;}
@@ -59,11 +65,7 @@ pre{color:#bbb;}
 
 <pre id=help>
 <b>播放器使用说明：</b>
-1.下载mp3英语文件(比如from https://www.51voa.com/)
-到本地web服务器地址(如apache,nginx等)
-2.下载本html文件和wavesurfer.min.js文件到静态服务器环境，本文件修改 wavesurfer.load() 中的地址为上述mp3 文件的相对地址。
-3.chrome浏览器打开该页面，刷新后即可练习听写了。
-鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，后续可能会修复，也可能不会。
+鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
 (1)空格/Enter  开始播放、暂停，如果不好用，就多按几次空格 和 c字母；
@@ -74,12 +76,51 @@ pre{color:#bbb;}
 	c键continue播放，不再ab复读;
 	r键repeat，继续ab复读;
 	    该键只能在按下c之后，又想回到原AB复读时有效;
-	    如果没有指定A点则指向起点，如果没有指定B点则指向终点，所以，开头直接按r键就是无限循环；
+	    如果没有指定A点则指向起点，如果没有指定B点则指向终点，所以，开头直接按r键就是单曲循环；
 
-(3)左右箭头，前进后退2s;
-shift+左右箭头，前进后退2%;
+(3)左右箭头，前进后退2s; 
+shift+左右箭头，前进后退2%; 对于100s以上的音频，使用百分号移动的更快。
 
 (4)上下箭头 播放速度，支持0.3-3倍速播放，每次增减0.05倍;
+
+Tips:
+1) 从想反复听的位置按下A，到一句话结束按下B，这时会自动反复AB区间播放；按下c键退出重复模式;
+2) 如果想让B点靠后一点，则按下C键，到达预定位置按下B键；
+3) 如果想让B点靠前一点，则播放过程中按下B键即可；
+4) 如果想让A点靠后一点，则播放过程中按下A键；
+5) 如果想让A点靠前一点，则按下c键后按下空格暂停，按下左箭头，或者shift+左箭头，到合适位置，按下A键；
+6) 如果按下c键后，还想听刚才设置的AB点之间，只需要按下r键即可；
+
+
+
+
+
+
+
+<b>Steps to use the player: </b>
+需要有静态服务器，如apache,nginx等，如果都没有，使用python也可以快速搭建，详见下文。
+1. 下载mp3等英语音频文件(比如from https://www.51voa.com/)到本地web服务器文件夹中；
+2. 下载<a href="http://ielts.biomooc.com/listening/player.html">本html文件</a>(右击-链接另存为)和<a href="http://ielts.biomooc.com/listening/wavesurfer.min.js">wavesurfer.min.js文件</a>(右击-链接另存为)到相同文件夹；
+3. 修改player.html中 wavesurfer.load() 中的地址为本地mp3等音频文件的相对地址。
+4. 启动本地web服务器，chrome浏览器打开该web页面，刷新后即可练习听写了。
+
+
+
+
+
+
+
+<b>如何快速搭建静态服务器?</b>
+以win10系统为例(苹果没用过，用linux的大神肯定会启服务器)：
+1. 先安装pyhton3;
+2. 使用 我的电脑 一路双击找到存放player.html和wavesurfer.min.js文件的文件夹，在地址栏输入 cmd 回车，弹出黑窗口；
+3. 输入 python -m http.server 8888 并回车，如下:
+G:\xampp\htdocs\IELTS\listening>python -m http.server 8888
+Serving HTTP on 0.0.0.0 port 8888 (http://0.0.0.0:8888/) ...
+
+4. 在浏览器中输入 http://127.0.0.1:8888 回车后出现文件名列表，点击player.html，即可看到播放器了：http://127.0.0.1:8888/player.html
+5. 同名目录下保存自己的英语听力文件，修改player.html(第175行)的 var musicPath='002.mp3'; 
+把引号内部分替换成自己的音频文件，回到浏览器 shift+F5 刷新即可。
 </pre>
 
 
@@ -97,6 +138,9 @@ shift+左右箭头，前进后退2%;
 播放器 https://wavesurfer-js.org/
 方法 http://wavesurfer-js.org/docs/methods.html
 事件 http://wavesurfer-js.org/docs/events.html
+
+bug1:开头按下B，按下c播放，播放一会按下A，然后按下R，会报错：
+
 */
 
 
@@ -127,20 +171,14 @@ function show(text){
 	$('div1').innerHTML='Status: '+text;
 }
 
-//交换变量的值
-function swap(a,b){
-	var tmp=a;
-	a=b;
-	b=tmp;
-}
-
 
 window.onload=function(){
 	var musicPath='002.mp3';
+	//musicPath='dustbin/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3';
 	//wavesurfer.load('audio.wav');
-	wavesurfer.load(musicPath);
 	//wavesurfer.load('201910/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3');
 	//https://www.51voa.com/VOA_Special_English/us-officials-twin-births-drop-to-lowest-level-in--years-83068.html
+	wavesurfer.load(musicPath);
 
 	wavesurfer.on('ready', function () {
 		Mstatus['duration']=wavesurfer.getDuration();
@@ -241,7 +279,6 @@ window.onload=function(){
 		}
 		//ab复读，r开始a到b播放repeat播放
 		else if(key==82){
-			//wavesurfer.play(Mstatus['pointA'],Mstatus['pointB'])
 			show('[r] AB repeat mode now.')
 			//开始播放
 			if(!(wavesurfer.isPlaying()) ){
@@ -252,7 +289,8 @@ window.onload=function(){
 		//ab复读，按c则continue，不再ab复读
 		else if(key==67){
 			show('[c] continue to play')
-			clearInterval(Mstatus.timer1)
+			clearInterval(Mstatus.timer1) //清除定时器
+			Mstatus['on']*=-1
 			wavesurfer.play();
 		}
 	};
@@ -276,10 +314,10 @@ function repeatPlay(){
 	}
 	//如果a比b大呢？交换a和b
 	if(Mstatus['pointA']>Mstatus['pointB']){
-		swap(Mstatus['pointA'],Mstatus['pointB'])
-		/*var tmp=Mstatus['pointA'];
+		//swap(Mstatus['pointA'],Mstatus['pointB'])
+		var tmp=Mstatus['pointA'];
 		Mstatus['pointA']=Mstatus['pointB']
-		Mstatus['pointB']=tmp*/
+		Mstatus['pointB']=tmp
 	}
 	//如果a和b之间的距离很小呢？比如完全一样，暂时无解，只能提醒用户按下c键继续了
 	if(Math.abs( Mstatus['pointA']-Mstatus['pointB'] )<0.1){
@@ -305,7 +343,7 @@ function repeatPlay(){
 function forward(n){
 	var n=n||2
 	var prevpage="#forward";
-	location = prevpage;
+	//location = prevpage;
 	show('前进'+n+'s')
 	wavesurfer.skip(n)
 }
@@ -314,7 +352,7 @@ function forward(n){
 function backward(n){
 	var n=n||2
 	var nextpage="#backward";
-	location = nextpage;
+	//location = nextpage;
 	show('后退'+n+'s')
 	wavesurfer.skip(-n)
 }

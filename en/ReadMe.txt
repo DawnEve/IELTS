@@ -140,7 +140,9 @@ https://www.gutenberg.org
 	(index):3974 [Deprecation] Synchronous XMLHttpRequest on the main thread is deprecated because of its detrimental effects to the end user's experience. For more help, check https://xhr.spec.whatwg.org/.
 	(2)听力王，支持AB复读，听写练习神器！
 > en0.2.28-3 修饰css
-#
+> en0.2.28-4 听力王完善帮助文档，修复bug1
+# commited here
+# ----------------> git hub
 
 
 
