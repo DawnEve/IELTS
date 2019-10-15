@@ -142,6 +142,7 @@ https://www.gutenberg.org
 > en0.2.28-3 修饰css
 > en0.2.28-4 听力王完善帮助文档，修复bug1
 > en0.2.28-5 听力王v0.3.3美化标题
+> en0.2.28-6 换一个mp3 name
 # commited here
 # ----------------> git hub
 
