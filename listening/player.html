@@ -2,12 +2,16 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.3.3 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.4 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
+server: http://ielts.biomooc.com/listening/player.html
+local: http://ielts.dawneve.cc/listening/player.html
+
 v0.3 键盘操作的AB复读机，加帮助文档。
 v0.3.1 完善帮助文档
 v0.3.2 修复bug1
 v0.3.3 美化顶部标题
+v0.4 支持在线初始化，可以加载外链音频文件
 
 -->
 <style>
@@ -20,8 +24,9 @@ html,body,h2,#info{padding:0px; margin:0;}
 pre{
 	border:1px dashed #000;
 	padding:5px;
-	background:#000;color:white;
+	background:rgb(44,0,30);color:white;
 }
+pre a{color: orange;}
 
 .grey{color:#ddd;}
 #help{display:none;}
@@ -36,7 +41,7 @@ pre{
 
 <body>
 <div id=info>
-	<h2><a target=_blank href="/" title="返回首页">听力王</a><span class=version> v0.3</span></h2>
+	<h2><a target=_blank href="/" title="返回首页">听力王</a><span class=version> v0.4</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -50,7 +55,7 @@ pre{
 	<br>
 	<span id="speed">Speed: 1.00</span>
 	<br>
-	<span id="path" class=grey>Path: music path</span>
+	<span id="path" class=grey>AudioPath: AudioPath</span>
 </div>
 
 <div id="div1" class=grey>Status: player status will be shown here.</div>
@@ -68,7 +73,7 @@ pre{
 
 
 <pre id=help>
-<b>播放器使用说明：</b>
+<h1>听力王v0.4 复读机播放器使用说明</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -94,36 +99,54 @@ Tips:
 4) 如果想让A点靠后一点，则播放过程中按下A键；
 5) 如果想让A点靠前一点，则按下c键后按下空格暂停，按下左箭头，或者shift+左箭头，到合适位置，按下A键；
 6) 如果按下c键后，还想听刚才设置的AB点之间，只需要按下r键即可；
+7) 感觉说的太慢？试试向上箭头，最高支持3倍速播放。
+
+高级攻略：
+chrome浏览器，F12快捷键，点开console
+1) 输入 Mstatus 回车，这是控制music status的全局js状态变量; 可以看到A和B点的时间; 
+2) 如何随意指定A点? 输入 Mstatus.pointA=15 回车
+3) 如何随意指定B点？输入 Mstatus.pointB=30 回车
 
 
 
 
 
 
+<hr>
+<h1>Method1: 在线版播放器添加音频</h1>
+支持静态服务器跨服务器调用文件，需要音频文件支持跨域访问，也就是开启 'Access-Control-Allow-Origin' header 。
 
-<b>Steps to use the player: </b>
+1.下载/获取文件列表: <a target="_blank" href="http://a2.biomooc.com/audio/">音频服务器</a> 输入url下载mp3到该服务器，右击给出的外链-复制外链；
+2.到本播放器的console输入
+init('http://a2.biomooc.com/audio/static.php?file=icrc-laws-war-remain-relevant-today-despite-new-challenges.mp3'); //回车
+就可以更新音频了。
+注意：括号内是外链音频文件链接。更新时间取决于网速和音频长度。
+
+
+
+
+
+
+<hr>
+<h1>Method2: 本地版</h1>
 需要有静态服务器，如apache,nginx等，如果都没有，使用python也可以快速搭建，详见下文。
 1. 下载mp3等英语音频文件(比如from https://www.51voa.com/)到本地web服务器文件夹中；
 2. 下载<a href="http://ielts.biomooc.com/listening/player.html">本html文件</a>(右击-链接另存为)和<a href="http://ielts.biomooc.com/listening/wavesurfer.min.js">wavesurfer.min.js文件</a>(右击-链接另存为)到相同文件夹；
-3. 修改player.html中 wavesurfer.load() 中的地址为本地mp3等音频文件的相对地址。
+3. 修改player.html中 wavesurfer.load() 中的var musicPath='002.mp3' 地址为本地mp3等音频文件的相对地址。
 4. 启动本地web服务器，chrome浏览器打开该web页面，刷新后即可练习听写了。
 
 
 
-
-
-
-
-<b>如何快速搭建静态服务器?</b>
+<h2>如何快速搭建静态服务器?</h2>
 以win10系统为例(苹果没用过，用linux的大神肯定会启服务器)：
-1. 先安装pyhton3;
+1. 先安装pyhton3.6(其他版本没测试过);
 2. 使用 我的电脑 一路双击找到存放player.html和wavesurfer.min.js文件的文件夹，在地址栏输入 cmd 回车，弹出黑窗口；
 3. 输入 python -m http.server 8888 并回车，如下:
 G:\xampp\htdocs\IELTS\listening>python -m http.server 8888
 Serving HTTP on 0.0.0.0 port 8888 (http://0.0.0.0:8888/) ...
 
 4. 在浏览器中输入 http://127.0.0.1:8888 回车后出现文件名列表，点击player.html，即可看到播放器了：http://127.0.0.1:8888/player.html
-5. 同名目录下保存自己的英语听力文件，修改player.html(大概第180行)的 var musicPath='002.mp3'; 
+5. 同名目录下保存自己的英语听力文件，修改player.html的 var musicPath='002.mp3'; 
 把引号内部分替换成自己的音频文件，回到浏览器 shift+F5 刷新即可。
 </pre>
 
@@ -161,7 +184,7 @@ function $(s){
 }
 
 
-var Mstatus={'on':1, 'showHelp':-1, }//播放状态
+var Mstatus={'on':1, 'showHelp':-1, 'ready':0, }//播放状态
 var wavesurfer = WaveSurfer.create({
     container: '#waveform',
     waveColor: 'violet',
@@ -177,130 +200,24 @@ function show(text){
 }
 
 
-window.onload=function(){
-	var musicPath='002.mp3';
-	//musicPath='dustbin/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3';
-	//wavesurfer.load('audio.wav');
-	//wavesurfer.load('201910/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3');
-	//https://www.51voa.com/VOA_Special_English/us-officials-twin-births-drop-to-lowest-level-in--years-83068.html
-	wavesurfer.load(musicPath);
-
-	wavesurfer.on('ready', function () {
-		Mstatus['duration']=wavesurfer.getDuration();
-		//wavesurfer.play();
-		//监视播放状态
-		setInterval(function(){
-			//进度: 显示时间、总时间和百分比
-			var tm=wavesurfer.getCurrentTime()
-			$('time').innerHTML='CurrentTime: '+digital(tm)+'s/'+ digital(Mstatus.duration)+'s('+ digital(tm/Mstatus.duration*100) +'%)'
-			//速度
-			var spd=wavesurfer.getPlaybackRate()
-			$('speed').innerHTML="Speed: "+ digital(spd);
-			//歌曲
-			$('path').innerHTML='Path: '+musicPath;
-		},500)//每0.5s刷新一次状态
-		show('ready now, press Enter or Space key to play')
-	});
-
-	wavesurfer.on('finish', function () {
-		Mstatus.on*=-1
-		show('finish now, press Enter or Space key to play again')
-	})
-
-	//wavesurfer.pause(), wavesurfer.skipForward(), wavesurfer.toggleMute()
-	$('showHelp').onclick=function(){
-		Mstatus.showHelp*=-1
-		if(Mstatus.showHelp>0){
-			$('help').style.display='block';
-		}else{
-			$('help').style.display='none';
-		}
-		//转移焦点
-		$('showHelp2').focus()
-	}
-	
-	//全键盘控制的播放器
-	document.onkeydown =function(event){
-		//获取键盘事件和数字
-		var evt = event ||window.event;
-		var key=event.which||event.keyCode;
-		console.log(key);//打印当前按键码
-		
-		//前进 后退，左右键
-		//if ([33,39].indexOf(key)!=-1){pre();}
-		if(key==39){ 
-			if(event.shiftKey==1){
-				//shift 则按照2%前进后退
-				forward( Mstatus.duration*0.02 );
-			}else{
-				forward(2);
-			}
-		}
-		else if(key==37){
-			if(event.shiftKey==1){
-				backward( Mstatus.duration*0.02 );
-			}else{
-				backward(2);
-			}
-		}
-		
-		//播放速度，上下键
-		else if(key==38){
-			if(wavesurfer.getPlaybackRate()<3)
-				wavesurfer.setPlaybackRate( wavesurfer.getPlaybackRate() +0.05 );
-		}
-		else if(key==40){
-			if(wavesurfer.getPlaybackRate()>0.25)
-				wavesurfer.setPlaybackRate( wavesurfer.getPlaybackRate() -0.05 );
-		}
-		
-		//空格32/回车13控制着暂停与否
-		else if( [32,13].indexOf(key)!=-1 ){
-			Mstatus.on*=-1
-			if(Mstatus.on>0){
-				wavesurfer.pause();
-				show('Pause')
-			}else{
-				wavesurfer.play();
-				show('Go on playing.')
-			}
-		}
-		
-		//ab复读，a记录a位置
-		else if(key==65){
-			Mstatus['pointA']=wavesurfer.getCurrentTime()
-			show('pointA:'+Mstatus['pointA'])
-		}
-		//ab复读，b记录b位置
-		else if(key==66){
-			Mstatus['pointB']=wavesurfer.getCurrentTime()
-			show('pointB:'+Mstatus['pointB'])
-			//暂停播放
-			wavesurfer.pause();
-			Mstatus['on']*=-1
-			//开始从a点到b点反复播放
-			show('[b] AB repeat mode now.')
-			repeatPlay()
-		}
-		//ab复读，r开始a到b播放repeat播放
-		else if(key==82){
-			show('[r] AB repeat mode now.')
-			//开始播放
-			if(!(wavesurfer.isPlaying()) ){
-				wavesurfer.play();
-			}
-			repeatPlay();
-		}
-		//ab复读，按c则continue，不再ab复读
-		else if(key==67){
-			show('[c] continue to play')
-			clearInterval(Mstatus.timer1) //清除定时器
-			Mstatus['on']*=-1
-			wavesurfer.play();
-		}
-	};
+//快进
+function forward(n){
+	var n=n||2
+	var prevpage="#forward";
+	//location = prevpage;
+	show('前进'+n+'s')
+	wavesurfer.skip(n)
 }
-//end of window.onload
+
+//快退
+function backward(n){
+	var n=n||2
+	var nextpage="#backward";
+	//location = nextpage;
+	show('后退'+n+'s')
+	wavesurfer.skip(-n)
+}
+
 
 
 //重复播放
@@ -344,24 +261,173 @@ function repeatPlay(){
 	}, 300)
 }
 
-//向前5s
-function forward(n){
-	var n=n||2
-	var prevpage="#forward";
-	//location = prevpage;
-	show('前进'+n+'s')
-	wavesurfer.skip(n)
-}
+//刷新播放器内容和事件绑定
+function init(musicPath){
+	Mstatus['audio']=musicPath;
+	Mstatus.ready=0;
+	show("<span style='color:red'>loading ...</span>");
+	//清除定时器
+	if('timer0' in Mstatus){
+		clearInterval(Mstatus.timer0);
+	}
+	wavesurfer.load(musicPath);
 
-//向后5s
-function backward(n){
-	var n=n||2
-	var nextpage="#backward";
-	//location = nextpage;
-	show('后退'+n+'s')
-	wavesurfer.skip(-n)
-}
+	wavesurfer.on('ready', function () {
+		Mstatus['duration']=wavesurfer.getDuration();
+		//wavesurfer.play();
+		//监视播放状态
+		Mstatus['timer0']=setInterval(function(){
+			//进度: 显示时间、总时间和百分比
+			var tm=wavesurfer.getCurrentTime()
+			$('time').innerHTML='CurrentTime: '+digital(tm)+'s/'+ digital(Mstatus.duration)+'s('+ digital(tm/Mstatus.duration*100) +'%)'
+			//速度
+			var spd=wavesurfer.getPlaybackRate()
+			$('speed').innerHTML="Speed: "+ digital(spd);
+			//歌曲
+			$('path').innerHTML='AudioPath: '+musicPath;
+		},500)//每0.5s刷新一次状态
+		Mstatus.ready=1;
+		show('ready now, press Enter or Space key to play')
+	});
 
+	wavesurfer.on('finish', function () {
+		Mstatus.on*=-1
+		show('finish now, press Enter or Space key to play again')
+	})
+	//wavesurfer.pause(), wavesurfer.skipForward(), wavesurfer.toggleMute()
+}
+//end of tools
+
+
+
+
+
+/**
+* 控制播放的主程序
+* version: 0.2 可播放
+* version: 0.3 可复读
+* version: 0.4 支持外链音频
+*/
+window.onload=function(){
+	var musicPath='002.mp3';
+	//musicPath='dustbin/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3';
+	//musicPath='dustbin/s-korea-donates-rice-money-feed-hungry-n-korea.mp3';
+	//musicPath='http://ielts.biomooc.com/listening/002.mp3';
+	//musicPath='http://a2.biomooc.com/audio/s-korea-donates-rice-money-feed-hungry-n-korea.mp3';
+	//musicPath='http://a2.biomooc.com/audio/static.php?file=s-korea-donates-rice-money-feed-hungry-n-korea.mp3';
+	//musicPath='http://localhost/IELTS/listening/dustbin/static.php?file=us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3';
+	//musicPath='http://ielts.dawneve.cc/listening/dustbin/static.php?file=s-korea-donates-rice-money-feed-hungry-n-korea.mp3';
+	//wavesurfer.load('audio.wav');
+	//wavesurfer.load('201910/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3');
+	//https://www.51voa.com/VOA_Special_English/us-officials-twin-births-drop-to-lowest-level-in--years-83068.html
+	
+	//初始化播放器
+	init(musicPath)
+	
+	
+	//帮助按钮，单击事件
+	$('showHelp').onclick=function(){
+		Mstatus.showHelp*=-1
+		if(Mstatus.showHelp>0){
+			$('help').style.display='block';
+		}else{
+			$('help').style.display='none';
+		}
+		//转移焦点
+		$('showHelp2').focus()
+	}
+	
+
+	//全键盘控制的播放器
+	document.onkeydown =function(event){
+		//获取键盘事件和数字
+		var evt = event ||window.event;
+		var key=event.which||event.keyCode;
+		console.log(key);//打印当前按键码
+		
+		if(Mstatus.ready==0){
+			var alert2='Nothing can be done before loading is completed!'
+			console.log(alert2);
+			alert(alert2);
+			return false;
+		}
+		
+		//前进 后退，左右键
+		//if ([33,39].indexOf(key)!=-1){pre();}
+		if(key==39){ 
+			if(event.shiftKey==1){
+				//shift 则按照2%前进
+				forward( Mstatus.duration*0.02 );
+			}else{
+				forward(2);
+			}
+		}
+		else if(key==37){
+			if(event.shiftKey==1){
+				//shift 则按照2%后退
+				backward( Mstatus.duration*0.02 );
+			}else{
+				backward(2);
+			}
+		}
+		
+		//播放速度，上下键
+		else if(key==38){
+			if(wavesurfer.getPlaybackRate()<3)
+				wavesurfer.setPlaybackRate( wavesurfer.getPlaybackRate() +0.05 );
+		}
+		else if(key==40){
+			if(wavesurfer.getPlaybackRate()>0.25)
+				wavesurfer.setPlaybackRate( wavesurfer.getPlaybackRate() -0.05 );
+		}
+		
+		//空格32/回车13控制着暂停与否
+		else if( [32,13].indexOf(key)!=-1 ){
+			Mstatus.on*=-1
+			if(Mstatus.on>0){
+				wavesurfer.pause();
+				show('Pause')
+			}else{
+				wavesurfer.play();
+				show('Go on playing.')
+			}
+		}
+		
+		//ab复读，a记录a位置
+		else if(key==65){
+			Mstatus['pointA']=wavesurfer.getCurrentTime()
+			show('pointA:'+Mstatus['pointA'])
+		}
+		//ab复读，b记录b位置
+		else if(key==66){
+			Mstatus['pointB']=wavesurfer.getCurrentTime()
+			show('pointB:'+Mstatus['pointB'])
+			//暂停播放
+			wavesurfer.pause();
+			//Mstatus['on']*=-1
+			//开始从a点到b点反复播放
+			show('[b] AB repeat mode now.')
+			repeatPlay()
+		}
+		//ab复读，r开始a到b播放repeat播放
+		else if(key==82){
+			show('[r] AB repeat mode now.')
+			//开始播放
+			if(!(wavesurfer.isPlaying()) ){
+				wavesurfer.play();
+			}
+			repeatPlay();
+		}
+		//ab复读，按c则continue，不再ab复读
+		else if(key==67){
+			show('[c] continue to play')
+			clearInterval(Mstatus.timer1) //清除定时器
+			Mstatus['on']*=-1
+			wavesurfer.play();
+		}
+	};
+}
+//end of window.onload
 </script>
 </body>
 </html>
