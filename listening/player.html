@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.4 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.4.1 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -12,6 +12,7 @@ v0.3.1 完善帮助文档
 v0.3.2 修复bug1
 v0.3.3 美化顶部标题
 v0.4 支持在线初始化，可以加载外链音频文件
+v0.4.1 添加外链下拉框显示可用音频列表(仅online版显示)
 
 -->
 <style>
@@ -34,6 +35,17 @@ pre a{color: orange;}
 
 .version{font-size:smaller;}
 .red{color:red;}
+
+/*links*/
+a {
+    color:#0593d3; /*#366799;*/
+    text-decoration: none;
+}
+a:hover {text-decoration: underline;}
+
+#showList{display:none;}
+
+button{margin:2px 20px;}
 </style>
 </head>
 
@@ -41,7 +53,7 @@ pre a{color: orange;}
 
 <body>
 <div id=info>
-	<h2><a target=_blank href="/" title="返回首页">听力王</a><span class=version> v0.4</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.1</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -51,14 +63,18 @@ pre a{color: orange;}
 
 <br>
 <div>
-	<span id="time">CurrentTime: 0.00/Total time(0.00%)</span>
-	<br>
-	<span id="speed">Speed: 1.00</span>
-	<br>
-	<span id="path" class=grey>AudioPath: AudioPath</span>
+	<span id="time">CurrentTime: 0.00/Total time(0.00%)</span> | <span id="speed">Speed: 1.00</span>
+</div>
+<div id="div1" class=grey>Status: player status will be shown here.</div>
+<div id="path" class=grey>AudioPath: AudioPath</div>
+
+<div id='showList'> <span class=grey>Available Audio on the <a target="_blank" href="http://a2.biomooc.com/audio/">Audio Server</a>:</span>
+	<select id="sel1">
+		<option value="">请选择</option>
+	</select>
 </div>
 
-<div id="div1" class=grey>Status: player status will be shown here.</div>
+
 
 <button id='showHelp'>Show Help</button>
 <button id='showHelp2'>doNothing</button>
@@ -68,12 +84,8 @@ pre a{color: orange;}
 
 
 
-
-
-
-
 <pre id=help>
-<h1>听力王v0.4 复读机播放器使用说明</h1>
+<h1>听力王v0.4.1 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -106,6 +118,38 @@ chrome浏览器，F12快捷键，点开console
 1) 输入 Mstatus 回车，这是控制music status的全局js状态变量; 可以看到A和B点的时间; 
 2) 如何随意指定A点? 输入 Mstatus.pointA=15 回车
 3) 如何随意指定B点？输入 Mstatus.pointB=30 回车
+4) 如何按照自定义好的AB点复读呢？按下r键即可，退出复读模式呢？按下c键即可。
+
+
+
+
+
+<hr>
+<h1>刻意练习法 - 精听训练方法</h1>
+准备纸和黑笔、蓝笔、红笔。
+1.找音频文件，一定要有英文文本！最好3-5分钟的。
+包括新概念英语，46级听力材料，雅思听力材料/剑桥雅思听力，TPO，BBC/VOA，经济学人，
+
+2.听一遍，感觉听到了什么就记录下来要点，这就是以后正常听力的状态。
+3.逐句听，听到实在写不出一个字为止，保证每个单词、标点都正确、准确，大概15-30遍；
+4.对照文本批改，人名地名用蓝笔改错，其他错误用红笔修改。
+找到听错了或者没有听写出来的部分，花大量时间去研究和复习。
+问自己这些问题：为什么听错呢？
+是因为这个词不认识？那就赶紧背单词去。。。
+是因为读音不熟悉？那就跟着正确的读音多读几遍。。。
+还是自己本来这个音就读错了？赶快自我纠正，防止以后有类似音的词搞错。
+
+5.再听，注意听错的地方的发音，开始跟读，注意连读、爆破音等
+7.选取其中约2min左右长度的内容，标注文本发音要点，反复模仿。
+影子跟读，就是发音、重音、声调、喘息都要一模一样，更严格的实时跟读。
+
+
+总之，听写只是找出自己的弱点，而之后的修正才是最最重要的地方。基本上做30-40篇听写，就能基本听出95%的内容。
+然后提高一个难度等级，继续做30-40篇听写。
+提高的同时，词汇量一定也要同时提高。毕竟如果单词不认识，那就不可能听得出来的啊。
+
+
+<b>不疯魔，不成活。其实又有哪件事不是如此呢？</b>
 
 
 
@@ -116,11 +160,11 @@ chrome浏览器，F12快捷键，点开console
 <h1>Method1: 在线版播放器添加音频</h1>
 支持静态服务器跨服务器调用文件，需要音频文件支持跨域访问，也就是开启 'Access-Control-Allow-Origin' header 。
 
-1.下载/获取文件列表: <a target="_blank" href="http://a2.biomooc.com/audio/">音频服务器</a> 输入url下载mp3到该服务器，右击给出的外链-复制外链；
-2.到本播放器的console输入
+1.下载/获取文件列表: 点击打开<a target="_blank" href="http://a2.biomooc.com/audio/">音频服务器</a> 输入音频文件url点击下载，下载音频到该服务器，右击中括号给出的外链 - 复制外链；
+2.到本播放器的console(F12)输入
 init('http://a2.biomooc.com/audio/static.php?file=icrc-laws-war-remain-relevant-today-despite-new-challenges.mp3'); //回车
 就可以更新音频了。
-注意：括号内是外链音频文件链接。更新时间取决于网速和音频长度。
+注意：括号内是外链音频文件链接。加载时间取决于网速和音频文件长度。
 
 
 
@@ -148,6 +192,11 @@ Serving HTTP on 0.0.0.0 port 8888 (http://0.0.0.0:8888/) ...
 4. 在浏览器中输入 http://127.0.0.1:8888 回车后出现文件名列表，点击player.html，即可看到播放器了：http://127.0.0.1:8888/player.html
 5. 同名目录下保存自己的英语听力文件，修改player.html的 var musicPath='002.mp3'; 
 把引号内部分替换成自己的音频文件，回到浏览器 shift+F5 刷新即可。
+
+
+Contact me: jimmymall at 163 dot com
+
+--the end --
 </pre>
 
 
@@ -167,7 +216,7 @@ Serving HTTP on 0.0.0.0 port 8888 (http://0.0.0.0:8888/) ...
 事件 http://wavesurfer-js.org/docs/events.html
 
 bug1:开头按下B，按下c播放，播放一会按下A，然后按下R，会报错：
-
+bug2:按下B键，进入自动播放模式，然后按下空格，不会停止，再次按下空格才能停止；fixed.
 */
 
 
@@ -179,18 +228,33 @@ function digital(num,n){
 	return num.toFixed(n)
 }
 
+//选择元素
 function $(s){
 	return document.getElementById(s);
 }
 
+//给obj增加事件的自定义函,兼容IE/chrome/ff
+function addEvent(obj,ev,fn){
+	if(obj.addEventListener){
+		//ff:addEventListener
+		obj.addEventListener(ev,fn,false);
+	}else{
+		//IE:attachEvent
+		obj.attachEvent('on'+ev,fn);
+	}
+}
 
+//状态
 var Mstatus={'on':1, 'showHelp':-1, 'ready':0, }//播放状态
+
+//初始化
 var wavesurfer = WaveSurfer.create({
     container: '#waveform',
     waveColor: 'violet',
     progressColor: 'purple',
 	scrollParent: true,
 });
+
 
 //控制台和web显示状态
 function show(text){
@@ -330,8 +394,10 @@ window.onload=function(){
 		Mstatus.showHelp*=-1
 		if(Mstatus.showHelp>0){
 			$('help').style.display='block';
+			this.innerHTML="Hide Help"
 		}else{
 			$('help').style.display='none';
+			this.innerHTML="Show Help"
 		}
 		//转移焦点
 		$('showHelp2').focus()
@@ -428,6 +494,118 @@ window.onload=function(){
 	};
 }
 //end of window.onload
+</script>
+
+
+
+<script>
+//使用ajax获取可用的音频文件列表
+/*封装的ajax函数
+* v0.1 https://www.cnblogs.com/wang-zhang/p/9883654.html
+* v0.2 添加了json类型自动转换
+*/
+function ajax(options){
+    //创建一个ajax对象
+    var xhr = new XMLHttpRequest() || new ActiveXObject("Microsoft,XMLHTTP");
+    //数据的处理 {a:1,b:2} a=1&b=2;
+    var str = "";
+    for(var key in options.data){
+        str+="&"+key+"="+options.data[key];
+    }
+    str = str.slice(1)
+    if(options.method == "get"){
+        var url = options.url+"?"+str;
+        xhr.open("get",url);
+        xhr.send();
+    }else if(options.method == "post"){
+        xhr.open("post",options.url);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        xhr.send(str)
+    }
+    //监听
+    xhr.onreadystatechange = function(){
+        //当请求成功的时候
+        if(xhr.readyState == 4 && xhr.status == 200){
+            var text = xhr.responseText;
+			if(options.type=="json"){
+				text=JSON.parse(text);
+			}
+            //将请求的数据传递给成功回调函数
+            options.success&&options.success(text)
+        }else if(xhr.status != 200){
+            //当失败的时候将服务器的状态传递给失败的回调函数
+            options.error&&options.error(xhr.status);
+        }
+    }
+}
+
+/** 返回创建的dom元素
+* 只有第一个参数是必须的。
+* 其余2个参数可选。
+*/
+function createElement(tag, json, innerHTML){
+	var json=json||{};
+	var dom=document.createElement(tag);
+	
+	if(json!=undefined){
+		for(var key in json){
+			dom.setAttribute(key,json[key]);
+		}
+	}
+	
+	if(innerHTML!=undefined){
+		dom.innerHTML=innerHTML;
+	}
+	return dom;
+}
+
+
+//初始化下拉框控件
+function initSelect(){
+	var oSel=$("sel1");
+	//从另一个服务器获取json格式的音频名字列表
+	ajax({
+		method:"get",
+		url:"http://a2.biomooc.com/audio/static.php",
+		success:function(arr){
+			//console.log(arr)
+			for(var i=0;i<arr.length;i++){
+				var arr2=arr[i].split('.');
+				//console.log('>>>>', arr2);
+				if( ['mp3','wav'].indexOf(arr2[arr2.length-1])>-1 ){
+					//音频文件列表
+					//console.log(arr[i]);
+					//添加到dom中
+					var oOp=createElement('option',{'value':arr[i]},arr[i])
+					oSel.append(oOp);
+				}
+			}
+		},
+		error: function(num){
+			console.log(num);
+		},
+		type: "json"
+	})
+
+	//改变值事件
+	oSel.onchange=function(){
+		if(this.value=="") return;//如果选择第一行，啥也不做
+		var outerURL="http://a2.biomooc.com/audio/static.php?file="+this.value
+		//console.log(outerURL)
+		init(outerURL)
+	}
+}
+
+//如果不是在线版，则退化为v0.4
+addEvent(window,'load',function(){
+	if(location.hostname!='ielts.biomooc.com'){
+		return false;
+	}
+	//如果是在线版，则可以直接使用音频服务器
+	$('showList').style.display='block';
+	initSelect();
+})
+
 </script>
 </body>
 </html>
