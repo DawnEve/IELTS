@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.4.1 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.4.2 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -13,6 +13,7 @@ v0.3.2 修复bug1
 v0.3.3 美化顶部标题
 v0.4 支持在线初始化，可以加载外链音频文件
 v0.4.1 添加外链下拉框显示可用音频列表(仅online版显示)
+v0.4.2 没变化的就不刷新了
 
 -->
 <style>
@@ -85,7 +86,7 @@ button{margin:2px 20px;}
 
 
 <pre id=help>
-<h1>听力王v0.4.1 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.4.2 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -334,7 +335,7 @@ function init(musicPath){
 	if('timer0' in Mstatus){
 		clearInterval(Mstatus.timer0);
 	}
-	wavesurfer.load(musicPath);
+	wavesurfer.load(Mstatus['audio']);
 
 	wavesurfer.on('ready', function () {
 		Mstatus['duration']=wavesurfer.getDuration();
@@ -343,12 +344,19 @@ function init(musicPath){
 		Mstatus['timer0']=setInterval(function(){
 			//进度: 显示时间、总时间和百分比
 			var tm=wavesurfer.getCurrentTime()
-			$('time').innerHTML='CurrentTime: '+digital(tm)+'s/'+ digital(Mstatus.duration)+'s('+ digital(tm/Mstatus.duration*100) +'%)'
+			var strTime='CurrentTime: '+digital(tm)+'s/'+ digital(Mstatus.duration)+'s('+ digital(tm/Mstatus.duration*100) +'%)'
+			if($('time').innerHTML!=strTime){
+				$('time').innerHTML=strTime
+			}
 			//速度
 			var spd=wavesurfer.getPlaybackRate()
-			$('speed').innerHTML="Speed: "+ digital(spd);
+			if($('speed').innerHTML!="Speed: "+ digital(spd)){
+				$('speed').innerHTML="Speed: "+ digital(spd);
+			}
 			//歌曲
-			$('path').innerHTML='AudioPath: '+musicPath;
+			if($('path').innerHTML!='AudioPath: '+Mstatus['audio']){
+				$('path').innerHTML='AudioPath: '+Mstatus['audio'];
+			}
 		},500)//每0.5s刷新一次状态
 		Mstatus.ready=1;
 		show('ready now, press Enter or Space key to play')
