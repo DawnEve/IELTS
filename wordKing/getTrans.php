@@ -35,6 +35,8 @@ $url="https://cn.bing.com/dict/SerpHoverTrans?q=".$word; //必应词典
 #$url="https://www.ldoceonline.com/dictionary/".$word; //朗文词典
 #$url="https://www.oed.com/search?searchType=dictionary&q=".$word."&_searchBtn=Search"; //牛津词典
 
+#$url="http://dict.youdao.com/w/eng/".$word."/#keyfrom=dict2.index";
+
 
 //返回结果
 $data['url']=$url;

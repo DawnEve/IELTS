@@ -9,7 +9,7 @@ url:http://ielts.dawneve.cc/wordKing/getTrans.js
 3.在需要划词翻译的网页，F12打开控制台，输入如下语句并回车即可: 
 var s=document.createElement("script");s.src="http://ielts.dawneve.cc/wordKing/getTrans.js";document.body.append(s);
 
-tips:如果网页是https的，需要构建https服务器，
+tips:很多网页是https的，需要构建https服务器，
 难点是证书的配置: https://blog.csdn.net/qq_35128576/article/details/81326524
 
 
@@ -22,9 +22,13 @@ tips:如果网页是https的，需要构建https服务器，
 3.在悬浮窗显示单词 //todo 悬浮窗有空再做。
 
 
+版本控制
 #v0.2 写成一个对象，避免污染变量空间
 #v0.3 抽象成一个js文件
 #v0.4 添加关闭按钮
+#v0.4.1 美化界面
+
+* todo 悬浮框显示；悬浮取词；
 */
 
 //替换文本前与后的空格
@@ -148,18 +152,26 @@ $(document).click(function(event){
 #ht_pop {
 	overflow: auto;
 	position: fixed;
-	background: #fff;
+	background: #fff;color:#000;
 	display:none;
 	z-index: 99999;
-	border:1px solid #eb7350;
+	border:1px solid #eee;
 	border-radius:5px;
 	bottom:0;left:0;
-	margin:2px;
+	margin:5px;
 	opacity:0.9;
 	max-height:500px;
+	font-size:1em;
+
+	transition: box-shadow 0.35s;
+    box-shadow: 2px -2px 10px rgba(0,0,0,0.1);
+}
+#ht_pop:hover{
+	transition:box-shadow .25s;
+	box-shadow:3px -3px 10px 3px rgba(0,0,0,0.2);
 }
 #ht_pop h4,#ht_pop div,#ht_pop ul{margin:0;padding:0;}
-#ht_pop div{padding:5px;}
+#ht_pop div{padding:5px 10px;}
 #ht_close{
 	border-top:1px dashed #eee;
 	color:#999;
