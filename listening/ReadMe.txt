@@ -7,5 +7,6 @@ VOA_Special_English 语速较慢
 VOA_Standard_English 这个语速正常。
 
 
-
+3.https://www.51en.com/news/cnn/49113.html
+冬季风暴侵袭美国 创下降雪纪录
 

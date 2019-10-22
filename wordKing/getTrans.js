@@ -159,16 +159,17 @@ $(document).click(function(event){
 	border-radius:5px;
 	bottom:0;left:0;
 	margin:5px;
-	opacity:0.9;
+	opacity:0.8;
 	max-height:500px;
 	font-size:1em;
 
 	transition: box-shadow 0.35s;
-    box-shadow: 2px -2px 10px rgba(0,0,0,0.1);
+    /*box-shadow: 2px -2px 10px rgba(0,0,0,0.1);*/
+	box-shadow:3px -3px 10px 3px rgba(0,0,0,0.2);
 }
 #ht_pop:hover{
 	transition:box-shadow .25s;
-	box-shadow:3px -3px 10px 3px rgba(0,0,0,0.2);
+	box-shadow:3px -3px 20px 5px rgba(255,0,0,0.3);
 }
 #ht_pop h4,#ht_pop div,#ht_pop ul{margin:0;padding:0;}
 #ht_pop div{padding:5px 10px;}
