@@ -149,9 +149,10 @@ https://www.gutenberg.org
 > en0.2.29-0 注入式词典划词翻译getTrans.js
 ############# 拂晓词典
 > en0.2.29-1 划词翻译v0.4.1 美化界面
+# ----------------> push to github
 > en0.2.29-2 听力王v0.4.3 记录循环的总次数，显示到状态中
-# commited here
-# ----------------> git hub
+> en0.2.29-3 听力王v0.4.4 显示copy right和鸡汤、微信号文章
+# commited local
 
 
 

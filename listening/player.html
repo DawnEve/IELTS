@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.4.3 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.4.4 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -15,12 +15,14 @@ v0.4 支持在线初始化，可以加载外链音频文件
 v0.4.1 添加外链下拉框显示可用音频列表(仅online版显示)
 v0.4.2 状态没变化的就不刷新了
 v0.4.3 记录循环的总次数，显示到状态中
-v0.4.4 todo
+v0.4.4 显示copy right和鸡汤、微信号文章
+
 
 //版本号还需要修改三个地方: title中，顶部标签中，正文帮助文档中
+//音频标记为波形图 https://blog.csdn.net/dongchengxuyuan/article/details/82759287
 -->
 <style>
-html,body,h2,#info{padding:0px; margin:0;}
+html,body,h2,#info,p{padding:0px; margin:0;}
 #info{text-align:center;}
 #info h2{display:block;padding:5px; background:#000; color:orange;}
 #info a{color:white; text-decoration:none;}
@@ -50,6 +52,8 @@ a:hover {text-decoration: underline;}
 #showList{display:none;}
 
 button{margin:2px 20px;}
+
+#footer{text-align:center; color:#ccc; padding-top:250px;}
 </style>
 </head>
 
@@ -57,7 +61,7 @@ button{margin:2px 20px;}
 
 <body>
 <div id=info>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.3</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.4</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -89,7 +93,7 @@ button{margin:2px 20px;}
 
 
 <pre id=help>
-<h1>听力王v0.4.3 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.4.4 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -205,6 +209,13 @@ Contact me: jimmymall at 163 dot com
 
 
 
+
+
+<div id=footer>
+	<p>&copy;2019 <a href="/en">英语读报</a> 荣誉出品 </p>
+	<p><a target=_blank href="https://mp.weixin.qq.com/s?__biz=MzI0NDcxNzc5Mg==&mid=2247485239&idx=2&sn=8846604b1ccbcafd8180246002f9b3e4">怎么快速提高英语听力水平?精听</a></p>
+	<p> 不疯魔，不成活！其实又有哪件事不是如此呢？</p>
+</div>
 
 
 
