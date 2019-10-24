@@ -1,4 +1,27 @@
-广告词：
+英语读报 更新流水账
+
+url: ielts.biomooc.com/en/
+local: ielts.dawneve.cc/en/
+
+
+
+新东方雅思培训课笔记-强化班 冲刺班
+
+Your site is ready to be published at http://ielts.biomooc.com/
+
+v0.0.1 写作课第一课
+	2017.12.14 周四 写作
+v0.0.2 加入同义词替换列表，带句子
+v0.0.3 加入课程表、周日口语、写作笔记。
+v0.0.4 加入写作body段-交通题材，口语-事件类，阅读-填空；
+	v0.0.4-1修改 read 页的小标题。
+	v0.0.4-2 增加 英语读报 链接。增加编码 <meta charset="utf-8">
+	v0.0.4-3 增加 每日一句口语
+-这个暂停，以为 en/ReadMe.txt为准。合并en/ReadMe.txt到这里：
+
+
+
+## 广告词：
 
 英语读报，保鲜英文，备考英语。
 提倡阅读原版英语主流报刊杂志学英语，在上下文中学习单词、短语、句子、行文结构等。 
@@ -149,11 +172,11 @@ https://www.gutenberg.org
 > en0.2.29-0 注入式词典划词翻译getTrans.js
 ############# 拂晓词典
 > en0.2.29-1 划词翻译v0.4.1 美化界面
-# ----------------> push to github
 > en0.2.29-2 听力王v0.4.3 记录循环的总次数，显示到状态中
 > en0.2.29-3 听力王v0.4.4 显示copy right和鸡汤、微信号文章
 # commited local
-
+# ----------------> push to github
+> en0.2.29-4 划词翻译v0.4.2改名为dawnDict;支持console查单词 dawnDict.trans('good');
 
 
 
@@ -188,4 +211,3 @@ https://www.sohu.com/a/248581597_290050
 			<a class="button red" target='_blank' href="xx">xx</a>
 			<span>xx</span>
 		</p>
-

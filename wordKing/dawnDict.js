@@ -1,13 +1,16 @@
 /*
-url:http://ielts.dawneve.cc/wordKing/getTrans.js
+拂晓词典：
+url:http://ielts.dawneve.cc/wordKing/dawnDict.js
 
 使用方法：
+该url仅支持本机访问，自用需要架服务器并调url
+
 1.把同名php文件放在服务器中；可以更改其中的词典链接，或者自己编写词典；
-2.把本js文件放在相同文件夹中，调整本文件的init方法中ajax的php文件地址，确保能访问到；
+2.把本js文件放在相同文件夹中，调整本文件的trans方法中ajax的php文件地址，确保能访问到；
 一旦以上步骤搞定，剩下的就简单了。
 
 3.在需要划词翻译的网页，F12打开控制台，输入如下语句并回车即可: 
-var s=document.createElement("script");s.src="http://ielts.dawneve.cc/wordKing/getTrans.js";document.body.append(s);
+var s=document.createElement("script");s.src="http://ielts.dawneve.cc/wordKing/dawnDict.js";document.body.append(s);
 
 tips:很多网页是https的，需要构建https服务器，
 难点是证书的配置: https://blog.csdn.net/qq_35128576/article/details/81326524
@@ -27,6 +30,8 @@ tips:很多网页是https的，需要构建https服务器，
 #v0.3 抽象成一个js文件
 #v0.4 添加关闭按钮
 #v0.4.1 美化界面
+#v0.4.2 改名为dawnDict;支持console查单词 dawnDict.trans('good');
+
 
 * todo 悬浮框显示；悬浮取词；
 */
@@ -35,7 +40,8 @@ tips:很多网页是https的，需要构建https服务器，
 ;String.prototype.trim = function (){
 	return this.replace(/(^\s*)|(\s*$)/g, "");
 }
-var myTransOBJ={
+var dawnDict={
+	version:"v0.4.2",
 	$: function(s){
 		return document.getElementById(s);
 	},
@@ -128,7 +134,34 @@ $(document).click(function(event){
 			}
 		}
 	},
-
+	//做了冗余，可以在控制台查单词
+	trans:function(word,oDiv){
+		var self=this;
+		//console.log('word==>'+word+';')
+		self.ajax({
+			method:"get",
+			url:"https://ielts.dawneve.cc/wordKing/dawnDict.php?word="+word, //访问后台 //todo: 修改时要保证能访问到php文件
+			success:function(data){
+				if(data.status){
+					if(data.res==''){
+						data.res="没有查到，请调整再试";
+					}
+					console.log(data.res)
+					if(oDiv && typeof oDiv =='object'){
+						oDiv.innerHTML=data.res
+					}
+					if(self.$("ht_pop")){
+						self.$("ht_pop").style.display='block';
+					}
+				}
+			},
+			error: function(num){
+				console.log(num);
+			},
+			type: "json"
+		})
+		//ajax end;
+	},
 	init:function(){
 		var self=this
 		//嵌入dom
@@ -206,30 +239,11 @@ $(document).click(function(event){
 			if(event.srcElement.tagName!="A" && event.srcElement.tagName!="INPUT" && starobj == event.srcElement){
 				//如果没有选中的内容，则啥都不做。针对双击时的第一次鼠标抬起
 				word=self.SelectText();
-				if(word==undefined){
-					return;
+				if(word==undefined || word==''){
+					return false;
 				}
-				//获取了单词，ajax请求后台，本地服务器查单词
-				//console.log('word==>'+word+';')
-				self.ajax({
-					method:"get",
-					url:"https://ielts.dawneve.cc/wordKing/getTrans.php?word="+word, //访问后台 //todo: 修改时要保证能访问到php文件
-					success:function(data){
-						if(data.status){
-							console.log(data)
-							if(data.res==''){
-								data.res="没有查到，请调整再试";
-							}
-							oDiv.innerHTML=data.res
-							self.$("ht_pop").style.display='block';
-						}
-					},
-					error: function(num){
-						console.log(num);
-					},
-					type: "json"
-				})
-				//ajax end;
+				//查单词
+				self.trans(word,oDiv);
 			}
 		}
 		//单击消失
@@ -239,5 +253,5 @@ $(document).click(function(event){
 		}
 	}
 };
-myTransOBJ.init();
-console.log('load myTransOBJ: done!');
+dawnDict.init();
+console.log('load dawnDict: done!');

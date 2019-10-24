@@ -1,14 +1,15 @@
 <?php
 /** 后台查词典，返回结果
-* 接口方式 http://ielts.dawneve.cc/wordKing/getTrans.php?word=good
+* 接口方式 http://ielts.dawneve.cc/wordKing/dawnDict.php?word=good
 * v0.1 必应查词，允许跨域请求翻译
+* v0.2 改名字为 dawnDict 拂晓词典
 * 
 * 这是后台接口。详细使用请看同名js文件.
 */
 //重新定义header，允许外链
 header('Server: suctom-server',true);
 //header('HTTP/1.1 200 OK');
-header('Server: WJL_translation_server/0.1');
+header('Server: WJL_translation_server/0.2');
 header('Email: jimmymall@163.com');
 //header('Content-Type:text/html;charset=UTF-8');//html文件类型,UTF-8类型
 header("Access-Control-Allow-Origin: *");

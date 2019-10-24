@@ -2,10 +2,11 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.4.4 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.4.5 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
+audio local: G:\xampp\htdocs\DawnScholar\audio\
 
 v0.3 键盘操作的AB复读机，加帮助文档。
 v0.3.1 完善帮助文档
@@ -16,24 +17,31 @@ v0.4.1 添加外链下拉框显示可用音频列表(仅online版显示)
 v0.4.2 状态没变化的就不刷新了
 v0.4.3 记录循环的总次数，显示到状态中
 v0.4.4 显示copy right和鸡汤、微信号文章
+v0.4.5 更改音频后要转移焦点！防止空格或箭头触发下一个
 
 
 //版本号还需要修改三个地方: title中，顶部标签中，正文帮助文档中
 //音频标记为波形图 https://blog.csdn.net/dongchengxuyuan/article/details/82759287
 -->
 <style>
-html,body,h2,#info,p{padding:0px; margin:0;}
-#info{text-align:center;}
-#info h2{display:block;padding:5px; background:#000; color:orange;}
-#info a{color:white; text-decoration:none;}
-#info a:hover{text-decoration:underline;}
-#info div{font-weight:bold;}
+html,body,h2,#topTitle,p{padding:0px; margin:0;}
+#topTitle{text-align:center;}
+#topTitle h2{display:block;padding:5px; background:#000; color:orange;}
+#topTitle a{color:white; text-decoration:none;}
+#topTitle a:hover{text-decoration:underline;}
+#topTitle div{font-weight:bold;}
 pre{
 	border:1px dashed #000;
 	padding:5px;
 	background:rgb(44,0,30);color:white;
 }
 pre a{color: orange;}
+
+.control,
+.status{padding:10px; margin:5px 10px; border:1px solid #eee; background:#fdfdfd;}
+.control{
+
+}
 
 .grey{color:#ddd;}
 #help{display:none;}
@@ -51,8 +59,6 @@ a:hover {text-decoration: underline;}
 
 #showList{display:none;}
 
-button{margin:2px 20px;}
-
 #footer{text-align:center; color:#ccc; padding-top:250px;}
 </style>
 </head>
@@ -60,8 +66,8 @@ button{margin:2px 20px;}
 
 
 <body>
-<div id=info>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.4</span></h2>
+<div id='topTitle'>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.5</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -69,23 +75,26 @@ button{margin:2px 20px;}
 <div id="waveform"></div>
 
 
-<br>
-<div>
-	<span id="time">CurrentTime: 0.00/Total time(0.00%)</span> | <span id="speed">Speed: 1.00</span>
+<div class="status">
+	<p><span id="time">CurrentTime: 0.00/Total time(0.00%)</span> | <span id="speed">Speed: 1.00</span></p>
+	<div id="div1" class=grey>Status: player status will be shown here.</div>
+	<div id="path" class=grey>AudioPath: AudioPath</div>
+
+	<div id='showList'>
+		<span class=grey>Available Audio on the <a id='hostName' target="_blank" href="http://a2.biomooc.com/audio/">Audio Server</a>:</span>
+		<select id="sel1">
+			<option value="">Please set a file to play</option>
+		</select>
+	</div>
 </div>
-<div id="div1" class=grey>Status: player status will be shown here.</div>
-<div id="path" class=grey>AudioPath: AudioPath</div>
 
-<div id='showList'> <span class=grey>Available Audio on the <a id='hostName' target="_blank" href="http://a2.biomooc.com/audio/">Audio Server</a>:</span>
-	<select id="sel1">
-		<option value="">请选择</option>
-	</select>
+
+
+<div class="control">
+	<button id='showHelp'>Show Help</button>
+	<button id='showHelp2'>doNothing</button>
 </div>
 
-
-
-<button id='showHelp'>Show Help</button>
-<button id='showHelp2'>doNothing</button>
 
 
 
@@ -93,7 +102,7 @@ button{margin:2px 20px;}
 
 
 <pre id=help>
-<h1>听力王v0.4.4 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.4.5 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -212,7 +221,7 @@ Contact me: jimmymall at 163 dot com
 
 
 <div id=footer>
-	<p>&copy;2019 <a href="/en">英语读报</a> 荣誉出品 </p>
+	<p>&copy;2019 <a target=_blank href="/en">英语读报</a> 荣誉出品 </p>
 	<p><a target=_blank href="https://mp.weixin.qq.com/s?__biz=MzI0NDcxNzc5Mg==&mid=2247485239&idx=2&sn=8846604b1ccbcafd8180246002f9b3e4">怎么快速提高英语听力水平?精听</a></p>
 	<p> 不疯魔，不成活！其实又有哪件事不是如此呢？</p>
 </div>
@@ -320,14 +329,14 @@ function repeatPlay(){
 		Mstatus['pointA']=Mstatus['pointB']
 		Mstatus['pointB']=tmp
 	}
-	//如果a和b之间的距离很小呢？比如完全一样，暂时无解，只能提醒用户按下c键继续了
+	//如果A和B之间的距离很小呢？比如完全一样，暂时无解，只能提醒用户按下c键继续了
 	if(Math.abs( Mstatus['pointA']-Mstatus['pointB'] )<0.1){
 		//暂停
 		wavesurfer.pause();
 		Mstatus.on*=-1;
 		//高亮提醒
 		show("<span class=red>Time between pointA and pointB is too short! Press C to continue.</span>")
-		return "";
+		return false;
 	}
 	
 	//开始播放
@@ -434,7 +443,7 @@ window.onload=function(){
 		var key=event.which||event.keyCode;
 		console.log(key);//打印当前按键码
 		
-		if(Mstatus.ready==0){
+		if(Mstatus.ready==0 && key!=123){
 			var alert2='Nothing can be done before loading is completed!'
 			console.log(alert2);
 			alert(alert2);
@@ -587,7 +596,7 @@ function createElement(tag, json, innerHTML){
 function initSelect(hostName){
 	var oSel=$("sel1");
 	var hostName=hostName||"a2.biomooc.com";
-	console.log('Loading from:',hostName)
+	console.log('Loading audio list from:',hostName)
 	//从另一个服务器获取json格式的音频名字列表
 	ajax({
 		method:"get",
@@ -618,6 +627,8 @@ function initSelect(hostName){
 		var outerURL="http://"+hostName+"/audio/static.php?file="+this.value
 		//console.log(outerURL)
 		init(outerURL)
+		//转移焦点
+		$('showHelp2').focus()
 	}
 }
 
