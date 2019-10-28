@@ -3,24 +3,6 @@
 url: ielts.biomooc.com/en/
 local: ielts.dawneve.cc/en/
 
-
-
-新东方雅思培训课笔记-强化班 冲刺班
-
-Your site is ready to be published at http://ielts.biomooc.com/
-
-v0.0.1 写作课第一课
-	2017.12.14 周四 写作
-v0.0.2 加入同义词替换列表，带句子
-v0.0.3 加入课程表、周日口语、写作笔记。
-v0.0.4 加入写作body段-交通题材，口语-事件类，阅读-填空；
-	v0.0.4-1修改 read 页的小标题。
-	v0.0.4-2 增加 英语读报 链接。增加编码 <meta charset="utf-8">
-	v0.0.4-3 增加 每日一句口语
--这个暂停，以为 en/ReadMe.txt为准。合并en/ReadMe.txt到这里：
-
-
-
 ## 广告词：
 
 英语读报，保鲜英文，备考英语。
@@ -30,6 +12,21 @@ v0.0.4 加入写作body段-交通题材，口语-事件类，阅读-填空；
 
 英语读报QQ群：755650994 
 微信群(活跃)，参考 http://ielts.biomooc.com/en/
+
+
+
+新东方雅思培训课笔记-强化班 冲刺班
+Your site is ready to be published at http://ielts.biomooc.com/
+v0.0.1 写作课第一课
+	2017.12.14 周四 写作
+v0.0.2 加入同义词替换列表，带句子
+v0.0.3 加入课程表、周日口语、写作笔记。
+v0.0.4 加入写作body段-交通题材，口语-事件类，阅读-填空；
+	v0.0.4-1修改 read 页的小标题。
+	v0.0.4-2 增加 英语读报 链接。增加编码 <meta charset="utf-8">
+	v0.0.4-3 增加 每日一句口语
+-这个暂停，以 en/ReadMe.txt为准。
+合并en/ReadMe.txt到本文件：
 
 > v0.1.8 add links to en/links.html	
 	> v0.1.8.1 en/links.html add links,add css
@@ -174,9 +171,10 @@ https://www.gutenberg.org
 > en0.2.29-1 划词翻译v0.4.1 美化界面
 > en0.2.29-2 听力王v0.4.3 记录循环的总次数，显示到状态中
 > en0.2.29-3 听力王v0.4.4 显示copy right和鸡汤、微信号文章
+> en0.2.29-4 划词翻译v0.4.2改名为dawnDict;支持console查单词 dawnDict.trans('good');
+> en0.2.29-5 增添网易云音乐链接; links.html 末尾加隐藏的经济学人下载地址;
 # commited local
 # ----------------> push to github
-> en0.2.29-4 划词翻译v0.4.2改名为dawnDict;支持console查单词 dawnDict.trans('good');
 
 
 
