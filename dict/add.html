@@ -1,0 +1,49 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+
+<style>
+.data,.data textarea,.data select,.data button{margin:10px; padding:10px;}
+.data textarea{height:300px;}
+.data button{cursor:pointer;}
+#show{color:#ccc;}
+</style>
+
+<div class=data>
+	<span>Sumit new words to DB(one word per line, or with blank between each word)</span>
+	<br>
+	<textarea id='words'></textarea>
+	<br>
+	<select id='type'>
+		<option value='n'>陌生单词</option>
+		<option value='w'>写错</option>
+		<option value='l'>听错</option>
+		<option value='r'>读错</option>
+	</select>
+	<button id='submit'>Submit</button>
+</div>
+
+<div id='show'></div>
+
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#submit').click(function(){
+		//1.获取单词和分类
+		var words=$('#words').val()
+		var aWord=words.split(/[^a-zA-Z]+/) //分割字符串成数组
+		var type=$('#type').val()
+		//output
+		//console.log('words=',aWord,'; type=',type)
+		//2.ajax to the backend
+		$.post('http://127.0.0.1:20180/api/newWord/',{
+			'word':aWord.join('_'),
+			'type':type
+		}, function(data,status){
+			if(status=='success'){
+				$('#show').html('status: <br>'+data.data[2])
+			}else{
+				console.log(data,status)
+			}
+		});
+	});
+});
+</script>

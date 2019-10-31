@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>拂晓词典 v0.1</title>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<style>
+.wrap{width:800px; margin:0 auto;}
+#logo{color:#eee;}
+#word{
+	padding:2px 10px; 
+	border: 1px solid #e6e6e6;
+	width: 500px;
+	height: 47px;
+    line-height: 47px;
+	border-radius: 5px;
+	font-size: 14px;
+}
+#submit2{
+	cursor: pointer;
+    height: 47px;
+    width: 113px;
+	background-color: #dd0a20;
+    background-image: -webkit-linear-gradient(top,#ea1e4c,#dd0a20);
+	font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    margin-left: 19px;
+    outline: 0;
+	border-width: 0px;
+}
+#submit2:hover{
+	background-color:#dd0a20;
+	background-image:-webkit-linear-gradient(top,#fa2f6a,#f50e2d);
+	background-image:-moz-linear-gradient(top,#fa2f6a,#f50e2d);
+	background-image:-o-linear-gradient(top,#fa2f6a,#f50e2d);
+	background-image:linear-gradient(top,#fa2f6a,#f50e2d)
+}
+
+#show{border:1px solid #feeeee; margin:5px; padding:5px;}
+
+#box2_id{width:100%; border-width:0px; border-top:1px solid #eee; height:50%; min-height:1000px;}
+
+#otherDict{color:#eee;}
+.light{color:#ccc;}
+#otherDict a, a.light{color:#ccc;}
+#otherDict a:hover,a.light:hover{color:#00e;}
+
+
+input::-webkit-input-placeholder{
+  color: #eee;
+  font-size: 16px;
+}
+
+</style>
+<!--
+v0.1 基本可用
+-->
+</head>
+
+
+
+<body>
+<div class=wrap>
+	<span id=logo>拂晓词典</span>
+	<input type='word' id='word' placeholder="Input a English word here">
+	<button id='submit2'>翻译</button>
+	<div id='show'></div>
+</div>
+
+	<iframe id='box2_id' name='box2'></iframe>
+
+
+<script type="text/javascript">
+
+//获取单词，调动接口翻译，显示结果
+var showTrans=function(){
+	var word=$('#word').val()
+	if(word=='')return;//空单词啥也不做
+	
+	$.get('http://127.0.0.1:20180/api/dict/'+word, function(res){
+		if(res.status==0){
+			$('#show').html(res.data.msg)
+		}else{
+			//console.log(res)
+			data=res.data
+			$('#show').html( data.word +'<br><span class=light>'+ data.phoneticSymbol +'</span><br>'+data.meaning);
+			
+			//添加其他词典的链接 悬浮显示
+			$('#show').append('<div id=otherDict>本窗口打开: <a target=box2 href="http://dict.youdao.com/w/eng/'+word+'/#keyfrom=dict2.index">有道词典</a> | '+
+				'<a target=box2 href="https://fanyi.baidu.com/#en/zh/'+word+'">百度翻译</a> | '+
+				
+				
+				'<br>新窗口打开: <a target=_blank href="https://www.collinsdictionary.com/dictionary/english/'+word+'">柯林斯</a> | '+
+				'<a target=_blank href="https://www.oed.com/search?searchType=dictionary&q='+word+'&_searchBtn=Search">牛津</a> | '+
+				'<a target=_blank href="https://www.ldoceonline.com/dictionary/'+word+'">朗文</a> | '+
+				//'<a target=_blank href="http://www.webster-dictionary.net/definition/'+word+'">韦氏</a> | '+
+				'<a target=_blank href="https://www.merriam-webster.com/dictionary/'+word+'">韦氏</a> | '+
+				
+				'</div>'
+			)
+			
+			//默认查有道词典
+			$('#box2_id')[0].src='http://dict.youdao.com/w/eng/'+word+'/#keyfrom=dict2.index'
+			//抢焦点
+			setTimeout(function(){
+				$('#word').focus();
+				$('#word').select();
+			},1000)
+		}
+	})
+	
+}
+
+
+$(document).ready(function(){
+	$('#word').focus(); //自动获取焦点
+	
+	//点击按钮
+	$("#submit2").click(showTrans);
+	//点回车键
+	$('#word').keydown(function(){
+		if(event.key=='Enter'){
+			showTrans();
+		}
+	});
+	
+	//鼠标悬停选择全部单词
+	$('#word').hover(function(){
+		this.select();
+	})
+
+});
+</script>
+
+<div class=wrap>
+	<a target="_blank" href='add.html' class=light>添加生词</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+拂晓词典v0.1
+
+整体架构
+后台：采用python3 flask + mysql的方式
+前台：先用普通页面，后期考虑Vue
+
+
+英汉精简数据库：主要来自必应
+CREATE TABLE `word_ms` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `word` varchar(50) DEFAULT NULL,
+  `phoneticSymbol` varchar(100) DEFAULT NULL,
+  `meaning` text,
+  `modi_time` varchar(30) DEFAULT NULL,
+  `add_time` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  #Unique KEY `word` (`word`)
+  KEY `word` (`word`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+查过的单词列表
+CREATE TABLE `word_searched` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `word` varchar(50) DEFAULT NULL,
+  `source` varchar(50) DEFAULT NULL,
+  `add_time` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+生词，易错词
+CREATE TABLE `word_unknown` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `word` varchar(50) DEFAULT NULL,
+  `type` char(10) DEFAULT NULL, #写错w/听错l/生词n/读音错了r/
+  `right` int(10) DEFAULT NULL,
+  `wrong` int(10) DEFAULT NULL,
+  `add_time` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+1.写一个简易的接口，使用web页面或js输入错误单词列表，默认是生词，
+
+
+
+
+
+
+
+
