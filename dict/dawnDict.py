@@ -4,7 +4,7 @@ from myConfig import DBUtil
 from flask import Flask
 from flask import jsonify,make_response,request
 import requests
-import re,time
+import re,time,datetime
 
 app = Flask(__name__)
 
@@ -23,12 +23,23 @@ def hello():
 """
 
 #测试接口，内部调用函数等
-import time
 @app.route('/api/test/<word>')
 def test3(word):
     print( request.headers)
     print(request.remote_addr) #获取IP地址
     return word
+
+#CORS (Cross-Origin Resource Sharing)
+def cors(arrOrStr):
+    res=jsonify(arrOrStr)
+    res.headers.add('Access-Control-Allow-Origin', '*')
+    res.headers.add('Backend', 'wjl_dawnDict_server/0.3')
+    res.headers.add('Email', 'jimmymall at 163 dot com')
+    return res;
+#
+
+
+
 
 #保存到数据库
 def saveToDB(arr):
@@ -165,7 +176,7 @@ def addNewWord():
             #空字符串啥也不做
             if len(word)==0:
                 continue;
-            print('=============>',word)
+            print('add=============>',word)
             data=mydb.query('select id,word, wrong from word_unknown where word="%s"' % word);
             #
             if len(data)==0:
@@ -181,10 +192,166 @@ def addNewWord():
         msg=[arr,type, msg]
     
     #response
-    res=jsonify({'status':status, 'data':msg})
-    #res=jsonify(arr)
-    res.headers.add('Access-Control-Allow-Origin', '*')
-    return res;
+    return cors({'status':status, 'data':msg})
+
+#
+# 查询统计信息
+@app.route('/api/status/', methods=['GET'])
+def statistics():
+    #总体统计
+    rs1=mydb.query('select count(*) from word_ms;');
+    rs2=mydb.query('select count(*) from word_unknown;');
+    rs3=mydb.query('select count(*) from word_searched;');
+    #
+    # 昨天时间 https://www.jb51.net/article/141272.htm
+    today = datetime.date.today()
+    yesterday = today - datetime.timedelta(days=1)
+    oneWeek = today - datetime.timedelta(days=7)
+    #
+    today=int(time.mktime(  time.strptime(str(today), '%Y-%m-%d')   ))
+    yesterday=int(time.mktime(  time.strptime(str(yesterday), '%Y-%m-%d')   ))
+    oneWeek=int(time.mktime(  time.strptime(str(oneWeek), '%Y-%m-%d')   ))
+    #24h内
+    #yesterday=time.time()-24*3600
+    #
+    print('today=',today)
+    td1=mydb.query('select count(*) from word_ms where add_time>%d;'%today);
+    td2=mydb.query('select count(*) from word_unknown where add_time>%d;'%today);
+    td3=mydb.query('select count(*) from word_searched where add_time>%d;'%today);
+    #
+    print('yesterday=',yesterday)
+    ys1=mydb.query('select count(*) from word_ms where add_time>%d and add_time<%d;'% (yesterday,today) );
+    ys2=mydb.query('select count(*) from word_unknown where add_time>%d and add_time<%d;'% (yesterday,today) );
+    ys3=mydb.query('select count(*) from word_searched where add_time>%d and add_time<%d;'% (yesterday,today) );
+    #
+    print('oneWeek=',oneWeek)
+    week1=mydb.query('select count(*) from word_ms where add_time>%d;'%oneWeek);
+    week2=mydb.query('select count(*) from word_unknown where add_time>%d;'%oneWeek);
+    week3=mydb.query('select count(*) from word_searched where add_time>%d;'%oneWeek);
+    #
+    sentence=mydb.query('select count(*) from sentence_dawn;');
+    #返回值
+    return cors({
+        'sentence':sentence[0][0],
+        'word':{
+            'total':{
+                'ms':rs1[0][0],
+                'unknown':rs2[0][0],
+                'searched':rs3[0][0]
+            },
+            'yesterday':{
+                'ms':ys1[0][0],
+                'unknown':ys2[0][0],
+                'searched':ys3[0][0]
+            },
+            'today':{
+                'ms':td1[0][0],
+                'unknown':td2[0][0],
+                'searched':td3[0][0]
+            },
+            'week':{
+                'ms':week1[0][0],
+                'unknown':week2[0][0],
+                'searched':week3[0][0]
+            }
+        }
+    })
+#
+
+
+
+# 插入新语料库2
+@app.route('/api/newSentence2/', methods=['POST'])
+def addNewSentences2():
+    status=1
+    wordStr=request.form.get('str')
+    arr=re.split('_____',wordStr)
+    #
+    source=request.form.get('source')
+    
+    return cors({
+        'arr':arr,
+        'source':source
+    })
+
+# 插入新语料库
+@app.route('/api/newSentence/', methods=['POST'])
+def addNewSentences():
+    status=1
+    wordStr=request.form.get('str')
+    lines=re.split('_____',wordStr)
+    #
+    msg=""
+    
+    if len(lines)==0:
+        msg="nothing to be inserted!"
+        status=0
+    else:
+        source=request.form.get('source')
+        add_time=int(time.time())
+        ###########
+        #过滤
+        i=0
+        j=0
+        res=''
+        for lineR in lines:
+            i+=1
+            line=lineR.strip()
+            arr=re.split('[.?!]+',line) #一行分割成句子
+            marker='OK'
+            #过滤空行
+            if len(line)==0:
+                continue;
+            #过滤带汉字的行
+            if re.search(r'[\u4e00-\u9fa5\|]+',line)!=None:
+                marker='No_汉字';
+                continue;
+            #过滤重复的行
+            if re.search('Listen to the tape then answer the question below',line)!=None:
+                marker='No_重复';
+                continue;
+            if re.search('https{0,1}://www',line)!=None or re.search('doi: ',line)!=None:
+                marker='No_URL'
+                continue;
+            if len(arr)==1 and len(re.split('\s+',arr[0]) )<5:
+                marker='No_仅有一句，且这一句不到5个单词'
+                continue
+            #整句的保存到数据库中
+            j+=1
+            rs=0
+            #检查数据库是否存在
+            tableName='sentence_dawn'         
+            if len( mydb.query( 'select * from '+tableName+' where line="%s";'%  mydb.db().escape_string(line)  ))>0:
+                rs=-1
+            else:
+                sql="insert into "+tableName+"(line,source,add_time) values('%s','%s',%d);" % ( mydb.db().escape_string(line), source,add_time)
+                rs=mydb.execute(sql)
+            #print(j,line)
+            res+=str(rs)+' | '+line+"<br>"
+        print('==end== 实际插入行数 j=',j, '; 总行数 i=',i)
+        msg=[i,j,res]
+    return cors({
+        'status':status,
+        'data':msg
+    })
+
+# 按照单词，返回句子接口
+@app.route('/api/sentence/id/<id>', methods=['GET'])
+def sentenceById(id):
+    sql="select * from sentence_dawn where id="+id;
+    rs=mydb.query(sql)
+    return cors(rs)
+
+# 按照单词，返回句子接口
+@app.route('/api/sentence/word/<word>', methods=['GET'])
+def sentenceByWord(word):
+    if word=='null':
+        sql="select * from sentence_dawn order by add_time DESC, id DESC limit 10;";
+    else:
+        sql="select * from sentence_dawn where line like '%"+word+"%' order by add_time DESC, id DESC;"
+    print('word=',word,sql)
+    rs=mydb.query(sql)
+    return cors(rs)
 
 
 #启动后端程序

@@ -173,9 +173,10 @@ https://www.gutenberg.org
 > en0.2.29-3 听力王v0.4.4 显示copy right和鸡汤、微信号文章
 > en0.2.29-4 划词翻译v0.4.2改名为dawnDict;支持console查单词 dawnDict.trans('good');
 > en0.2.29-5 增添网易云音乐链接; links.html 末尾加隐藏的经济学人下载地址;
-# commited local
-# ----------------> push to github
 > en0.2.29-6 新增拂晓词典py web版0.1，需要本地启动py脚本
+# ----------------> push to github
+> en0.2.29-7 添加NEC3-4; web添加语料库; 修正听力王播放器帮助文档
+# commited local
 
 
 

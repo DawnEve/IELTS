@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>拂晓词典 v0.1</title>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<style>
+/*
+body{background: #EFF5DD;}
+*/
+.wrap{margin:10px;margin:30px 0;}
+div,p,span{margin:0;padding:0;}
+.box{
+	background:#fff;
+	margin:10px;
+	padding:2px 5px;
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+    border-radius: 5px;
+	border:1px solid #eee;
+	border-left-width:3px;
+}
+.box:hover{border-left-color:#f00;}
+.box span{border-bottom:1px dashed #eee;}
+
+.light,.light a{color:#ddd; font-size:smaller;}
+.red{color:red;}
+
+</style>
+
+</head>
+
+
+
+<body>
+<div class=wrap>
+	<div id='box'></div>
+</div>
+
+<script>
+//http://127.0.0.1:20180/api/sentence/word/
+
+//获取url中的参数 https://www.cnblogs.com/vicky-li/p/9145026.html
+function getUrlParam(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+
+
+$(document).ready(function(){
+	//var word=location.search.split('=')[1]
+	var word=getUrlParam('word')
+	var id=getUrlParam('id')
+	var url='http://127.0.0.1:20180/api/sentence/word/'+word
+	
+	if(id!=null){
+		url='http://127.0.0.1:20180/api/sentence/id/'+id
+	}
+	$.get(url,function(res,status){
+		wjl=res;
+		if(res.length==0){
+			html="<div class=box>Nothing found.</div>"
+			$('#box').append(html)
+			return false;
+		}
+		for(var i in res){
+			var line=res[i]
+			//console.log(arr)
+			//一行分成多个句子
+			var arr=line[1].split(/[.?!]+\s/);
+			var sentence=line[1];
+			
+			//如果有单词，则自动高亮显示
+			if(word!=null){
+				//正则动态替换
+				var reg=new RegExp( word,'ig')
+				if(id==null){//没有指定id，则最小化显示句子
+					for(var j in arr){
+						if(arr[j].match(reg)){
+							//sentence=arr[j].replace(/word/ig,function(word){	
+							sentence=arr[j].replace(reg,function(keyword,index,originText){
+								//console.log(keyword,index,originText)//关键词  位置 原文
+								return("<span class=red>"+keyword+'</span>')
+							})
+							break;
+						}
+					}
+				}else{//有id，则一行全部显示
+					sentence=sentence.replace(reg,function(a){
+						return("<span class=red>"+word+'</span>')
+					})
+				}
+			}
+			//链接信息
+			var wordPara=""
+			if(word!=null){
+				wordPara='&word='+word
+			}
+			html="<div class=box>"+
+				'<span class=light><a target=_blank href="?id='+line[0]+wordPara+'">#'+line[0]+'</a> ['+line[2]+']</span>'+
+				'<p>'+sentence+'</p>'
+			+"</div>"
+			
+			//console.log(rs)
+			$('#box').append(html)
+		}
+	})
+});
+
+</script>

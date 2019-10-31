@@ -41,12 +41,30 @@ CREATE TABLE `word_unknown` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+
+
+
+
+dawn语料库，以行为单位保存(一行可能包含很多句子)
+CREATE TABLE `sentence_dawn` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `line` text,
+  `source` varchar(50) DEFAULT NULL,
+  `add_time` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+词典从语料库查询单词，新页面显示
+select * from sentence_dawn where line like "%risk%" order by add_time DESC, id DESC limit 5;
+
+
+
 1.写一个简易的接口，使用web页面或js输入错误单词列表，默认是生词，
 
 
+2.提供状态的接口
+/api/status/  提供状态，数据表条目数，昨天新增条目数
 
 
-
-
-
-
+v0.2 修正高亮显示例句问题

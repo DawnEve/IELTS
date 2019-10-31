@@ -1,0 +1,63 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>添加语料v0.1</title>
+<!--
+v0.1 勉强可用了
+-->
+<style>
+.data,.data textarea,.data select,.data button,.data input{margin:10px; padding:10px;}
+.data textarea{height:600px; width:80%}
+.data button{cursor:pointer;}
+#show{color:#ccc;}
+</style>
+
+<div class=data>
+	<span>Sumit new text to DB(one line per line)</span>
+	<br>
+	<textarea id='words'></textarea>
+	<br>
+	Source: <input type=input id='source'>
+	<br>
+	<button id='submit'>Submit</button>
+</div>
+
+<div id='show'></div>
+
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script>
+var print=console.log
+$(document).ready(function(){
+	$('#submit').click(function(){
+		//1.获取单词和分类
+		var words=$('#words').val()
+		var aSentence=words.split(/[\n]+/) //分割字符串成数组
+		var source=$('#source').val()
+		if(words==''){
+			alert('请填写文本')
+			$('#words').focus()
+			return false;
+		}
+		if(source==''){
+			alert('请填写来源')
+			$('#source').focus()
+			return false;
+		}
+		
+		wjl=aSentence
+		//print(aSentence, source)
+		//output
+		//console.log('words=',aWord,'; type=',type)
+		//2.ajax to the backend
+		$.post('http://127.0.0.1:20180/api/newSentence/',{
+			'str':aSentence.join('_____'),
+			'source':source
+		}, function(data,status){
+			if(status=='success'){
+				console.log('OK:',data,status)
+				$('#show').html('status: '+data.data[1]+'<br>'+data.data[2])
+			}else{
+				console.log(data,status)
+			}
+		});
+	});
+});
+</script>

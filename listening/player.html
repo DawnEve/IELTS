@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.4.5 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.4.6 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -18,6 +18,7 @@ v0.4.2 状态没变化的就不刷新了
 v0.4.3 记录循环的总次数，显示到状态中
 v0.4.4 显示copy right和鸡汤、微信号文章
 v0.4.5 更改音频后要转移焦点！防止空格或箭头触发下一个
+v0.4.6 补充帮助文档
 
 
 //版本号还需要修改三个地方: title中，顶部标签中，正文帮助文档中
@@ -67,7 +68,7 @@ a:hover {text-decoration: underline;}
 
 <body>
 <div id='topTitle'>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.5</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.6</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -102,7 +103,7 @@ a:hover {text-decoration: underline;}
 
 
 <pre id=help>
-<h1>听力王v0.4.5 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.4.6 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -126,13 +127,13 @@ Tips:
 2) 如果想让B点靠后一点，则按下C键，到达预定位置按下B键；
 3) 如果想让B点靠前一点，则播放过程中按下B键即可；
 4) 如果想让A点靠后一点，则播放过程中按下A键；
-5) 如果想让A点靠前一点，则按下c键后按下空格暂停，按下左箭头，或者shift+左箭头，到合适位置，按下A键；
+5) 如果想让A点靠前一点，则按下c键后按下空格暂停，按下左箭头，或者shift+左箭头，到合适位置，按下A键，再按下R键即用原B点播放；
 6) 如果按下c键后，还想听刚才设置的AB点之间，只需要按下r键即可；
 7) 感觉说的太慢？试试向上箭头，最高支持3倍速播放。
 
 高级攻略：
 chrome浏览器，F12快捷键，点开console
-1) 输入 Mstatus 回车，这是控制music status的全局js状态变量; 可以看到A和B点的时间; 
+1) 输入 Mstatus 回车，这是控制music status的全局js状态变量; 可以看到A和B点的时间，单位是秒; 
 2) 如何随意指定A点? 输入 Mstatus.pointA=15 回车
 3) 如何随意指定B点？输入 Mstatus.pointB=30 回车
 4) 如何按照自定义好的AB点复读呢？按下r键即可，退出复读模式呢？按下c键即可。
