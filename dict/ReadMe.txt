@@ -34,8 +34,9 @@ CREATE TABLE `word_unknown` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `word` varchar(50) DEFAULT NULL,
   `type` char(10) DEFAULT NULL, #写错w/听错l/生词n/读音错了r/
-  `right` int(10) DEFAULT NULL,
-  `wrong` int(10) DEFAULT NULL,
+  `right` int(10) DEFAULT 0,
+  `wrong` int(10) DEFAULT 0,
+  `modi_time` varchar(30) DEFAULT NULL,
   `add_time` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -68,3 +69,11 @@ select * from sentence_dawn where line like "%risk%" order by add_time DESC, id 
 
 
 v0.2 修正高亮显示例句问题
+v0.3 添加背单词工具
+
+
+
+
+todo
+1.浏览语料库，删除质量不高的部分
+2.

@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+	<title>拂晓背单词 - dawnDict_recite v0.1</title>
+
+<style>
+div{padding:10px;margin:5px;border:1px solid #eee;}
+.light{color:#ddd;}
+#word{padding:2px 5px;}
+#word2{cursor:pointer; color:blue}
+</style>
+</head>
+
+<h1 style='opacity:0.05'>remember word</h1>
+
+<div><span id=mean></span></div>
+<div>单词: <input type=input id=word autocomplete="off" ></input> (正确答案: <u id=word2>点击查看</u>) </div>
+
+<div><button id='check'>提交答案</button> <span id='rightOrWrong'></span></div>
+
+<div class=light id=status>Status: 正确率0/0(?%)</div>
+<div class=light id=show2></div>
+
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+
+
+//通过某种方法，选出来10个单词，
+var words=[
+	/*['pendulum','n 钟摆'],
+	['vanity','n 自负;自大;虚荣;虚荣心;'],
+	['vanish','v.(莫名其妙地)突然消失;不复存在;消亡;绝迹'],
+	['foremost', 'adj.最重要的;最著名的;最前的'],
+	['hierarchy', 'n 等级制度(尤指社会或组织);统治集团;层次体系'],
+	['exceedingly', 'adv.极其;非常;特别'],
+	['hypothesis', 'n.(有少量事实依据但未被证实的)假说，假设;(凭空的)猜想，猜测'],
+	['inspiration', 'n.灵感;启发灵感的人(或事物);使人产生动机的人(或事物);鼓舞人心的人(或事物)'],
+	['specialize', 'v.专门研究(或从事);专攻'],
+	['jargon', 'n.行话;黑话;行业术语;切口'],
+	*/
+]
+//第三位是错误次数，0或者1
+
+
+
+
+print=console.log 
+var Mstatus={'i':0,'right':0,'total':0, 'canGainScore':true}; //全局状态
+
+
+//tools
+function $id(s){
+	return document.getElementById(s)
+}
+
+function listWord(){
+	for(w in words){
+		console.log(w, words[w])
+	}
+}
+
+
+//根据当前Mstatus刷新测试题
+function refresh(words){
+	var info=''
+	//如果答完题了，就计算正确率，提交按钮不可用
+	if(Mstatus.i==Mstatus.total){
+		console.log('<span style="color:red">任务完成！</span>')
+		$id('check').disabled=true;
+		info='答完题目了！共'+Mstatus['total']+'个'
+		$id('status').style.color='red'
+		//反馈到后台
+		feedBack(words)
+	}else{
+		//显示单词
+		$id('mean').innerHTML=words[Mstatus['i']][1]
+		$id('word').value=""
+		$id('word').focus()
+		$id('word2').innerHTML="点击查看"
+		info='第'+ (Mstatus['i']+1) +'/'+Mstatus['total']+'个'
+	}
+	//状态栏刷新
+	var ratio=0
+	if(Mstatus['i']>0){
+		ratio=Math.round(Mstatus['right']/Mstatus['i']*100)
+	}
+	$id('status').innerHTML=info+'，正确: '+Mstatus.right+'(正确率'+ratio+'%)';
+	if(Mstatus.i==Mstatus.total && ratio==100){
+		$id('status').style.color='green';
+	}
+	$id('rightOrWrong').innerHTML='';
+}
+
+
+//打印错误，并把答题结果提交到后台
+function feedBack(words){
+	//提取单词
+	var oWords={}
+	$('#show2').append('<hr>错误的单词:<hr>')
+	for(var i=0;i<words.length;i++){
+		oWords[words[i][0]]=words[i][2] //word1:0 打错了; 1答对了
+		//答错的，打印出来
+		if(words[i][2]==1){
+			$('#show2').append('<p>'+words[i][0]+words[i][1]+'</p><hr>')
+		}
+	}
+	console.log('oWords=',oWords)
+	//把学习过的单词，提交到后台数据库
+	$.post('http://127.0.0.1:20180/api/wordRecited/',{
+		'word':JSON.stringify(oWords)
+	}, function(data,status){
+		if(status=='success'){
+			//console.log('OK:',data,status)
+			$('#show2').append('<br>错误单词已记录; status: <br>'+data.data)
+		}else{
+			console.log('Err: ',data,status)
+		}
+	});
+}
+
+
+
+$(document).ready(function(){
+	var type='all'
+	
+	$.get('http://127.0.0.1:20180/api/unknown/'+type, function(res,status){
+		console.log(res,status)
+		words=res //获取10个单词
+		Mstatus.total=words.length
+		//随机排列
+		words.sort(function(a,b){ return(Math.random()-0.5);})
+		//
+		refresh(words);
+		$id('word').focus();
+		$id('word2').onclick=function(){
+			//查看答案，就表示打错了！
+			Mstatus.canGainScore=false;
+			if( words[Mstatus['i']].length==2 ){
+				words[Mstatus['i']].push(1)
+			}
+			if(this.innerHTML=='点击查看'){
+				this.innerHTML=words[Mstatus['i']][0]
+			}else{
+				this.innerHTML='点击查看'
+			}
+		}
+		//按下提交按钮
+		$id('check').onclick=checkWord;
+		//按下回车键
+		document.onkeyup=function(){
+			if(event.key=="Enter"){
+				checkWord()
+			}
+		}
+		
+		//检查单词是否正确
+		function checkWord(){
+			var meaning='';
+			var answer=$id('word').value
+			if(answer.length==0){
+				alert('不能为空')
+				return false;
+			}
+			//如果答对了
+			if(answer==words[Mstatus['i']][0]){
+				meaning=words[Mstatus['i']][1] //答对有答案
+				$id('rightOrWrong').innerHTML='<span style="color:blue">回答正确</span>'
+				console.log('right')
+				//回答错误过，不能得分！
+				if(Mstatus.canGainScore==true){
+					Mstatus.right++;
+				}
+				if( words[Mstatus['i']].length==2 ){
+					words[Mstatus['i']].push(0)
+				}
+				Mstatus.canGainScore=true;
+				Mstatus.i++;
+				setTimeout(function(){
+					refresh(words)			
+				},500)
+			}
+			//如果答错了
+			else{
+				$id('rightOrWrong').innerHTML='<span style="color:red">回答错误</span>，请查看答案后再试。'
+				console.log('wrong')
+				//设置错误
+				Mstatus.canGainScore=false;
+				if(words[Mstatus['i']].length==2){
+					words[Mstatus['i']].push(1)
+				}
+			}
+			console.log(answer, meaning, Mstatus)
+		}
+		
+		
+	});
+});
+
+
+
+
+</script>
