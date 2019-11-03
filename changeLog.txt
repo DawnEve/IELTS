@@ -175,9 +175,11 @@ https://www.gutenberg.org
 > en0.2.29-5 增添网易云音乐链接; links.html 末尾加隐藏的经济学人下载地址;
 > en0.2.29-6 新增拂晓词典py web版0.1，需要本地启动py脚本
 > en0.2.29-7 添加NEC3-4; web添加语料库; 修正听力王播放器帮助文档
+> en0.2.29-8 添加背单词工具v0.3; static/js/dragBar.js 听力对答案视线框;
+############# 拂晓词典背单词; static/js/dragBar.js
+> en0.2.29-9 dragBar.js v0.2 能设置和键盘移动;
 # commited local
 # ----------------> push to github
-> en0.2.29-8 添加背单词工具v0.3; static/js/dragBar.js 听力对答案视线框;
 
 
 
