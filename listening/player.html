@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.4.6 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.4.7 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -19,6 +19,10 @@ v0.4.3 记录循环的总次数，显示到状态中
 v0.4.4 显示copy right和鸡汤、微信号文章
 v0.4.5 更改音频后要转移焦点！防止空格或箭头触发下一个
 v0.4.6 补充帮助文档
+v0.4.7 修改停止播放切换方法;
+	本地版只需要提供音频服务器即可: 有同源策略，太复杂；
+#
+
 
 
 //版本号还需要修改三个地方: title中，顶部标签中，正文帮助文档中
@@ -68,7 +72,7 @@ a:hover {text-decoration: underline;}
 
 <body>
 <div id='topTitle'>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.6</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.7</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -103,7 +107,7 @@ a:hover {text-decoration: underline;}
 
 
 <pre id=help>
-<h1>听力王v0.4.6 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.4.7 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -196,6 +200,9 @@ init('http://a2.biomooc.com/audio/static.php?file=icrc-laws-war-remain-relevant-
 2. 下载<a href="http://ielts.biomooc.com/listening/player.html">本html文件</a>(右击-链接另存为)和<a href="http://ielts.biomooc.com/listening/wavesurfer.min.js">wavesurfer.min.js文件</a>(右击-链接另存为)到相同文件夹；
 3. 修改player.html中 wavesurfer.load() 中的var musicPath='002.mp3' 地址为本地mp3等音频文件的相对地址。
 4. 启动本地web服务器，chrome浏览器打开该web页面，刷新后即可练习听写了。
+
+tips: 本软件不定期修正bug，建议及时更新；发现问题请及时报告，描述清晰，并截图，反馈邮箱见结尾。
+
 
 
 
@@ -482,6 +489,8 @@ window.onload=function(){
 		
 		//空格32/回车13控制着暂停与否
 		else if( [32,13].indexOf(key)!=-1 ){
+			wavesurfer.playPause()
+			/*
 			Mstatus.on*=-1
 			if(Mstatus.on>0){
 				wavesurfer.pause();
@@ -490,6 +499,7 @@ window.onload=function(){
 				wavesurfer.play();
 				show('Go on playing.')
 			}
+			*/
 		}
 		
 		//ab复读，a记录a位置

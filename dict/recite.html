@@ -3,7 +3,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
 	<title>拂晓背单词 - dawnDict_recite v0.1</title>
-
+<!--
+v0.1 
+v0.2 抵抗F5刷新
+-->
 <style>
 div{padding:10px;margin:5px;border:1px solid #eee;}
 .light{color:#ddd;}
@@ -67,7 +70,7 @@ function refresh(words){
 	var info=''
 	//如果答完题了，就计算正确率，提交按钮不可用
 	if(Mstatus.i==Mstatus.total){
-		console.log('<span style="color:red">任务完成！</span>')
+		console.log('%c 任务完成！','color:purple;font-size:30px')
 		$id('check').disabled=true;
 		info='答完题目了！共'+Mstatus['total']+'个'
 		$id('status').style.color='red'
@@ -115,7 +118,7 @@ function feedBack(words){
 			//console.log('OK:',data,status)
 			$('#show2').append('<br>错误单词已记录; status: <br>'+data.data)
 		}else{
-			console.log('Err: ',data,status)
+			console.error('Err: ',data,status)
 		}
 	});
 }
@@ -149,9 +152,18 @@ $(document).ready(function(){
 		//按下提交按钮
 		$id('check').onclick=checkWord;
 		//按下回车键
-		document.onkeyup=function(){
+		document.onkeydown=function(event){
 			if(event.key=="Enter"){
 				checkWord()
+			}
+			
+			//阻止F5刷新。要使用鼠标，或shift+F5刷新
+			if(event.key=='F5'){
+				if(event.shiftKey==false){
+					alert(event.key+'不能刷新，请使用鼠标刷新, 或shift+F5刷新.')
+					event.preventDefault();
+					return false;
+				}
 			}
 		}
 		
@@ -180,18 +192,19 @@ $(document).ready(function(){
 				setTimeout(function(){
 					refresh(words)			
 				},500)
+				console.log('%c'+answer+' '+ meaning,'color:green;', Mstatus)
 			}
 			//如果答错了
 			else{
 				$id('rightOrWrong').innerHTML='<span style="color:red">回答错误</span>，请查看答案后再试。'
-				console.log('wrong')
+				console.log('%c wrong','color:red')
 				//设置错误
 				Mstatus.canGainScore=false;
 				if(words[Mstatus['i']].length==2){
 					words[Mstatus['i']].push(1)
 				}
+				console.log('%c'+answer+' is not correct!', 'color:red;', Mstatus)
 			}
-			console.log(answer, meaning, Mstatus)
 		}
 		
 		

@@ -162,9 +162,9 @@ def getword(word):
 @app.route('/api/unknown/<type>')
 def unknownWord(type=''):
     #MySQL不支持子查询里有limit解决办法 https://blog.csdn.net/qq_15076569/article/details/83787108
-    sql='select word,meaning from word_ms where word in ( select tb.word from (select * from word_unknown where type="'+type+'" order by wrong/(wrong+`right`) DESC limit 10) as tb );'
+    sql='select word,meaning from word_ms where word in ( select tb.word from (select * from word_unknown where type="'+type+'" order by wrong/(wrong+`right`) DESC limit 5) as tb );'
     if type=='all':
-        sql='select word,meaning from word_ms where word in ( select tb.word from (select * from word_unknown order by wrong/(wrong+`right`) DESC limit 10) as tb ) ;'
+        sql='select word,meaning from word_ms where word in ( select tb.word from (select * from word_unknown order by wrong/(wrong+`right`) DESC limit 5) as tb ) ;'
     arr=mydb.query(sql)
     print('===========>>',arr)
     return cors(arr)
@@ -389,6 +389,46 @@ def addNewSentences():
         'data':msg
     })
 
+# 更新语料库
+@app.route('/api/updateSentence/', methods=['POST'])
+def updateNewSentences():
+    status=1
+    wordStr=request.form.get('str')
+    lines=re.split('_____',wordStr)
+    #
+    msg=""
+    if len(lines)==0:
+        msg="nothing to be inserted!"
+        status=0
+    else:
+        source=request.form.get('source')
+        id=int(request.form.get('id'))
+        modi_time=int(time.time())
+        ###########
+        #过滤
+        res=''
+        for lineR in lines:
+            i+=1
+            line=lineR.strip()
+            #过滤空行
+            if len(line)==0:
+                continue;
+            #整行写到db
+            tableName='sentence_dawn'
+            sql="update "+tableName+" set source='%s', line='%s', modi_time=%d where id=%d;" % \
+                (source, mydb.db().escape_string(line),modi_time, id)
+            msg=sql
+            rs=mydb.execute(sql)
+            res+=str(rs)+' | '+line+"<br>"
+    msg=[id,res]
+    return cors({
+        'status':status,
+        'data':msg
+    })
+#
+
+
+ 
 # 按照单词，返回句子接口
 @app.route('/api/sentence/id/<id>', methods=['GET'])
 def sentenceById(id):
@@ -399,11 +439,17 @@ def sentenceById(id):
 # 按照单词，返回句子接口
 @app.route('/api/sentence/word/<word>', methods=['GET'])
 def sentenceByWord(word):
-    if word=='null':
-        sql="select * from sentence_dawn order by add_time DESC, id DESC limit 10;";
+    # 获取分页，默认是第一页
+    page=int(request.args.get('page',1))
+    size=10 #每页条目
+    
+    if word=='null2':
+        sql="select * from sentence_dawn order by add_time DESC, id DESC limit %d,%d;" % ( (page-1)*size, size );
     else:
-        sql="select * from sentence_dawn where line like '%"+word+"%' order by add_time DESC, id DESC;"
-    print('word=',word,sql)
+        initSite=(page-1)*size
+        sql="select * from sentence_dawn where line like '%"+word+"%' order by add_time DESC, id DESC limit "+str(initSite)+","+str(size)+";";
+        #sql=sql % ( (page-1)*size, size );
+    #print('************>>>word=',word,sql)
     rs=mydb.query(sql)
     return cors(rs)
 

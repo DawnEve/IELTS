@@ -3,6 +3,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
 <title>拂晓词典 - dawnDict v0.1</title>
+<!--
+v0.1 基本可用
+-->
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <style>
 .wrap{width:800px; margin:0 auto;}
@@ -53,9 +56,6 @@ input::-webkit-input-placeholder{
 }
 
 </style>
-<!--
-v0.1 基本可用
--->
 </head>
 
 
@@ -89,14 +89,21 @@ var showTrans=function(){
 			//添加其他词典的链接 悬浮显示
 			$('#show').append('<div id=otherDict>本窗口打开: <a target=box2 href="http://dict.youdao.com/w/eng/'+word+'/#keyfrom=dict2.index">有道词典</a> | '+
 				'<a target=box2 href="https://fanyi.baidu.com/#en/zh/'+word+'">百度翻译</a> | '+
+				'<a target=box2 href="https://dictionary.cambridge.org/dictionary/english-chinese-simplified/'+word+'">剑桥英汉</a> | '+
+				'<a target=box2 href="https://www.synonyms.com/synonym/'+word+'">同义词</a> | '+
 				
 				
 				'<br>新窗口打开: <a target=_blank href="https://www.collinsdictionary.com/dictionary/english/'+word+'">柯林斯</a> | '+
-				'<a target=_blank href="https://www.oed.com/search?searchType=dictionary&q='+word+'&_searchBtn=Search">牛津</a> | '+
-				'<a target=_blank href="https://www.ldoceonline.com/dictionary/'+word+'">朗文</a> | '+
+				'<a target=_blank href="https://www.oxfordlearnersdictionaries.com/definition/english/'+word+'">牛津</a> | '+
+				//'<a target=_blank href="https://www.oed.com/search?searchType=dictionary&q='+word+'&_searchBtn=Search">牛津</a> | '+
+				'<a target=_blank href="https://www.ldoceonline.com/dictionary/'+word+'" title="大量例句">朗文</a> | '+
+				'<a target=_blank href="https://dictionary.cambridge.org/dictionary/english/'+word+'">剑桥</a> | '+
 				//'<a target=_blank href="http://www.webster-dictionary.net/definition/'+word+'">韦氏</a> | '+
 				'<a target=_blank href="https://www.merriam-webster.com/dictionary/'+word+'">韦氏</a> | '+
-				'<a target=_blank href="sentence.html?word='+word+'">语料库</a> | '+
+				'<a target=_blank href="https://www.dictionary.com/browse/'+word+'">dictionary</a> | '+
+				'<a target=_blank href="https://www.lexico.com/en/definition/'+word+'">lexico</a> | '+
+				'<a target=_blank href="https://sentence.yourdictionary.com/'+word+'">Y语料库</a> | '+
+				'<a target=_blank href="sentence.html?word='+word+'">拂晓语料库</a> | '+
 				
 				'</div>'
 			)

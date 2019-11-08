@@ -55,21 +55,39 @@ CREATE TABLE `sentence_dawn` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+#添加新列：修改时间
+alter table sentence_dawn add modi_time varchar(30) DEFAULT NULL comment '修改时间';
+
+
 
 词典从语料库查询单词，新页面显示
 select * from sentence_dawn where line like "%risk%" order by add_time DESC, id DESC limit 5;
 
 
+mysql> delete from sentence_dawn where line like '%listen and then answer the following%';
+Query OK, 47 rows affected (0.02 sec)
+
+
 
 1.写一个简易的接口，使用web页面或js输入错误单词列表，默认是生词，
-
 
 2.提供状态的接口
 /api/status/  提供状态，数据表条目数，昨天新增条目数
 
 
+3.背单词app，怎么优化？
+
+查看生词，按照错误率排名，相同排名的按照时间正序
+select *, wrong/(`right`+ wrong) as ratio  from word_unknown order by ratio desc, add_time limit 20;
+
+
+
+
+
+
 v0.2 修正高亮显示例句问题
 v0.3 添加背单词工具
+v0.4 语料库可以孤立web页修改
 
 
 

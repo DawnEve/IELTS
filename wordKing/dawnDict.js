@@ -48,8 +48,9 @@ var dawnDict={
 	
 	//判断子元素 
 	//http://demo.jb51.net/js/2012/isParent/ 该页面有高亮代码
+	//v0.2 fix bug, add && obj.tagName!=undefined
 	isParent: function(obj,parentObj){
-		while (obj != undefined && obj != null && obj.tagName.toUpperCase() != 'BODY'){
+		while (obj != undefined && obj != null && obj.tagName!=undefined && obj.tagName.toUpperCase() != 'BODY'){
 			if (obj == parentObj){
 				return true;
 			}
