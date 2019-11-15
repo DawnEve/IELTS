@@ -2,9 +2,11 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>拂晓词典 - dawnDict v0.1</title>
+<title>拂晓词典 - dawnDict v0.5</title>
 <!--
+more at ReadMe.txt
 v0.1 基本可用
+v0.5 添加修改单词功能；
 -->
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <style>
@@ -45,7 +47,9 @@ v0.1 基本可用
 #box2_id{width:100%; border-width:0px; border-top:1px solid #eee; height:50%; min-height:800px;}
 
 #otherDict{color:#eee;}
+.fix,
 .light{color:#ccc;}
+.fix{margin-left:20px;}
 #otherDict a, a.light{color:#ccc;}
 #otherDict a:hover,a.light:hover{color:#00e;}
 
@@ -55,6 +59,10 @@ input::-webkit-input-placeholder{
   font-size: 16px;
 }
 
+.phonetic {
+	color: #ccc;
+    font-family: "lucida sans unicode",arial,sans-serif;
+}
 </style>
 </head>
 
@@ -63,7 +71,7 @@ input::-webkit-input-placeholder{
 <body>
 <div class=wrap>
 	<span id=logo>拂晓词典</span>
-	<input type='word' id='word' placeholder="Input a English word here">
+	<input type='word' id='word' placeholder="Input a English word here" autocomplete="off">
 	<button id='submit2'>翻译</button>
 	<div id='show'></div>
 </div>
@@ -84,26 +92,28 @@ var showTrans=function(){
 		}else{
 			//console.log(res)
 			data=res.data
-			$('#show').html( '<b>'+data.word +'</b><br><span class=light>'+ data.phoneticSymbol +'</span><br>'+data.meaning);
+			$('#show').html( '<b>'+data.word +'</b> <a class="fix" target=_blank href="updateWord.html?id='+data.id+'">[修改]</a>'+'<br><span class=phonetic>'+ data.phoneticSymbol +'</span><br>'+data.meaning);
 			
 			//添加其他词典的链接 悬浮显示
-			$('#show').append('<div id=otherDict>本窗口打开: <a target=box2 href="http://dict.youdao.com/w/eng/'+word+'/#keyfrom=dict2.index">有道词典</a> | '+
+			$('#show').append('<div id=otherDict>本窗口: <a target=box2 href="http://dict.youdao.com/w/eng/'+word+'/#keyfrom=dict2.index">有道词典</a> | '+
 				'<a target=box2 href="https://fanyi.baidu.com/#en/zh/'+word+'">百度翻译</a> | '+
 				'<a target=box2 href="https://dictionary.cambridge.org/dictionary/english-chinese-simplified/'+word+'">剑桥英汉</a> | '+
 				'<a target=box2 href="https://www.synonyms.com/synonym/'+word+'">同义词</a> | '+
 				
 				
-				'<br>新窗口打开: <a target=_blank href="https://www.collinsdictionary.com/dictionary/english/'+word+'">柯林斯</a> | '+
+				'<br>新窗口: <a target=_blank href="https://www.collinsdictionary.com/dictionary/english/'+word+'">柯林斯</a> | '+
 				'<a target=_blank href="https://www.oxfordlearnersdictionaries.com/definition/english/'+word+'">牛津</a> | '+
-				//'<a target=_blank href="https://www.oed.com/search?searchType=dictionary&q='+word+'&_searchBtn=Search">牛津</a> | '+
+				//'<a target=_blank href="https://www.oed.com/search?searchType=dictionary&q='+word+'&_searchBtn=Search" title="历史用法">牛津2</a> | '+
 				'<a target=_blank href="https://www.ldoceonline.com/dictionary/'+word+'" title="大量例句">朗文</a> | '+
 				'<a target=_blank href="https://dictionary.cambridge.org/dictionary/english/'+word+'">剑桥</a> | '+
-				//'<a target=_blank href="http://www.webster-dictionary.net/definition/'+word+'">韦氏</a> | '+
 				'<a target=_blank href="https://www.merriam-webster.com/dictionary/'+word+'">韦氏</a> | '+
-				'<a target=_blank href="https://www.dictionary.com/browse/'+word+'">dictionary</a> | '+
+				//'<a target=_blank href="http://www.webster-dictionary.net/definition/'+word+'">韦氏2</a> | '+
+				'<a target=_blank href="https://www.dictionary.com/browse/'+word+'">dict</a> | '+
+				'<a target=_blank href="https://www.ahdictionary.com/word/search.html?q='+word+'">ahdict</a> | '+
+				'<a target=_blank href="https://www.thefreedictionary.com/'+word+'">freedict</a> | '+
 				'<a target=_blank href="https://www.lexico.com/en/definition/'+word+'">lexico</a> | '+
 				'<a target=_blank href="https://sentence.yourdictionary.com/'+word+'">Y语料库</a> | '+
-				'<a target=_blank href="sentence.html?word='+word+'">拂晓语料库</a> | '+
+				'<a target=_blank href="sentence.html?page=1&word='+word+'">拂晓语料库</a> | '+
 				
 				'</div>'
 			)

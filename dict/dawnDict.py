@@ -138,6 +138,7 @@ def getword(word):
         response = jsonify({
             'status':result[0],
             'data':{
+                'id': result[0], 
                 'word': result[1], 
                 'phoneticSymbol':result[2], 
                 'meaning':result[3]
@@ -162,9 +163,9 @@ def getword(word):
 @app.route('/api/unknown/<type>')
 def unknownWord(type=''):
     #MySQL不支持子查询里有limit解决办法 https://blog.csdn.net/qq_15076569/article/details/83787108
-    sql='select word,meaning from word_ms where word in ( select tb.word from (select * from word_unknown where type="'+type+'" order by wrong/(wrong+`right`) DESC limit 5) as tb );'
+    sql='select word,meaning from word_ms where word in ( select tb.word from (select * from word_unknown where type="'+type+'" order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC limit 5) as tb );'
     if type=='all':
-        sql='select word,meaning from word_ms where word in ( select tb.word from (select * from word_unknown order by wrong/(wrong+`right`) DESC limit 5) as tb ) ;'
+        sql='select word,meaning from word_ms where word in ( select tb.word from (select * from word_unknown order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC limit 5) as tb ) ;'
     arr=mydb.query(sql)
     print('===========>>',arr)
     return cors(arr)
@@ -217,10 +218,10 @@ def addNewWord():
     else:
         type=request.form.get('type')
         add_time=int(time.time())
-        wrong=1
         msg=''
         #查询之前是否有，如果没有则新增，否则仅仅更新错误次数
         for i in range(len(arr)):
+            wrong=1
             word=arr[i]
             #空字符串啥也不做
             if len(word)==0:
@@ -238,7 +239,7 @@ def addNewWord():
             else:
                 wrong=data[0][2]
                 wrong+=1
-                sql='update word_unknown set wrong=%d where id=%d;' % (wrong, data[0][0])
+                sql='update word_unknown set wrong=%d, modi_time=%d where id=%d;' % (wrong, add_time, data[0][0])
                 print('update=============>word_unknown:',word,sql)
                 rs=mydb.execute(sql)
             msg+=word+':'+str(rs)+'|';
@@ -314,7 +315,7 @@ def statistics():
 
 
 
-# 插入新语料库2
+# 插入新语料库2 debug use only
 @app.route('/api/newSentence2/', methods=['POST'])
 def addNewSentences2():
     status=1
@@ -420,7 +421,7 @@ def updateNewSentences():
             msg=sql
             rs=mydb.execute(sql)
             res+=str(rs)+' | '+line+"<br>"
-    msg=[id,res]
+        msg=[id,res]
     return cors({
         'status':status,
         'data':msg
@@ -428,8 +429,42 @@ def updateNewSentences():
 #
 
 
+# 按照单词id，返回单词接口
+@app.route('/api/word/id/<id>', methods=['GET'])
+def wordById(id):
+    sql="select * from word_ms where id="+id;
+    rs=mydb.query(sql)
+    return cors(rs)
+#
+
+
+# 更新单词
+@app.route('/api/updateWord/', methods=['POST'])
+def updateWord():
+    status=1
+    id=int(request.form.get('id'))
+    word=request.form.get('word')
+    phonetic=request.form.get('phonetic')
+    meaning=request.form.get('meaning')
+    modi_time=int(time.time());
+    #
+    if len(word)==0:
+        msg="no word!"
+        status=0
+    else:
+        #整行写到db
+        tableName='word_ms';
+        sql="update "+tableName+" set word='%s', phoneticSymbol='%s', meaning='%s', modi_time=%d where id=%d;" % \
+            (word, mydb.db().escape_string(phonetic), mydb.db().escape_string(meaning), modi_time, id)
+        rs=mydb.execute(sql);
+        msg=[id,rs,word]
+    return cors({
+        'status':status,
+        'data':msg
+    })
+#
  
-# 按照单词，返回句子接口
+# 按照单词id，返回句子接口
 @app.route('/api/sentence/id/<id>', methods=['GET'])
 def sentenceById(id):
     sql="select * from sentence_dawn where id="+id;

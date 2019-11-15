@@ -82,13 +82,22 @@ select *, wrong/(`right`+ wrong) as ratio  from word_unknown order by ratio desc
 
 
 
+4.过单词软件，一天过几百单词，只为眼熟。
+(1) 词汇表
+https://github.com/Deemoore/zieckey-study-code/tree/319fd3914a9abc0e617f96409de6062e9ec4b98c/eclipseworkspace/python/dictparser/src/zieckey/dict/wordlist
+只有46级可能齐全。
+
+(2)雅思word list:
+https://github.com/woshichuanqilz/others/blob/master/WindowsConfig/IELTS
+
+
 
 
 
 v0.2 修正高亮显示例句问题
 v0.3 添加背单词工具
 v0.4 语料库可以孤立web页修改
-
+v0.5 添加修改单词功能
 
 
 

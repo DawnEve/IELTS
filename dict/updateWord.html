@@ -1,22 +1,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>更新语料v0.1</title>
+<title>更新单词 v0.1</title>
 <!--
 v0.1 勉强可用了
 -->
 <style>
 .data,.data textarea,.data select,.data button,.data input{margin:10px; padding:10px;}
-.data textarea{height:600px; width:80%}
+.data textarea{height:200px; width:80%}
 .data button{cursor:pointer;}
+#id,
 #show{color:#ccc;}
 </style>
 
 <div class=data>
-	<span>Update the text to DB(one line)</span>
-	<br>
-	<textarea id='words'></textarea>
-	<br>
-	Source: <input type=input id='source'>
-	<br>
+	<span>Update the word to DB</span>
+	<hr>
+	id: <span id='id'></span><br>
+	word: <input type=input  id='word'></input><br>
+	phonetic: <input type=input id='phonetic'><br>
+	meaning: <textarea type=input id='meaning'></textarea><br>
 	<button id='submit'>Submit</button>
 </div>
 
@@ -47,11 +48,13 @@ $(document).ready(function(){
 	}
 	
 	//请求数据库，填充内容
-	$.get('http://127.0.0.1:20180/api/sentence/id/'+id, function(data,status){
+	$.get('http://127.0.0.1:20180/api/word/id/'+id, function(data,status){
 		if(status=='success'){
 			console.log('OK:',data,status)
-			$('#words').html(data[0][1]);
-			$('#source').val(data[0][2]);
+			$('#id').html(data[0][0]);
+			$('#word').val(data[0][1]);
+			$('#phonetic').val(data[0][2]);
+			$('#meaning').val(data[0][3]);
 		}else{
 			console.log('Error',data,status)
 		}
@@ -60,36 +63,33 @@ $(document).ready(function(){
 	
 	//如果更新
 	$('#submit').click(function(){
-		//1.获取单词和分类
-		var words=$('#words').val()
-		var aSentence=words.split(/[\n]+/) //分割字符串成数组
-		var source=$('#source').val()
-		if(words==''){
+		//1.获取单词音标、意思
+		var word=$('#word').val()
+		var phonetic=$('#phonetic').val()
+		var meaning=$('#meaning').val()
+		//
+		if(word==''){
 			alert('请填写文本')
-			$('#words').focus()
+			$('#word').focus()
 			return false;
 		}
-		if(source==''){
-			alert('请填写来源')
-			$('#source').focus()
-			return false;
-		}
-		
-		wjl=aSentence
-		//print(aSentence, source)
 		//output
-		//console.log('words=',aWord,'; type=',type)
+		//console.log('words=',word,'; \nphonetic=',phonetic,'; \nmeaning=',meaning)
+		
 		//2.ajax to the backend
-		$.post('http://127.0.0.1:20180/api/updateSentence/',{
-			'str':aSentence.join('_____'),
-			'source':source,
-			'id':id
+		$.post('http://127.0.0.1:20180/api/updateWord/',{
+			'id':id,
+			'word':word,
+			'phonetic':phonetic,
+			'meaning':meaning
 		}, function(data,status){
 			if(status=='success'){
 				console.log('OK:',data,status)
-				$('#show').html('status: '+data.data[1]+'<br>'+data.data[2])
+				if(data.status==1){
+					$('#show').html('status: '+data.data[1]+'<br>'+data.data[0]+'<br>'+data.data[2])
+				}
 			}else{
-				console.log(data,status)
+				console.log('Err: ',data,status)
 			}
 		});
 	});

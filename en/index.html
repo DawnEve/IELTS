@@ -224,6 +224,10 @@ p.grey a{color: grey;}
 2019.8.28 上线<a target="_blank" href="/wordKing/">单词王</a>，可以DIY背单词的一个web app, 要保存到本地使用。解释依赖百度翻译。<br>
 2019.10.15 上线<a target="_blank" href="/listening/player.html">听力王</a>，可以在本地静态web服务器运行的AB复读机，英语听写神器。<br>
 2019.10.20 上线<a target="_blank" href="/wordKing/dawnDictDemo.html">拂晓词典</a>，需本地启动https php服务器，然后一行js注入到当前页面即可划词翻译。<br>
+2019.11.01 上线<a target="_blank" href="/static/js/dragBar.js">dragBar.js</a> 用于听写对答案时，提示屏幕上的视线位置，控制台js注入; 如果是https网页，则需要本地架设https服务器才能注入。<br>
+<code>英语听写对答案的工具：可拖拽的实现提示框：<br>
+var s=document.createElement("script");s.src="http://ielts.biomooc.com/static/js/dragBar.js";document.body.append(s);<br>
+var s=document.createElement("script");s.src="http://ielts.dawneve.cc/static/js/dragBar.js";document.body.append(s);</code>
 </p>
 
 </div><!--end of wrapper-->
