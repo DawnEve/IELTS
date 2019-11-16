@@ -2,6 +2,8 @@ import pymysql
 # 单例模式 https://blog.csdn.net/qq_32539403/article/details/83343581
 # 方法很好 https://blog.csdn.net/qy20115549/article/details/82972993
 # 更多方法 https://www.cnblogs.com/ddjl/p/8670545.html
+
+#v0.2 self._db.commit() 防止查询缓存，保证数据最新
 class DBUtil():
     """mysql 辅助工具"""
     _db=None
@@ -57,6 +59,7 @@ class DBUtil():
              sql为查询语句
         '''
         try:
+            self._db.commit() #防止缓存
             self._cur.execute(sql)
             rows = self._cur.fetchall()
             return rows

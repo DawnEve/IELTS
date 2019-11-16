@@ -60,6 +60,7 @@ def saveToDB(arr):
     # 执行sql语句
     rs=mydb.execute(sql)
     print('S03=========>word_ms:rs=',rs)
+    return rs;
 #
 
 #直接用必应词典查词的web页面
@@ -127,7 +128,7 @@ def getword(word):
         result=getwordByBing(word)
         if result[0]==1:
             #保存到数据库
-            saveToDB(result[1:])
+            result[0]=saveToDB(result[1:]) #返回值是插入db的id
     else:
         result=results[0]
     #调试用
@@ -429,6 +430,26 @@ def updateNewSentences():
 #
 
 
+#过单词 刷单词神器
+# 扫描单词接口：返回dict格式数据
+@app.route('/api/wordScan/', methods=['GET'])
+def wordJson():
+    sql="select * from word_ms where id>5000 and tag_ox is null limit 100";
+    rs=mydb.query(sql)
+    
+    #array to dict
+    json={}
+    re_h=re.compile('</?\w+[^>]*>', flags=re.S)#HTML标签
+    for word in rs:
+        json[word[1]]={
+            'meaning':re_h.sub('',word[3]),
+            'phonetic':word[2]
+        }
+    #
+    return cors(json)
+#
+
+
 # 按照单词id，返回单词接口
 @app.route('/api/word/id/<id>', methods=['GET'])
 def wordById(id):
@@ -492,4 +513,4 @@ def sentenceByWord(word):
 #启动后端程序
 if __name__ == '__main__':
     print("==> pls browse http://127.0.0.1:20180/")
-    app.run(debug=True, port=20180)
+    app.run(debug=True,  port=20180) #host='0.0.0.0',

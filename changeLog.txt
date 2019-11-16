@@ -182,6 +182,7 @@ https://www.gutenberg.org
 > en0.2.30-1 拂晓词典v0.5 添加修改单词功能
 # commited local
 # ----------------> push to github
+> en0.2.30-2 刷单词神器v0.1 能快速刷单词
 
 
 

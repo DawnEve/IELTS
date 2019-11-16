@@ -1,0 +1,238 @@
+<meta charset="UTF-8">
+<h1 class=light>刷单词神器 v0.1</h1>
+<!--
+v0.1 基本可用
+
+
+
+# 使用方法：
+1.需要修改后端sql语句 
+# 扫描单词接口：返回dict格式数据
+@app.route('/api/wordScan/', methods=['GET'])
+def wordJson():
+
+2. todo 只能刷，目前还没有想好怎么给后端反馈。
+
+
+-->
+<div id=control>
+	1.选要被的单词，不要勾选已经会的单词。
+	<hr>
+	<button id=sellectAll>全选</button>
+	<button id=sellectOther>反选</button>
+</div>
+<div id=word></div>
+
+<hr>
+<span id=caption2>2.一个一个刷遍数</span>
+<button id=begin>开始背单词</button>
+
+<div id=status class=light></div>
+
+<div id=help>
+<pre>
+帮助：<hr>
+单词不够1.5w，阅读和听力会很受障碍。听力即便认识的单词都听懂，依然会被陌生词汇分神或者误导。
+过遍数是记单词的重要方法。一天花2个10min过100个单词，1个10min复习昨天的100个，学习1万单词需要100天，合计100*0.5=50h。
+
+使用方法：
+1.通过全选、反选，勾选陌生单词；
+2.一对一模式开始背单词。
+
+背诵模式快捷键:
+1.数字键1表示记住了，更新进度条，并从背诵列表删除掉该单词；2-4表示没记住，并显示下一页；
+2.固定时间后显示释义，空格切换是否显示释义； 
+3.背诵模式，有单词没记住，错误的点了1，使用F12控制台，输入 oWords.todo.push('theWord') 回车即可；
+</pre>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<style>
+ol{padding-inline-start: 0px;}
+ol li{padding:10px; list-style-position:inside;}
+ol li.even{background:#eee;}
+ol li span{font-weight:bold; padding:0 20px;display:none; }
+.card{
+	/*
+	border:1px dotted #eee;
+	*/
+	background:rgba(240,240,240,0.5);
+	border-radius:5px;
+	
+	height: 200px;
+    width: 400px;
+	padding:10px;
+}
+.card span,
+.card input{display:none;}
+.light{color:#eee;}
+.light2{color:#ccc;}
+
+#help{color:yellow; background:black;padding:2px 10px;margin-top:10px;}
+</style>
+
+<script>
+//全局变量
+var oWords={
+	'keyEnabled':false, //是否答题模式
+	'cur':0, //当前位置
+	'todo':[], //不会的单词
+	'len':0, //总单词个数
+	'timeOut':1,//几秒后显示单词
+};
+
+
+$().ready(function(){
+	//给obj添加点击时隐藏或显示单词功能
+	function showOnClick(obj){
+		obj.click(function(){
+			var oSpan=this.getElementsByTagName('span')[0];
+			var oInput=this.getElementsByTagName('input')[0];
+			//
+			if(oSpan.style.display=='inline'){
+				oSpan.style.display='none';
+				oInput.checked=false;
+			}else{
+				oSpan.style.display='inline';
+				oInput.checked=true;
+			}
+		})
+	}
+	//全选
+	$('#sellectAll').click(function(e,i){
+		var aSpan=$('#word span')
+		$('#word input').each(function(index,el){
+			//console.log(index, el)
+			el.checked=true;
+			aSpan[index].style.display='inline';
+		});
+	})
+	
+	//反选
+	$('#sellectOther').click(function(e,i){
+		var aSpan=$('#word span')
+		$('#word input').each(function(index,el){
+			el.checked=el.checked==true?false:true;
+			aSpan[index].style.display=el.checked==true?'inline':'none';
+		});
+	})
+	
+	//加载后获取资源
+	$.get('http://127.0.0.1:20180/api/wordScan/', function(res,status){
+		console.log('load word: ', status);
+		//res=JSON.parse(res)
+		oWords['words']=res;//给全局变量
+		var oOl=$('<ol></ol>');
+		for(var word in res){
+			oWords.len++;
+			var info=res[word];
+			var even=oWords.len%2==0?' class=even':'';
+			var oLi=$('<li'+even+'><input type=checkbox name='+word+'>'+word+' <span>'+info.meaning+"</span></li>");
+			showOnClick(oLi);//添加单击事件
+			oOl.append(oLi);
+		}
+		$('#word').append(oOl);
+	})
+	
+	//开始背单词按钮
+	$('#begin').click(function(){
+		$('#word input').each(function(index,el){
+			//获取要背诵的单词
+			if(el.checked){
+				var word=el.name;
+				oWords.todo.push(word);
+			}
+			oWords['ulen']=oWords.todo.length;//unknown length
+		})
+		//如果没有勾选，则啥都不做
+		if(oWords['ulen']==0){
+			alert('没有勾选任何单词！')
+			return false;
+		}
+		
+		//清空界面
+		$('#control').html('<span class=light>背诵模式： 键盘操作<hr>1记住了;2稍熟悉;3见过;4未知</span>');
+		$('#begin').css('display','none');
+		$('#caption2').css('display','none');
+		$('#help').css('display','none');
+		
+		//生成卡片
+		oWords['keyEnabled']=true;//开始响应键盘事件
+		refresh()
+	})
+	
+	//响应键盘事件
+	document.body.onkeydown=function(e){
+		//console.log(e.key)
+		if(!oWords.keyEnabled){
+			alert('非背诵模式，不接收键盘事件')
+			return false;
+		}
+		//
+		if(e.key=='F5'){
+			if(!e.shiftKey){
+				alert('refresh only shift+F5')
+				//e.preventDefault()
+				//e.cancelBubble = true; 
+				return false;
+			}
+		}
+		
+		//下一个: 1 记住了就删掉，否则下一轮还有它
+		if(e.key=='1'){
+			var word=oWords.todo[oWords.cur];
+			var tmp=oWords.todo.splice(oWords.todo.indexOf(word),1);
+			console.log(tmp[0], oWords.words[tmp[0]].meaning);
+			refresh();
+		}else if(['2','3','4'].indexOf(e.key)!=-1 ){
+			oWords.cur+=1;
+			refresh();
+		}
+		//如果是空格，则显示意思
+		if(e.key==' '){
+			if($('#word span').css('display')=='none'){
+				$('#word span').css('display','inline');
+			}else{
+				$('#word span').css('display','none');
+			}
+		}
+	}
+	
+	//更新卡片
+	function refresh(){
+		//清除没有及时发生的计时器
+		clearTimeout(oWords.timer);
+		//进度条
+		var leftPct=Math.round(100*(1-oWords.todo.length/oWords.ulen));
+		//console.log('todo:', oWords.todo.length)
+		$('#status').html('Current/Left: '+oWords.cur +"/"+oWords.todo.length)
+		$('#status').append('<br>Remember Percentage: '+leftPct+'%<div style="height:5px;width:100%;background:red"><span style="height:100%;width:'+leftPct+'%;background:#eee;display:block;"></span></span>')
+		
+		//判断是否背完了
+		if(oWords.todo.length==0){
+			alert('任务完成');
+			//给后台反馈
+			
+			return false;
+		}
+		//循环背诵
+		if(oWords.cur>=oWords.todo.length){
+			oWords.cur=0;
+		}
+		
+		var word=oWords.todo[oWords.cur];
+		var info=oWords.words[word];
+		//console.log(word,info)
+		var oLi=$('<div class=card><input type=checkbox name='+word+'><b>'+word+'</b> <p class=light2>'+info.phonetic+'</p><span>'+info.meaning+"</span></div>");
+		showOnClick(oLi);//添加单击事件
+		oWords['timer']=setTimeout(function(){
+			//触发点击事件：显示释义
+			//https://blog.csdn.net/MiaoHuiZiJiDeGuShi/article/details/84074559
+			//https://www.cnblogs.com/jiangxiaobo/p/5830200.html
+			//https://blog.csdn.net/bcfdsagbfcisbg/article/details/78480307
+			oLi.trigger("click");
+		},oWords.timeOut*1000)
+		$('#word').html(oLi);
+	}
+})
+</script>
