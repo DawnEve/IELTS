@@ -159,14 +159,14 @@ def getword(word):
 #
 
 
-#获取没记住的单词
+#背单词： 获取没记住的单词，按照错误率排序
 #艾宾浩斯记忆曲线怎么实现呢？ todo
 @app.route('/api/unknown/<type>')
 def unknownWord(type=''):
     #MySQL不支持子查询里有limit解决办法 https://blog.csdn.net/qq_15076569/article/details/83787108
-    sql='select word,meaning from word_ms where word in ( select tb.word from (select * from word_unknown where type="'+type+'" order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC limit 5) as tb );'
+    sql='select word,meaning,phoneticSymbol from word_ms where word in ( select tb.word from (select * from word_unknown where type="'+type+'" order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC limit 5) as tb );'
     if type=='all':
-        sql='select word,meaning from word_ms where word in ( select tb.word from (select * from word_unknown order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC limit 5) as tb ) ;'
+        sql='select word,meaning,phoneticSymbol from word_ms where word in ( select tb.word from (select * from word_unknown order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC limit 5) as tb ) ;'
     arr=mydb.query(sql)
     print('===========>>',arr)
     return cors(arr)
@@ -180,7 +180,7 @@ def wordRecited():
     wordStr=request.form.get('word')
     oDict=json.loads(wordStr);
     msg=''
-    modi_time=int(time.time())
+    modi_time=int(time.time())   
     
     for word in oDict:
         sql='select id,word, wrong,`right` from word_unknown where word="%s";' % word
@@ -203,9 +203,10 @@ def wordRecited():
         msg+=word+':'+ str(oDict[word] ) +':'+str(rs)+'|';
     #response
     return cors({'status':status, 'data':msg})
-    
-    
-    
+#
+
+
+
 #字典查询后台接口，允许跨域访问
 @app.route('/api/newWord/', methods=['POST'])
 def addNewWord():
@@ -410,7 +411,6 @@ def updateNewSentences():
         #过滤
         res=''
         for lineR in lines:
-            i+=1
             line=lineR.strip()
             #过滤空行
             if len(line)==0:
@@ -430,11 +430,13 @@ def updateNewSentences():
 #
 
 
-#过单词 刷单词神器
+#过单词 刷单词神器 刷遍数 过遍数
 # 扫描单词接口：返回dict格式数据
 @app.route('/api/wordScan/', methods=['GET'])
-def wordJson():
-    sql="select * from word_ms where id>5000 and tag_ox is null limit 100";
+def wordScan():
+    page=3 # >=1
+    sql="select * from word_ms where id>4000 and tag_ox is null limit "+ str((page-1)*100) +",100;";
+    print('scan======>', sql)
     rs=mydb.query(sql)
     
     #array to dict

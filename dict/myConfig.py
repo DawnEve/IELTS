@@ -2,8 +2,11 @@ import pymysql
 # 单例模式 https://blog.csdn.net/qq_32539403/article/details/83343581
 # 方法很好 https://blog.csdn.net/qy20115549/article/details/82972993
 # 更多方法 https://www.cnblogs.com/ddjl/p/8670545.html
+# python mysql使用持久链接 https://blog.csdn.net/wzm112/article/details/7745835
+
 
 #v0.2 self._db.commit() 防止查询缓存，保证数据最新
+#v0.3 加了 _reConn() 数据库连接失效后自动重连
 class DBUtil():
     """mysql 辅助工具"""
     _db=None
@@ -32,12 +35,36 @@ class DBUtil():
                     charset = self._config['charset']
                 )
                 self._cur=self._db.cursor()
+                return True;
             except Exception as e:
                 print(e)
-                raise BaseException("DataBase connect error,please check the db config.")
+                #raise BaseException("连接失败。DataBase connect error,please check the db config.")
+                return False;
+        print('run empty __connect()')
+        return True; #永远不会被执行
     #初始化
     def __init__(self):
         self.__connect()
+    
+    # 连接异常后自动重连3次
+    def _reConn (self,num = 28800,stime = 3): #重试连接总次数为1天,这里根据实际情况自己设置,如果服务器宕机1天都没发现就......
+            _number = 0 #重连次数
+            _status = True
+            while _status and _number <= num:
+                try:
+                    self._db.ping()       #cping 校验连接是否异常
+                    _status = False
+                    print('can ping mysql.<===')
+                except:
+                    self._db = None #如果ping不通，则清空，重新连接
+                    print('>>>重新连接数据库， try =',_number)
+                    if self.__connect()==True: #重新连接,成功退出
+                        _status = False
+                        break
+                    _number +=1
+                    time.sleep(stime)      #连接不成功,休眠3秒钟,继续循环，直到成功或重试次数结束
+    #
+
     #结束销毁连接
     def close(self):
         '''结束查询和关闭连接'''
@@ -59,6 +86,7 @@ class DBUtil():
              sql为查询语句
         '''
         try:
+            self._reConn()
             self._db.commit() #防止缓存
             self._cur.execute(sql)
             rows = self._cur.fetchall()
@@ -72,6 +100,7 @@ class DBUtil():
         插入或更新记录 成功返回最后的id
         '''
         try:
+            self._reConn()
             self._cur.execute(sql) #成功了总是1
             rs= self._cur.lastrowid  # 最新插入行的主键id
             self._db.commit()
@@ -86,6 +115,7 @@ class DBUtil():
         更新多个记录，成功返回最后的id
         '''
         try:
+            self._reConn()
             for sql in sqlArr:
                 self._cur.execute(sql) #成功了总是1
             rs= self._cur.lastrowid  # 最新插入行的主键id

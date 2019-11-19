@@ -28,7 +28,13 @@ div{padding:10px;margin:5px;border:1px solid #eee;}
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 
 <script>
-
+//过滤掉html标签和空格
+function  filter(text) {
+	var reg = /<[^<>]+>/g;//1、全局匹配g肯定忘记写,2、<>标签中不能包含标签实现过滤HTML标签
+	text = text.replace(reg, '');//替换HTML标签
+	text = text.replace(/&nbsp;/ig, '');//替换HTML空格
+	return text;
+};
 
 //通过某种方法，选出来10个单词，
 var words=[
@@ -106,10 +112,11 @@ function feedBack(words){
 		oWords[words[i][0]]=words[i][2] //word1:0 打错了; 1答对了
 		//答错的，打印出来
 		if(words[i][2]==1){
-			$('#show2').append('<p>'+words[i][0]+words[i][1]+'</p><hr>')
+			var phonetic=Mstatus['phonetic'][ words[i][0] ]
+			$('#show2').append('<p>'+words[i][0]+phonetic+words[i][1]+'</p><hr>')
 		}
 	}
-	console.log('oWords=',oWords)
+	console.log('要传给后台的数据： oWords=',oWords)
 	//把学习过的单词，提交到后台数据库
 	$.post('http://127.0.0.1:20180/api/wordRecited/',{
 		'word':JSON.stringify(oWords)
@@ -130,7 +137,15 @@ $(document).ready(function(){
 	
 	$.get('http://127.0.0.1:20180/api/unknown/'+type, function(res,status){
 		console.log(res,status)
-		words=res //获取10个单词
+		//words=res //获取10个单词
+		Mstatus['phonetic']={}
+		
+		for(i in res){
+			words.push( res[i].splice(0,2) ) //获取单词前面2元素:单词和意思
+			Mstatus['phonetic'][ words[i][0] ]=res[i][0] //获取字典格式的 单词、音标
+		}
+		wjl=res
+		
 		Mstatus.total=words.length
 		//随机排列
 		words.sort(function(a,b){ return(Math.random()-0.5);})
@@ -192,7 +207,7 @@ $(document).ready(function(){
 				setTimeout(function(){
 					refresh(words)			
 				},500)
-				console.log('%c'+answer+' '+ meaning,'color:green;', Mstatus)
+				console.log('%c'+answer,'color:green;', filter(meaning), Mstatus)
 			}
 			//如果答错了
 			else{
@@ -210,8 +225,5 @@ $(document).ready(function(){
 		
 	});
 });
-
-
-
 
 </script>

@@ -5,6 +5,13 @@
 前台：先用普通页面，后期考虑Vue
 
 
+
+大型项目的组织方式：
+https://blog.csdn.net/ying847782627/article/details/51189049
+
+
+
+
 ####################################
 英汉精简数据库：主要来自必应
 CREATE TABLE `word_ms` (
@@ -34,15 +41,18 @@ mysql> select tag_ox, count(*) from word_ms group by tag_ox;
 | C1     |     1292 |
 +--------+----------+
 
-# 查异常值：
+#1) 查异常值：
 mysql> select id,word,tag_ox from word_ms where tag_ox like '%\.%';
 
-# 查找带数字的单词
+#2) 查找带数字的单词
 mysql> select * from word_ms where word REGEXP '[0-9]{1,}'; ## live2
 #并删掉
 mysql> delete from word_ms where word REGEXP '[0-9]{1,}';
 Query OK, 12 rows affected (0.03 sec)
 
+#3) 查找带web的词条，基本都是输入错误，改正，不能改正的删除
+mysql> select * from word_ms where meaning like '%web.%';
+delete from word_ms where meaning like '%web.%';
 
 
 (2) 添加新列，陌生程度1-4级别，1是记住了，4是没见过。
@@ -50,10 +60,17 @@ alter table word_ms add strangeness int(5) DEFAULT 4 comment '陌生程度';
 
 
 
-扫描单词：100个约下10个以下时停止。
+扫描单词：100个剩下10个以下时可以停止。
 1)"select * from word_ms where id>5000 and tag_ox is null limit 100";
 ["futile", "numb", "pail", "rack", "stale", "wretched", "tangle"]
 
+2)select * from word_ms where id>4000 and tag_ox is null limit 100;
+["amiable", "bypass", "composite", "entail", "pedestrian", "rake", "riddle", "scorn", "tentative"]
+
+3) select * from word_ms where id>4000 and tag_ox is null limit 100,100;
+["dissipate", "lounge", "renovate", "repel", "revolt", "spontaneous", "tiresome", "wholesome", "wreath"]
+
+4) select * from word_ms where id>4000 and tag_ox is null limit 200,100;
 
 
 
@@ -136,6 +153,17 @@ https://github.com/woshichuanqilz/others/blob/master/WindowsConfig/IELTS
 
 (3)话题的单词列表
 https://www.cambridgeenglish.org/Images/22105-ket-vocabulary-list.pdf
+
+
+
+
+5.报错
+(1)
+(2013, 'Lost connection to MySQL server during query ([WinError 10054] 远程主机强迫关闭了一个现有的连接。)')
+
+
+
+
 
 
 

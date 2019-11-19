@@ -1,8 +1,11 @@
 <meta charset="UTF-8">
-<h1 class=light>刷单词神器 v0.1</h1>
+<title>刷单词神器 - 单词快速过遍数是记忆的好方法</title>
+
+<h1 class=light>刷单词神器 v0.3</h1>
 <!--
 v0.1 基本可用
-
+v0.2 键盘方向键前后查看
+v0.3 +添加误删单词
 
 
 # 使用方法：
@@ -39,10 +42,26 @@ def wordJson():
 1.通过全选、反选，勾选陌生单词；
 2.一对一模式开始背单词。
 
-背诵模式快捷键:
-1.数字键1表示记住了，更新进度条，并从背诵列表删除掉该单词；2-4表示没记住，并显示下一页；
-2.固定时间后显示释义，空格切换是否显示释义； 
-3.背诵模式，有单词没记住，错误的点了1，使用F12控制台，输入 oWords.todo.push('theWord') 回车即可；
+推荐操作：
+1.全选，点击开始背单词；
+2.遇到会的就按减号-从在被列表删除该单词；
+不小心误删了，按下加号+，把误删的单词添加到在背单词末尾；
+不会的就按下箭头，下一个循环还会遇到它；
+
+
+
+操作说明:
+1.显示意思：
+浏览模式：单击显示意思；
+卡片模式：单击显示意思；固定时间后显示释义; 空格切换是否显示释义；鼠标移入卡片显示意思，移出卡片不显示 意思；
+2.卡片模式，切换下一个单词：
+- 数字键1或者 减号- 表示记住了，从背诵列表删除掉该单词，并更新进度条；
+- 数字2-4，或者箭头 下 或 右，表示没记住，并显示下一个卡片；
+- 箭头 上 或者 左，显示上一个单词。
+
+3.卡片背诵模式，有单词没记住，错误的点了1，使用F12控制台，输入 oWords.todo.push('theWord') 回车即可；
+或者 按加号+，只可以连续操作一次！
+4.获取没记住的单词列表，F12控制台输入： oWords.todo
 </pre>
 </div>
 
@@ -79,6 +98,7 @@ var oWords={
 	'todo':[], //不会的单词
 	'len':0, //总单词个数
 	'timeOut':1,//几秒后显示单词
+	'repeates':0, //重复过的次数
 };
 
 
@@ -98,6 +118,20 @@ $().ready(function(){
 			}
 		})
 	}
+	
+	//给obj添加鼠标悬停时隐藏或显示单词功能
+	function showOnEnter(obj){
+		obj.on('mouseenter',function(){
+			var oSpan=this.getElementsByTagName('span')[0];
+			oSpan.style.display='inline';
+		})
+		obj.on('mouseleave',function(){
+			var oSpan=this.getElementsByTagName('span')[0];
+			oSpan.style.display='none';
+		})
+	}
+	
+	
 	//全选
 	$('#sellectAll').click(function(e,i){
 		var aSpan=$('#word span')
@@ -149,9 +183,13 @@ $().ready(function(){
 			alert('没有勾选任何单词！')
 			return false;
 		}
+		//对单词打乱
+		oWords.todo.sort(function(a,b){
+			return 0.5 - Math.random()
+		});
 		
 		//清空界面
-		$('#control').html('<span class=light>背诵模式： 键盘操作<hr>1记住了;2稍熟悉;3见过;4未知</span>');
+		$('#control').html('<span class=light>背诵模式： 键盘操作<hr>1记住了;2稍熟悉;3见过;4未知 <a target=_blank href="/dict/">拂晓词典</a></span>');
 		$('#begin').css('display','none');
 		$('#caption2').css('display','none');
 		$('#help').css('display','none');
@@ -178,18 +216,37 @@ $().ready(function(){
 			}
 		}
 		
-		//下一个: 1 记住了就删掉，否则下一轮还有它
-		if(e.key=='1'){
+		//下一个: 1 记住了就删掉
+		if(['1','-'].indexOf(e.key)!=-1){
 			var word=oWords.todo[oWords.cur];
 			var tmp=oWords.todo.splice(oWords.todo.indexOf(word),1);
 			console.log(tmp[0], oWords.words[tmp[0]].meaning);
+			oWords['last']=tmp[0];//保留最后一个被删除的单词，方便恢复
 			refresh();
-		}else if(['2','3','4'].indexOf(e.key)!=-1 ){
+		}
+		//下一个: 没记住，一会接着看
+		else if(['2','3','4','ArrowDown','ArrowRight'].indexOf(e.key)!=-1 ){
 			oWords.cur+=1;
 			refresh();
 		}
-		//如果是空格，则显示意思
-		if(e.key==' '){
+		//上一个: 查看
+		else if(['ArrowUp','ArrowLeft'].indexOf(e.key)!=-1 ){
+			oWords.cur-=1;
+			refresh();
+		}
+		//+: 添加单词
+		else if(['+'].indexOf(e.key)!=-1 ){
+			if(oWords['last']){
+				oWords.todo.push(oWords['last']);
+				console.log('在背单词列表 末尾 添加 ', oWords['last']);
+				delete oWords.last;
+				refresh();
+			}else{
+				console.log('无操作');
+			}
+		}
+		//如果是空格，则意思 显示或者隐藏
+		else if(e.key==' '){
 			if($('#word span').css('display')=='none'){
 				$('#word span').css('display','inline');
 			}else{
@@ -215,16 +272,27 @@ $().ready(function(){
 			
 			return false;
 		}
-		//循环背诵
+		//循环背诵，到最后一个
 		if(oWords.cur>=oWords.todo.length){
 			oWords.cur=0;
+			console.log('%c打乱单词，再过一遍。已刷遍数：'+ (++oWords.repeates), 'color:green;' );
+			//对单词打乱
+			oWords.todo.sort(function(a,b){
+				return 0.5 - Math.random()
+			});
+		}
+		
+		//循环背诵，到第一个
+		if(oWords.cur<0){
+			oWords.cur=oWords.todo.length-1;
 		}
 		
 		var word=oWords.todo[oWords.cur];
 		var info=oWords.words[word];
 		//console.log(word,info)
 		var oLi=$('<div class=card><input type=checkbox name='+word+'><b>'+word+'</b> <p class=light2>'+info.phonetic+'</p><span>'+info.meaning+"</span></div>");
-		showOnClick(oLi);//添加单击事件
+		showOnClick(oLi);//添加单击显示
+		showOnEnter(oLi) //鼠标悬停显示
 		oWords['timer']=setTimeout(function(){
 			//触发点击事件：显示释义
 			//https://blog.csdn.net/MiaoHuiZiJiDeGuShi/article/details/84074559
@@ -232,6 +300,7 @@ $().ready(function(){
 			//https://blog.csdn.net/bcfdsagbfcisbg/article/details/78480307
 			oLi.trigger("click");
 		},oWords.timeOut*1000)
+
 		$('#word').html(oLi);
 	}
 })
