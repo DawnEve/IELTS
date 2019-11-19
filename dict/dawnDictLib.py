@@ -1,9 +1,13 @@
+##################
+# lib file: 放一些工具函数，与具体业务无直接关系
+##################
+
+
 import pymysql
 # 单例模式 https://blog.csdn.net/qq_32539403/article/details/83343581
 # 方法很好 https://blog.csdn.net/qy20115549/article/details/82972993
 # 更多方法 https://www.cnblogs.com/ddjl/p/8670545.html
 # python mysql使用持久链接 https://blog.csdn.net/wzm112/article/details/7745835
-
 
 #v0.2 self._db.commit() 防止查询缓存，保证数据最新
 #v0.3 加了 _reConn() 数据库连接失效后自动重连
@@ -54,10 +58,9 @@ class DBUtil():
                 try:
                     self._db.ping()       #cping 校验连接是否异常
                     _status = False
-                    print('can ping mysql.<===')
                 except:
                     self._db = None #如果ping不通，则清空，重新连接
-                    print('>>>重新连接数据库， try =',_number)
+                    print('>>>重新连接数据库， tried =',_number)
                     if self.__connect()==True: #重新连接,成功退出
                         _status = False
                         break
@@ -130,4 +133,16 @@ class DBUtil():
         sql="alter table %s drop %s;"
         rs1=self.execute(sql %(tableName, colName)) #3 如果重复，会报错
         print('删除%s表中的 %s列, rs1=%s' % (tableName, colName, rs1) )
+#
+
+
+
+from flask import jsonify
+#CORS (Cross-Origin Resource Sharing)
+def cors(arrOrStr):
+    res=jsonify(arrOrStr)
+    res.headers.add('Access-Control-Allow-Origin', '*')
+    res.headers.add('Backend', 'wjl_dawnDict_server/0.3')
+    res.headers.add('Email', 'jimmymall at 163 dot com')
+    return res;
 #
