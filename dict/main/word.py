@@ -219,8 +219,10 @@ def  add_word_routes(app):
     # 扫描单词接口：返回dict格式数据
     @app.route('/api/wordScan/', methods=['GET'])
     def wordScan():
-        page=3 # >=1
-        sql="select * from word_ms where id>4000 and tag_ox is null limit "+ str((page-1)*100) +",100;";
+        page=int(request.args.get('page',1) )
+        if page<1: # >=1
+            page=1;
+        sql="select * from word_ms where id>3000 and tag_ox is null limit "+ str((page-1)*100) +",100;";
         print('scan======>', sql)
         rs=mydb.query(sql)
         

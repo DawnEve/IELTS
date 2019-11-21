@@ -18,4 +18,6 @@ mydb=DBUtil()
 
 print('*********** this is main module ***********')
 
-# __all__ = ["word", "sentence", "statistic"]
+
+#from main import *
+#__all__ = ["word", "sentence", "statistic"]

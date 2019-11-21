@@ -1,11 +1,12 @@
 <meta charset="UTF-8">
 <title>刷单词神器 - 单词快速过遍数是记忆的好方法</title>
 
-<h1 class=light>刷单词神器 v0.3</h1>
+<h1 class=light>刷单词神器 v0.4</h1>
 <!--
 v0.1 基本可用
 v0.2 键盘方向键前后查看
 v0.3 +添加误删单词
+v0.4 顶部添加2nd开始背单词按钮；url传入页码；http://ielts.dawneve.cc/dict/scanWord.html?page=2
 
 
 # 使用方法：
@@ -16,6 +17,7 @@ def wordJson():
 
 2. todo 只能刷，目前还没有想好怎么给后端反馈。
 
+bug: 299行 有空格的词组会报错。
 
 -->
 <div id=control>
@@ -23,6 +25,7 @@ def wordJson():
 	<hr>
 	<button id=sellectAll>全选</button>
 	<button id=sellectOther>反选</button>
+	<button id=begin2>开始背单词</button>
 </div>
 <div id=word></div>
 
@@ -88,6 +91,10 @@ ol li span{font-weight:bold; padding:0 20px;display:none; }
 .light2{color:#ccc;}
 
 #help{color:yellow; background:black;padding:2px 10px;margin-top:10px;}
+
+
+.dictLink{color:#ccc; padding-left:200px; text-decoration: none; font-size:smaller;}
+.dictLink:hover{text-decoration: underline;}
 </style>
 
 <script>
@@ -99,7 +106,17 @@ var oWords={
 	'len':0, //总单词个数
 	'timeOut':1,//几秒后显示单词
 	'repeates':0, //重复过的次数
+	'bgcolors':['#FFD4D4','#FFE0D0','#FAFBB6', '#DEFFDB', '#D7FBFF','#DEE2FF','#FBD7FF','#eeeeee'], //卡片背景颜色
+	'oWords':'#eee', //当前背景色
 };
+
+
+//获取url中的参数 https://www.cnblogs.com/vicky-li/p/9145026.html
+function getUrlParam(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	if (r != null) return unescape(r[2]); return null; //返回参数值
+}
 
 
 $().ready(function(){
@@ -151,10 +168,15 @@ $().ready(function(){
 		});
 	})
 	
+	
+	//自动翻页功能，这样就不用太过于频繁的修改源码了
+	var page=getUrlParam('page');
+	page=page||1;
 	//加载后获取资源
-	$.get('http://127.0.0.1:20180/api/wordScan/', function(res,status){
+	$.get('http://127.0.0.1:20180/api/wordScan/?page='+page, function(res,status){
 		console.log('load word: ', status);
 		//res=JSON.parse(res)
+		console.log('page=',page)
 		oWords['words']=res;//给全局变量
 		var oOl=$('<ol></ol>');
 		for(var word in res){
@@ -169,7 +191,7 @@ $().ready(function(){
 	})
 	
 	//开始背单词按钮
-	$('#begin').click(function(){
+	$('#begin,#begin2').click(function(){
 		$('#word input').each(function(index,el){
 			//获取要背诵的单词
 			if(el.checked){
@@ -187,9 +209,13 @@ $().ready(function(){
 		oWords.todo.sort(function(a,b){
 			return 0.5 - Math.random()
 		});
+		//背景色随机排序
+		oWords.bgcolors.sort(function(a,b){
+			return 0.5 - Math.random()
+		});
 		
 		//清空界面
-		$('#control').html('<span class=light>背诵模式： 键盘操作<hr>1记住了;2稍熟悉;3见过;4未知 <a target=_blank href="/dict/">拂晓词典</a></span>');
+		$('#control').html('<span class=light>背诵模式： 键盘操作<hr>1记住了;2稍熟悉;3见过;4未知 </span>');
 		$('#begin').css('display','none');
 		$('#caption2').css('display','none');
 		$('#help').css('display','none');
@@ -202,7 +228,7 @@ $().ready(function(){
 	//响应键盘事件
 	document.body.onkeydown=function(e){
 		//console.log(e.key)
-		if(!oWords.keyEnabled){
+		if(!oWords.keyEnabled && e.key!='F12'){
 			alert('非背诵模式，不接收键盘事件')
 			return false;
 		}
@@ -220,7 +246,10 @@ $().ready(function(){
 		if(['1','-'].indexOf(e.key)!=-1){
 			var word=oWords.todo[oWords.cur];
 			var tmp=oWords.todo.splice(oWords.todo.indexOf(word),1);
-			console.log(tmp[0], oWords.words[tmp[0]].meaning);
+			var info=oWords.words[tmp[0]];
+			//console.log(word,info)
+			var phonetic=info.phonetic?info.phonetic:"";
+			console.log(tmp[0],phonetic, info.meaning);
 			oWords['last']=tmp[0];//保留最后一个被删除的单词，方便恢复
 			refresh();
 		}
@@ -240,7 +269,7 @@ $().ready(function(){
 				oWords.todo.push(oWords['last']);
 				console.log('在背单词列表 末尾 添加 ', oWords['last']);
 				delete oWords.last;
-				refresh();
+				//refresh();
 			}else{
 				console.log('无操作');
 			}
@@ -275,7 +304,7 @@ $().ready(function(){
 		//循环背诵，到最后一个
 		if(oWords.cur>=oWords.todo.length){
 			oWords.cur=0;
-			console.log('%c打乱单词，再过一遍。已刷遍数：'+ (++oWords.repeates), 'color:green;' );
+			console.log('%c打乱单词，再过一遍。已刷遍数：'+ (++oWords.repeates), 'background:black; padding:5px;color:'+ oWords.color );
 			//对单词打乱
 			oWords.todo.sort(function(a,b){
 				return 0.5 - Math.random()
@@ -290,7 +319,9 @@ $().ready(function(){
 		var word=oWords.todo[oWords.cur];
 		var info=oWords.words[word];
 		//console.log(word,info)
-		var oLi=$('<div class=card><input type=checkbox name='+word+'><b>'+word+'</b> <p class=light2>'+info.phonetic+'</p><span>'+info.meaning+"</span></div>");
+		var phonetic=info.phonetic?info.phonetic:"";
+		var wordUrl='<a class="dictLink" target=_blank href="/dict/index.html?word="'+word+'>拂晓词典</a>'
+		var oLi=$('<div class=card><input type=checkbox name='+word+'><b>'+word+'</b> '+wordUrl+' <p class=light2>'+phonetic+'</p><span>'+info.meaning+"</span></div>");
 		showOnClick(oLi);//添加单击显示
 		showOnEnter(oLi) //鼠标悬停显示
 		oWords['timer']=setTimeout(function(){
@@ -302,6 +333,12 @@ $().ready(function(){
 		},oWords.timeOut*1000)
 
 		$('#word').html(oLi);
+		
+		if(oWords.repeates>0){
+			//换卡片的颜色
+			oWords.color=oWords.bgcolors[ oWords.repeates % oWords.bgcolors.length ];
+			$('#word .card').css('background', oWords.color)
+		}
 	}
 })
 </script>

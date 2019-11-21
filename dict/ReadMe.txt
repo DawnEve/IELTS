@@ -44,11 +44,32 @@ mysql> select tag_ox, count(*) from word_ms group by tag_ox;
 #1) 查异常值：
 mysql> select id,word,tag_ox from word_ms where tag_ox like '%\.%';
 
+# 查id断开的编号
+select (id-1) as id_jump from word_ms a where not exists (select 1 from word_ms where id+1=a.id) order by id_jump;
++---------+
+| id_jump |
++---------+
+|       0 |
+|    5499 |
+|    5506 |
+|    5523 |
+|    5528 |
+|    5535 |
+|    5540 |
+|    5547 |
+
+
+
 #2) 查找带数字的单词
 mysql> select * from word_ms where word REGEXP '[0-9]{1,}'; ## live2
 #并删掉
 mysql> delete from word_ms where word REGEXP '[0-9]{1,}';
 Query OK, 12 rows affected (0.03 sec)
+
+#查带空格的单词
+select id, concat('|',word,"|"), tag_ox from word_ms where word like '% %' limit 10;
+
+
 
 #3) 查找带web的词条，基本都是输入错误，改正，不能改正的删除
 mysql> select * from word_ms where meaning like '%web.%';
@@ -59,20 +80,35 @@ delete from word_ms where meaning like '%web.%';
 alter table word_ms add strangeness int(5) DEFAULT 4 comment '陌生程度';
 
 
+(3)添加雅思word list:
+https://github.com/woshichuanqilz/others/blob/master/WindowsConfig/IELTS
+
+添加新列，雅思词汇 tag_ielts: 第一批3000个标签为1, 默认是0；
+alter table word_ms add tag_ielts int(3) DEFAULT 0 comment '雅思词汇' after tag_ox;
+## ALTER TABLE word_ms DROP tag_ielts;
+
+
+
+
 
 扫描单词：100个剩下10个以下时可以停止。
-1)"select * from word_ms where id>5000 and tag_ox is null limit 100";
+0)"select * from word_ms where id>5000 and tag_ox is null limit 100";
 ["futile", "numb", "pail", "rack", "stale", "wretched", "tangle"]
 
-2)select * from word_ms where id>4000 and tag_ox is null limit 100;
+1)select * from word_ms where id>4000 and tag_ox is null limit 100;
 ["amiable", "bypass", "composite", "entail", "pedestrian", "rake", "riddle", "scorn", "tentative"]
 
-3) select * from word_ms where id>4000 and tag_ox is null limit 100,100;
+2) select * from word_ms where id>4000 and tag_ox is null limit 100,100;
 ["dissipate", "lounge", "renovate", "repel", "revolt", "spontaneous", "tiresome", "wholesome", "wreath"]
 
-4) select * from word_ms where id>4000 and tag_ox is null limit 200,100;
+4000,
+#page 3 ["preclude", "agitate", "pathetic", "sly", "humid", "shaft", "tempo", "gracious", "inertia"]
+#page 4 ["gasp", "shrewd", "numb", "refrain", "stale", "futile", "rack", "wretched"]
+#page 5 ["fiddling", "nagging", "fraught", "episodic", "prised", "concur", "tacking", "epistemological", "disparate"]
+#page 6 ["interrogate", "wig", "coerce", "penile", "platinum", "milieu", "dissect", "homeostasis", "bimodality"]
 
-
+3000,
+#page1 
 
 
 
@@ -148,10 +184,8 @@ select *, wrong/(`right`+ wrong) as ratio  from word_unknown order by ratio desc
 https://github.com/Deemoore/zieckey-study-code/tree/319fd3914a9abc0e617f96409de6062e9ec4b98c/eclipseworkspace/python/dictparser/src/zieckey/dict/wordlist
 只有46级可能齐全。
 
-(2)雅思word list:
-https://github.com/woshichuanqilz/others/blob/master/WindowsConfig/IELTS
 
-(3)话题的单词列表
+(2)话题的单词列表
 https://www.cambridgeenglish.org/Images/22105-ket-vocabulary-list.pdf
 
 
@@ -174,6 +208,7 @@ v0.5 添加修改单词功能
 v0.6 扫单词功能基本可用
 v1.0 代码重构，分成好几个小py文件
 	__init__ 好像不会用
+	__all__ =[] 也不好用
 
 
 

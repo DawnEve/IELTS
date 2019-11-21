@@ -2,11 +2,14 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>拂晓词典 - dawnDict v0.5</title>
+<title>拂晓词典 - dawnDict v1.1</title>
 <!--
 more at ReadMe.txt
 v0.1 基本可用
 v0.5 添加修改单词功能；
+v1.0 代码重构，分成好几个小py文件
+v1.1 增加词典链接;url接收单词 http://ielts.dawneve.cc/dict/index.html?word=corrupt
+
 -->
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <style>
@@ -80,10 +83,17 @@ input::-webkit-input-placeholder{
 
 
 <script type="text/javascript">
+//获取url中的参数 https://www.cnblogs.com/vicky-li/p/9145026.html
+function getUrlParam(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+
 
 //获取单词，调动接口翻译，显示结果
 var showTrans=function(){
-	var word=$('#word').val()
+	var word=$('#word').val().trim(); //两头去空格
 	if(word=='')return;//空单词啥也不做
 	
 	$.get('http://127.0.0.1:20180/api/dict/'+word, function(res){
@@ -97,6 +107,8 @@ var showTrans=function(){
 			//添加其他词典的链接 悬浮显示
 			$('#show').append('<div id=otherDict>本窗口: <a target=box2 href="http://dict.youdao.com/w/eng/'+word+'/#keyfrom=dict2.index">有道词典</a> | '+
 				'<a target=box2 href="https://fanyi.baidu.com/#en/zh/'+word+'">百度翻译</a> | '+
+				'<a target=box2 href="http://dict.eudic.net/dicts/en/'+word+'">欧路</a> | '+
+				'<a target=box2 href="https://dict.cn/search?q='+word+'">海词</a> | '+
 				'<a target=box2 href="https://dictionary.cambridge.org/dictionary/english-chinese-simplified/'+word+'">剑桥英汉</a> | '+
 				'<a target=box2 href="https://www.synonyms.com/synonym/'+word+'">同义词</a> | '+
 				
@@ -108,6 +120,7 @@ var showTrans=function(){
 				'<a target=_blank href="https://dictionary.cambridge.org/dictionary/english/'+word+'">剑桥</a> | '+
 				'<a target=_blank href="https://www.merriam-webster.com/dictionary/'+word+'">韦氏</a> | '+
 				//'<a target=_blank href="http://www.webster-dictionary.net/definition/'+word+'">韦氏2</a> | '+
+				'<a target=_blank href="https://www.macmillandictionary.com/dictionary/british/'+word+'">麦克</a> | '+
 				'<a target=_blank href="https://www.dictionary.com/browse/'+word+'">dict</a> | '+
 				'<a target=_blank href="https://www.ahdictionary.com/word/search.html?q='+word+'">ahdict</a> | '+
 				'<a target=_blank href="https://www.thefreedictionary.com/'+word+'">freedict</a> | '+
@@ -147,6 +160,14 @@ $(document).ready(function(){
 	$('#word').hover(function(){
 		this.select();
 	})
+	
+	//如果url带单词进来，则直接填充单词框，并查单词
+	var word=getUrlParam('word')
+	if(word){
+		console.log(word)
+		$('#word').val(word);
+		showTrans();
+	}
 
 });
 </script>
