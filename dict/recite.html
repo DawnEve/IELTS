@@ -2,20 +2,21 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>拂晓背单词 - dawnDict_recite v0.1</title>
+	<title>拂晓背单词 拼写版 - dawnDict_recite v0.3</title>
 <!--
 v0.1 
 v0.2 抵抗F5刷新
+v0.3 线上上一个答对的单词
 -->
 <style>
 div{padding:10px;margin:5px;border:1px solid #eee;}
 .light{color:#ddd;}
-#word{padding:2px 5px;}
+#word{padding:5px 10px; font-size: 30px;}
 #word2{cursor:pointer; color:blue}
 </style>
 </head>
 
-<h1 style='opacity:0.05'>remember word</h1>
+<h1 style='opacity:0.05'>Remember word spelling</h1>
 
 <div><span id=mean></span></div>
 <div>单词: <input type=input id=word autocomplete="off" ></input> (正确答案: <u id=word2>点击查看</u>) </div>
@@ -56,7 +57,9 @@ var words=[
 
 
 print=console.log 
-var Mstatus={'i':0,'right':0,'total':0, 'canGainScore':true}; //全局状态
+var Mstatus={'i':0,'right':0,'total':0, 'canGainScore':true,
+	'phonetic':{}, //音标
+}; //全局状态
 
 
 //tools
@@ -138,7 +141,6 @@ $(document).ready(function(){
 	$.get('http://127.0.0.1:20180/api/unknown/'+type, function(res,status){
 		console.log(res,status)
 		//words=res //获取10个单词
-		Mstatus['phonetic']={}
 		
 		for(i in res){
 			words.push( res[i].splice(0,2) ) //获取单词前面2元素:单词和意思
@@ -207,6 +209,9 @@ $(document).ready(function(){
 				setTimeout(function(){
 					refresh(words)			
 				},500)
+				//音标，显示到网页中更准确，console中则很多事编码过的样子，不可读；
+				var phonetic=Mstatus['phonetic'][ answer ]
+				$id('show2').innerHTML='The last one: <br><span style="color:#aaa"><a target=_blank href=/dict/?word='+answer+'>'+answer+'</a> '+ phonetic+' '+filter(meaning)+'</span>';
 				console.log('%c'+answer,'color:green;', filter(meaning), Mstatus)
 			}
 			//如果答错了

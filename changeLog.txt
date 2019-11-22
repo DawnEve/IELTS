@@ -187,7 +187,7 @@ https://www.gutenberg.org
 	/dict/ 刷单词背景变色; 查单词链接；url设置页码page参数，减少py代码sql的修改；允许随时按下F12；
 # commited local
 # ----------------> push to github
-
+> en0.2.30-6 scanWord修正小显示bug; 
 
 
 

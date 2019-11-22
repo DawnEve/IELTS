@@ -215,7 +215,7 @@ $().ready(function(){
 		});
 		
 		//清空界面
-		$('#control').html('<span class=light>背诵模式： 键盘操作<hr>1记住了;2稍熟悉;3见过;4未知 </span>');
+		$('#control').html('<span class=light>背诵模式： 键盘操作(空格 显示意思)<hr>1记住了;2稍熟悉;3见过;4未知 </span>');
 		$('#begin').css('display','none');
 		$('#caption2').css('display','none');
 		$('#help').css('display','none');
@@ -320,7 +320,7 @@ $().ready(function(){
 		var info=oWords.words[word];
 		//console.log(word,info)
 		var phonetic=info.phonetic?info.phonetic:"";
-		var wordUrl='<a class="dictLink" target=_blank href="/dict/index.html?word="'+word+'>拂晓词典</a>'
+		var wordUrl='<a class="dictLink" target=_blank href="/dict/index.html?word='+word+'">拂晓词典</a>'
 		var oLi=$('<div class=card><input type=checkbox name='+word+'><b>'+word+'</b> '+wordUrl+' <p class=light2>'+phonetic+'</p><span>'+info.meaning+"</span></div>");
 		showOnClick(oLi);//添加单击显示
 		showOnEnter(oLi) //鼠标悬停显示

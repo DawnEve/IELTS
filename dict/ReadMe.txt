@@ -109,6 +109,8 @@ alter table word_ms add tag_ielts int(3) DEFAULT 0 comment '雅思词汇' after 
 
 3000,
 #page1 
+#page2 ["envisage", "tub", "susceptible", "wrench", "strenuous", "clasp"]
+
 
 
 

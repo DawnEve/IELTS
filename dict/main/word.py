@@ -128,9 +128,9 @@ def  add_word_routes(app):
     @app.route('/api/unknown/<type>')
     def unknownWord(type=''):
         #MySQL不支持子查询里有limit解决办法 https://blog.csdn.net/qq_15076569/article/details/83787108
-        sql='select word,meaning,phoneticSymbol from word_ms where word in ( select tb.word from (select * from word_unknown where type="'+type+'" order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC limit 5) as tb );'
+        sql='select word,meaning,phoneticSymbol from word_ms where word in ( select tb.word from (select * from word_unknown where type="'+type+'" order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC limit 10) as tb );'
         if type=='all':
-            sql='select word,meaning,phoneticSymbol from word_ms where word in ( select tb.word from (select * from word_unknown order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC limit 5) as tb ) ;'
+            sql='select word,meaning,phoneticSymbol from word_ms where word in ( select tb.word from (select * from word_unknown order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC limit 10) as tb ) ;'
         arr=mydb.query(sql)
         print('===========>>',arr)
         return cors(arr)
