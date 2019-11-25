@@ -238,7 +238,7 @@ def  add_word_routes(app):
         #刷单词的目的
         aim=int(request.args.get('aim',0) ) 
         aims={
-            0:'\n默认刷单词......: 按照 (familiarScore+0.5*unfamiliarScore) 选择没见过面的单词 ',
+            0:'\n默认刷单词......: 按照 (familiarScore+0.5*unfamiliarScore+0.1*viewed) 选择没见过面的单词',
             1:'\n刷生疏词汇......: 按照 unfamiliarScore 倒序排出来的单词;',
             2:'\n刷雅思单词......: 按照tag_ielts标签筛选',
             3:'\n刷易错单词......: 按照 听写的出错频率，可以不反馈到后台',
@@ -249,8 +249,8 @@ def  add_word_routes(app):
             aim=100;
         print(aims[aim])
         if 0==aim:
-            #从scan表uid=1单词的熟悉程度，按照 (familiarScore+0.5*unfamiliarScore)排列，则见面越多的越往后排
-            sql="select a.id, a.word,a.phoneticSymbol,a.meaning,familiarScore,unfamiliarScore from word_ms a left join ( select * from  word_scan where uid="+str(uid)+" ) b on a.id=b.wid order by (familiarScore+0.5*unfamiliarScore), b.modi_time DESC, b.add_time DESC limit "+str((page-1)*100) +",100;";
+            #从scan表uid=1单词的熟悉程度，按照 (familiarScore+0.5*unfamiliarScore+0.1*viewed)排列，则见面越多的越往后排
+            sql="select a.id, a.word,a.phoneticSymbol,a.meaning,familiarScore,unfamiliarScore,viewed from word_ms a left join ( select * from  word_scan where uid="+str(uid)+" ) b on a.id=b.wid order by (familiarScore+0.5*unfamiliarScore+0.1*viewed), b.modi_time DESC, b.add_time DESC limit "+str((page-1)*100) +",100;";
         elif 1==aim:
             sql="select a.id, a.word,a.phoneticSymbol,a.meaning,familiarScore,unfamiliarScore from word_ms a left join ( select * from  word_scan where uid="+str(uid)+" ) b on a.id=b.wid order by unfamiliarScore DESC, b.modi_time DESC, b.add_time DESC limit "+str((page-1)*100) +",100;";
         elif 2==aim:
@@ -332,6 +332,8 @@ def  add_word_routes(app):
                         msg[word]=rs1;
             return msg;
         #逐个集合的提交到db
+        msg0=addScoreToScan(plus['viewed'],'viewed');# 看过一遍
+        #
         msg1=addScoreToScan(plus['g1']);
         msg2=addScoreToScan(plus['g3'],score=3);
         msg3=addScoreToScan(minus,'unfamiliarScore');

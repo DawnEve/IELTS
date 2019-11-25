@@ -185,12 +185,12 @@ https://www.gutenberg.org
 > en0.2.30-4 拂晓词典/dict/ v1.0 代码重构，分成好几个小py文件
 > en0.2.30-5 拂晓词典v1.1 url接收单词; 刷单词web优化；
 	/dict/ 刷单词背景变色; 查单词链接；url设置页码page参数，减少py代码sql的修改；允许随时按下F12；
-# commited local
-# ----------------> push to github
 > en0.2.30-6 scanWord修正小显示bug; 
 > en0.2.30-7 scanWord-v0.6 支持更多目的刷单词
-
-
+> en0.2.30-8 scanWord-v0.7 排序新增viewed字段，用于筛选单词时排序
+############# 拂晓词典刷单词神器: dict/scanWord.html v0.7
+# commited local
+# ----------------> push to github
 
 
 

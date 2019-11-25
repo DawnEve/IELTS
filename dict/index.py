@@ -39,7 +39,9 @@ def hello():
 3.例句增删改查
 
 4.统计，
-todo: 记录用户信息
+todo: 记录用户信息; 统计结果页
+
+版本信息记录在/dict/index.html 头部和 /dict/ReadMe.txt 中;
 """
 
 #测试接口，内部调用函数等

@@ -198,6 +198,10 @@ mysql> desc word_scan;
 陌生打分，见一次不认识，则陌生程度加1，貌似不会减少；
 熟悉打分，直接斩杀加3分，见一次后再斩杀加1分，此后不再加分。最后剩下的10个左右单词，陌生程度加1分。
 
+#添加新列: viewed 只要提交，所有看过的都加1
+alter table word_scan drop viewed;
+alter table word_scan add viewed int(5) DEFAULT 0 comment '过遍数' after familiarScore;
+
 (1) 查看最熟悉的单词
 select a.id, a.word,a.phoneticSymbol,a.meaning,b.familiarScore from word_ms a left join ( select * from  word_scan where uid=1 ) b on a.id=b.wid order by familiarScore DESC, b.add_time DESC limit 10\G
 
@@ -208,6 +212,8 @@ select a.id, a.word,a.phoneticSymbol,a.meaning,b.familiarScore, b.unfamiliarScor
 http://ielts.dawneve.cc/dict/scanWord.html?page=1&aim=0  默认刷单词......: 按照 (familiarScore+0.5*unfamiliarScore) 选择没见过面的单词 
 aim=1: 
 
+(4)查一个词，联合两个表
+select a.id, a.word,a.phoneticSymbol,a.meaning,familiarScore,unfamiliarScore,viewed from word_ms a left join ( select * from  word_scan where uid=1 ) b on a.id=b.wid where a.word="posture";
 
 
 ####################################
@@ -255,7 +261,7 @@ v0.6 扫单词功能基本可用
 v1.0 代码重构，分成好几个小py文件
 	__init__ 好像不会用
 	__all__ =[] 也不好用
-
+v1.1 反馈结果新增 viewed 字段，影响筛选单词时的排序;
 
 
 todo

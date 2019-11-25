@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <title>刷单词神器 - 单词快速过遍数是记忆的好方法</title>
 
-<h1 class=light>刷单词神器 v0.6</h1>
+<h1 class=light>刷单词神器 v0.7</h1>
 <!--
 v0.1 基本可用
 v0.2 键盘方向键前后查看
@@ -9,6 +9,7 @@ v0.3 +添加误删单词
 v0.4 顶部添加2nd开始背单词按钮；url传入页码；http://ielts.dawneve.cc/dict/scanWord.html?page=2
 v0.5 卡片背景更绚丽，能根据颜色变文字颜色；
 v0.6 支持更多目的刷单词
+v0.7 排序新增viewed字段，用于筛选单词时排序
 
 
 # 使用方法：
@@ -17,7 +18,13 @@ v0.6 支持更多目的刷单词
 @app.route('/api/wordScan/', methods=['GET'])
 def wordJson():
 
-2. todo 只能刷，目前还没有想好怎么给后端反馈。
+2. 支持给后端反馈。
+
+
+# 整体架构：
+前端: html页面
+后端: python3 flask + mysql, restful API, 支持跨域访问;
+
 
 bug: 299行 有空格的词组会报错。
 
@@ -400,8 +407,8 @@ $().ready(function(){
 	
 	//给后台反馈数据：1或者2次浏览的单词(浏览过0和1次，熟悉度加3和1分)，以及最后剩下到todo中的单词(陌生度加1分)
 	function feedback(){
-		//构建第一个数据
-		var oFamiliar={'g3':[], 'g1':[]}
+		//构建要反馈的数据，熟悉的单词
+		var oFamiliar={'g3':[], 'g1':[],'viewed':[]}
 		for(var word in oWords.times){
 			var times=oWords.times[word];
 			if(times==0){
@@ -409,8 +416,10 @@ $().ready(function(){
 			}else if(times==1){
 				oFamiliar['g1'].push(word);//加1分
 			}
+			//
+			oFamiliar['viewed'].push(word); //所有单词的看过一遍, viewed字段都加一分
 		}
-		//第二个数据
+		//不熟悉的单词
 		var aUnfamiliar=oWords.todo;
 		
 		//*********************
