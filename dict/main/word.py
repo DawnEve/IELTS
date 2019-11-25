@@ -169,7 +169,8 @@ def  add_word_routes(app):
         return cors({'status':status, 'data':msg})
     #
 
-        
+
+    
     #字典查询后台接口，允许跨域访问
     @app.route('/api/newWord/', methods=['POST'])
     def addNewWord():
@@ -215,30 +216,149 @@ def  add_word_routes(app):
         return cors({'status':status, 'data':msg})
 
 
+
+
+
+
+    ##################
+    ## 过单词 刷遍数
+    ##################
+    
     #过单词 刷单词神器 刷遍数 过遍数
-    # 扫描单词接口：返回dict格式数据
+    # 扫描单词获取接口：返回dict格式数据给前端
+    #v0.2 2表联合查询，按照familiarScore排序
     @app.route('/api/wordScan/', methods=['GET'])
     def wordScan():
+        #获取参数
+        uid=1;
         page=int(request.args.get('page',1) )
         if page<1: # >=1
             page=1;
-        sql="select * from word_ms where id>3000 and tag_ox is null limit "+ str((page-1)*100) +",100;";
+        #
+        #刷单词的目的
+        aim=int(request.args.get('aim',0) ) 
+        aims={
+            0:'\n默认刷单词......: 按照 (familiarScore+0.5*unfamiliarScore) 选择没见过面的单词 ',
+            1:'\n刷生疏词汇......: 按照 unfamiliarScore 倒序排出来的单词;',
+            2:'\n刷雅思单词......: 按照tag_ielts标签筛选',
+            3:'\n刷易错单词......: 按照 听写的出错频率，可以不反馈到后台',
+            
+            100:"\n非0且没有指定sql，则刷生僻单词......: 牛津分级不是a1,a2,b1,b2,c1的词;"
+        }
+        if aim>3:
+            aim=100;
+        print(aims[aim])
+        if 0==aim:
+            #从scan表uid=1单词的熟悉程度，按照 (familiarScore+0.5*unfamiliarScore)排列，则见面越多的越往后排
+            sql="select a.id, a.word,a.phoneticSymbol,a.meaning,familiarScore,unfamiliarScore from word_ms a left join ( select * from  word_scan where uid="+str(uid)+" ) b on a.id=b.wid order by (familiarScore+0.5*unfamiliarScore), b.modi_time DESC, b.add_time DESC limit "+str((page-1)*100) +",100;";
+        elif 1==aim:
+            sql="select a.id, a.word,a.phoneticSymbol,a.meaning,familiarScore,unfamiliarScore from word_ms a left join ( select * from  word_scan where uid="+str(uid)+" ) b on a.id=b.wid order by unfamiliarScore DESC, b.modi_time DESC, b.add_time DESC limit "+str((page-1)*100) +",100;";
+        elif 2==aim:
+            sql="select id, word, phoneticSymbol, meaning from word_ms where tag_ielts>0 limit "+ str((page-1)*100) +",100;";
+        elif 3==aim:
+            sql='select id, word,phoneticSymbol, meaning from word_ms where word in ( select tb.word from (select * from word_unknown order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC ) as tb ) limit ' + str((page-1)*100) +",100;";
+        else: 
+            sql="select id, word, phoneticSymbol, meaning from word_ms where id>3000 and tag_ox is null limit "+ str((page-1)*100) +",100;";
+        #
         print('scan======>', sql)
-        rs=mydb.query(sql)
+        lines=mydb.query(sql)
         
         #array to dict
         json={}
-        re_h=re.compile('</?\w+[^>]*>', flags=re.S)#HTML标签
-        for word in rs:
-            json[word[1]]={
-                'meaning':re_h.sub('',word[3]),
-                'phonetic':word[2]
+        re_h=re.compile('</?\w+[^>]*>', flags=re.S) #HTML标签
+        for line in lines:
+            json[line[1]]={
+                'meaning':re_h.sub('',line[3]),
+                'phonetic':line[2]
             }
         #
-        return cors(json)
+        return cors({ 'aim':aims[aim], 'data':json})
     #
+    
+    #过单词 刷遍数， 反馈接口，记录结果到db
+    #v0.2 怎么添加到表中？
+    @app.route('/api/wordScanFeedback/', methods=['POST'])
+    def wordScanFeedback():
+        #1.获取参数
+        uid=1;
+        plus=request.form.get('plus')
+        minus=request.form.get('minus')
+        add_time=int(time.time());
+        
+        # str 2 json
+        import json
+        plus=json.loads(plus)
+        minus=json.loads(minus)
+        #
+        #print('plus=',plus['g3'], plus['g1'])
+        #print('minus=',minus)
+        
+        #2.内部函数：交叉表查询单词的wid，不存在则插入新记录，存在则更新列值；
+        def addScoreToScan(words, colname='familiarScore', score=1):
+            #words=plus['g1'] #单词数组
+            #colname="familiarScore"; #要更新的列是什么
+            #score=1; #加几分?
+            #
+            msg={};
+            for word in words:
+                sql='select a.id,wid,unfamiliarScore,familiarScore from word_ms a left join ( select * from word_scan where uid=%d) b on a.id=b.wid where word="%s";' % (uid, word);
+                print('in for: sql=',sql)
+                result=mydb.query(sql);
+                
+                #word_ms表肯定有单词，否则报错
+                if len(result)>0:
+                    if len(result)>1:
+                        print('**********有单词重复，可能是大小写问题，请检查 word_ms表(len(result)>1): word=',word,'**********');
+                    #按照第一个使用
+                    line=result[0]
+                    wid=int(line[0]);
+                    #如果word_scan没有记录，则插入一行新记录
+                    if line[1]==None:
+                        sql="insert into word_scan(uid, wid,add_time,%s) values(%d,%d,%d,%d);" % (colname, uid, wid, add_time, 1);
+                        rs1=mydb.execute(sql);
+                        #msg+='"'+word+'":'+str(rs1)+',';
+                        #print('insert: line=',word, rs1 )
+                        msg[word]=rs1;
+                    else: #有word_scan记录，则更新字段
+                        if colname=="familiarScore":
+                            oldValue=line[3] #熟悉指数
+                        else:
+                            oldValue=line[2] #陌生指数
+                        newValue=int(oldValue)+1;
+                        sql='update word_scan set %s=%d, modi_time=%d where uid=%d and wid=%d;' % (colname,newValue, add_time, uid, wid);
+                        rs1=mydb.execute(sql);
+                        #msg+='"'+word+'":'+str(rs1)+',';
+                        #print('update: line=',word, rs1 )
+                        msg[word]=rs1;
+            return msg;
+        #逐个集合的提交到db
+        msg1=addScoreToScan(plus['g1']);
+        msg2=addScoreToScan(plus['g3'],score=3);
+        msg3=addScoreToScan(minus,'unfamiliarScore');
+        
+        #{
+        #    "familiarScore":{
+        #        "g1": msg1,
+        #        "g3": msg2
+        #    },
+        #    "unfamiliarScore": msg3
+        #} #[plus, minus]
+        
+        #
+        return cors({
+            'status':1,
+            'data': {"unfamiliarScore": msg3}
+        });
+    
 
 
+
+
+
+    ##################
+    ## 修改单词信息
+    ##################
+    
     # 按照单词id，返回单词接口
     @app.route('/api/word/id/<id>', methods=['GET'])
     def wordById(id):

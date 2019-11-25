@@ -188,6 +188,7 @@ https://www.gutenberg.org
 # commited local
 # ----------------> push to github
 > en0.2.30-6 scanWord修正小显示bug; 
+> en0.2.30-7 scanWord-v0.6 支持更多目的刷单词
 
 
 

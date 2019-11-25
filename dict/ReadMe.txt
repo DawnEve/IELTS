@@ -76,11 +76,8 @@ mysql> select * from word_ms where meaning like '%web.%';
 delete from word_ms where meaning like '%web.%';
 
 
-(2) 添加新列，陌生程度1-4级别，1是记住了，4是没见过。
-alter table word_ms add strangeness int(5) DEFAULT 4 comment '陌生程度';
 
-
-(3)添加雅思word list:
+(2)添加雅思word list:
 https://github.com/woshichuanqilz/others/blob/master/WindowsConfig/IELTS
 
 添加新列，雅思词汇 tag_ielts: 第一批3000个标签为1, 默认是0；
@@ -163,6 +160,53 @@ select * from sentence_dawn where line like "%risk%" order by add_time DESC, id 
 mysql> delete from sentence_dawn where line like '%listen and then answer the following%';
 Query OK, 47 rows affected (0.02 sec)
 
+
+
+
+
+
+
+####################################
+刷单词记录表，可以记录多用户的单词掌握情况
+CREATE TABLE `word_scan` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `uid` int(10) NOT NULL comment '用户id号',
+  `wid` int(10) NOT NULL comment '单词id号',
+  `unfamiliarScore` int(5) DEFAULT 0 comment '陌生程度',
+  `familiarScore` int(5) DEFAULT 0 comment '熟悉程度',
+  
+  `add_time` varchar(30) DEFAULT NULL,
+  `modi_time` varchar(30) DEFAULT NULL,
+  KEY (`id`),
+  PRIMARY KEY (`uid`,`wid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+使用复合主键，必须是MyISAM  引擎？
+
+mysql> desc word_scan;
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| id              | int(10)     | NO   | MUL | NULL    | auto_increment |
+| uid             | int(10)     | NO   | PRI | NULL    |                |
+| wid             | int(10)     | NO   | PRI | NULL    |                |
+| unfamiliarScore | int(5)      | YES  |     | 0       |                |
+| familiarScore   | int(5)      | YES  |     | 0       |                |
+| add_time        | varchar(30) | YES  |     | NULL    |                |
+| modi_time       | varchar(30) | YES  |     | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+
+陌生打分，见一次不认识，则陌生程度加1，貌似不会减少；
+熟悉打分，直接斩杀加3分，见一次后再斩杀加1分，此后不再加分。最后剩下的10个左右单词，陌生程度加1分。
+
+(1) 查看最熟悉的单词
+select a.id, a.word,a.phoneticSymbol,a.meaning,b.familiarScore from word_ms a left join ( select * from  word_scan where uid=1 ) b on a.id=b.wid order by familiarScore DESC, b.add_time DESC limit 10\G
+
+(2)查看最陌生的单词
+select a.id, a.word,a.phoneticSymbol,a.meaning,b.familiarScore, b.unfamiliarScore from word_ms a left join ( select * from  word_scan where uid=1 ) b on a.id=b.wid order by unfamiliarScore DESC, b.add_time DESC limit 10\G
+
+(3)按照目的刷单词
+http://ielts.dawneve.cc/dict/scanWord.html?page=1&aim=0  默认刷单词......: 按照 (familiarScore+0.5*unfamiliarScore) 选择没见过面的单词 
+aim=1: 
 
 
 

@@ -53,7 +53,7 @@ v1.1 增加词典链接;url接收单词 http://ielts.dawneve.cc/dict/index.html?
 .fix,
 .light{color:#ccc;}
 .fix{margin-left:20px;}
-#otherDict a, a.light{color:#ccc;}
+#otherDict a, a.light{color:#aaa;}
 #otherDict a:hover,a.light:hover{color:#00e;}
 
 
@@ -172,12 +172,13 @@ $(document).ready(function(){
 });
 </script>
 
-<div class=wrap>
-	<a target="_blank" href='http://127.0.0.1:20180/api/status/' class=light>统计信息</a>
+<div class="wrap light">
+	<a target="_blank" href='http://127.0.0.1:20180/api/status/' class=light>统计信息</a> | 
 	<a target="_blank" href='addWord.html' class=light>添加生词</a>
 	<a target="_blank" href='addSentence.html' class=light>添加语料</a>
-	<a target="_blank" href='sentence.html' class=light>查看语料库</a>
-	<a target="_blank" href='recite.html' class=light>背单词</a>
+	<a target="_blank" href='sentence.html?page=1' class=light>查看语料库</a> | 
+	<a target="_blank" href='recite.html' class=light>背单词拼写</a>
+	<a target="_blank" href='scanWord.html?page=1&aim=0' class=light>刷单词</a>
 </div>
 </body>
 </html>

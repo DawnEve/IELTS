@@ -1,12 +1,14 @@
 <meta charset="UTF-8">
 <title>刷单词神器 - 单词快速过遍数是记忆的好方法</title>
 
-<h1 class=light>刷单词神器 v0.4</h1>
+<h1 class=light>刷单词神器 v0.6</h1>
 <!--
 v0.1 基本可用
 v0.2 键盘方向键前后查看
 v0.3 +添加误删单词
 v0.4 顶部添加2nd开始背单词按钮；url传入页码；http://ielts.dawneve.cc/dict/scanWord.html?page=2
+v0.5 卡片背景更绚丽，能根据颜色变文字颜色；
+v0.6 支持更多目的刷单词
 
 
 # 使用方法：
@@ -73,7 +75,9 @@ bug: 299行 有空格的词组会报错。
 ol{padding-inline-start: 0px;}
 ol li{padding:10px; list-style-position:inside;}
 ol li.even{background:#eee;}
-ol li span{font-weight:bold; padding:0 20px;display:none; }
+ol li span{ /*font-weight:bold;*/ padding:0 20px;display:none; }
+ol li span.light3{display:inline; color:#ccc;padding:0 5px;}
+
 .card{
 	/*
 	border:1px dotted #eee;
@@ -95,6 +99,9 @@ ol li span{font-weight:bold; padding:0 20px;display:none; }
 
 .dictLink{color:#ccc; padding-left:200px; text-decoration: none; font-size:smaller;}
 .dictLink:hover{text-decoration: underline;}
+
+ol li a{text-decoration: none; color:orange;}
+ol li a:hover{text-decoration: underline;}
 </style>
 
 <script>
@@ -104,19 +111,45 @@ var oWords={
 	'cur':0, //当前位置
 	'todo':[], //不会的单词
 	'len':0, //总单词个数
-	'timeOut':1,//几秒后显示单词
-	'repeates':0, //重复过的次数
-	'bgcolors':['#FFD4D4','#FFE0D0','#FAFBB6', '#DEFFDB', '#D7FBFF','#DEE2FF','#FBD7FF','#eeeeee'], //卡片背景颜色
-	'oWords':'#eee', //当前背景色
+	'timeOut':1,//几秒后显示单词意思，卡片模式下。
+	'repeates':0, //重复过的遍数
+	'bgcolors':['#FFD4D4','#FFE0D0','#FAFBB6', '#DEFFDB', '#D7FBFF','#DEE2FF','#FBD7FF','#eeeeee',
+		'#414141','#A12D36', '#FF8350', '#80A6F0','#3EBBC7','#FF7B1D','#27AE61','#DC2F2F','#12B1CF', //dark color 
+		//淘汰的颜色 FEC519音标的区分度太低
+	], //卡片背景颜色，要深或浅，要6位。目前看浅色好看一点。
+	'color':'#eee', //当前背景色
+	'times':{}, //记录每个单词循环的次数，最后循环1遍的加3分熟悉度，2遍的加1分熟悉度，其余不加；最后todo中的加陌生度1分；
+	'pointA':0, //记录开始时间
+	'pointB':0, //记录结束时间
 };
 
 
+//tools 
 //获取url中的参数 https://www.cnblogs.com/vicky-li/p/9145026.html
 function getUrlParam(name) {
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
 	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
 	if (r != null) return unescape(r[2]); return null; //返回参数值
 }
+//1.js将16进制颜色转换成RGB格式
+//https://blog.csdn.net/u012255097/article/details/78772157
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);   
+    return result ? {       
+        r: parseInt(result[1], 16),              
+        g: parseInt(result[2], 16),       
+        b: parseInt(result[3], 16)   
+    } : null;
+}
+
+//2. 通过rgb值判断颜色深浅 https://blog.csdn.net/qq_36843675/article/details/79448051
+//通过把 RGB 模式转换成 YUV 模式，而 Y 是明亮度（灰阶），因此只需要获得 Y 的值而判断他是否足够亮就可以了：
+//越小颜色越深
+var Y=function(obj){
+	var Y=obj.r*0.299 + obj.g*0.578 + obj.b*0.114;
+	return Y>192;
+}
+
 
 
 $().ready(function(){
@@ -169,25 +202,34 @@ $().ready(function(){
 	})
 	
 	
-	//自动翻页功能，这样就不用太过于频繁的修改源码了
+	//初始化，加载单词
+	//自动翻页功能，这样就不用太过于频繁的修改py源码了
 	var page=getUrlParam('page');
 	page=page||1;
+	var aim=getUrlParam('aim'); //背单词目标设定
+	aim=aim||0
 	//加载后获取资源
-	$.get('http://127.0.0.1:20180/api/wordScan/?page='+page, function(res,status){
+	$.get('http://127.0.0.1:20180/api/wordScan/?page='+page+'&aim='+aim, function(res,status){
 		console.log('load word: ', status);
 		//res=JSON.parse(res)
-		console.log('page=',page)
-		oWords['words']=res;//给全局变量
+		console.log('page=',page, '; aim=', aim,  res.aim)
+		oWords['words']=res.data;//给全局变量
 		var oOl=$('<ol></ol>');
-		for(var word in res){
+		for(var word in oWords.words){
 			oWords.len++;
-			var info=res[word];
+			var info=oWords.words[word];
+			var phonetic=info.phonetic?info.phonetic:"";
 			var even=oWords.len%2==0?' class=even':'';
-			var oLi=$('<li'+even+'><input type=checkbox name='+word+'>'+word+' <span>'+info.meaning+"</span></li>");
+			var oLi=$('<li'+even+'><input type=checkbox name='+word+'>'+word+' <span><a class=light2>'+phonetic+"</a> "+info.meaning+"</span></li>");
 			showOnClick(oLi);//添加单击事件
 			oOl.append(oLi);
+			//初始化每个单词过的遍数
+			oWords.times[word]=0;
 		}
 		$('#word').append(oOl);
+		
+		//默认直接全选
+		$('#sellectAll').trigger('click');
 	})
 	
 	//开始背单词按钮
@@ -223,6 +265,9 @@ $().ready(function(){
 		//生成卡片
 		oWords['keyEnabled']=true;//开始响应键盘事件
 		refresh()
+		
+		//开始记录时间
+		oWords['pointA']=new Date().getTime();
 	})
 	
 	//响应键盘事件
@@ -295,11 +340,18 @@ $().ready(function(){
 		$('#status').append('<br>Remember Percentage: '+leftPct+'%<div style="height:5px;width:100%;background:red"><span style="height:100%;width:'+leftPct+'%;background:#eee;display:block;"></span></span>')
 		
 		//判断是否背完了
-		if(oWords.todo.length==0){
-			alert('任务完成');
+		if(oWords.todo.length<=10){
+			if(oWords.todo.length==10 && oWords['pointB']==0){
+				alert('任务基本完成! 请看控制台: 反馈刷新再开一局 or 直接刷新再来一遍?');
+				oWords['pointB']=new Date().getTime();
+			}
 			//给后台反馈
+			console.log('%cTips: 反馈并记录到后台: $(document).trigger("feedback"); %c //第一面斩杀熟悉度加3分，第二面斩杀熟悉度加1分；最后剩下的单词(oWords.todo中的)不熟悉度加1分;','color:red;','color:#aaaaaa');
 			
-			return false;
+			if(oWords.todo.length==0){
+				console.log('任务完成！请F12反馈到后台，或者F5刷新，再开一局!');
+				return false;
+			}
 		}
 		//循环背诵，到最后一个
 		if(oWords.cur>=oWords.todo.length){
@@ -316,6 +368,7 @@ $().ready(function(){
 			oWords.cur=oWords.todo.length-1;
 		}
 		
+		//准备卡片
 		var word=oWords.todo[oWords.cur];
 		var info=oWords.words[word];
 		//console.log(word,info)
@@ -332,13 +385,77 @@ $().ready(function(){
 			oLi.trigger("click");
 		},oWords.timeOut*1000)
 
-		$('#word').html(oLi);
+		$('#word').html(oLi);//显示卡片
+		oWords.times[word]=oWords.repeates; //该单词显示遍数和当前过的遍数一致;
 		
+		//从第二遍开始，卡片变色生效;
 		if(oWords.repeates>0){
 			//换卡片的颜色
 			oWords.color=oWords.bgcolors[ oWords.repeates % oWords.bgcolors.length ];
 			$('#word .card').css('background', oWords.color)
+			//设置卡片文字的颜色
+			$('#word .card').css('color', Y( hexToRgb(oWords.color) )?"black":"white" );
 		}
 	}
+	
+	//给后台反馈数据：1或者2次浏览的单词(浏览过0和1次，熟悉度加3和1分)，以及最后剩下到todo中的单词(陌生度加1分)
+	function feedback(){
+		//构建第一个数据
+		var oFamiliar={'g3':[], 'g1':[]}
+		for(var word in oWords.times){
+			var times=oWords.times[word];
+			if(times==0){
+				oFamiliar['g3'].push(word);//加3分
+			}else if(times==1){
+				oFamiliar['g1'].push(word);//加1分
+			}
+		}
+		//第二个数据
+		var aUnfamiliar=oWords.todo;
+		
+		//*********************
+		
+		//开始向后台传递
+		console.log('sendToPy: ',oFamiliar, aUnfamiliar)
+		//如果已经传递过一次了，则啥都不干
+		if(oWords['feedbacked']!=undefined){
+			console.log('%c这次啥也没干，因为此前已提交过。','color:red;', '； 想再次提交，请控制台输入: delete oWords.feedbacked; 后再试。')
+			return false;
+		}
+		
+		/*
+		tmp1=JSON.stringify(oFamiliar)
+		tmp2=JSON.stringify(aUnfamiliar)
+		console.log('InJS: tmp1=',tmp1, 'tmp2='.tmp2)
+		*/
+		console.log('提交中，请稍候...');
+		$.post('http://127.0.0.1:20180/api/wordScanFeedback/',{
+			'plus':JSON.stringify(oFamiliar), //tmp1,
+			'minus':JSON.stringify(aUnfamiliar), //tmp2,
+		},function(res,status){
+			oWords['feedbacked']=true;//已经向后台提交过
+			//console.log('FromPy:', res,status)
+			
+			//刷新页面，显示最后几个单词列表
+			$('#word').html("<span class=light2>本次刷词已记录到数据库! 本次卡片耗时: "+ ((oWords.pointB-oWords.pointA)/1000/60).toFixed(2)+"min <br>难背单词列表:</span><hr>");
+			var oOl=$('<ol></ol>');
+			var i=0;
+			for(var word in res.data.unfamiliarScore){
+				var info=oWords.words[word];
+				var even=(++i)%2==0?' class=even':'';
+				var phonetic=info.phonetic?info.phonetic:"";
+				var wordUrl='<a target=_blank href="/dict/index.html?word='+word+'">'+word+'</a>'
+				var oLi=$('<li'+even+'>'+wordUrl+" <span class=light3>"+info.phonetic+'</span> <span class=light3>'+info.meaning+"</span></li>");
+				oOl.append(oLi);
+			}
+			$('#word').append(oOl);
+			$('#word').append("<hr><span style='color:red'>少侠，请 shift+F5 刷新，再开一局!</span>");
+		})
+	}
+	//自定义事件
+	$(document).on('feedback',feedback)
+	//触发提交
+	//$(document).trigger('feedback')
+	
 })
 </script>
