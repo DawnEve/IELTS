@@ -2,13 +2,14 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>拂晓词典 - dawnDict v1.1</title>
+<title>拂晓词典 - dawnDict v1.2</title>
 <!--
 more at ReadMe.txt
 v0.1 基本可用
 v0.5 添加修改单词功能；
 v1.0 代码重构，分成好几个小py文件
 v1.1 增加词典链接;url接收单词 http://ielts.dawneve.cc/dict/index.html?word=corrupt
+v1.2 查词时，自动更新url
 
 -->
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
@@ -95,7 +96,7 @@ function getUrlParam(name) {
 var showTrans=function(){
 	var word=$('#word').val().trim(); //两头去空格
 	if(word=='')return;//空单词啥也不做
-	
+
 	$.get('http://127.0.0.1:20180/api/dict/'+word, function(res){
 		if(res.status==0){
 			$('#show').html(res.data.msg)
@@ -141,6 +142,8 @@ var showTrans=function(){
 		}
 	})
 	
+	//不刷新，更新url
+	history.replaceState({}, "", "/dict/index.html?word="+word);
 }
 
 
