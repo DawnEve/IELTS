@@ -1,0 +1,91 @@
+
+
+<style>
+.box ol li span{color:#ccc;padding-right:5px;}
+.box .month{border-bottom:1px dashed black; color:orange;}
+
+.footer{border-top:1px dotted #aaa; color:#aaa; margin-top:50px;}
+</style>
+
+<h1>Contents</h1>
+<p>Order by month DESC, day ASC;</p>
+
+
+<div class=box>
+	<p class=month>November, 2019</p>
+	<ol>
+		<li>theweek | The vanishing Outer Banks <a target="_blank" href="2019/11/26.txt">[txt]</a> <span>Nov 26, 2019 | 1419 words</span> </li>
+		<li>wired | What Is Time? One Physicist Hunts for the Ultimate Theory <a target="_blank" href="2019/11/28.txt">[txt]</a> <span>Nov 28, 2019 | 1834 words</span> </li>
+		
+	</ol>
+
+</div>
+
+
+
+<div class=footer>
+The end.
+</div>
+
+
+<script>
+var print=console.log
+//最简单的ajax实例
+window.onload=function(){
+	//获取每个.box ol li 中的a
+	var aBox=document.getElementsByClassName('box')
+	//get li
+	var aLi=[]
+	for(var i=0; i<aBox.length;i++){
+		var oBox=aBox[i];
+		var aLi2=oBox.getElementsByTagName('li');
+		Array.prototype.push.apply(aLi,aLi2);//合并数组到第一个
+	}
+	//get a 
+	var aA=[];
+	for(var i=0; i<aLi.length;i++){
+		var oLi=aLi[i];
+		var aA2=oLi.getElementsByTagName('a');
+		Array.prototype.push.apply(aA,aA2);//合并数组到第一个
+	}
+
+	//绑定事件
+	for(var i in aA){
+		var oA=aA[i]
+		//print(oA)
+		oA.onclick=function(e){
+			e.preventDefault();//阻止默认事件
+			openText(this.href)
+
+		}
+	}
+
+	function openText(fileName){
+		var xmlhttp=new XMLHttpRequest(); //1.获取对象
+		//2.绑定回调函数
+		xmlhttp.onreadystatechange=function(){
+			if (xmlhttp.readyState==4 && xmlhttp.status==200){
+				//新窗口打开
+				//document.getElementById("text").innerHTML=xmlhttp.responseText;
+				//打开新窗口
+				var newWindowObi=window.open('', "_blank");
+				//var newWindowObi=window.open('', "_blank",'location=yes');
+				newWindowObi.document.write("<style>.light,.grey{color:#ccc;} </style>")
+				newWindowObi.document.write("<span class=light><a href='/reading/'>Home</a> | dawnReader0.2 with dawnDict: "+fileName+"</span><hr>")
+				//
+				newWindowObi.document.write("<div style='margin:10px auto; width:80%;min-width:500px; line-height: 1.6;'><pre style='word-wrap: break-word!important; white-space: pre-wrap;font-size: 17px;font-family: -apple-system-font,BlinkMacSystemFont,\"Helvetica Neue\",\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei UI\",\"Microsoft YaHei\",Arial,sans-serif;text-align: justify;'>");
+				newWindowObi.document.write(xmlhttp.responseText);
+				newWindowObi.document.write("</pre></div>")
+				newWindowObi.document.write("<script src='https://ielts.dawneve.cc/wordKing/dawnDict.js'></s"+"cript>")
+				newWindowObi.document.write("<script> window.history.pushState({},0,'"+fileName+"'); </s"+"cript>")
+			}
+		}
+		//3.设定访问的url
+		//xmlhttp.open("GET","2019/11/28.txt",true);
+		xmlhttp.open("GET",fileName,true);
+		//4.发送请求
+		xmlhttp.send();
+	}
+}
+
+</script>

@@ -57,6 +57,7 @@ select (id-1) as id_jump from word_ms a where not exists (select 1 from word_ms 
 |    5535 |
 |    5540 |
 |    5547 |
+insert into word_ms(id) values(5499);
 
 
 
@@ -125,7 +126,7 @@ CREATE TABLE `word_searched` (
 
 
 ####################################
-生词，易错词
+生词，主要是易写的错词
 CREATE TABLE `word_unknown` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `word` varchar(50) DEFAULT NULL,
@@ -250,6 +251,13 @@ https://www.cambridgeenglish.org/Images/22105-ket-vocabulary-list.pdf
 
 
 
+6.备份表
+mysqldump -u 用户名 -p 数据库名 表名> 导出的文件名
+G:\xampp\mysql\bin\mysqldump -h y.biomooc.com -P 7070 -u root -p wang word_unknown > G:\xampp\htdocs\IELTS\dict\backup\tb_word_unknown_20191127.sql
+有更好用的脚本： tools/backup_DB_tables.py
+备份到 backup/目录下，git不跟踪，自行发送到Email中。
+
+
 
 
 
@@ -262,6 +270,7 @@ v1.0 代码重构，分成好几个小py文件
 	__init__ 好像不会用
 	__all__ =[] 也不好用
 v1.1 反馈结果新增 viewed 字段，影响筛选单词时的排序;
+v1.2 备份脚本//todo
 
 
 todo

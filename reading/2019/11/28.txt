@@ -1,0 +1,106 @@
+wired | What Is Time? One Physicist Hunts for the Ultimate Theory
+<span class=grey>Nov 28, 2019 | 1834 words
+ERIN BIBA|SCIENCE|02.26.1005:30 AM</span>
+
+
+SAN DIEGO – One way to get noticed as a scientist is to tackle a really difficult problem. Physicist Sean Carroll has become a bit of a rock star in geek circles by attempting to answer an age-old question no scientist has been able to fully explain: What is time?
+
+Sean Carroll is a theoretical physicist at Caltech where he focuses on theories of cosmology, field theory and gravitation by studying the evolution of the universe. Carroll's latest book, From Eternity to Here: The Quest for the Ultimate Theory of Time, *is an attempt to bring his theory of time and the universe to physicists and nonphysicists alike.*Here at the annual meeting of the American Association for the Advancement of Science, where he gave a presentation on the arrow of time, scientists stopped him in the hallway to tell him what big fans they were of his work.
+
+Carroll sat down with Wired.com on Feb. 19 at AAAS to explain his theories and why Marty McFly’s adventure could never exist in the real world, where time only goes forward and never back.
+
+
+
+
+Wired.com: Can you explain your theory of time in layman’s terms?
+
+Sean Carroll: I'm trying to understand how time works. And that's a huge question that has lots of different aspects to it. A lot of them go back to Einstein and spacetime and how we measure time using clocks. But the particular aspect of time that I'm interested in is the arrow of time: the fact that the past is different from the future. We remember the past but we don't remember the future. There are irreversible processes. There are things that happen, like you turn an egg into an omelet, but you can’t turn an omelet into an egg.
+
+And we sort of understand that halfway. The arrow of time is based on ideas that go back to Ludwig Boltzmann, an Austrian physicist in the 1870s. He figured out this thing called entropy. Entropy is just a measure of how disorderly things are. And it tends to grow. That's the second law of thermodynamics: Entropy goes up with time, things become more disorderly. So, if you neatly stack papers on your desk, and you walk away, you're not surprised they turn into a mess. You'd be very surprised if a mess turned into neatly stacked papers. That's entropy and the arrow of time. Entropy goes up as it becomes messier.
+
+So, Boltzmann understood that and he explained how entropy is related to the arrow of time. But there's a missing piece to his explanation, which is, why was the entropy ever low to begin with? Why were the papers neatly stacked in the universe? Basically, our observable universe begins around 13.7 billion years ago in a state of exquisite order, exquisitely low entropy. It's like the universe is a wind-up toy that has been sort of puttering along for the last 13.7 billion years and will eventually wind down to nothing. But why was it ever wound up in the first place? Why was it in such a weird low-entropy unusual state?
+
+That is what I'm trying to tackle. I’m trying to understand cosmology, why the Big Bang had the properties it did. And it's interesting to think that connects directly to our kitchens and how we can make eggs, how we can remember one direction of time, why causes precede effects, why we are born young and grow older. It's all because of entropy increasing. It's all because of conditions of the Big Bang.
+
+
+
+
+Wired.com: So the Big Bang starts it all. But you theorize that there's something before the Big Bang. Something that makes it happen. What's that?
+
+Carroll: If you find an egg in your refrigerator, you're not surprised. You don't say, "Wow, that's a low-entropy configuration. That's unusual," because you know that the egg is not alone in the universe. It came out of a chicken, which is part of a farm, which is part of the biosphere, etc., etc. But with the universe, we don't have that appeal to make. We can’t say that the universe is part of something else. But that's exactly what I'm saying. I'm fitting in with a line of thought in modern cosmology that says that the observable universe is not all there is. It's part of a bigger multiverse. The Big Bang was not the beginning.
+
+And if that's true, it changes the question you're trying to ask. It's not, "Why did the universe begin with low entropy?" It's, "Why did part of the universe go through a phase with low entropy?" And that might be easier to answer.
+
+
+
+Wired.com: In this multiverse theory, you have a static universe in the middle. From that, smaller universes pop off and travel in different directions, or arrows of time. So does that mean that the universe at the center has no time?
+
+Carroll: So that's a distinction that is worth drawing. There's different moments in the history of the universe and time tells you which moment you're talking about. And then there's the arrow of time, which give us the feeling of progress, the feeling of flowing or moving through time. So that static universe in the middle has time as a coordinate but there's no arrow of time. There's no future versus past, everything is equal to each other.
+
+
+
+Wired.com: So it’s a time that we don't understand and can't perceive?
+
+Carroll: We can measure it, but you wouldn't feel it. You wouldn't experience it. Because objects like us wouldn't exist in that environment. Because we depend on the arrow of time just for our existence.
+
+
+Wired.com: So then, what is time in that universe?
+
+Carroll: Even in empty space, time and space still exist. Physicists have no problem answering the question of “If a tree falls in the woods and no one's there to hear it, does it make a sound?” They say, “Yes! Of course it makes a sound!” Likewise, if time flows without entropy and there's no one there to experience it, is there still time? Yes. There's still time. It's still part of the fundamental laws of nature even in that part of the universe. It's just that events that happen in that empty universe don't have causality, don't have memory, don't have progress and don't have aging or metabolism or anything like that. It's just random fluctuations.
+
+
+Wired.com: So if this universe in the middle is just sitting and nothing's happening there, then how exactly are these universes with arrows of time popping off of it? Because that seems like a measurable event.
+
+Carroll: Right. That's an excellent point. And the answer is, almost nothing happens there. So the whole point of this idea that I'm trying to develop is that the answer to the question, “Why do we see the universe around us changing?” is that there is no way for the universe to truly be static once and for all. There is no state the universe could be in that would just stay put for ever and ever and ever. If there were, we should settle into that state and sit there forever.
+
+It's like a ball rolling down the hill, but there's no bottom to the hill. The ball will always be rolling both in the future and in the past. So, that center part is locally static – that little region there where there seems to be nothing happening. But, according to quantum mechanics, things can happen occasionally. Things can fluctuate into existence. There's a probability of change occurring.
+
+
+So, what I'm thinking of is the universe is kind of like an atomic nucleus. It's not completely stable. It has a half-life. It will decay. If you look at it, it looks perfectly stable, there's nothing happening … there's nothing happening … and then, boom! Suddenly there's an alpha particle coming out of it, except the alpha particle is another universe.
+
+Wired.com: So inside those new universes, which move forward with the arrow of time, there are places where the laws of physics are different – anomalies in spacetime. Does the arrow of time still exist there?
+
+Carroll: It could. The weird thing about the arrow of time is that it's not to be found in the underlying laws of physics. It's not there. So it's a feature of the universe we see, but not a feature of the laws of the individual particles. So the arrow of time is built on top of whatever local laws of physics apply.
+
+
+Wired.com: So if the arrow of time is based on our consciousness and our ability to perceive it, then do people like you who understand it more fully experience time differently then the rest of us?
+
+Carroll: Not really. The way it works is that the perception comes first and then the understanding comes later. So the understanding doesn't change the perception, it just helps you put that perception into a wider context. It’s a famous quote that's in my book from St. Augustine, where he says something along the lines of, "I know what time is until you ask me for a definition about it, and then I can't give it to you." So I think we all perceive the passage of time in very similar ways. But then trying to understand it doesn’t change our perceptions.
+
+
+Wired.com: So what happens to the arrow in places like a black hole or at high speeds where our perception of it changes?
+
+Carroll: This goes back to relativity and Einstein. For anyone moving through spacetime, them and the clocks they bring along with them – including their biological clocks like their heart and their mental perceptions – no one ever feels time to be passing more quickly or more slowly. Or, at least, if you have accurate clocks with you, your clock always ticks one second per second. That's true if you're inside a black hole, here on Earth, in the middle of nowhere, it doesn't matter. But what Einstein tells us is that path you take through space and time can dramatically affect the time that you feel elapsing.
+
+The arrow of time is about a direction, but it's not about a speed. The important thing is that there's a consistent direction. That everywhere through space and time, this is the past and this is the future.
+
+
+Wired.com: So you would tell Michael J. Fox that it's impossible for him to go back to the past and save his family?
+
+Carroll: The simplest way out of the puzzle of time travel is to say that it can't be done. That's very likely the right answer. However, we don't know for sure. We're not absolutely proving that it can't be done.
+
+Wired.com: At the very least, you can't go back.
+
+Carroll: Yeah, no. You can easily go to the future, that's not a problem.
+
+Wired.com: We're going there right now!
+
+Carroll: Yesterday, I went to the future and here I am!
+
+One of things I point out in the book is that if we do imagine that it was possible, hypothetically, to go into the past, all the paradoxes that tend to arise are ultimately traced to the fact that you can't define a consistent arrow of time if you can go into the past. Because what you think of as your future is in the universe's past. So it can't be one in the same everywhere. And that's not incompatible with the laws of physics, but it's very incompatible with our everyday experience, where we can make choices that affect the future, but we cannot make choices that affect the past.
+
+
+Wired.com: So, one part of the multiverse theory is that eventually our own universe will become empty and static. Does that mean we'll eventually pop out another universe of our own?
+
+Carroll: The arrow of time doesn't move forward forever. There's a phase in the history of the universe where you go from low entropy to high entropy. But then once you reach the locally maximum entropy you can get to, there's no more arrow of time. It's just like this room. If you take all the air in this room and put it in the corner, that's low entropy. And then you let it go and it eventually fills the room and then it stops. And then the air's not doing anything. In that time when it's changing, there's an arrow of time, but once you reach equilibrium, then the arrow ceases to exist. And then, in theory, new universes pop off.
+
+Wired.com: So there's an infinite number of universes behind us and an infinite number of universes coming ahead of us. Does that mean we can go forward to visit those universes ahead of us?
+
+Carroll: I suspect not, but I don't know. In fact, I have a postdoc at Caltech who's very interested in the possibility of universes bumping into each other. Now, we call them universes. But really, to be honest, they are regions of space with different local conditions. It's not like they're metaphysically distinct from each other. They're just far away. It's possible that you could imagine universes bumping into each other and leaving traces, observable effects. It's also possible that that's not going to happen. That if they're there, there's not going to be any sign of them there. If that's true, the only way this picture makes sense is if you think of the multiverse not as a theory, but as a prediction of a theory.
+
+If you think you understand the rules of gravity and quantum mechanics really, really well, you can say, “According to the rules, universes pop into existence. Even if I can't observe them, that's a prediction of my theory, and I've tested that theory using other methods.” We're not even there yet. We don't know how to have a good theory, and we don't know how to test it. But the project that one envisions is coming up with a good theory in quantum gravity, testing it here in our universe, and then taking the predictions seriously for things we don't observe elsewhere.
+
+Images: 1) Artist's rendition of the multiverse./Jason Torchinsky. 2) Diagram of the multiverse./Sean Carroll. 3) Ken Weingart.
+
+
+<span class=grey>https://www.wired.com/2010/02/what-is-time/</span>

@@ -17,6 +17,7 @@ local: ielts.dawneve.cc/en/
 /en/links.html 
 英语本土期刊链接列表
 
+/reading/ 阅读器，选词翻译。保存为纯文本，支持html标签和简单的格式化class样式: .light,.grey,
 
 
 
