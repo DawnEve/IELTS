@@ -192,6 +192,7 @@ https://www.gutenberg.org
 > en0.2.30-9 dawnReader 从微信切换全文到隐藏的web页面 /reading/index2.html
 ############# 拂晓阅读器 基本的美化
 > en0.2.31-0 dawnDict-v1.2 查词时，自动更新url
+> en0.2.31-1 dawnReader 独立阅读器，接收参数text为文本地址
 # commited local
 # ----------------> push to github
 

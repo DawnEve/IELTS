@@ -1,25 +1,71 @@
-
+<meta http-equiv=Content-Type content="text/html;charset=utf-8">
 
 <style>
-.box ol li span{color:#ccc;padding-right:5px;}
-.box .month{border-bottom:1px dashed black; color:orange;}
+/*
+v0.1 基本可用
+v0.2 优化样式，阅读器独立出来了
 
-.footer{border-top:1px dotted #aaa; color:#aaa; margin-top:50px;}
+
+*/
+.light,.grey{color:#ccc;}
+.light{font-size:x-small;}
+
+.card{
+	width:1000px; 
+	margin:20px auto; 
+	border:1px solid #eaeaea; 
+	background:#fefefe; 
+	border-radius:10px;
+	transition:box-shadow .25s;
+	box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 
+		0 1px 5px 0 rgba(0,0,0,0.12), 
+		0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+
+.card ol li span{padding-right:5px;}
+.card .month{border-bottom:1px dashed black; color:orange;}
+
+.footer{
+	border-top:1px solid #ccc; 
+	color:#ccc; 
+	margin-top:50px; 
+	margin:0;padding:10px 10px; 
+	text-align:center;
+}
+
+/* tags for each kind of articles*/
+.tag{background:blue;color:#fff;font-size:x-small;padding:2px; font-weight:bold;}
+.tag.red{background:red;}
+.tag.green{background:green;}
+
 </style>
 
 <h1>Contents</h1>
 <p>Order by month DESC, day ASC;</p>
 
 
-<div class=box>
+
+
+
+
+
+
+
+
+
+
+<div class=card>
 	<p class=month>November, 2019</p>
 	<ol>
-		<li>theweek | The vanishing Outer Banks <a target="_blank" href="2019/11/26.txt">[txt]</a> <span>Nov 26, 2019 | 1419 words</span> </li>
-		<li>cta | Project overview: The Cancer-Testis (CT) Antigens <a target="_blank" href="2019/11/27.txt">[txt]</a> <span>Nov 27, 2019 | 368 words</span> </li>
-		<li>wired | What Is Time? One Physicist Hunts for the Ultimate Theory <a target="_blank" href="2019/11/28.txt">[txt]</a> <span>Nov 28, 2019 | 1834 words</span> </li>
+		<li>theweek | The vanishing Outer Banks <a target="_blank" href="2019/11/26.txt">[txt]</a> <span class=light>Nov 26, 2019 | 1419 words</span> </li>
+		<li>cta | Project overview: The Cancer-Testis (CT) Antigens <a target="_blank" href="2019/11/27.txt">[txt]</a> <span class=light>Nov 27, 2019 | 368 words</span>  <span class='tag red'>cancer</span> </li>
+		<li>wired | What Is Time? One Physicist Hunts for the Ultimate Theory <a target="_blank" href="2019/11/28.txt">[txt]</a> <span class=light>Nov 28, 2019 | 1834 words</span> </li>
+		<li>cnn|Scientists have discovered a 'monster' black hole that's so big it shouldn't exist<a target="_blank" href="2019/11/29.txt">[txt]</a> <span class=light>Nov 29, 2019 | 610 words</span></li>
 		
-		
-		<li>xx|xx<a target="_blank" href="">[txt]</a> <span>Nov ??, 2019 | ?? words</span> </li>
+		<!--
+		<li>xx|xx<a target="_blank" href="">[txt]</a> <span class=light>Nov ??, 2019 | ?? words</span> </li>
+		-->
 		
 	</ol>
 
@@ -27,8 +73,10 @@
 
 
 
+
+
 <div class=footer>
-The end.
+&copy;2009-2020 dawnReader. All rights reserved. | <a class=grey href='/en/' target=_blank>英语读报</a>
 </div>
 
 
@@ -36,8 +84,8 @@ The end.
 var print=console.log
 //最简单的ajax实例
 window.onload=function(){
-	//获取每个.box ol li 中的a
-	var aBox=document.getElementsByClassName('box')
+	//获取每个.card ol li 中的a
+	var aBox=document.getElementsByClassName('card')
 	//get li
 	var aLi=[]
 	for(var i=0; i<aBox.length;i++){
@@ -56,40 +104,30 @@ window.onload=function(){
 	//绑定事件
 	for(var i in aA){
 		var oA=aA[i]
-		//print(oA)
-		oA.onclick=function(e){
+		oA.onclick=function(e){			
 			e.preventDefault();//阻止默认事件
-			openText(this.href)
+			openText_InNewWindow(this.href)
 
 		}
 	}
-
-	function openText(fileName){
+	
+	//新窗口打开窗口
+	function openText_InNewWindow(fileName){
 		var xmlhttp=new XMLHttpRequest(); //1.获取对象
 		//2.绑定回调函数
 		xmlhttp.onreadystatechange=function(){
 			if (xmlhttp.readyState==4 && xmlhttp.status==200){
 				//新窗口打开
-				//document.getElementById("text").innerHTML=xmlhttp.responseText;
-				//打开新窗口
-				var newWindowObi=window.open('', "_blank");
-				//var newWindowObi=window.open('', "_blank",'location=yes');
-				newWindowObi.document.write("<style>.light,.grey{color:#ccc;} </style>")
-				newWindowObi.document.write("<span class=light><a href='/reading/'>Home</a> | dawnReader0.2 with dawnDict: "+fileName+"</span><hr>")
-				//
-				newWindowObi.document.write("<div style='margin:10px auto; width:80%;min-width:500px; line-height: 1.6;'><pre style='word-wrap: break-word!important; white-space: pre-wrap;font-size: 17px;font-family: -apple-system-font,BlinkMacSystemFont,\"Helvetica Neue\",\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei UI\",\"Microsoft YaHei\",Arial,sans-serif;text-align: justify;'>");
-				newWindowObi.document.write(xmlhttp.responseText);
-				newWindowObi.document.write("</pre></div>")
-				newWindowObi.document.write("<script src='https://ielts.dawneve.cc/wordKing/dawnDict.js'></s"+"cript>")
-				newWindowObi.document.write("<script> window.history.pushState({},0,'"+fileName+"'); </s"+"cript>")
+				var newWindowObi=window.open('/reading/dawnReader.html?text='+fileName, "_blank");
+				newWindowObi.document.write("<script> window.history.pushState({},0,'/reading/dawnReader.html?text="+fileName+"'); </s"+"cript>")
+				newWindowObi.location=newWindowObi.location; //刷新
 			}
 		}
 		//3.设定访问的url
-		//xmlhttp.open("GET","2019/11/28.txt",true);
 		xmlhttp.open("GET",fileName,true);
 		//4.发送请求
 		xmlhttp.send();
 	}
 }
-
 </script>
+<script src='/wordKing/dawnDict.js'></script>

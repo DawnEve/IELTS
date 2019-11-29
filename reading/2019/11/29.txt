@@ -1,0 +1,54 @@
+cnn|Scientists have discovered a 'monster' black hole that's so big it shouldn't exist
+<span class=light>Nov 29, 2019 | 610 words
+
+By Jessie Yeung, CNN
+Updated 0857 GMT (1657 HKT) November 29, 2019</span>
+
+(CNN)Scientists have discovered a "monster black hole" so massive that, in theory, it shouldn't exist.
+
+It's a stellar black hole — the type that forms after stars die, collapse, and explode. Researchers had previously believed that the size limit was no more than 20 times the mass of our sun because as these stars die, they lose most of their mass through explosions that expel matter and gas swept away by stellar winds.
+
+This theory has now been toppled by LB-1, the newly-discovered black hole. Located about 15,000 light years away, it has a mass 70 times greater than our sun, according to a press release from the Chinese Academy of Sciences.
+
+The findings were published by Chinese researchers in the journal Nature on Wednesday.
+
+==
+The Milky Way's black hole kicked a star out of our galaxy
+
+"Black holes of such mass should not even exist in our galaxy, according to most of the current models of stellar evolution," said Liu Jifeng, head of the team that made the discovery. "LB-1 is twice as massive as what we thought possible. Now theorists will have to take up the challenge of explaining its formation."
+
+Scientists are now scratching their heads at how LB-1 got so huge.
+
+The Chinese team has proposed a number of theories. LB-1's sheer size suggests that it "was not formed from the collapse of only one star," the study said -- instead, it could potentially be two smaller black holes orbiting each other.
+
+Another possibility is that it formed from a "fallback supernova." This is when a supernova -- the last stage of an exploding star -- ejects material during the explosion, which then falls back into the supernova, creating a black hole.
+
+==
+A new type of black hole has been discovered and it may be the smallest ever, astronomers say
+
+This fallback formation is theoretically possible, but scientists have never been able to prove or observe it. If this is how LB-1 formed, then we may have "direct evidence for this process" for the first time, the study said.
+
+LB-1 is not the biggest black hole ever discovered -- but it may be the largest of its kind. There are several types of black holes, and stellar black holes like LB-1 are on the smaller side, according to NASA. Supermassive black holes are much bigger -- they can be billions of times the mass of our sun.
+
+Scientists believe supermassive black holes may be connected to the formation of galaxies, as they often exist at the center of the massive star systems -- but it is still not clear exactly how, or which form first.
+
+
+--
+Stellar renaissance
+
+Stellar black holes are believed to be commonly scattered across the universe, but they are difficult to detect because they do not normally emit X-rays -- only doing so when they gobble up gas from a star that has ventured close enough. They are so elusive that scientists have only found, identified, and measured about two dozen stellar black holes, the press release said.
+
+The researchers at the Chinese Academy of Sciences tried a different approach. Instead of looking for X-rays emitted by black holes, the team looked for stars that were orbiting some invisible object, being pulled in by its gravity.
+
+Their efforts paid off -- they soon spotted a giant star eight times heavier than the sun, orbiting around what turned out to be LB-1.
+
+==
+The black hole that helps baby stars grow instead of destroying them
+
+"This discovery forces us to re-examine our models of how stellar-mass black holes form," said David Reitze, a physicist at the University of Florida. In May, Reitze's team made its own breakthrough discovery -- observing the never-before-seen collision of a neutron star and a black hole, which sent out ripples in space and time.
+
+These twin discoveries -- the collision, and now LB-1 -- indicate that scientists are reaching "a renaissance in our understanding of black hole astrophysics," said Reitze in the press release.
+
+There have been several other discoveries over the past year that have added to this renaissance. In October, researchers discovered what they believe to be a new type of black hole, smaller than the other kinds. And earlier this week, astronomers discovered a black hole that is actually helping baby stars grow instead of destroying them.
+
+<span class=light>https://edition.cnn.com/2019/11/28/asia/china-black-hole-discovery-intl-hnk-scli-scn/index.html</span>

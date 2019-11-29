@@ -57,9 +57,9 @@ select (id-1) as id_jump from word_ms a where not exists (select 1 from word_ms 
 |    5535 |
 |    5540 |
 |    5547 |
-insert into word_ms(id) values(5499);
-
-
+insert into word_ms(id) values(1027);
+insert into word_ms(id) values(1131);
+    
 
 #2) 查找带数字的单词
 mysql> select * from word_ms where word REGEXP '[0-9]{1,}'; ## live2

@@ -1,7 +1,6 @@
 wired | What Is Time? One Physicist Hunts for the Ultimate Theory
-<span class=grey>Nov 28, 2019 | 1834 words
+<span class=light>Nov 28, 2019 | 1834 words
 ERIN BIBA|SCIENCE|02.26.1005:30 AM</span>
-
 
 SAN DIEGO – One way to get noticed as a scientist is to tackle a really difficult problem. Physicist Sean Carroll has become a bit of a rock star in geek circles by attempting to answer an age-old question no scientist has been able to fully explain: What is time?
 
@@ -103,4 +102,4 @@ If you think you understand the rules of gravity and quantum mechanics really, r
 Images: 1) Artist's rendition of the multiverse./Jason Torchinsky. 2) Diagram of the multiverse./Sean Carroll. 3) Ken Weingart.
 
 
-<span class=grey>https://www.wired.com/2010/02/what-is-time/</span>
+<span class=light>https://www.wired.com/2010/02/what-is-time/</span>

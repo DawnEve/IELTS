@@ -1,9 +1,9 @@
 theweek | The vanishing Outer Banks
-Nov 26, 2019 | 1419 words
+<span class=light>Nov 26, 2019 | 1419 words
 
 Frances Stead Sellers
 The Outer Banks.Davicl2/iStock
-November 24, 2019
+November 24, 2019</span>
 
 This article originally appeared in The Washington Post. Used with permission.
 
@@ -75,4 +75,4 @@ Dorian chewed up the tarmac. Only four-wheel drives are allowed to make the trip
 
 "There's a whole new level of fear for those who stay."
 
-https://theweek.com/articles/880119/vanishing-outer-banks
+<span class=light>https://theweek.com/articles/880119/vanishing-outer-banks</span>

@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <title>刷单词神器 - 单词快速过遍数是记忆的好方法</title>
 
-<h1 class=light>刷单词神器 v0.7</h1>
+<h1 class=light>刷单词神器 v0.8</h1>
 <!--
 v0.1 基本可用
 v0.2 键盘方向键前后查看
@@ -10,6 +10,7 @@ v0.4 顶部添加2nd开始背单词按钮；url传入页码；http://ielts.dawne
 v0.5 卡片背景更绚丽，能根据颜色变文字颜色；
 v0.6 支持更多目的刷单词
 v0.7 排序新增viewed字段，用于筛选单词时排序
+v0.8 增加灰色背景机会到一半
 
 
 # 使用方法：
@@ -399,6 +400,10 @@ $().ready(function(){
 		if(oWords.repeates>0){
 			//换卡片的颜色
 			oWords.color=oWords.bgcolors[ oWords.repeates % oWords.bgcolors.length ];
+			//如果是计数次，必须是灰色背景
+			if(oWords.repeates %2==0){
+				oWords.color="#eeeeee";
+			}
 			$('#word .card').css('background', oWords.color)
 			//设置卡片文字的颜色
 			$('#word .card').css('color', Y( hexToRgb(oWords.color) )?"black":"white" );
@@ -446,6 +451,9 @@ $().ready(function(){
 			//console.log('FromPy:', res,status)
 			
 			//刷新页面，显示最后几个单词列表
+			if(oWords.pointB==0){
+				oWords.pointB=new Date().getTime();
+			}
 			$('#word').html("<span class=light2>本次刷词已记录到数据库! 本次卡片耗时: "+ ((oWords.pointB-oWords.pointA)/1000/60).toFixed(2)+"min <br>难背单词列表:</span><hr>");
 			var oOl=$('<ol></ol>');
 			var i=0;

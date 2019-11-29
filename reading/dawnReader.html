@@ -1,0 +1,110 @@
+<html>
+<head>
+<!--
+dawnReader 
+v0.2 独立web页面，可以接收绝对url作为参数
+v0.3 防止报错
+
+
+-->
+<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+<style>
+*{margin:0; padding:0;}
+.light,.grey{color:#ccc;}
+.light{font-size:x-small;}
+.btn{
+	background: #55b9ff;
+    color: white;
+    padding: 0 5px;
+	text-decoration: none;
+}
+.btn:hover{text-decoration: underline; background:#0096ff;}
+
+.title{font-size:smaller;}
+
+.textDiv{
+	margin:10px auto; 
+	width:80%;
+	max-width:600px;
+	line-height: 1.6;
+}
+
+#textPre{
+	word-wrap: break-word!important; 
+	white-space: pre-wrap;
+	font-size: 17px;
+	font-family: -apple-system-font,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei UI","Microsoft YaHei",Arial,sans-serif;
+	text-align: justify;
+}
+
+
+.footer{
+	border-top:1px solid #ccc; 
+	color:#ccc; 
+	margin-top:50px; 
+	margin:0;padding:10px 10px; 
+	text-align:center;
+}
+</style>
+</head>
+
+
+<body>
+	<div id=reader>
+		<span class='light title'><a class=btn href='/reading/index2.html'>Home</a> dawnReader0.2 with dawnDict: <span id=fileName>fileName</span></span>
+		<hr>
+		<div class='textDiv'>
+			<pre id='textPre'></pre>
+		</div>
+	</div>
+
+
+	<div class=footer>
+	&copy;2009-2020 dawnReader. All rights reserved. | <a class=grey href='/reading/index2.html'>Home</a>
+	</div>
+
+	<script src='/wordKing/dawnDict.js'></script>
+</body>
+
+
+
+<script>
+//tools
+var print=console.log
+function $(s){
+	return document.getElementById(s);
+}
+
+//最简单的ajax实例
+window.onload=function(){
+	function openText(fileName){
+		var xmlhttp=new XMLHttpRequest(); //1.获取对象
+		//2.绑定回调函数
+		xmlhttp.onreadystatechange=function(){
+			if (xmlhttp.readyState==4 && xmlhttp.status==200){
+				$("fileName").innerHTML=fileName;
+				$("textPre").innerHTML=xmlhttp.responseText;
+			}
+		}
+		//3.设定访问的url
+		xmlhttp.open("GET",fileName,true);
+		//4.发送请求
+		xmlhttp.send();
+	}
+	
+	//获取url参数
+	if(location.href.search('text=(.*)')<0){
+		//如果没有text参数，则alert提示，并给出返回按钮，然后返回。
+		alert('No text parameter from url!')
+		$("textPre").innerHTML="<a href=/reading/index2.html>Back</a>"
+		//
+		return false;
+	}
+	var textUrl=location.href.substring(location.href.search('text=(.*)')+5);
+	//"http://ielts.dawneve.cc/reading/2019/11/29.txt"
+	openText(textUrl)
+}
+
+</script>
+
+</html>
