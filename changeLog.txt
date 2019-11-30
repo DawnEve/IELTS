@@ -190,9 +190,10 @@ https://www.gutenberg.org
 ############# 拂晓词典刷单词神器: dict/scanWord.html v0.7
 > en0.2.30-8 scanWord-v0.7 排序新增viewed字段，用于筛选单词时排序
 > en0.2.30-9 dawnReader 从微信切换全文到隐藏的web页面 /reading/index2.html
-############# 拂晓阅读器 基本的美化
+############# 拂晓阅读器 基本的美化 /reading/index2.html
 > en0.2.31-0 dawnDict-v1.2 查词时，自动更新url
 > en0.2.31-1 dawnReader 独立阅读器，接收参数text为文本地址
+> en0.2.31-2 dawnReader-v0.4 第一行加粗
 # commited local
 # ----------------> push to github
 

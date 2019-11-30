@@ -4,6 +4,7 @@
 dawnReader 
 v0.2 独立web页面，可以接收绝对url作为参数
 v0.3 防止报错
+v0.4 第一行加粗
 
 
 -->
@@ -21,7 +22,7 @@ v0.3 防止报错
 .btn:hover{text-decoration: underline; background:#0096ff;}
 
 .title{font-size:smaller;}
-
+b.h1{font-size:large;}
 .textDiv{
 	margin:10px auto; 
 	width:80%;
@@ -83,7 +84,9 @@ window.onload=function(){
 		xmlhttp.onreadystatechange=function(){
 			if (xmlhttp.readyState==4 && xmlhttp.status==200){
 				$("fileName").innerHTML=fileName;
-				$("textPre").innerHTML=xmlhttp.responseText;
+				//$("textPre").innerHTML=xmlhttp.responseText;
+				//第一行加粗
+				$("textPre").innerHTML=xmlhttp.responseText.replace(/^([^\n]+)\n/,function(x){return "<b class=h1>"+x+"</b>";});
 			}
 		}
 		//3.设定访问的url

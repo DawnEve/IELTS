@@ -31,6 +31,17 @@ if($word==''){
 $data['word']=$word;
 $data['status']=1;
 
+
+//把查的词写入文件
+$date = date("Ymd");
+$file_name = 'backup/tmp/wordSearched_'.$date.'.txt'; //每天一个文件
+//$wordfile_handler = fopen("backup/wordSearched.txt", "a");
+$wordfile_handler = fopen($file_name, "a");
+$time=time();
+fwrite($wordfile_handler, $word."\t".$time."\n");
+fclose($wordfile_handler);
+
+
 //这里是词典
 $url="https://cn.bing.com/dict/SerpHoverTrans?q=".$word; //必应词典
 #$url="https://www.ldoceonline.com/dictionary/".$word; //朗文词典
