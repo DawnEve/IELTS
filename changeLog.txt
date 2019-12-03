@@ -193,7 +193,8 @@ https://www.gutenberg.org
 ############# 拂晓阅读器 基本的美化 /reading/index2.html
 > en0.2.31-0 dawnDict-v1.2 查词时，自动更新url
 > en0.2.31-1 dawnReader 独立阅读器，接收参数text为文本地址
-> en0.2.31-2 dawnReader-v0.4 第一行加粗
+> en0.2.31-2 dawnReader-v0.4 第一行加粗;js词典增加记录查询词功能，每天一个文件;
+> en0.2.31-3 /reading/index2.html 美化，并独立css文件
 # commited local
 # ----------------> push to github
 
@@ -222,6 +223,7 @@ https://www.sohu.com/a/248581597_290050
 
 2018.9.29 热烈庆祝公众号[英语读报]关注人数超过500人！ 
 2019.6.2 热烈庆祝公众号[英语读报]关注人数超过1000人！ 
+2019.11.26 公众号[英语读报]停止更新全文。 
 
 		<p>
 			<a class="button red" target='_blank' href="xx">xx</a>

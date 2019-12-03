@@ -33,9 +33,18 @@ b.h1{font-size:large;}
 #textPre{
 	word-wrap: break-word!important; 
 	white-space: pre-wrap;
+	/*
 	font-size: 17px;
 	font-family: -apple-system-font,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei UI","Microsoft YaHei",Arial,sans-serif;
+	*/
 	text-align: justify;
+	
+	font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 1.25em;
+    text-rendering: optimizeLegibility;
 }
 
 
@@ -100,6 +109,7 @@ window.onload=function(){
 		//如果没有text参数，则alert提示，并给出返回按钮，然后返回。
 		alert('No text parameter from url!')
 		$("textPre").innerHTML="<a href=/reading/index2.html>Back</a>"
+		location="/reading/index2.html";
 		//
 		return false;
 	}

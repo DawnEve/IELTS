@@ -1,0 +1,72 @@
+/*
+reader style
+*/
+.light,.grey{color:#ccc;}
+.light{font-size:x-small;}
+
+.header{
+	border-bottom:1px dotted #ccc; 
+	color:#ccc; 
+	padding:0px 10px; 
+	margin:0;
+
+	text-align:center;
+}
+
+.card{
+	width:1000px; 
+	margin:20px auto; 
+	border:1px solid #eaeaea;
+	background:#fefefe;
+	border-radius:10px;
+	transition:box-shadow .25s;
+	box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 
+		0 1px 5px 0 rgba(0,0,0,0.12), 
+		0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+.card ol li span{padding-right:5px;}
+.card .month{border-bottom:1px dotted #CCC; color:black; 
+	font-weight:bold; /*#009a61;*/
+	font-style: italic;
+}
+.card ol li a{color:#009a61; text-decoration: none;}
+.card ol li a:hover{color:#004e31; text-decoration: underline;}
+
+.footer{
+	border-top:1px dotted #ccc; 
+	color:#ccc; 
+	margin-top:50px; 
+	margin:0;padding:10px 10px; 
+	text-align:center;
+}
+
+/* tags for each kind of articles*/
+.tag{
+	font-size:x-small;
+	padding:2px 5px;
+	margin:2px 5px; 
+	border-radius:3px; 
+	font-weight:bold;
+	
+	color: #39739d;
+    background-color: #E1ECF4;
+    border-color: #E1ECF4;
+	margin-bottom: .5em;
+	/*cursor: pointer;*/
+}
+.tag:hover{background-color:#cee0ed; }
+.tag.red{color:#FD6C6C;background-color: rgba(255,206,206,0.5);}
+
+.tag.yellow {
+    /*content: '原创';*/
+    background-color: rgba(242,174,67,0.25);
+    color: #F2AE43;
+}
+.tag.green {
+    color: #017e66;
+    background-color: rgba(1,126,102,0.08);
+}
+
+.tag.bgGreen{color:white; background:#5fba7d;}
+.tag.bgBlue{color:white; background:#0095FF;}

@@ -4,6 +4,7 @@
 
 
 import pymysql
+import time
 # 单例模式 https://blog.csdn.net/qq_32539403/article/details/83343581
 # 方法很好 https://blog.csdn.net/qy20115549/article/details/82972993
 # 更多方法 https://www.cnblogs.com/ddjl/p/8670545.html
@@ -49,7 +50,7 @@ class DBUtil():
     #初始化
     def __init__(self):
         self.__connect()
-    
+
     # 连接异常后自动重连3次
     def _reConn (self,num = 28800,stime = 3): #重试连接总次数为1天,这里根据实际情况自己设置,如果服务器宕机1天都没发现就......
             _number = 0 #重连次数
@@ -60,7 +61,8 @@ class DBUtil():
                     _status = False
                 except:
                     self._db = None #如果ping不通，则清空，重新连接
-                    print('>>>重新连接数据库， tried =',_number)
+                    now=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+                    print('>>>重新连接数据库， tried =',_number, '; now:',now)
                     if self.__connect()==True: #重新连接,成功退出
                         _status = False
                         break

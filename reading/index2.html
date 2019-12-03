@@ -1,55 +1,23 @@
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
-
-<style>
-/*
+<link rel="stylesheet" type="text/css" href="css/reading.css">
+<!--
 v0.1 基本可用
 v0.2 优化样式，阅读器独立出来了
 
+-->
 
-*/
-.light,.grey{color:#ccc;}
-.light{font-size:x-small;}
-
-.card{
-	width:1000px; 
-	margin:20px auto; 
-	border:1px solid #eaeaea; 
-	background:#fefefe; 
-	border-radius:10px;
-	transition:box-shadow .25s;
-	box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 
-		0 1px 5px 0 rgba(0,0,0,0.12), 
-		0 3px 1px -2px rgba(0,0,0,0.2);
-}
-
-
-.card ol li span{padding-right:5px;}
-.card .month{border-bottom:1px dashed black; color:orange;}
-
-.footer{
-	border-top:1px solid #ccc; 
-	color:#ccc; 
-	margin-top:50px; 
-	margin:0;padding:10px 10px; 
-	text-align:center;
-}
-
-/* tags for each kind of articles*/
-.tag{background:blue;color:#fff;font-size:x-small;padding:2px; font-weight:bold;}
-.tag.red{background:red;}
-.tag.green{background:green;}
-
-</style>
-
-<h1>Contents</h1>
-<p>Order by month DESC, day ASC;</p>
-
-
-
-
-
-
-
+<div class=header>
+	<h1>Contents</h1>
+	<p>Order by month DESC, day ASC; | 
+	标签示例: 
+		<span class='tag'>tag1</span>
+		<span class='tag yellow'>yellow</span>
+		<span class='tag green'>green</span>
+		<span class='tag red'>red</span>
+		<span class='tag bgGreen'>bgGreen</span>
+		<span class='tag bgBlue'>bgBlue</span>
+	</p>
+</div>
 
 
 
@@ -58,9 +26,12 @@ v0.2 优化样式，阅读器独立出来了
 <div class=card>
 	<p class=month>December, 2019</p>
 	<ol>
-		<li>xx|xx<a target="_blank" href="2019/11/xx.txt">[txt]</a> <span class=light>Nov ??, 2019 | ?? words</span> </li>
+		<li>politics | It's time to ditch the term 'fake news'<a target="_blank" href="2019/12/1.txt">[txt]</a> <span class=light>Dec 01, 2019 | 1072 words</span> </li>
+		<li>politics | Government accused of complacency over rising homelessness<a target="_blank" href="2019/12/2.txt">[txt]</a> <span class=light>Dec 02, 2019 | 237 words</span> </li>
+		<li>bbc | India tiger on 'longest walk ever' for mate and prey<a target="_blank" href="2019/12/3.txt">[txt]</a> <span class=light>Dec 03, 2019 | 390 words</span> </li>
+		<li>Economist | Emergency preparedness: Tips for troglodytes<a target="_blank" href="2019/12/4.txt">[txt]</a> <span class=light>Dec 04, 2019 | 753 words</span> <span class='tag green'>精听</span></li>
 		<!--
-		<li>xx|xx<a target="_blank" href="2019/11/xx.txt">[txt]</a> <span class=light>Nov ??, 2019 | ?? words</span> </li>
+		<li>xx|xx<a target="_blank" href="2019/12/xx.txt">[txt]</a> <span class=light>Dec ??, 2019 | ?? words</span> </li>
 		-->
 	</ol>
 </div>

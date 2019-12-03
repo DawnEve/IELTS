@@ -1,0 +1,58 @@
+politics | It's time to ditch the term 'fake news'
+<span class=light>Dec 01, 2019 | 1072 words
+Sunday, 29 July 2018 7:44 AM|By James Ball</span>
+
+==
+"The committee would like 'fake news' to be a dead term. We should do everything in our power to make that a reality."
+
+
+In January of 2017, parliament’s Digital, Culture, Media,and Sport (DCMS) committee – headed up by Conservative MP Damian Collins – launched an inquiry into the phenomenon of 'fake news'.
+
+Over the eighteen months since that time, the inquiry has found much more than it set out to look for. It has ended up questioning the social media giants in Washington DC over bots, explored the role of Russia in spreading dodgy information to swing elections, takenc the forefront of investigating Cambridge Analytica, microtargeting and data harvesting, and had a blazing public row with Vote Leave strategist Dominic Cummings over its investigations into the campaign’s activities.
+
+As the committee finally published its interim report – despite the 18 months of evidence-gathering, the final report is still months away – on Sunday, the group’s inquiry into fake news came to a conclusion they’re unlikely to have imagined when they set out: they’ve rejected the idea of 'fake news' entirely.
+
+
+As originally conceived, the term 'fake news' was intended to cover entirely fabricated stories, usually created to make the author behind them a quick bit of money from online adverts if the story went viral. These type of stories came to attention in 2016 when they shifted from celebrity hoaxes – fake death stories would often quickly go viral before getting debunked – to politics, as Trump-related stories started attracting millions of hits.
+
+So far, so simple – but the committee (and the rest of us) hit on three problems. The first is that 'fake news' quickly lost that quite specific and useful definition in favour of coming to mean 'any journalism or story I don’t like'.
+
+This was largely the fault of Donald Trump, who, despite being the US President and therefore under oath obliged to uphold the Constitution (and thus the First Amendment), has publicly deemed multiple TV networks, journalists, and outlets as 'fake news' when they accurately report on his antics.
+
+
+
+The second issue with 'fake news' as an inquiry topic is that it’s never been a particularly big problem in the UK: while the US was bombarded with fake political stories which went mega-viral, the UK just never saw this volume of stories. And even in the US, this particular type of fake news has declined – partly due to Facebook changes, and partly because, as networks are taking action, it’s now just less worth the time of hoaxers to make fake news.
+
+The third problem is that 'fake news' is the least of our information problems, as the committee’s extensive investigations suggest. We can read misleading but not totally fabricated stories in mainstream newspapers, as well as in hyper-partisan blogs and far-right websites. We can see people share political memes making dubious or outright false claims (Theresa May’s husband being a major G4S shareholder is a common false trope) on social media. We can watch conspiracy theorists spout offensive nonsense about victims of terror or mass-shootings on YouTube. And often we can be misled by outlets simply reporting honestly what leading politicians say.
+
+None of those are 'fake news', but all of those distort our understanding of the world. So one of the central recommendations from the UK’s first official report into 'fake news' is that the government should reject the term – and we should stop using it.
+
+"We recommend that the government rejects the term 'fake news', and instead puts forward an agreed definition of the words 'misinformation' and 'disinformation'," the report notes – in my book on the topic I went for the rather blunter term 'bullshit', but these terms are more useful and reflect the real crisis in our information ecosystem better.
+
+Fake news was only ever the most visible tip of the iceberg when it comes to trying to restore trust in the media and to prevent the spread of polarising and dangerous misinformation and disinformation.
+
+
+
+Some of the issues are technological, for social networks to tackle. Some come down to geopolitics, and working out how we respond to efforts by Russia and others to poison our discourse – and make us paranoid in the process (one risk of Russian misinformation is that we each accuse our opponents of being Russian bots – itself achieving their goals). Some of these are economic: in the ad-driven online economy, exaggerated and sensationalised reporting will get more clicks and thus revenue than a more careful and measured piece. And some of this is cultural: stories which tell readers what they want to hear will often do better than one offering uncomfortable truths.
+
+The way information spreads is often messy and easily exploited – and the DCMS committee inquiry accidentally provided a case study of this by the way its own report was released.
+
+When long and complex official reports are released, journalists often get access to them early with an embargo (a strict rule not to publish before a set time) so that the report can be read in full and digested before a story is written, with the intention that it makes the quality of writing better than people having a mad race to pick out news lines.
+
+The DCMS committee released its report with an embargo of midnight on Sunday, presumably timed so that Carole Cadwalladr – the Observer journalist who has led the reporting on Cambridge Analytica – could be among the first to report its findings.
+
+However, someone handed the embargoed report to Dominic Cummings – the Vote Leave strategist – who promptly leaked it alongside a rubbishing of its work and its findings. Despite its surfacing in public, the committee insisted to journalists the embargo must hold – but Guardian media editor Jim Waterson had not received an embargoed copy (and thus not agreed to the terms), and so felt able to publish based on the leaked report – a story which then led the site, one of the largest online outlets in the world. Even then, the DCMS committee insisted its embargo should hold – trying to stick to its plan and not have rushed-out reporting – which some outlets adhered to, and others did not.
+
+Some on social media then wondered why so many outlets were ignoring what seemed to be a big story, suspecting a cover-up – itself a sort of disinformation.
+
+Cummings' motivation in leaking the report can only have been to try and scotch its roll-out and muddy the waters of its release – and his effort has at least to an extent succeeded: the story rolled out irregularly over Friday night (not peak news time), rather than the clean Sunday paper hit they wanted.
+
+There’s no way to regulate against that, and controlling the information ecosystem has always, and will always be, far too complex for anyone to fully master. But it does highlight on a small scale some of the challenges faced on much bigger, more complex, and even more important stories.
+
+We will never have a perfect information ecosystem, and the way the sausage gets made will always be a process we might not want to look too closely at. We'll need a variety of technological, financial, regulatory and cultural changes to make things better. But the committee has given us one useful start: the term 'fake news' is only holding us back.
+
+The committee would like 'fake news' to be a dead term. We should do everything in our power to make that a reality.
+
+<span class=light>James Ball is an award-winning journalist and writer. His latest book, 'Post-Truth: How Bullshit Conquered The World', was published by Biteback in May 2017. You can follow him on Twitter at @jamesrbuk.
+The opinions in politics.co.uk's Comment and Analysis section are those of the author and are no reflection of the views of the website or its owners.
+https://www.politics.co.uk/comment-analysis/2018/07/29/it-s-time-to-ditch-the-term-fake-news</span>
