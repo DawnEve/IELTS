@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>拂晓统计 - dawnDict v1.2</title>
+<!--
+more at ReadMe.txt
+v0.1 勉强可用
+-->
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<style>
+body{font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;}
+.wrap{width:800px; margin:0 auto;}
+#time{color:#ccc;}
+a.back{color:#ff9600;}
+
+.card{width:180px; height:220px; text-align:center;border:1px solid #ccc; display:inline-block; margin:5px;}
+
+.card p.big span{font-size:x-large;}
+.card p.title{display:block;background:#fff;font-size:large; margin:0;padding:10 0;}
+.card p{padding:5px; margin:5px; font-size:small;}
+.card p span{padding:0 10px;}
+
+.card.yellow{color: #F2AE43;}
+.card.yellow .title{background-color: rgba(242,174,67,0.25)}
+
+
+.card.red{color: #FD6C6C;}
+.card.red .title{background-color: rgba(255,206,206,0.5);}
+
+
+.card.green{color: #017e66;}
+.card.green .title{background-color: rgba(1,126,102,0.08);}
+</style>
+
+</head>
+
+
+
+<body>
+<div class=wrap>
+<a class=back target=_blank href="/dict/">Dict Home</a>
+	<p>Statistics about each table in the DB. <span id=time></span> </p>
+	<div id='show'>
+		<div class='card green' id=sentence>
+			<p class=title>sentence</p>
+			<p class="big">Total <span>0</span></p> 
+			<p>Today<span>0</span></p>
+			<p>Yesterday<span>0</span></p>
+			<p>Week<span>0</span></p>
+		</div>
+
+
+		<div class='card green' id="word_ms">
+			<p class=title>word_ms</p>
+			<p class="big">Total <span>0</span></p> 
+			<p>Today<span>0</span></p>
+			<p>Yesterday<span>0</span></p>
+			<p>Week<span>0</span></p>
+		</div>
+		
+
+		<div class='card red' id="word_unknown">
+			<p class=title>word_unknown</p>
+			<p class="big">Total <span>0</span></p> 
+			<p>Today<span>0</span></p>
+			<p>Yesterday<span>0</span></p>
+			<p>Week<span>0</span></p>
+		</div>
+		
+		<div class='card yellow' id="word_searched">
+			<p class=title>word_searched</p>
+			<p class="big">Total <span>0</span></p> 
+			<p>Today<span>0</span></p>
+			<p>Yesterday<span>0</span></p>
+			<p>Week<span>0</span></p>
+		</div>
+		
+
+
+
+
+	</div>
+</div>
+
+<script type="text/javascript">
+
+$(function(){
+	//显示日期
+	$('#time').html('['+new Date()+']')
+	//获取统计数据
+	$.get('http://127.0.0.1:20180/api/stat/', function(res){
+		if(res.status==0){
+			$('#show').html(res.data.msg)
+		}else{
+			//console.log(res)
+			refresh(res);
+		}
+	});
+})
+//根据结果展示图形
+function refresh(data){
+	function fill(id,json){
+		var oDiv=document.getElementById(id);
+		var aSpan=oDiv.getElementsByTagName('span')
+		//console.log(aSpan,json)
+		aSpan[0].innerHTML=json.total;
+		aSpan[1].innerHTML=json.today;
+		aSpan[2].innerHTML=json.yesterday;
+		aSpan[3].innerHTML=json.week;
+	}
+	//
+	fill("sentence",  data.sentence)
+	fill("word_ms",  data.word_ms)
+	fill("word_unknown",  data.word_unknown)
+	fill("word_searched",  data.word_searched)
+}
+</script>
+</body>
+</html>

@@ -58,7 +58,7 @@ def  add_sentence_routes(app):
             msg="nothing to be inserted!"
             status=0
         else:
-            source=request.form.get('source')
+            source=request.form.get('source','dict') #默认来自于字典
             add_time=int(time.time())
             ###########
             #过滤

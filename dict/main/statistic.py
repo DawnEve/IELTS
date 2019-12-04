@@ -2,12 +2,12 @@
 #
 from __init__ import *
 
-
+# v0.2 做了web页面
 
 def  add_statistic_routes(app):
     #
     # 查询统计信息
-    @app.route('/api/status/', methods=['GET'])
+    @app.route('/api/stat/', methods=['GET'])
     def statistics():
         #总体统计
         rs1=mydb.query('select count(*) from word_ms;');
@@ -41,30 +41,34 @@ def  add_statistic_routes(app):
         week3=mydb.query('select count(*) from word_searched where add_time>%d;'%oneWeek);
         #
         sentence=mydb.query('select count(*) from sentence_dawn;');
+        sentenceToday=mydb.query('select count(*) from sentence_dawn where add_time>%d;'%today);
+        sentenceYs=mydb.query('select count(*) from sentence_dawn where add_time>%d and add_time<%d;'% (yesterday,today) );
+        sentenceWeek1=mydb.query('select count(*) from sentence_dawn where add_time>%d;'%oneWeek);
         #返回值
         return cors({
-            'sentence':sentence[0][0],
-            'word':{
-                'total':{
-                    'ms':rs1[0][0],
-                    'unknown':rs2[0][0],
-                    'searched':rs3[0][0]
-                },
-                'yesterday':{
-                    'ms':ys1[0][0],
-                    'unknown':ys2[0][0],
-                    'searched':ys3[0][0]
-                },
-                'today':{
-                    'ms':td1[0][0],
-                    'unknown':td2[0][0],
-                    'searched':td3[0][0]
-                },
-                'week':{
-                    'ms':week1[0][0],
-                    'unknown':week2[0][0],
-                    'searched':week3[0][0]
-                }
+            'sentence':{
+                'total':sentence[0][0],
+                'today':sentenceToday[0][0],
+                'yesterday':sentenceYs[0][0],
+                'week':sentenceWeek1[0][0]
+            },
+            'word_ms':{
+                'total':rs1[0][0],
+                'today':td1[0][0],
+                'yesterday':ys1[0][0],
+                'week':week1[0][0]
+            },
+            'word_unknown':{
+                'total':rs2[0][0],
+                'today':td2[0][0],
+                'yesterday':ys2[0][0],
+                'week':week2[0][0]
+            },
+            'word_searched':{
+                'total':rs3[0][0],
+                'today':td3[0][0],
+                'yesterday':ys3[0][0],
+                'week':week3[0][0]
             }
         })
     #

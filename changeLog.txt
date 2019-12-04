@@ -195,6 +195,7 @@ https://www.gutenberg.org
 > en0.2.31-1 dawnReader 独立阅读器，接收参数text为文本地址
 > en0.2.31-2 dawnReader-v0.4 第一行加粗;js词典增加记录查询词功能，每天一个文件;
 > en0.2.31-3 /reading/index2.html 美化，并独立css文件
+> en0.2.31-4 /dict/stat.html 独立统计web页
 # commited local
 # ----------------> push to github
 
