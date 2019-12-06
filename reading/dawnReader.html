@@ -9,11 +9,9 @@ v0.4 第一行加粗
 
 -->
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scaleble=no">
 
 <style>
-
-
 *{margin:0; padding:0;}
 .light,.grey{color:#ccc;}
 .light{font-size:x-small;}
@@ -29,9 +27,9 @@ v0.4 第一行加粗
 b.h1{font-size:large;}
 .textDiv{
 	margin:10px auto; 
-	width:80%;
+	width:95%;
 	max-width:600px;
-	line-height: 1.6;
+	line-height: 1.3em;
 }
 
 #textPre{
@@ -129,6 +127,7 @@ window.onload=function(){
 
 
 //调整字体大小
+/*
 !(function(doc, win) {
 	var docEle = doc.documentElement,
 	evt = "onorientationchange" in window ? "orientationchange":"resize",
@@ -141,12 +140,13 @@ window.onload=function(){
 		}
 		width && (docEle.style.fontSize =size);
 		//弹出吧，看看大小
-		//console.log(width, size )
-		alert(width+' to '+ size )
+		console.log(width, ' to ', size )
+		//alert(width+' to '+ size )
 	};
 	win.addEventListener(evt, fn, false);
 	doc.addEventListener("DOMContentLoaded", fn, false);
 }(document, window));
+*/
 </script>
 
 </html>

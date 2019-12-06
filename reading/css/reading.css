@@ -1,8 +1,16 @@
 /*
 reader style
 */
-.light,.grey{color:#ccc;}
-.light{font-size:x-small;}
+body{
+	margin:10px auto; 
+	width:95%;
+	max-width:800px;
+}
+
+
+.grey{color:#ccc;}
+
+.light{font-size:x-small; color:#ddd;}
 
 .header{
 	border-bottom:1px dotted #ccc; 
@@ -12,9 +20,11 @@ reader style
 
 	text-align:center;
 }
+.header p{margin:5px;}
+
 
 .card{
-	width:1000px; 
+	/*width:1000px; */
 	margin:20px auto; 
 	border:1px solid #eaeaea;
 	background:#fefefe;
@@ -33,6 +43,19 @@ reader style
 .card ol li a{color:#009a61; text-decoration: none;}
 .card ol li a:hover{color:#004e31; text-decoration: underline;}
 
+
+.card .bingo{
+	display:block; 
+	padding-left:5px; 
+	color:#BBB;
+	/*rgba(248,118,109,0.5);
+	*/
+	border-left:5px solid #eee;
+}
+
+
+
+
 .footer{
 	border-top:1px dotted #ccc; 
 	color:#ccc; 
@@ -45,15 +68,16 @@ reader style
 .tag{
 	font-size:x-small;
 	padding:2px 5px;
-	margin:2px 5px; 
+	margin:5px 5px; 
 	border-radius:3px; 
 	font-weight:bold;
 	
 	color: #39739d;
     background-color: #E1ECF4;
     border-color: #E1ECF4;
+	/*cursor: pointer;
 	margin-bottom: .5em;
-	/*cursor: pointer;*/
+	*/
 }
 .tag:hover{background-color:#cee0ed; }
 .tag.red{color:#FD6C6C;background-color: rgba(255,206,206,0.5);}

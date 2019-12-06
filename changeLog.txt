@@ -2,6 +2,8 @@
 
 url: ielts.biomooc.com/
 local: ielts.dawneve.cc/
+mobile test tmp: m.biomooc.com
+
 
 ## 广告词：
 
@@ -199,9 +201,9 @@ https://www.gutenberg.org
 > en0.2.31-5 统计页增加上周; 阅读页美化;
 	/dict/main/ 新增单词时只打印一次sql语句; 
 	/reading/ 阅读器字号移动端测试，添加标题; 新增网易云音乐敏感词。
+> en0.2.31-6 /reading/阅读页美化，和微信基本一致;
 # commited local
 # ----------------> push to github
-
 
 
 
@@ -219,6 +221,8 @@ https://www.gutenberg.org
 --------
 url: ielts.biomooc.com/en/
 local: ielts.dawneve.cc/en/
+mobile test tmp: m.biomooc.com
+
 公众号html样式素材:
 http://bj.96weixin.com/
 
