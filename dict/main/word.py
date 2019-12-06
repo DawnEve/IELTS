@@ -169,7 +169,10 @@ def  add_word_routes(app):
         return cors({'status':status, 'data':msg})
     #
 
-
+    
+    ################
+    ## 新增未知单词
+    ################
     
     #字典查询后台接口，允许跨域访问
     @app.route('/api/newWord/', methods=['POST'])
@@ -300,9 +303,12 @@ def  add_word_routes(app):
             #score=1; #加几分?
             #
             msg={};
+            i=0
             for word in words:
+                i+=1
                 sql='select a.id,wid,unfamiliarScore,familiarScore from word_ms a left join ( select * from word_scan where uid=%d) b on a.id=b.wid where word="%s";' % (uid, word);
-                print('in for: sql=',sql)
+                if i==1:
+                    print('查询示例 in for: sql=',sql)
                 result=mydb.query(sql);
                 
                 #word_ms表肯定有单词，否则报错

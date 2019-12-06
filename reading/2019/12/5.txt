@@ -1,0 +1,28 @@
+science | Could this desert beetle help humans harvest water from thin air?
+<span class=light>Dec 05, 2019 | 577 words
+By Eva FrederickNov. 27, 2019 , 9:55 AM</span>
+==
+The Namib Desert beetle gets its water from fog. SOLVIN ZANKO/MINDEN PICTURES
+
+To survive in the arid wilderness of southwestern Africa, the Namib Desert beetle harvests water from thin air. The blueberry-size, long-legged insect leans its bumpy body into the wind, letting droplets of fog accumulate and drip down its wing case into its mouth. For years, scientists have tried to learn the insect’s secrets to help provide clean water to communities in water-stressed areas. Now, a team of researchers has gained deeper insight into how the texture on the insect’s body helps it collect water.
+
+When the Namib Desert beetle (Stenocara gracilipes) “fog basks,” water droplets hit its abdomen and roll down its body. Researchers have spent decades trying to discover how the insect’s surface transports the droplets to its mouth. But first, the beetle must collect the droplets. So, Hunter King, a physicist at the University of Akron in Ohio, and colleagues focused instead on how the shape and texture of the beetles increased the amount of water droplets they could capture from the air to begin with.
+
+It might seem easy to catch fog, “but if you’re trying to grab it, it goes right through your fingers,” King says. “That’s the whole problem. It’s difficult to make two things touch each other.”
+
+King and his team used 3D printing to create several spheres with varying surface textures—bumpy, grooved, and smooth—and tested them in a specially designed wind tunnel to see how much water they could pull out of the foggy breeze. They found that bumpy surfaces were fog magnets: A sphere with 1-millimeter lumps on its surface caught droplets with nearly 2.5 times the efficiency of a smooth sphere with the same surface area.
+
+To understand what was going on at a microscopic level, King reached out to animal movement expert Mattia Gazzola and his graduate student Fan Kiat Chan at the University of Illinois in Urbana. Gazzola’s lab specializes in hydrodynamic simulations. The two researchers created a computer model to see how different hydrodynamic forces acting on the water drops made them more or less likely to stick to a sphere’s textured surface.
+
+One important factor was how lubricated the surface is, the team discovered. If there is always a thin film of water, droplets were less likely to stick to it. The microscopic texture of the surface—how smooth or rough it was on the micrometer level—also influenced the behavior of the droplets, the scientists report this week in a presentation at the American Physical Society Division of Fluid Dynamics annual meeting in Seattle, Washington.
+
+If researchers can manipulate these properties to create more efficient beetle-inspired materials, Chan says, engineers could design a water-collection device for refugee tents that could catch water droplets from the wind. Such materials might also be fashioned into a bottle that could refill itself using water from the air.
+
+In some dry areas like the edge of the Sahara Desert in Morocco, residents have been harvesting fog for years. They use mesh that routes water into pipes, which transport it back to the village. Still, fog remains a hard-to-capture resource, Chan says, and even a slight increase in efficiency might benefit thirsty communities.
+
+Shifting the focus of the beetle research to how the insects are able to collect so much fog is a good move, says Jonathan Boreyko, a biomechanical engineer at Virginia Polytechnic Institute and State University in Blacksburg, who was not involved with the work. This aspect of the beetle’s water collection process has long been overlooked, he notes.
+
+How useful beetle-inspired technologies will be outside of the lab remains to be seen, Boreyko says. “You have to ask, ‘Can you actually scale this beetle approach to something large enough to collect enough water that actually matters on a human level?’”
+
+<span class=light>Posted in: Plants & Animals | doi:10.1126/science.aba3775
+https://www.sciencemag.org/news/2019/11/could-desert-beetle-help-humans-harvest-water-thin-air</span>

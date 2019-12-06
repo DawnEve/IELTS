@@ -9,7 +9,11 @@ v0.4 第一行加粗
 
 -->
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 <style>
+
+
 *{margin:0; padding:0;}
 .light,.grey{color:#ccc;}
 .light{font-size:x-small;}
@@ -95,7 +99,11 @@ window.onload=function(){
 				$("fileName").innerHTML=fileName;
 				//$("textPre").innerHTML=xmlhttp.responseText;
 				//第一行加粗
-				$("textPre").innerHTML=xmlhttp.responseText.replace(/^([^\n]+)\n/,function(x){return "<b class=h1>"+x+"</b>";});
+				$("textPre").innerHTML=xmlhttp.responseText.replace(/^([^\n]+)\n/,function(x){
+					//标题
+					document.title="英语读报 - "+x
+					return "<b class=h1>"+x+"</b>";
+				});
 			}
 		}
 		//3.设定访问的url
@@ -118,6 +126,27 @@ window.onload=function(){
 	openText(textUrl)
 }
 
+
+
+//调整字体大小
+!(function(doc, win) {
+	var docEle = doc.documentElement,
+	evt = "onorientationchange" in window ? "orientationchange":"resize",
+	fn = function() {
+		var width = docEle.clientWidth;
+		//
+		var size='17px';
+		if(width<600){
+			size= 20 * (width / 320) + "px";
+		}
+		width && (docEle.style.fontSize =size);
+		//弹出吧，看看大小
+		//console.log(width, size )
+		alert(width+' to '+ size )
+	};
+	win.addEventListener(evt, fn, false);
+	doc.addEventListener("DOMContentLoaded", fn, false);
+}(document, window));
 </script>
 
 </html>

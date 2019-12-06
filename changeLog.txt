@@ -196,6 +196,9 @@ https://www.gutenberg.org
 > en0.2.31-2 dawnReader-v0.4 第一行加粗;js词典增加记录查询词功能，每天一个文件;
 > en0.2.31-3 /reading/index2.html 美化，并独立css文件
 > en0.2.31-4 /dict/stat.html 独立统计web页
+> en0.2.31-5 统计页增加上周; 阅读页美化;
+	/dict/main/ 新增单词时只打印一次sql语句; 
+	/reading/ 阅读器字号移动端测试，添加标题; 新增网易云音乐敏感词。
 # commited local
 # ----------------> push to github
 

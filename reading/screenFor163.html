@@ -1,0 +1,71 @@
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>网易云音乐敏感词替换
+v0.1
+</title>
+
+<style>
+.wrap{width:90%; margin:10px auto; }
+h1{color:#eee;}
+#source{width:100%;display:block; margin: 10px 0; height:300px;}
+#output{
+	word-wrap: break-word!important; 
+	white-space: pre-wrap;}
+#info{color:red;}
+</style>
+<div class=wrap>
+	<h1>网易云音乐敏感词替换(English Only)</h1>
+	<textarea id=source>But do I think it passes the 2-3% threshold that I buy home insurance for? </textarea>
+	<button id=begin>Begin 替换</button>
+	<pre id=info></pre>
+	<pre id=output></pre>
+</div>
+
+<script>
+var print=console.log;
+function $(s){return document.getElementById(s);}
+
+window.onload=function(){
+	$('begin').onclick=function(){
+		//1.获取文字，并显示
+		var val=$('source').value
+		//console.log(val)
+		
+		//2. black word list
+		var oBlackWord={
+			'for':'/*for*/',
+			'until':'u/**/ntil ',
+			'goverment':'go/*ver*/ment',
+			'shifting':'shi/*f*/ting ',
+			'demographics':'de/*mogr*/aphics',
+			'improve':'im/*pr*/ove',
+			'insurance':'insur/*an*/ce',
+			'bullet':'bull/*et*/',
+			//以后有敏感词，接着往下补充:
+			'Jinping':'DaDa',
+			'Dalai Lama':'D/*_*/L',
+			'target':'tar/*get*/',
+			
+		}
+		
+		//3. screen
+		var oldVal=val;
+		var i=0, sword=[]
+		for(var word in oBlackWord){
+			//console.log(word, oBlackWord[word])
+			val=val.replace(new RegExp(word,'g'), oBlackWord[word])
+			//如果发生替换，则记录替换单词
+			if(oldVal != val){
+				i+=1;
+				sword.push(word)
+			}
+			oldVal=val;
+		}
+		
+		//4. 输出
+		print(i, sword)
+		$('info').innerHTML='检出并替换敏感词'+i+'个。F12查看更多。'
+		$('output').innerHTML=val;
+	}
+}
+
+</script>

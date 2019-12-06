@@ -2,17 +2,18 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>拂晓统计 - dawnDict v1.2</title>
+<title>拂晓统计 - dawnStat v0.2</title>
 <!--
 more at ReadMe.txt
 v0.1 勉强可用
+v0.2 增加上周
 -->
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <style>
 body{font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
     font-size: 1rem;}
 .wrap{width:800px; margin:0 auto;}
-#time{color:#ccc;}
+.light{color:#ccc;}
 a.back{color:#ff9600;}
 
 .card{width:180px; height:220px; text-align:center;border:1px solid #ccc; display:inline-block; margin:5px;}
@@ -41,14 +42,15 @@ a.back{color:#ff9600;}
 <body>
 <div class=wrap>
 <a class=back target=_blank href="/dict/">Dict Home</a>
-	<p>Statistics about each table in the DB. <span id=time></span> </p>
+	<p>Statistics about each table in the DB. <span id=time class=light></span> </p>
 	<div id='show'>
 		<div class='card green' id=sentence>
 			<p class=title>sentence</p>
 			<p class="big">Total <span>0</span></p> 
 			<p>Today<span>0</span></p>
 			<p>Yesterday<span>0</span></p>
-			<p>Week<span>0</span></p>
+			<p>Week1<span>0</span></p>
+			<p>Week2<span>0</span></p>
 		</div>
 
 
@@ -57,7 +59,8 @@ a.back{color:#ff9600;}
 			<p class="big">Total <span>0</span></p> 
 			<p>Today<span>0</span></p>
 			<p>Yesterday<span>0</span></p>
-			<p>Week<span>0</span></p>
+			<p>Week1<span>0</span></p>
+			<p>Week2<span>0</span></p>
 		</div>
 		
 
@@ -66,7 +69,8 @@ a.back{color:#ff9600;}
 			<p class="big">Total <span>0</span></p> 
 			<p>Today<span>0</span></p>
 			<p>Yesterday<span>0</span></p>
-			<p>Week<span>0</span></p>
+			<p>Week1<span>0</span></p>
+			<p>Week2<span>0</span></p>
 		</div>
 		
 		<div class='card yellow' id="word_searched">
@@ -74,10 +78,13 @@ a.back{color:#ff9600;}
 			<p class="big">Total <span>0</span></p> 
 			<p>Today<span>0</span></p>
 			<p>Yesterday<span>0</span></p>
-			<p>Week<span>0</span></p>
+			<p>Week1<span>0</span></p>
+			<p>Week2<span>0</span></p>
 		</div>
 		
-
+		
+		
+		<p  class=light>Server time: <span id=time2></span></p>
 
 
 
@@ -85,7 +92,6 @@ a.back{color:#ff9600;}
 </div>
 
 <script type="text/javascript">
-
 $(function(){
 	//显示日期
 	$('#time').html('['+new Date()+']')
@@ -94,7 +100,8 @@ $(function(){
 		if(res.status==0){
 			$('#show').html(res.data.msg)
 		}else{
-			//console.log(res)
+			//console.log('Server time now: ',res.time)
+			$('#time2').html(res.time);
 			refresh(res);
 		}
 	});
@@ -106,9 +113,11 @@ function refresh(data){
 		var aSpan=oDiv.getElementsByTagName('span')
 		//console.log(aSpan,json)
 		aSpan[0].innerHTML=json.total;
+		//
 		aSpan[1].innerHTML=json.today;
 		aSpan[2].innerHTML=json.yesterday;
 		aSpan[3].innerHTML=json.week;
+		aSpan[4].innerHTML=json.week2;
 	}
 	//
 	fill("sentence",  data.sentence)

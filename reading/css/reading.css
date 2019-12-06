@@ -65,7 +65,7 @@ reader style
 }
 .tag.green {
     color: #017e66;
-    background-color: rgba(1,126,102,0.08);
+    background-color: rgba(1,126,102,0.18);
 }
 
 .tag.bgGreen{color:white; background:#5fba7d;}
