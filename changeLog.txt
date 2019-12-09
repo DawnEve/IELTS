@@ -202,6 +202,7 @@ https://www.gutenberg.org
 	/dict/main/ 新增单词时只打印一次sql语句; 
 	/reading/ 阅读器字号移动端测试，添加标题; 新增网易云音乐敏感词。
 > en0.2.31-6 /reading/阅读页美化，和微信基本一致;
+> en0.2.31-7 /reading/更新
 # commited local
 # ----------------> push to github
 
