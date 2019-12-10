@@ -203,6 +203,7 @@ https://www.gutenberg.org
 	/reading/ 阅读器字号移动端测试，添加标题; 新增网易云音乐敏感词。
 > en0.2.31-6 /reading/阅读页美化，和微信基本一致;
 > en0.2.31-7 /reading/更新
+> en0.2.31-8 /dict/scan web显示aim
 # commited local
 # ----------------> push to github
 
