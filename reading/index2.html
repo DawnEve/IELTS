@@ -6,6 +6,7 @@
 <!--
 v0.1 基本可用
 v0.2 优化样式，阅读器独立出来了
+v0.3 自动根据日期识别周日，加样式
 
 -->
 <style>
@@ -25,14 +26,14 @@ v0.2 优化样式，阅读器独立出来了
 <div class=card>
 	<p class=month>December, 2019</p>
 	<ol>
-		<li class=sunday>politics | It's time to ditch the term 'fake news'<a target="_blank" href="2019/12/1.txt">[txt]</a> <span class=light>Dec 01, 2019 | 1072 words</span> </li>
+		<li>politics | It's time to ditch the term 'fake news'<a target="_blank" href="2019/12/1.txt">[txt]</a> <span class=light>Dec 01, 2019 | 1072 words</span> </li>
 		<li>politics | Government accused of complacency over rising homelessness<a target="_blank" href="2019/12/2.txt">[txt]</a> <span class=light>Dec 02, 2019 | 237 words</span> </li>
 		<li>bbc | India tiger on 'longest walk ever' for mate and prey<a target="_blank" href="2019/12/3.txt">[txt]</a> <span class=light>Dec 03, 2019 | 390 words</span> </li>
 		<li>Economist | Emergency preparedness: Tips for troglodytes<a target="_blank" href="2019/12/4.txt">[txt]</a> <span class=light>Dec 04, 2019 | 753 words</span> <span class='tag green'>精听</span> <span class=bingo>At the height of the cold war, people built fallout shelters in their yards, and governments installed them under public buildings.</span></li>
 		<li>science | Could this desert beetle help humans harvest water from thin air?<a target="_blank" href="2019/12/5.txt">[txt]</a> <span class=light>Dec 05, 2019 | 577 words</span> <span class='bingo'>The blueberry-size, long-legged insect leans its bumpy body into the wind, letting droplets of fog accumulate and drip down its wing case into its mouth.</span></li>
 		<li>economist | India v China: Forced smiles<a target="_blank" href="2019/12/6.txt">[txt]</a> <span class=light>Dec 06, 2019 | 717 words</span> <span class='tag green'>精听</span> <span class=bingo>India also fears the growing disparity between China’s military might and its own. With an economy that is now five times bigger, and with an industrial base and defence budget to match, China is rapidly outstripping a neighbour that still relies on imported weapons. </span></li>
 		<li>SA | Subtle Ancient Footprints Come to Light<a target="_blank" href="2019/12/7.txt">[txt]</a> <span class=light>Dec 07, 2019 | 270 words</span><span class='tag green'>精听</span> <span class=bingo>Ground-penetrating radar can detect tiny density differences that lead to images of ancient footprints impossible to discern by eye.</span></li>
-		<li class=sunday>science | Nitrogen crisis from jam-packed livestock operations has ‘paralyzed’ Dutch economy<a target="_blank" href="2019/12/8.txt">[txt]</a> <span class=light>Dec 08, 2019 | 931 words</span> </li>
+		<li>science | Nitrogen crisis from jam-packed livestock operations has ‘paralyzed’ Dutch economy<a target="_blank" href="2019/12/8.txt">[txt]</a> <span class=light>Dec 08, 2019 | 931 words</span> </li>
 		
 		<li>npr | Wealthy Donor Promises College Tuition To Help Spur Growth In Hometown<a target="_blank" href="2019/12/9.txt">[txt]</a> <span class=light>Dec 09, 2019 | 556 words</span><span class='tag green'>精听</span> <span class=bingo>The idea takes its cue from bigger cities, but it could hit some unexpected roadblocks.</span></li>
 		<!--
@@ -97,6 +98,13 @@ window.onload=function(){
 		var oLi=aLi[i];
 		var aA2=oLi.getElementsByTagName('a');
 		Array.prototype.push.apply(aA,aA2);//合并数组到第一个
+		
+		//如果li中的span.light日期是周日，则该li样式加sunday
+		var dateStr=oLi.getElementsByClassName('light')[0].innerHTML;
+		var date=dateStr.split(' |')[0];
+		if("Sun"==new Date(date).toString().substring(0,3)){
+			oLi.setAttribute('class','sunday');
+		}
 	}
 
 	//绑定事件
