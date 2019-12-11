@@ -245,12 +245,13 @@ def  add_word_routes(app):
             1:'\n刷生疏词汇......: 按照 unfamiliarScore 倒序排出来的单词;',
             2:'\n刷雅思单词......: 按照tag_ielts标签筛选',
             3:'\n刷易错单词......: 按照 听写的出错频率，可以不反馈到后台',
+            4:'\n刷易错单词......: 按照 添加顺序倒序，可以不反馈到后台',
             
             100:"\n非0且没有指定sql，则刷生僻单词......: 牛津分级不是a1,a2,b1,b2,c1的词(可重复背诵);"
         }
-        if aim>3:
+        if aim not in aims:
             aim=100;
-        print(aims[aim])
+        print(aim, aims[aim])
         if 0==aim:
             #从scan表uid=1单词的熟悉程度，按照 (familiarScore+0.5*unfamiliarScore+0.1*viewed)排列，则见面越多的越往后排
             sql="select a.id, a.word,a.phoneticSymbol,a.meaning,familiarScore,unfamiliarScore,viewed from word_ms a left join ( select * from  word_scan where uid="+str(uid)+" ) b on a.id=b.wid order by (familiarScore+0.5*unfamiliarScore+0.1*viewed), b.modi_time DESC, b.add_time DESC limit "+str((page-1)*100) +",100;";
@@ -260,6 +261,8 @@ def  add_word_routes(app):
             sql="select id, word, phoneticSymbol, meaning from word_ms where tag_ielts>0 limit "+ str((page-1)*100) +",100;";
         elif 3==aim:
             sql='select id, word,phoneticSymbol, meaning from word_ms where word in ( select tb.word from (select * from word_unknown order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC ) as tb ) limit ' + str((page-1)*100) +",100;";
+        elif 4==aim:
+            sql='select id, word,phoneticSymbol, meaning from word_ms where word in ( select tb.word from (select * from word_unknown order by add_time DESC, modi_time DESC,id DESC limit '+ str((page-1)*40) +',40 ) as tb );';
         else: 
             sql="select id, word, phoneticSymbol, meaning from word_ms where id>3000 and tag_ox is null limit "+ str((page-1)*100) +",100;";
         #

@@ -2,12 +2,13 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>拂晓语料库 v0.1</title>
+<title>拂晓语料库 v0.4</title>
 <!--
 version
 v0.1 可用
 v0.2 能url分页
-todo web页分页按钮
+v0.3 分页按钮
+v0.4 添加句子按钮
 -->
 
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
@@ -39,8 +40,16 @@ div,p,span{margin:0;padding:0;}
 span.highlight2,
 span.highlight{border-bottom:thin dotted rgba(255,0,0,0.4);}
 
-.pages{width:300px; margin:0 auto; padding:0}
+.pages{width:300px; margin:0 auto; padding:0; text-align:center;}
 .pages button{padding:10px;width:100px; cursor:pointer; opacity: 0.2;}
+
+.middle{width:300px; margin:30px auto; padding:0; text-align:center;}
+.middle a{ text-decoration:none; 
+	padding:5px;
+	background-color: rgba(255,206,206,0.5);
+	color: #FD6C6C;
+}
+.middle a:hover{color:red;}
 </style>
 
 </head>
@@ -63,6 +72,9 @@ span.highlight{border-bottom:thin dotted rgba(255,0,0,0.4);}
 	<button>Next</button>
 </div>
 
+<div class=middle>
+	<a href="addSentence.html">add sentence</a>
+</div>
 
 <script>
 print=console.log

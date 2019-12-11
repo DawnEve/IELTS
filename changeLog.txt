@@ -205,6 +205,7 @@ https://www.gutenberg.org
 > en0.2.31-7 /reading/更新
 > en0.2.31-8 /dict/scan web显示aim
 > en0.2.31-9 /reading/阅读页 v0.3 自动根据日期识别周日，加样式
+> en0.2.32-0 /dict/句子页add 添加句子btn
 # commited local
 # ----------------> push to github
 
