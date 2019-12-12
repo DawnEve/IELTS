@@ -249,6 +249,12 @@ def  add_word_routes(app):
             
             100:"\n非0且没有指定sql，则刷生僻单词......: 牛津分级不是a1,a2,b1,b2,c1的词(可重复背诵);"
         }
+        #如果传递get参数，则返回aim列表
+        get=request.args.get('get','');
+        if get!='':
+            return cors(aims);
+        
+        #
         if aim not in aims:
             aim=100;
         print(aim, aims[aim])

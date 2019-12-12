@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <title>刷单词神器 - 单词快速过遍数是记忆的好方法</title>
 
-<h1 class=light>刷单词神器 v0.9</h1>
+<h1 class=light>刷单词神器 v0.9.2</h1>
 <!--
 v0.1 基本可用
 v0.2 键盘方向键前后查看
@@ -12,6 +12,8 @@ v0.6 支持更多目的刷单词
 v0.7 排序新增viewed字段，用于筛选单词时排序
 v0.8 增加灰色背景机会到一半
 v0.9 修订帮助
+v0.9.1 web页添加Aim列表
+v0.9.2 反馈页隐藏无关提示;
 
 
 # 使用方法：
@@ -24,8 +26,14 @@ def wordJson():
 
 
 # 整体架构：
+RESTful API 接口模式，前后端分离。
 前端: html页面
 后端: python3 flask + mysql, restful API, 支持跨域访问;
+
+
+改后台为php也很容易，只需要按照原接口实现功能即可，前台不需要改动。
+
+
 
 
 bug: 299行 有空格的词组会报错。
@@ -221,7 +229,35 @@ $().ready(function(){
 	var page=getUrlParam('page');
 	page=page||1;
 	var aim=getUrlParam('aim'); //背单词目标设定
-	aim=aim||0
+	aim=aim||-1;
+	
+	//如果aim没有设置，则给出aim列表
+	//http://127.0.0.1:20180/api/wordScan/?get=1
+	if(-1==aim){
+		$.get('http://127.0.0.1:20180/api/wordScan/?get=1', function(res,status){
+			//console.log('load aims: ', res);
+			//清空界面： 隐藏掉多余按钮
+			$('#control').html('<span class=light>Click to choose an aim: </span>');
+			$('#begin').css('display','none');
+			$('#caption2').css('display','none');
+			//$('#help').css('display','none');
+			
+			$("#word").html("<ol></ol>");
+			var j=1;
+			for(var i in res){
+				var even=j++%2==0?"class=even":"";
+				//console.log(i,res[i])
+				$("#word ol").append("<li "+even+"><a href=?page=1&aim="+i+">[ Aim="+i+" ] "+res[i]+"</a></li>");
+			}
+		});
+		
+		//如果显示aim列表了，则直接返回，剩下的代码不执行。
+		return false;
+	}
+	
+	
+	//如果设置了aim，就可以执行了
+	if(aim<0)aim=0;
 	//加载后获取资源
 	$.get('http://127.0.0.1:20180/api/wordScan/?page='+page+'&aim='+aim, function(res,status){
 		console.log('load word: ', status);
@@ -274,7 +310,7 @@ $().ready(function(){
 		});
 		
 		//清空界面
-		$('#control').html('<span class=light>背诵模式： 键盘操作(空格 显示意思)<hr>1记住了;2稍熟悉;3见过;4未知 </span>');
+		$('#control').html('<span class=light>卡片背诵模式： 键盘操作(空格 显示意思)<hr>1记住了;2稍熟悉;3见过;4未知 </span>');
 		$('#begin').css('display','none');
 		$('#caption2').css('display','none');
 		$('#help').css('display','none');
@@ -459,11 +495,15 @@ $().ready(function(){
 			oWords['feedbacked']=true;//已经向后台提交过
 			//console.log('FromPy:', res,status)
 			
+			//清空界面
+			//$('#control').html('<hr>');
+			$('#control').html('<span class=light>列表浏览模式： 难背的单词，请使用响应模式继续刷。</span>');
+			
 			//刷新页面，显示最后几个单词列表
 			if(oWords.pointB==0){
 				oWords.pointB=new Date().getTime();
 			}
-			$('#word').html("<span class=light2>本次刷词已记录到数据库! 本次卡片耗时: "+ ((oWords.pointB-oWords.pointA)/1000/60).toFixed(2)+"min <br>难背单词列表:</span><hr>");
+			$('#word').html("<span class=light2>本次刷词已记录到数据库! 本次卡片耗时: "+ ((oWords.pointB-oWords.pointA)/1000/60).toFixed(2)+"min <br>难搞定 word list:</span><hr>");
 			var oOl=$('<ol></ol>');
 			var i=0;
 			for(var word in res.data.unfamiliarScore){
