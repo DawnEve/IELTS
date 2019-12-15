@@ -1,0 +1,65 @@
+cnn | How fake accounts pushing inflammatory content went viral -- with the help of YouTube's algorithms
+<span class=light>Dec 17, 2019 | 896 words
+By Donie O'Sullivan, CNN Business
+Updated 2240 GMT (0640 HKT) December 13, 2019</span>
+
+New York (CNN Business)YouTube channels posing as American news outlets racked up millions of views on false and inflammatory videos over several months this year, all with the help of YouTube's recommendation engine.
+
+Many of the accounts, which mostly used footage from CNN, but also employed some video from Fox News, exploited a YouTube feature that automatically creates channels on certain topics. Those topic channels are then automatically populated by videos related to the topic — including, in this case, blatant misinformation. YouTube has now shut down many of the accounts.
+
+YouTube's own algorithms also recommended videos from the channels to American users who watched videos about US politics. That the channels could achieve such virality -- one channel was viewed more than two million times over one weekend in October -- raises questions about YouTube's preparedness for tackling misinformation on its platform just weeks before the Iowa caucuses and points to the continuing challenge platforms face as people try to game their systems.
+
+In recent years, YouTube, which is owned by Google, has taken steps to increase the likelihood users will be recommended videos from what it determines as authoritative sources, like news outlets.
+
+==
+Google's updated ad policy will still allow politicians to run false ads
+
+Plasticity, a San Francisco natural language processing and artificial intelligence startup that gathered and analyzed the YouTube data, provided CNN with hundreds of examples of how the accounts had doctored on-screen graphics to make stories appear inflammatory.
+
+YouTube told CNN Business on Thursday that its threat analysis team had investigated and determined the channels were run from Southeast Asia and were part of a spam campaign, designed to make money from online ads. The company said it found nothing to suggest that the channels were linked to a state-backed campaign or that they were part of a coordinated influence campaign. Although Plasticity and CNN saw hundreds of videos that were about news and politics, YouTube said they removed many more videos that were entertainment clips.
+
+To help their videos go viral the person or people behind the YouTube channels created hundreds of false images that altered CNN's on-screen graphics to make stories and CNN's coverage of them appear inflammatory. Once the user clicked into the video, unaltered CNN footage would play.
+
+==
+Some of the fake headlines and graphics the YouTube channels used to promote their videos.
+
+One video was promoted using an image that falsely made it appear as if CNN had run an on-screen graphic that stated the "President is a disgrace" and showed a doctored image of President Trump with a noose around his neck.
+
+Another image showed a fake CNN on-screen graphic that read "War officially started!" and showed pictures of President Trump and the president of Iran.
+
+Responding to the findings on Thursday, a CNN spokesperson said YouTube needs to take responsibility.
+
+"Manipulation of our brand and intellectual property with the specific intent to misinform the public is an incredibly serious problem that platforms need to urgently address," the spokesperson said. "Platforms like YouTube bear a responsibility to manage the integrity of the content they deliver to audiences. That's something journalists know and have been doing effectively for generations. It's a core difference between platforms and publishers."
+
+A spokesperson for Fox News declined to comment.
+
+==
+Exclusive: The FBI is running Facebook ads targeting Russians in Washington
+
+"Unfortunately, reuploading content with sensationalist thumbnails is a common tactic spammers use in an attempt to attract views and revenue," a YouTube spokesperson said in a statement to CNN Business on Thursday. "We use a combination of machine learning and human review to identify and remove spam accounts, last quarter alone we removed nearly 5 million videos and 3 million channels for spam violations. We've taken action against these accounts and will continue our work to remove spam from the platform."
+
+YouTube said it had already shut down many channels prior to Plasticity's findings -- but used information provided to them by the firm to shut down 25 more.
+
+Social media platforms have been plagued with fake accounts targeting Americans. Some are run by nation states, like Russia and Iran, for geopolitical or ideological purposes. Other accounts are run by scammers and people trying to make a quick buck through online ads.
+
+But while their motivations may be different, scammers and nation state actors use similar playbooks, pushing content that focuses on divisions in American politics and society.
+
+Darren Linvill, an associate professor at Clemson University who reviewed Plasticity's data, told CNN Business that, regardless of the motives of the people behind the channels, it is the effect that matters.
+
+Linvill pointed to the polarizing, false, and inflammatory thumbnails and captions used on the YouTube channels discovered by Plasticity as an example of how scammers, spammers and nation state actors are using similar techniques and focusing on the same divisive issues.
+
+"The roots of this are the same," he said, "it's about how you communicate with people and get them to pay attention to you online."
+
+Plasticity began monitoring the fake accounts at the end of November after Ajay Patel, one of Plasticity's co-founders, noticed YouTube was repeatedly recommending he watch videos from the channels.
+
+Over the course of just one week, Plasticity said, it found more than two dozen YouTube channels that had more than 8 million views combined that were posting US news videos with false and misleading thumbnails and titles.
+
+In October, CNN Business observed a channel using similar tactics. YouTube's own algorithms recommended users watch videos on some of the channels, according to a CNN Business review in October of data from AlgoTransparency, a tool that tracks what YouTube recommends.
+
+"The professionalism of the operation surprised me. It felt like a round-the-clock operation putting out new content with fake thumbnails and headlines every few hours," Patel told CNN Business Thursday. "When accounts were deleted or banned, they were able to spin up new accounts within hours. The tactics they used to game the YouTube algorithm were executed perfectly. They knew what they were doing,"
+
+Plasticity reported its findings to YouTube and subsequently briefed representatives from the company by phone. YouTube removed the channels Plasticity identified.
+
+Plasticity and CNN Business found some evidence to suggest, but did not confirm, some of the accounts posting the videos had been potentially stolen from other YouTube users and repurposed. YouTube declined to comment on this.
+
+<span class=light>https://edition.cnn.com/2019/12/13/tech/youtube-fake-accounts-viral/index.html</span>

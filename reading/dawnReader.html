@@ -6,6 +6,7 @@ v0.2 独立web页面，可以接收绝对url作为参数
 v0.3 防止报错
 v0.4 第一行加粗
 v0.5 美化移动端，和微信基本一致。
+v0.6 解决url获取参数bug
 
 
 -->
@@ -51,6 +52,18 @@ b.h1{font-size:x-large;}
 }
 #textPre img{max-width:100%;}
 
+/*文中的引用部分：加粗，加大，左侧加灰色竖线。*/
+#textPre b.center{
+	border-left: 10px solid #ffc857;
+    display: block;
+    padding-left: 5px;
+	margin:5px 0;
+	font-size:larger;
+}
+
+
+
+
 .footer{
 	border-top:1px solid #ccc; 
 	color:#ccc; 
@@ -58,6 +71,8 @@ b.h1{font-size:x-large;}
 	margin:0;padding:10px 10px; 
 	text-align:center;
 }
+
+
 </style>
 </head>
 
@@ -88,6 +103,14 @@ function $(s){
 	return document.getElementById(s);
 }
 
+//获取url中的参数 https://www.cnblogs.com/vicky-li/p/9145026.html
+function getUrlParam(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+
+
 //最简单的ajax实例
 window.onload=function(){
 	function openText(fileName){
@@ -110,9 +133,11 @@ window.onload=function(){
 		//4.发送请求
 		xmlhttp.send();
 	}
+
 	
 	//获取url参数
-	if(location.href.search('text=(.*)')<0){
+	var textUrl = getUrlParam('text');
+	if(!textUrl){
 		//如果没有text参数，则alert提示，并给出返回按钮，然后返回。
 		alert('No text parameter from url!')
 		$("textPre").innerHTML="<a href=/reading/index2.html>Back</a>"
@@ -120,7 +145,7 @@ window.onload=function(){
 		//
 		return false;
 	}
-	var textUrl=location.href.substring(location.href.search('text=(.*)')+5);
+	//print(textUrl)
 	//"http://ielts.dawneve.cc/reading/2019/11/29.txt"
 	openText(textUrl)
 }
