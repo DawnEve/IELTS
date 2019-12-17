@@ -7,13 +7,17 @@
 v0.1 基本可用
 v0.2 优化样式，阅读器独立出来了
 v0.3 自动根据日期识别周日，加样式
-v0.4  
+v0.4 重写替换url为阅读器url; 点击 月份p 隐藏显示当月目录; 为js被禁做了plan B;
 
 -->
 <style>
-.card ol{padding-left: 30px;}
+.card ol{padding-left: 30px; display:none;}
+.card ol.current{display:block;}
 .card li.sunday{border-bottom:1px dotted green; background:rgba(255,255,181,0.2);}
 .card li.sunday:before{content:"[Sunday]"; color:green; opacity:0.2;}
+.card b.oldnew{/*熟词新义*/
+	color:orange;
+}
 </style>
 
 <div class=header>
@@ -32,7 +36,7 @@ v0.4
 
 <div class=card>
 	<p class=month>December, 2019</p>
-	<ol>
+	<ol class=current>
 		<li>politics | It's time to ditch the term 'fake news'<a target="_blank" href="2019/12/1.txt">[txt]</a> <span class=light>Dec 01, 2019 | 1072 words</span> </li>
 		<li>politics | Government accused of complacency over rising homelessness<a target="_blank" href="2019/12/2.txt">[txt]</a> <span class=light>Dec 02, 2019 | 237 words</span> </li>
 		<li>bbc | India tiger on 'longest walk ever' for mate and prey<a target="_blank" href="2019/12/3.txt">[txt]</a> <span class=light>Dec 03, 2019 | 390 words</span> </li>
@@ -42,16 +46,20 @@ v0.4
 		<li>SA | Subtle Ancient Footprints Come to Light<a target="_blank" href="2019/12/7.txt">[txt]</a> <span class=light>Dec 07, 2019 | 270 words</span><span class='tag green'>精听</span> <span class=bingo>Ground-penetrating radar can detect tiny density differences that lead to images of ancient footprints impossible to discern by eye.</span></li>
 		<li>science | Nitrogen crisis from jam-packed livestock operations has ‘paralyzed’ Dutch economy<a target="_blank" href="2019/12/8.txt">[txt]</a> <span class=light>Dec 08, 2019 | 931 words</span> </li>
 		
+		
 		<li>npr | Wealthy Donor Promises College Tuition To Help Spur Growth In Hometown<a target="_blank" href="2019/12/9.txt">[txt]</a> <span class=light>Dec 09, 2019 | 556 words</span><span class='tag green'>精听</span> <span class=bingo>The idea takes its cue from bigger cities, but it could hit some unexpected roadblocks.</span></li>
 		<li>science | DNA recovered from Arctic lakes holds clues for our future world<a target="_blank" href="2019/12/10.txt">[txt]</a> <span class=light>Dec 10, 2019 | 995 words</span> <span class=bingo>High in the Canadian Arctic on Baffin Island, beneath 10 meters of water and many more of mud, sits a refrigerated archive of Earth’s past life.</span></li>
 		<li>economist | The discovery of an ancient complex in Thessaloniki ignites old debates<a target="_blank" href="2019/12/11.txt">[txt]</a> <span class=light>Dec 11, 2019 | 885 words</span> <span class=bingo>Exaggerating only a little, some have called it the Byzantine Pompeii.</span></li>
 		<li>science | Biologists think they know why this stunning Hawaiian plant is vanishing<a target="_blank" href="2019/12/12.txt">[txt]</a> <span class=light>Dec 12, 2019 | 446 words</span> <span class=bingo></span> </li>
 		<li>cnn | Famous long lost painting may have been hidden behind wall for 23 years<a target="_blank" href="2019/12/13.txt">[txt]</a> <span class=light>Dec 13, 2019 | 409 words</span> <span class=bingo></span> </li>
-		<li>science | What’s creating thousands of craters off the California coast?<a target="_blank" href="2019/12/14.txt">[txt]</a> <span class=light>Dec 14, 2019 | 330 words</span> <span class=bingo></span> </li>
+		<li>science | What’s creating thousands of craters off the California coast?<a target="_blank" href="2019/12/14.txt">[txt]</a> <span class=light>Dec 14, 2019 | 330 words</span> <span class=bingo>Just off the coast of California, thousands of craterlike <b class=oldnew>depressions</b>, some as big as buses, dot the sea floor.</span> </li>
 		<li>cnn | The luxury yacht that turns into a submarine<a target="_blank" href="2019/12/15.txt">[txt]</a> <span class=light>Dec 15, 2019 | 314 words</span> <span class=bingo></span> </li>
-		<li>bbc | Why can't this doctor work in the UK?<a target="_blank" href="2019/12/16.txt">[txt]</a> <span class=light>Dec 16, 2019 | 1391 words</span> <span class=bingo></span> </li>
+		
+		
+		<li>bbc | Why can't this doctor work in the UK?<a target="_blank" href="2019/12/16.txt">[txt]</a> <span class=light>Dec 16, 2019 | 1391 words</span> <span class=bingo>He was immediately accepted on the scheme and unusually, passed the very rigorous English exam at first sitting and with <i>flying colours</i>. </span> </li>
 		<li>cnn | How fake accounts pushing inflammatory content went viral -- with the help of YouTube's algorithms<a target="_blank" href="2019/12/17.txt">[txt]</a> <span class=light>Dec 17, 2019 | 896 words</span> <span class=bingo></span> </li>
 		<li>bbc | Crows could be the smartest animal other than primates<a target="_blank" href="2019/12/18.txt">[txt]</a> <span class=light>Dec 18, 2019 | 1183 words</span> <span class=bingo></span> </li>
+		<li>cnbc | Only 11% of people say you need to get rich to make it in America<a target="_blank" href="2019/12/19.txt">[txt]</a> <span class=light>Dec 19, 2019 | 285 words</span> <span class=bingo>Money can pave the way to the American dream: owning a home, raising a family, having a successful career, retiring comfortably.</span> </li>
 		<!--
 		<li>xxxx<a target="_blank" href="2019/12/1x.txt">[txt]</a> <span class=light>Dec 1x, 2019 | ?? words</span> <span class=bingo></span> </li>
 		-->
@@ -97,18 +105,19 @@ v0.4
 
 <script>
 var print=console.log
-//最简单的ajax实例
+
 window.onload=function(){
-	//获取每个.card ol li 中的a
+	// step1 替换链接为阅读器链接
+	//1 获取每个.card ol li 中的a
 	var aBox=document.getElementsByClassName('card')
-	//get li
+	//2 get li
 	var aLi=[]
 	for(var i=0; i<aBox.length;i++){
 		var oBox=aBox[i];
 		var aLi2=oBox.getElementsByTagName('li');
 		Array.prototype.push.apply(aLi,aLi2);//合并数组到第一个
 	}
-	//get a 
+	//3 get a 
 	var aA=[];
 	for(var i=0; i<aLi.length;i++){
 		var oLi=aLi[i];
@@ -122,34 +131,32 @@ window.onload=function(){
 			oLi.setAttribute('class','sunday');
 		}
 	}
-
-	//绑定事件
+	//4 替换文章链接
 	for(var i in aA){
-		var oA=aA[i]
-		oA.onclick=function(e){			
-			e.preventDefault();//阻止默认事件
-			openText_InNewWindow(this.href)
-
+		var oA=aA[i];
+		var fileName=oA.href;
+		if( ! fileName.match('dawnReader')){
+			oA.href='/reading/dawnReader.html?text='+fileName;
 		}
 	}
 	
-	//新窗口打开窗口
-	function openText_InNewWindow(fileName){
-		var xmlhttp=new XMLHttpRequest(); //1.获取对象
-		//2.绑定回调函数
-		xmlhttp.onreadystatechange=function(){
-			if (xmlhttp.readyState==4 && xmlhttp.status==200){
-				//新窗口打开
-				var newWindowObi=window.open('/reading/dawnReader.html?text='+fileName, "_blank");
-				newWindowObi.document.write("<script> window.history.pushState({},0,'/reading/dawnReader.html?text="+fileName+"'); </s"+"cript>")
-				newWindowObi.location=newWindowObi.location; //刷新
-			}
+	
+	
+	// step2 给每个.card p绑定事件: 控制.card ol的显示
+	for(var i=0; i<aBox.length;i++){
+		var oBox=aBox[i];
+		var oP=oBox.getElementsByTagName('p')[0];
+		//添加默认显示，否则js获取不到 (js的bug)
+		oUl=oP.nextElementSibling;
+		oUl.style.display= (i==0)?"block":"none";
+		//单击切换
+		oP.onclick=function(){
+			var oUl=this.nextElementSibling;
+			oUl.style.display = oUl.style.display=='block'?"none":"block";
 		}
-		//3.设定访问的url
-		xmlhttp.open("GET",fileName,true);
-		//4.发送请求
-		xmlhttp.send();
 	}
+
+
 }
 </script>
 <script src='/wordKing/dawnDict.js'></script>
