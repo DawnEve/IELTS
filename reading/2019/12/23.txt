@@ -1,0 +1,31 @@
+newsweek | China is about to fire up its 'artificial sun' in quest for fusion energy
+<span class=light>Dec 23, 2019 | 494 words
+BY Hannah Osborne ON 12/17/19 AT 11:34 AM EST</span>
+
+China is about to start operation on its "artificial sun"—a nuclear fusion device that produces energy by replicating the reactions that take place at the center of the sun.
+
+If successful, the device could edge scientists closer to achieving the ultimate goal of nuclear fusion: near limitless, cheap clean energy.
+
+The device, called HL-2M Tokamak, is part of the nation's Experimental Advanced Superconducting Tokamak project, which has been running since 2006. In March, an official from the China National Nuclear Corporation announced it would complete building HL-2M by the end of the year.
+
+
+The coil system was installed in June and since then, work on HL-2M has gone "smoothly," the Xinhua News Agency reported in November.
+
+Duan Xuru, head of the Southwestern Institute of Physics, which is part of the corporation, announced the device will become operational in 2020 at the 2019 China Fusion Energy Conference, the state news agency said. He told attendees how the new device will achieve temperatures of over 200 million degrees Celsius. That's about 13 times hotter than the center of the sun. Previous devices developed for the artificial sun experiment reached 100 million degrees Celsius, a breakthrough that was announced in November last year.
+
+Nuclear fusion is the reaction that powers the sun. It involves fusing two lighter atomic nuclei to form a heavier nucleus—a reaction that releases a huge amount of energy. On the sun, where core temperatures reach about 15 million degrees Celsius, hydrogen nuclei combine to form helium.
+
+To recreate this on Earth, scientists must heat the fuel—types of hydrogen—to temperatures over 100 million degrees Celsius. At this point, the fuel becomes a plasma. This extremely hot plasma must be confined and one method scientists have been developing is a donut shaped device called a tokamak. This uses magnetic fields to try to stabilize the plasma so reactions can take place and energy be released. However, plasma is prone to producing bursts. If these touch the reactor wall it can damage the device.
+
+While stable nuclear fusion has been achieved, the amount of energy it takes to produce the reactions outweighs how much power is generated.
+
+James Harrison, a senior fusion physicist at the United Kingdom Atomic Energy Authority (UKAEA) told Newsweek that China's HL-2M Tokamak differs from other devices because of the flexibility of its magnetic field. Scientists will be able to tailor it to protect the interior of the device when it is operating at high power.
+
+
+He explained: "Magnetic confinement fusion devices—such as tokamaks—typically deposit the exhaust heat and particles from the fusion-producing core in a very narrow layer, centimeters-to-millimeters wide, which leads to very high heat and particle loads which can damage the surfaces lining the interior of the device in a reactor; the flexibility available on HL-2M will allow researchers to explore novel solutions to this problem."
+
+Harrison said the first stage of HL-2M will likely involve testing each part of the system individually. Chinese physicists are then expected to test integrated systems before beginning experiments. "The next step is to start producing relatively low-performance plasmas to explore the optimization of the plasma breakdown and ramp-up to higher performance, making improvements to various subsystems along the way to improve the reliability and controllability of the device," he said.
+
+"HL-2M will provide researchers with valuable data on the compatibility of high-performance fusion plasmas with approaches to more effectively handle the heat and particles exhausted from the core of the device. This is one of the biggest issues facing the development of a commercial fusion reactor, and the results from HL-2M, as part of the international fusion research community, will influence the design of these reactors."
+
+<span class=light>https://www.newsweek.com/china-about-fire-its-artificial-sun-quest-fusion-energy-1477705</span>

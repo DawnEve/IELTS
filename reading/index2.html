@@ -9,12 +9,28 @@ v0.2 优化样式，阅读器独立出来了
 v0.3 自动根据日期识别周日，加样式
 v0.4 重写替换url为阅读器url; 点击 月份p 隐藏显示当月目录; 为js被禁做了plan B;
 
+to use:
+Using AI to Eliminate Bias from Hiring https://hbr.org/2019/10/using-ai-to-eliminate-bias-from-hiring
+
+
 -->
 <style>
 .card ol{padding-left: 30px; display:none;}
 .card ol.current{display:block;}
-.card li.sunday{border-bottom:1px dotted green; background:rgba(255,255,181,0.2);}
-.card li.sunday:before{content:"[Sunday]"; color:green; opacity:0.2;}
+.card li.sunday{
+	/*border-bottom:1px dotted green; background:rgba(255,255,181,0.2);
+    margin-bottom: 10px;
+    border: 2px dotted #ccc;
+    border-radius: 5px;
+	*/	
+	background: rgba(255,255,181,0.3);
+}
+.card li.sunday:before{content:"[Sunday]"; color:orange; opacity:0.5;}
+.card li.sunday:after{
+	content:"";
+    display: block;
+	margin-bottom:20px;
+}
 .card b.oldnew{/*熟词新义*/
 	color:orange;
 }
@@ -57,11 +73,15 @@ v0.4 重写替换url为阅读器url; 点击 月份p 隐藏显示当月目录; �
 		
 		
 		<li>bbc | Why can't this doctor work in the UK?<a target="_blank" href="2019/12/16.txt">[txt]</a> <span class=light>Dec 16, 2019 | 1391 words</span> <span class=bingo>He was immediately accepted on the scheme and unusually, passed the very rigorous English exam at first sitting and with <i>flying colours</i>. </span> </li>
-		<li>cnn | How fake accounts pushing inflammatory content went viral -- with the help of YouTube's algorithms<a target="_blank" href="2019/12/17.txt">[txt]</a> <span class=light>Dec 17, 2019 | 896 words</span> <span class=bingo></span> </li>
+		<li>cnn | How fake accounts pushing inflammatory content went viral -- with the help of YouTube's algorithms<a target="_blank" href="2019/12/17.txt">[txt]</a> <span class=light>Dec 17, 2019 | 896 words</span> <span class=bingo>"Platforms like YouTube bear a responsibility to manage the integrity of the content they deliver to audiences. That's something journalists know and have been doing effectively for generations. It's a core difference between platforms and publishers."</span> </li>
 		<li>bbc | Crows could be the smartest animal other than primates<a target="_blank" href="2019/12/18.txt">[txt]</a> <span class=light>Dec 18, 2019 | 1183 words</span> <span class=bingo></span> </li>
 		<li>cnbc | Only 11% of people say you need to get rich to make it in America<a target="_blank" href="2019/12/19.txt">[txt]</a> <span class=light>Dec 19, 2019 | 285 words</span> <span class=bingo>Money can pave the way to the American dream: owning a home, raising a family, having a successful career, retiring comfortably.</span> </li>
+		<li>newsweek | Yes, Farmers Need Help. But So Do Hungry Families<a target="_blank" href="2019/12/20.txt">[txt]</a> <span class=light>Dec 20, 2019 | 616 words</span> <span class=bingo>It's only right that farmers be compensated for this administration's trade war, but cutting food stamps for millions of Americans is unjustifiable cruelty.</span> </li>
+		<li>hbr | Managing the Social Butterfly in Your Office<a target="_blank" href="2019/12/21.txt">[txt]</a> <span class=light>Dec 21, 2019 | 908 words</span> <span class=bingo>Without clipping their wings.</span> </li>
+		<li>hbr | The Art of Asking for (and Getting) Help<a target="_blank" href="2019/12/22.txt">[txt]</a> <span class=light>Dec 22, 2019 | 3521 words</span> <span class="tag green">精听</span> <span class=bingo></span> </li>
+		<li>newsweek | China is about to fire up its 'artificial sun' in quest for fusion energy<a target="_blank" href="2019/12/23.txt">[txt]</a> <span class=light>Dec 23, 2019 | 494 words</span> <span class=bingo></span> </li>
 		<!--
-		<li>xxxx<a target="_blank" href="2019/12/1x.txt">[txt]</a> <span class=light>Dec 1x, 2019 | ?? words</span> <span class=bingo></span> </li>
+		<li>xxxx<a target="_blank" href="2019/12/2x.txt">[txt]</a> <span class=light>Dec 2x, 2019 | ?? words</span> <span class=bingo></span> </li>
 		-->
 	</ol>
 </div>

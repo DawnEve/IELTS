@@ -209,6 +209,7 @@ https://www.gutenberg.org
 > en0.2.32-1 /dict/刷单词v0.9.1 web页添加Aim列表
 > en0.2.32-2 /reading/阅读页 v0.6 解决url获取参数bug
 > en0.2.32-3 /reading/index v0.4 单击显示隐藏当月目录
+> en0.2.32-4 add psg;
 # commited local
 # ----------------> push to github
 
