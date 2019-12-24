@@ -3,6 +3,8 @@
 * 接口方式 http://ielts.dawneve.cc/wordKing/dawnDict.php?word=good
 * v0.1 必应查词，允许跨域请求翻译
 * v0.2 改名字为 dawnDict 拂晓词典
+* v0.3 目录不存在时递归创建
+* 
 * 
 * 这是后台接口。详细使用请看同名js文件.
 */
@@ -31,6 +33,11 @@ if($word==''){
 $data['word']=$word;
 $data['status']=1;
 
+
+
+//文件夹
+$dir = 'backup/tmp/';
+is_dir($dir) OR mkdir($dir, 0777, true); // 如果文件夹不存在，将以递归方式创建该文件夹
 
 //把查的词写入文件
 $date = date("Ymd");

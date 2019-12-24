@@ -31,6 +31,7 @@ tips:很多网页是https的，需要构建https服务器，
 #v0.4 添加关闭按钮
 #v0.4.1 美化界面
 #v0.4.2 改名为dawnDict;支持console查单词 dawnDict.trans('good');
+#v0.4.3 长度为0或大于30的不查
 
 
 * todo 悬浮框显示；悬浮取词；
@@ -139,9 +140,14 @@ $(document).click(function(event){
 	trans:function(word,oDiv){
 		var self=this;
 		//console.log('word==>'+word+';')
+		if(word.length==0 || word.length>30){
+			//如果单词长度为0，或者超过30，就不查了
+			return false;
+		}
+		
 		self.ajax({
 			method:"get",
-			url:"https://ielts.dawneve.cc/wordKing/dawnDict.php?word="+word, //访问后台 //todo: 修改时要保证能访问到php文件
+			url:location.protocol+"//ielts.dawneve.cc/wordKing/dawnDict.php?word="+word, //访问后台 //todo: 修改时要保证能访问到php文件
 			success:function(data){
 				if(data.status){
 					if(data.res==''){

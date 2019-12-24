@@ -1,0 +1,31 @@
+hbr | Using AI to Eliminate Bias from Hiring
+<span class=light>Dec 27, 2019 | 746 words
+TECHNOLOGY | Frida Polli | October 29, 2019</span>
+
+Like any new technology, artificial intelligence is capable of immensely good or bad outcomes. The public seems increasingly focused on the bad, especially when it comes to the potential for bias in AI. This concern is both well-founded and well-documented. But what is AI? It is the simulation of human processes by machines. This fear of biased AI ignores a critical fact: The deepest-rooted source of bias in AI is the human behavior it is simulating. It is the biased data set used to train the algorithm. If you don’t like what the AI is doing, you definitely won’t like what humans are doing because AI is purely learning from humans.
+
+Let’s focus on hiring. The status quo of hiring is deeply flawed and quite frankly dystopian for three primary reasons.
+
+Unconscious human bias makes hiring unfair. The typical way of reviewing applicants prior to an interview is through recruiters reviewing résumés. Numerous studies have shown this process leads to significant unconscious bias against women, minorities and older workers.
+
+Large pools of applicants are being ignored. LinkedIn and other sourcing platforms have been so successful that, on average, 250 applicants apply for any open role. This translates into millions of applicants for a few thousand open roles. This process obviously cannot be handled manually. So, recruiters limit their review of the applicant pool to the 10% to 20% they think will show most promise: those coming from Ivy League campuses, passive candidates from competitors of the companies seeking to fill positions, or employee-referral programs. But guess what? Top colleges and employee-referral programs are much less diverse than the broader pool of applicants submitting résumés.
+
+
+Traditional hiring tools are already biased. This is permitted by a loophole in U.S. law: Federal regulations state that a hiring tool can be biased if it is job-related. “Job-related” means that the people who are successful in a role show certain characteristics. But if all “successful employees” are white men, due to a history of biased human hiring practices, then it is almost certain that your job-related hiring assessment will bias towards white men and against women and minorities. An African American woman from a non-Ivy League college who is lucky enough to become part of the pipeline, whose résumé is reviewed, and who passes the human recruiter evaluating her résumé may then be asked to take a biased assessment.
+
+Is it any wonder we struggle to hire a diverse workforce? What has led to today’s chronic lack of diversity, and what will continue to stunt diversity, are the human paradigms in place today, not AI.
+
+AI holds the greatest promise for eliminating bias in hiring for two primary reasons:
+
+1. AI can eliminate unconscious human bias. Many current AI tools for recruiting have flaws, but they can be addressed. A beauty of AI is that we can design it to meet certain beneficial specifications. A movement among AI practitioners like OpenAI and the Future of Life Institute is already putting forth a set of design principles for making AI ethical and fair (i.e., beneficial to everyone). One key principle is that AI should be designed so it can be audited and the bias found in it can be removed. An AI audit should function just like the safety testing of a new car before someone drives it. If standards are not met, the defective technology must be fixed before it is allowed into production.
+
+2. AI can assess the entire pipeline of candidates rather than forcing time-constrained humans to implement biased processes to shrink the pipeline from the start. Only by using a truly automated top-of-funnel process can we eliminate the bias due to shrinking the initial pipeline so the capacity of the manual recruiter can handle it. It is shocking that companies today unabashedly admit how only a small portion of the millions of applicants who apply are ever reviewed. Technologists and lawmakers should work together to create tools and policies that make it both possible and mandatory for the entire pipeline to be reviewed.
+
+Additionally, this focus on AI fairness should have us evaluate existing pre-hire assessments with the same standards. The U.S. Equal Employment Opportunity Commission (EEOC) wrote the existing fair-hiring regulations in the 1970s — before the advent of the public internet and the explosion in the number of people applying for each job. The EEOC didn’t anticipate modern algorithms that are less biased than humans yet also able to evaluate a much larger, more diverse pipeline. We need to update and clarify these regulations to truly encourage equal opportunity in hiring and allow for the use of algorithmic recruiting systems that meet clear criteria. Some precedents for standards have already occurred. The California State Assembly passed a resolution to use unbiased technology to promote diversity in hiring, and the San Francisco DA is using “blind sentencing” AI in criminal justice proceedings.
+
+The same standards should be applied to existing hiring tools. Amazon was nationally lambasted for months due to its male-biased hiring algorithm. Yet in the United States today, employers are legally allowed to use traditional, biased assessments that discriminate against women or minorities. How can this be? Probably because most people are unaware that biased assessments are prominently used (and legal). If we are going to call for unbiased AI — which we absolutely should — we should also call for the elimination of all biased traditional assessments.
+
+It is impossible to correct human bias, but it is demonstrably possible to identify and correct bias in AI. If we take critical steps to address the concerns that are being raised, we can truly harness technology to diversify the workplace.
+
+<span class=light>Frida Polli, a cognitive neuroscientist, is the co-founder and CEO of pymetrics, a platform that uses behavioral science and AI to match people to jobs accurately and fairly.
+https://hbr.org/2019/10/using-ai-to-eliminate-bias-from-hiring</span>
