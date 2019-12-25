@@ -1,0 +1,20 @@
+science | Artificial intelligence masters multiplayer poker
+<span class=light>Jan 01, 2019 | 302 words
+breakthrough 2019 | Adrian Cho</span>
+
+This year, an artificial intelligence (AI) program beat some of the world’s best players in the most popular version of poker, no-limit Texas Hold ’em. The landmark result marks the first time AI has prevailed in a multiplayer contest in which players have only imperfect information about the state of the game.
+
+AI has been trouncing humans in games at a spectacular rate. In 2007, computer scientists developed a program guaranteed not to lose at checkers. In 2016, another team developed an AI program that defeated the best humans at Go, a board game with vastly more configurations than checkers.
+
+Poker presents a stiffer challenge, as players cannot see their opponents’ cards and thus have limited information. In 2017, computer scientists developed an AI program unbeatable at a two-player version of Hold ’em—in which each player forms a hand from five cards laid face up on the table and two more each holds privately.
+
+Now, AI has bested world-class players in the full multiplayer game, as computer scientists at Carnegie Mellon University in Pittsburgh, Pennsylvania, announced in August. By playing 1 trillion games against itself, their program, Pluribus, developed a basic strategy for various kinds of situations—say, playing for an inside straight. For each specific hand, it could also think through how the cards would likely play out. In 20,000 hands with six players it outperformed 15 top-level players, as measured by average winnings per hand.
+
+Pluribus played differently from programs for two-player games. Those programs sought out a no-lose strategy, known as a Nash equilibrium, which guarantees that, on average, their opponents would do worse unless they also played with the exact same strategy. With multiple opponents, there is no such guarantee, so Pluribus simply learned what was most effective in a given situation. The program also taught itself to play while running on a single server with 64 processors—whereas the Go-playing program required more than 1200 processors.
+
+AI developers aren’t done playing games. In poker there’s still room for improvement. Although Pluribus can bluff, it cannot adapt its strategy to exploit an opponent’s particular weaknesses. Some more complex games such as contract bridge remain unmastered. Still, the most famous objective in the application of AI to games has fallen to the computers. It may be time humans cashed in their chips.
+
+<span class=light>References
+N. Brown and T. Sandholm, Superhuman AI for multiplayer poker, Science, Vol. 365, p. 885, 30 August 2019
+A. Blair and A. Saffidine, AI surpasses humans at six-player poker, Science, Vol. 365, p. 885, 30 August 2019
+https://vis.sciencemag.org/breakthrough2019/finalists/#face-face</span>
