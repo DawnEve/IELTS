@@ -211,8 +211,9 @@ https://www.gutenberg.org
 > en0.2.32-3 /reading/index v0.4 单击显示隐藏当月目录
 > en0.2.32-4 add psg;
 > en0.2.32-5 add psg 2019.12.24
-# ----------------> push to github
 > en0.2.32-6 add psg 2019.12.25
+> en0.2.32-7 add track code
+# ----------------> push to github
 # commited local
 
 
