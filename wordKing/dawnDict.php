@@ -33,6 +33,14 @@ if($word==''){
 $data['word']=$word;
 $data['status']=1;
 
+//获取完整的url
+#$fromUrl= 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+//获取网址参数
+//接收参数
+$source='';
+if(isset($_GET['source'])){
+	$source=$_GET['source'];
+}
 
 
 //文件夹
@@ -40,12 +48,12 @@ $dir = 'backup/tmp/';
 is_dir($dir) OR mkdir($dir, 0777, true); // 如果文件夹不存在，将以递归方式创建该文件夹
 
 //把查的词写入文件
-$date = date("Ymd");
+$date = date("Ym");
 $file_name = 'backup/tmp/wordSearched_'.$date.'.txt'; //每天一个文件
 //$wordfile_handler = fopen("backup/wordSearched.txt", "a");
 $wordfile_handler = fopen($file_name, "a");
 $time=time();
-fwrite($wordfile_handler, $word."\t".$time."\n");
+fwrite($wordfile_handler, $word."\t".$time.' '.date("Y/m/d h:m:s")."\t".$source."\n");
 fclose($wordfile_handler);
 
 

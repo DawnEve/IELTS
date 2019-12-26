@@ -3,7 +3,7 @@
 url:http://ielts.dawneve.cc/wordKing/dawnDict.js
 
 使用方法：
-该url仅支持本机访问，自用需要架服务器并调url
+该url仅支持本机访问，自用需要架服务器并调url -> v0.4.4 支持web访问了;
 
 1.把同名php文件放在服务器中；可以更改其中的词典链接，或者自己编写词典；
 2.把本js文件放在相同文件夹中，调整本文件的trans方法中ajax的php文件地址，确保能访问到；
@@ -32,6 +32,9 @@ tips:很多网页是https的，需要构建https服务器，
 #v0.4.1 美化界面
 #v0.4.2 改名为dawnDict;支持console查单词 dawnDict.trans('good');
 #v0.4.3 长度为0或大于30的不查
+#v0.4.4 支持远端访问，只要php文件放到web服务器即可，js放到哪里都行。
+	生词本记录在web端：http://applybio.com/wordKing/backup/tmp/wordSearched_201912.txt
+#
 
 
 * todo 悬浮框显示；悬浮取词；
@@ -147,7 +150,10 @@ $(document).click(function(event){
 		
 		self.ajax({
 			method:"get",
-			url:location.protocol+"//ielts.dawneve.cc/wordKing/dawnDict.php?word="+word, //访问后台 //todo: 修改时要保证能访问到php文件
+			//访问后台 //todo: 修改时要保证能访问到php文件
+			//url:location.protocol+"//ielts.dawneve.cc/wordKing/dawnDict.php?word="+word+'&source='+window.location, 
+			url:location.protocol+"//applybio.com/wordKing/dawnDict.php?word="+word+'&source='+window.location,  
+			
 			success:function(data){
 				if(data.status){
 					if(data.res==''){
