@@ -2,7 +2,9 @@
 /*
 v0.1 基本可用
 v0.2 能跨域
+v0.3 time zone
 */
+
 
 //1.允许跨域
 header('Server: suctom-server',true);
@@ -11,6 +13,9 @@ header('Server: WJL_track_server/0.1');
 header('Email: jimmymall@163.com');
 //header('Content-Type:text/html;charset=UTF-8');//html文件类型,UTF-8类型
 header("Access-Control-Allow-Origin: *");
+
+# time zone
+date_default_timezone_set('Asia/Shanghai');
 
 
 /*2. tools: function and classes*/
@@ -51,12 +56,12 @@ $agent=$_SERVER['HTTP_USER_AGENT'];
 //$msg="open from: ". $ip.' '. date("Y/m/d H:m:s").' '. $url .' '. $para;
 //$msg='{IP:"'. $ip.'", serverDate:"'. date("Y/m/d H:m:s").'", para:"'. $para.'"},';
 $n="\n";
-$msg="=========";
-$msg .= '===========\n{IP:"'. $ip.'", '.$n.
-	'serverDate:"'. date("Y/m/d H:m:s").'", '.$n.
+$msg="====================\n";
+$msg .= '{IP:"'. $ip.'", '.$n.
+	'serverDate:"'. date("Y/m/d H:i:s").'", '.$n.
 	'para: "'. $para.'", '.$n.
-	'agent:"'.$agent.'"},\n---------';
-$msg .= "-----------\n";
+	'agent:"'.$agent.'"},';
+$msg .= "\n--------------------\n";
 
 
 // 文件名

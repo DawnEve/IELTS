@@ -1,0 +1,27 @@
+science | A warning from ancient tree rings: The Americas are prone to catastrophic, simultaneous droughts
+<span class=light>Jan 03, 2020 | 636 words
+By Paul VoosenDec. 31, 2019 , 8:00 AM
+Ongoing drought has dried up a lagoon near Santiago, Chile. RODRIGO GARRIDO/REUTERS/NEWSCOM</span>
+
+For 10 years, central Chile has been gripped by unrelenting drought. With 30% less rainfall than normal, verdant landscapes have withered, reservoirs are low, and more than 100,000 farm animals have died. The dry spell has lasted so long that researchers are calling it a “megadrought,” rivaling dry stretches centuries ago. It’s not so different from the decadelong drought that California, some 8000 kilometers away, endured until this year.
+
+By analyzing tree ring records, scientists have now found evidence that such tandem droughts are more than a coincidence: They are surprisingly common over the past 1200 years, and they may often share a common cause—an abnormally cool state of the eastern Pacific Ocean known as La Niña. “We did not expect there to be as much coherence as we see,” says Nathan Steiger, a paleoclimatologist at Columbia University who presented the work this month at a meeting of the American Geophysical Union. “They just happen together.” The results suggest that, in the future, extreme aridity could strike all along the Americas’ western coast.
+
+Evidence for synchronous, hemispherewide droughts first emerged in a 1994 study in Nature, which documented dead tree stumps in the middle of lakes and rivers in both Patagonia and California’s Sierra Nevada. For trees to grow in stream- and lakebeds, the droughts must have lasted for decades, and at least one of these megadroughts seemed to have hit both continents simultaneously.
+
+But pinning down the exact timing wasn’t possible in the 1990s. Ancient drought is typically detected in variations in the width of tree rings, but tree ring records then were spotty. Since, however, tree ring scientists have put together “drought atlases” that provide consistent records for much of the world. “We’ll have most hemispheric land areas covered by the end of the year,” says Ed Cook, a tree ring scientist at Columbia.
+
+Steiger combined these records with thousands of other proxies for dryness and temperature from trees, corals, ocean sediments, and ice cores, and fed them into a global climate model. Aligning itself to the records, it generated a global view of the changing climate, even in places with sparse proxies. The model confirmed that, from 800 to 1600 C.E., multiple megadroughts occurred simultaneously across the hemispheres. “It’s there,” Cook says. “Without question, it’s there.”
+
+Besides correlating the varied climate records, the model also identified the key factors driving the climate variations. Steiger and his co-authors, including Cook, first used the new tool to look at megadroughts in the U.S. Southwest. Their study, published this year in Science Advances, is “amazing,” says David Stahle, a tree ring scientist at the University of Arkansas in Fayetteville. “It’s a bit like … they took those black-and-white films and colorized them.” They found that megadroughts in the Southwest were influenced by three factors: an anomalously warm North Atlantic Ocean, small global temperature rises driven by factors such as a brightening Sun, and, especially, La Niña. The cold cousin of El Niño, La Niña can persist for years, deflecting rainstorms away from their usual tracks.
+
+In the new work, the team finds that La Niña is almost the sole driver of the South American megadroughts. And because La Niña affects conditions on both sides of the equator, it could plausibly trigger simultaneous droughts in both hemispheres.
+
+Jessica Tierney, a paleoclimatologist at the University of Arizona, says this marriage of proxy records and models is a powerful tool for understanding past climates. “Nathan has really been leading the way on that,” she says. But she cautions that models don’t perfectly simulate the La Niña cycle. It’s also uncertain whether the link between La Niña and distant droughts is a stable dynamic that lasts centuries or might change over time. And the randomness of weather is always a factor: The current South American drought, for example, has endured through both El Niño and La Niña conditions.
+
+Nor is it clear how the drought patterns will change as climate warms. A warming atmosphere alone seems certain to make megadroughts more frequent, especially in the Southwest. But scientists remain divided on how climate change will affect the El Niño-La Niña cycle. Models suggest El Niño will dominate, but in the past few decades, La Niña has seemed to be more frequent. “There are still camps,” says Daniel Griffin, a paleoclimatologist at the University of Minnesota. “I see people trying to hold their noses for consensus statements.”
+
+As bad as the drought in Chile is today, it barely qualifies as a megadrought when compared with the medieval ones, which were longer and more severe. Clearly, there was something about that period that switched off in recent centuries, Cook says. If that pattern somehow came back, with greenhouse warming amplifying it, Cook says, “then things could get quite catastrophic.”
+
+<span class=light>Posted in: Climate|doi:10.1126/science.aba7191
+https://www.sciencemag.org/news/2019/12/warning-ancient-tree-rings-americas-are-prone-catastrophic-simultaneous-droughts</span>

@@ -1,0 +1,29 @@
+science | How ants walking backward find their way home
+<span class=light>Jan 07, 2020 | 729 words
+By Eva FrederickDec. 27, 2019 , 3:45 PM
+Spanish desert ants can find their way home while dragging food backward. CHEW CHUN HIAN/ALAMY</span>
+
+Every day, tiny, red insects called Spanish desert ants make several trips from their nest in search of food. When they find a small snack like a seed or crumb, they can hold it aloft in their tiny jaws and carry it home. But when they encounter a larger meal, say, a dead cricket or a piece of popcorn, they often have to drag it, walking backward, to get it to the nest.
+
+Scientists used to think the insects needed to see something from the front to recognize a familiar location. Now, a research team has shown that the ants use a number of methods to find their way, and that they can recognize familiar scenery even when they’re walking backward—a high level of visual sophistication for such a tiny animal.
+
+“These are beautiful behavioral experiments,” says Pauline Fleischmann of the Julius Maximilian University of Würzburg, a neuroethologist who has studied ant locomotion but who was not involved with the current work. “When you witness how the ants navigate in their natural habitat, you are deeply impressed by their skills.”
+
+When walking forward, Spanish desert ants (Cataglyphis velox) use a strategy called “path integration”: They remember the feeling of the twists and turns they took and how many steps they are from the nest, which they use to compute the fastest route back home. They also rely on the angle of the Sun to get their bearings, and they look around at the passing scenery and remember certain landmarks that can help them on their return journey.
+
+But how they know where they’re going while walking backward is less clear. Sometimes the ants drop their food and turn around to see the path ahead—a behavior called peeking—before picking up the crumb again and trudging along on their backward way. “We wanted to figure out if they recognize anything visually while they’re walking backwards,” says Sebastian Schwarz, an ethologist at Paul Sabatier University.
+
+Schwarz and colleagues selected ants that had already walked to a feeder from their nest in the desert so they knew where they were. (In other words, they had their path integration information already.) The scientists also ant-napped some insects from right outside the nest who thought they were home. They deposited the ants some distance away from the nest with a giant crumb of ant-approved cookie. (Making the right kind of cookie was tricky, Schwarz says. “More butter and more sugar is better.”)
+
+As the ants began to drag the cookie back to the nest, the researchers would sometimes change the scenery around them, mimicking strange mountains by adding black plastic bags and tarps alongside the path. When confronted with such new landmarks, the ants peeked after walking only 3.2 meters along the 8-meter path, whereas ants on familiar paths could go nearly 6 meters without turning around. The observations reveal that the insects were taking in their surroundings as they walked backward and using them to navigate and decide when to peek.
+
+As expected, ants that already knew where they were did much better regardless of the scenery, the team reports this month on the preprint server bioRxiv. They could walk for longer distances before they peeked behind them, and more of them made it home with their cookie. A few “clueless” ants got lost, but surprisingly, others were able to find their way back to the nest even when they hadn’t previously tracked where they walked using path integration, which means they must have only been using their visual memories of their surroundings and possibly the angle of the Sun.
+
+The ants’ eyes have a wide angle of view—they have nearly 360° vision, whereas humans can only see about one-third of their surroundings without turning their heads. Schwarz says the insects are likely taking in information from beside and behind them as they walk away from the nest, then using it to guide them back as they are dragging food. After analyzing the behavior of the ants, Schwarz was able to create a model showing the circumstances in which the insects rely on their visual surroundings versus other sources of information like the angle of the Sun or their internal step-counter to find their way home backward.
+
+Fleischmann says the findings of the study are “exciting,” although there is still more to learn about ant navigation. The ants in the study were walking back and forth on straight paths, she notes, so Schwarz’s model of how they navigate doesn’t take into consideration that “under natural conditions the ants might walk in all directions and might flexibly combine different views.”
+
+Schwarz says future experiments will involve covering one of an ant’s eyes with paint to see how its navigational strategies change. He and collaborators are also creating a tiny “ant cinema,” where an ant walks on a treadmill through a virtual world, so the researchers can better manipulate the scenery. In the future, the setup may provide even more insights about how ants take in their visual surroundings—and save researchers from hours spent staring at ants in the desert. 
+
+<span class=light>Posted in: Plants & Animals|doi:10.1126/science.aba7194
+https://www.sciencemag.org/news/2019/12/how-ants-walking-backward-find-their-way-home</span>
