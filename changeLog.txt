@@ -217,6 +217,7 @@ https://www.gutenberg.org
 > en0.2.32-8 web划词记录在服务器端;
 	http://applybio.com/wordKing/backup/tmp/wordSearched_201912.txt
 > en0.2.32-9 add psg 2020.1.4
+> en0.2.33-0 add psg 2020.1.8
 # ----------------> push to github
 # commited local
 

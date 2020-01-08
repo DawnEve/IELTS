@@ -1,0 +1,47 @@
+nytimes | Study Sheds Light on How Birds Navigate by Magnetic Field
+<span class=light>Jan 12, 2020 | 558 words
+By JAMES GORMANAPRIL 26, 2012</span>
+
+Birds are famously good navigators. Some migrate thousands of miles, flying day and night, even when the stars are obscured. And for decades, scientists have known that one navigational skill they employ is an ability to detect variations in the earth’s magnetic field.
+
+How this magnetic sense works, however, has been frustratingly difficult to figure out.
+
+Now, two researchers at Baylor College of Medicine, Le-Qing Wu and David Dickman, have solved a central part of that puzzle, identifying cells in a pigeon’s brain that record detailed information on the earth’s magnetic field, a kind of biological compass.
+
+“It’s a stunning piece of work,” David Keays of the Institute of Molecular Pathology in Vienna wrote in an e-mail. “Wu and Dickman have found cells in the pigeon brain that are tuned to specific directions of the magnetic field.”
+
+Their report appeared online in Science Express on Thursday. Kenneth Lohmann at the University of North Carolina at Chapel Hill, who also studies magnetic sensing, said in an e-mail that the study was “very exciting and important.”
+
+
+Navigating by magnetism includes several steps. Birds have to have a way to detect a magnetic field, and some part of the brain has to register that information; it seems likely that another part of the brain then compares the incoming information to a stored map.
+
+
+The Baylor researchers have offered a solution to the middle step. They identified a group of cells in the brainstem of pigeons that record both the direction and the strength of the magnetic field. And they have good, but not conclusive, evidence to suggest that the information these cells are recording is coming from the bird’s inner ear. Dr. Dickman said this research “is still something we want to pursue.”
+
+They did not work on the third step, but Dr. Dickman said a good candidate for the location of that map was the hippocampus, the brain region involved in memory of locations in both birds and humans.
+
+
+Pigeons are able to record detailed information on the earth's magnetic field, according to a new study. Credit iStock
+A well-known and often-mentioned study of London taxi drivers showed that experienced drivers with a mental map of London had a hippocampus larger in one area than people without their experience. In some birds that hide seeds and return later to their caches with astonishing accuracy, the hippocampus grows and shrinks seasonally, presumably as they map their hiding spots.
+
+Efforts to understand the magnetic sense in birds have gone in several directions. Some researchers have offered evidence for chemical reactions in the eyes sensitive to magnetic signals, while others have looked at neurons in the beak that they thought contained minute amounts of magnetite, a mineral that is affected by magnetic fields.
+
+Just a few weeks ago, Dr. Keays and colleagues reported in the journal Nature that the idea of neurons in the beak was a nonstarter.
+
+
+
+The Baylor researchers did a kind of step-by-step tracking of what areas in pigeons’ brains were responding to variations in an artificial magnetic field that they created. They focused on activity in the brainstem, one of the most primitive parts of the brain, partly because in earlier work they had shown that this area of the brain received signals from a part of the inner ear.
+
+By looking at specific neurons in this part of the brain, the researchers found that the bird’s orientation determined which neurons were active. Each neuron was tuned to respond to signals from one direction. The neurons also registered the strength of the magnetic field.
+
+Other brain regions are also active in response to magnetic stimulation and may be involved in the magnetic sense, Dr. Dickman said. And although he does not provide an answer to how birds detect magnetism, the research clearly falls on one side of a debate over whether magnetite is involved, or whether chemical reactions in the eye may be the key.
+
+Dr. Keays said the research gave strong support to the magnetite idea and the hypothesis that “a population of undiscovered magnetoreceptive cells reside in the pigeon’s ear.”
+
+As Dr. Lohmann said, the discovery “will no doubt inspire much additional work in the future.”
+
+<span class=light>
+Correction: April 30, 2012
+An article on Friday about a magnetic sense that helps birds navigate misidentified an iron-containing substance found in a recent analysis of beaks. It is ferrihydrite, not magnetite. (The study found that the cells containing the substance were not involved in navigation.)
+A version of this article appears in print on April 27, 2012, on Page A16 of the New York edition with the headline: Study Sheds Light on How Birds Navigate by Magnetic Field.
+https://www.nytimes.com/2012/04/27/science/study-sheds-light-on-how-pigeons-navigate-by-magnetic-field.html</span>

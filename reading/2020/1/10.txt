@@ -1,0 +1,33 @@
+forbes | We Finally Know How Birds Can See Earth's Magnetic Field
+<span class=light>Jan 10, 2020 | 407 words
+Science|Trevor Nace | Senior Contributor | 51,767 viewsApr 4, 2018, 01:28pm</span>
+
+Earth's magnetic field plays a vital role in everything from animal migration to protecting the Earth from the Sun's harsh solar wind. Now, a recent study finally sheds light on how some birds visually see Earth's magnetic field. Birds use Earth's magnetic field as sort of a heads-up display to help them navigate the globe.
+
+The Earth's magnetic field is a result of the movement or convection of liquid iron in the outer core. As the liquid metal in the outer core moves, it generates electric currents, which lead to a magnetic field. The continual movement of liquid metal through this magnetic field creates stronger electrical currents and thus a stronger magnetic field. This positive feedback loop is called the geomagnetic dynamo.
+
+
+==
+A depiction of Earth's magnetic field deflecting the Sun's solar wind. SHUTTERSTOCK
+Today In: Tech
+
+
+While scientists have known for quite some time that birds can see Earth's magnetic field, it was unclear exactly how birds are able to visualize the magnetic field. Two recent studies from researchers at Lund University in Sweden and Carl von Ossietzky University Oldenburg in Germany discovered that the ability is a result of a special protein in bird's eyes. The two papers studied European robins and zebra finches and found evidence for an unusual eye protein called Cry4.
+
+The Cry4 protein is part of a class of protein called a cryptochrome that is sensitive to blue light. Cryptochromes are found in both plants and animals and are responsible for circadian rhythms in various species. In the two bird species above, it appears that the presence of cryptochromes, specifically the Cry4 protein, is responsible for the ability of birds to visually detect Earth's magnetic field.
+
+
+The ability to see Earth's magnetic field, known as magnetoreception, relies on the presence of specifically the blue wavelength of light. The complex process involves "radical" intermediate molecules which are sensitive to Earth's magnetic field. The Earth's magnetic field, as it relates to the direction the bird is facing, could alter the intermediate radical molecules differently, giving the bird a sense for where it is facing in relation to the Earth's magnetic field.
+
+
+==
+Representation of how birds may visually see Earth's magnetic field. THEORETICAL AND COMPUTATIONAL BIOPHYSICS / UNIVERSITY OF ILLINOIS AT URBANA-CHAMPAIGN
+
+
+The research team also found that the Cry4 protein was produced in much higher amounts in European robins during migration season. Perhaps this would give the robin a more precise picture of Earth's magnetic field throughout its migration.
+
+While the exact way birds visualize Earth's magnetic field is part of further investigation, scientists believe the Cry4 protein acts as sort of a filter over the bird's vision. This filter would allow birds to see a sort of compass of the Earth and direct their migratory flights accordingly.
+
+Scientists at the University of Illinois at Urbana-Champaign believe birds see Earth's magnetic field through a filter similar to the figure above. This would act to guide birds in the right direction through migration.
+
+<span class=light>https://www.forbes.com/sites/trevornace/2018/04/04/we-finally-know-how-birds-can-see-earths-magnetic-field/#14c8cdd020e1</span>

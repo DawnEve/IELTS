@@ -1,0 +1,31 @@
+discover | Birds Navigate Using Magnetic Compass-Vision
+<span class=light>Jan 11, 2020 | 608 words
+By Andrea AndersonOctober 30, 2007 1:00 PM</span>
+
+<b>Combined with a GPS beak, it leads them on marathon migrations.</b>
+
+
+Dominik Heyers' imagining of what avian magneto-vision might look like. | Garden warbler image courtesy of Henrik Mouritsen
+
+For decades, scientists have known that migratory birds use Earth’s geomagnetic field—along with light, stars, and other cues—to guide them on remarkably long journeys. But it is unclear just how birds sense this relatively weak field and use it for navigation.
+
+Now German researchers have provided new evidence supporting the notion that migratory birds actually see magnetic fields. Postdoctoral fellow Dominik Heyers and his colleagues peered into the brains of garden warblers, which travel seasonally between northern Europe and southern Africa, and uncovered a link between neurons in the eye and a region of the brain thought to be involved in migration.
+
+
+To see how the warblers perceived magnetic fields, the team first had to “get the birds in a migratory mood,” which they did by shortening the birds' exposure to light, Heyers says. Then they injected a dye into cluster N, a region of the brain that is likely related to migration because it is highly active at night and when birds are keen to migrate, says group leader Henrik Mouritsen. Then the researchers injected a second dye into the birds’ eyes. Sure enough, the two dyes oozed along different sets of neurons and met in the thalamus, a relay station for visual information deep in the brain.
+
+The data supports a theory, first proposed in the late 1970s, that has been bolstered by increasing evidence over the past 10 to 15 years—that birds collect magnetic-field information through specialized receptors in the eye. Researchers don't know for sure what this receptor would be, but cryptochrome—a protein known to be involved in some animals' circadian rhythms—has been found in the eyes of several migratory birds and is a prime candidate.
+
+Several years ago, biophysicists predicted the properties that a magnetic field–sensing molecule should have, and cryptochrome fit the bill. Unlike typical bird photoreceptor proteins that change shape when they absorb light energy, cryptochrome generates free electrons when it absorbs light. Earth's magnetic field may influence the spin of these free electrons, which birds could then detect, explains biophysicist Thorsten Ritz of the University of California at Irvine, who was not involved in the Heyers study. If so, then north and south look inherently different to migratory birds, and even when flying over open ocean on a starless night, they may use that distinction to stay on course.
+
+Researchers have long known that migratory birds receive information about magnetic fields from a part of their upper beak called the magnetite receptor, which contains iron-based magnetic crystals. This receptor seems to measure the strength of the magnetic field—the field is generally strongest at the poles—and the angle of the field in relation to the ground, which also varies with latitude.
+
+Heyers suggests that the magnetite receptor and the visual magnetic receptor complement one another, with birds using the receptors in their beaks like GPS and using visual magnetic information like a compass to determine which way they're facing. “If you have a direction but don’t know where you are, that probably won’t help you find your way,” Heyers explains.
+
+The Dark Spot Called “North”? So if birds actually do see the geomagnetic field, what does it look like? “We don’t know exactly how it looks at all,” Mouritsen says. Based on the theory that magnetic fields affect the overall light sensitivity of birds’ eyes, Heyers’s best guess is that birds see north as a dark spot, with a gradient of light representing other directions.
+
+Still, there are many remaining questions. While Ritz calls the new study “interesting” and “really necessary,” he also emphasizes that the new data correlate vision with magnetic-field sensing rather than absolutely defining the neural pathway. Rachel Muheim, a postdoctoral fellow at Virginia Tech, agrees, saying there are still questions about whether the vision-related cluster N is involved in detecting magnetic fields or just in night vision.
+
+"Definitive proof is still lacking,” Mouritsen admits. Still, he argues, differences in cluster N activity between migratory and nonmigratory birds indicate it does have a role in navigation, and the new data fit predictions of the visual magnetic perception theory. “We have a lot of correlative evidence that is very hard to explain if this is not true.”
+
+<span class=light>https://www.discovermagazine.com/planet-earth/birds-navigate-using-magnetic-compass-vision</span>
