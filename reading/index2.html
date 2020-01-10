@@ -1,7 +1,7 @@
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<title>英语读报</title>
+<title>英语读报 - 保鲜英文，备考英语</title>
 <link rel="stylesheet" type="text/css" href="css/reading.css">
 <!--
 local: ielts.dawneve.cc/reading/index2.html
@@ -12,6 +12,7 @@ v0.1 基本可用
 v0.2 优化样式，阅读器独立出来了
 v0.3 自动根据日期识别周日，加样式
 v0.4 重写替换url为阅读器url; 点击 月份p 隐藏显示当月目录; 为js被禁做了plan B;
+v0.5 简化url传递
 
 to use: ./backup/resouce.txt
 
@@ -194,7 +195,7 @@ window.onload=function(){
 			oLi.setAttribute('class','sunday');
 		}
 		
-		// 如果是当前日期，则高亮显示li
+		// 如果当前日期是today，则高亮显示li
 		if(i<31){
 			if( new Date(date).toString().substring(0,15) == new Date().toString().substring(0,15) ){
 				oLi.setAttribute('class', "current")
@@ -207,6 +208,8 @@ window.onload=function(){
 	for(var i in aA){
 		var oA=aA[i];
 		var fileName=oA.href;
+		fileName=fileName.replace(location.protocol+'//'+location.host+"/reading/",'');
+		fileName=fileName.replace(/\.txt$/,'');
 		if( ! fileName.match('dawnReader')){
 			oA.href='/reading/dawnReader.html?text='+fileName;
 		}
@@ -231,6 +234,7 @@ window.onload=function(){
 
 }
 </script>
+
 <script src='/wordKing/dawnDict.js'></script>
 <script type="text/javascript" src="../en/js/ielts.js"></script>
 

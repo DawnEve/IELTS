@@ -219,6 +219,7 @@ https://www.gutenberg.org
 > en0.2.32-9 add psg 2020.1.4
 > en0.2.33-0 add psg 2020.1.8
 > en0.2.33-1 reading/ 首页自动从前31个找并标明 today
+> en0.2.33-2 reading/ 点击传参简化为只有年月日
 # ----------------> push to github
 # commited local
 

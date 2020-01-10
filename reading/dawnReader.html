@@ -7,6 +7,7 @@ v0.3 防止报错
 v0.4 第一行加粗
 v0.5 美化移动端，和微信基本一致。
 v0.6 解决url获取参数bug
+v0.7 返回链接加到标题下，模仿微信；接收简化url(仅包含年月日)
 
 
 -->
@@ -61,7 +62,7 @@ b.h1{font-size:x-large;}
 	font-size:larger;
 }
 
-
+#textPre a.blue{color:#576b95; text-decoration:none;}
 
 
 .footer{
@@ -78,13 +79,9 @@ b.h1{font-size:x-large;}
 
 
 <body>
-	<div id=reader>
-		<span class='light title'><a class=btn href='/reading/index2.html'>Home</a> dawnReader
-		v0.6
-		(with dawnDict): <span id=fileName>fileName</span></span>
-		<hr>
+	<div id=reader>		
 		<div class='textDiv'>
-			<pre id='textPre'></pre>
+			<pre id='textPre'> Loading text now ...</pre>
 		</div>
 	</div>
 
@@ -115,18 +112,25 @@ function getUrlParam(name) {
 
 //最简单的ajax实例
 window.onload=function(){
+	
+	//v1 传过来的是路径，v2传过来的是日期
 	function openText(fileName){
+		if( ! fileName.match('reading')){
+			fileName='/reading/'+fileName+'.txt'
+		}
 		var xmlhttp=new XMLHttpRequest(); //1.获取对象
 		//2.绑定回调函数
 		xmlhttp.onreadystatechange=function(){
 			if (xmlhttp.readyState==4 && xmlhttp.status==200){
-				$("fileName").innerHTML=fileName;
+				//$("fileName").innerHTML=fileName;
 				//$("textPre").innerHTML=xmlhttp.responseText;
 				//第一行加粗
 				$("textPre").innerHTML=xmlhttp.responseText.replace(/^([^\n]+)\n/,function(x){
 					//标题
-					document.title="英语读报 - "+x
-					return "<b class=h1>"+x+"</b>";
+					document.title=x+" - 英语读报";
+					//第一行后面加返回链接，模仿微信
+					var homeLink="<a class=blue href='/reading/index2.html'>英语读报</a> "
+					return "<b class=h1>"+x+"</b>" + homeLink;
 				});
 			}
 		}
@@ -138,43 +142,18 @@ window.onload=function(){
 
 	
 	//获取url参数
-	var textUrl = getUrlParam('text');
-	if(!textUrl){
+	var date = getUrlParam('text');
+	if(!date){
 		//如果没有text参数，则alert提示，并给出返回按钮，然后返回。
 		alert('No text parameter from url!')
 		$("textPre").innerHTML="<a href=/reading/index2.html>Back</a>"
 		location="/reading/index2.html";
 		//
 		return false;
+	}else{
+		openText(date)
 	}
-	//print(textUrl)
-	//"http://ielts.dawneve.cc/reading/2019/11/29.txt"
-	openText(textUrl)
 }
-
-
-
-//调整字体大小
-/*
-!(function(doc, win) {
-	var docEle = doc.documentElement,
-	evt = "onorientationchange" in window ? "orientationchange":"resize",
-	fn = function() {
-		var width = docEle.clientWidth;
-		//
-		var size='17px';
-		if(width<600){
-			size= 20 * (width / 320) + "px";
-		}
-		width && (docEle.style.fontSize =size);
-		//弹出吧，看看大小
-		console.log(width, ' to ', size )
-		//alert(width+' to '+ size )
-	};
-	win.addEventListener(evt, fn, false);
-	doc.addEventListener("DOMContentLoaded", fn, false);
-}(document, window));
-*/
 </script>
 
 <script src="http://applybio.com/track/dawnTrack.js?time="+new Date().getTime()></script>
