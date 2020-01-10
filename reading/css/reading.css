@@ -95,3 +95,42 @@ body{
 
 .tag.bgGreen{color:white; background:#5fba7d;}
 .tag.bgBlue{color:white; background:#0095FF;}
+
+
+
+/*sunday*/
+.card li.sunday{
+	/*border-bottom:1px dotted green; background:rgba(255,255,181,0.2);
+    margin-bottom: 10px;
+    border: 2px dotted #ccc;
+    border-radius: 5px;
+	background: rgba(255,255,181,0.3);
+	#fff3cd;
+	*/
+	color: #856404;
+    background-color: rgba(255,238,186,0.2);
+	border: 1px solid transparent;
+    border-color: #ffeeba;
+	padding: 5px 0;
+    border-radius: 10px;
+}
+.card li.sunday:before{content:"[Sunday]"; color:orange; opacity:0.5;}
+.card li.sunday:after{
+	content:"";
+    display: block;
+	margin-bottom:10px;
+}
+
+
+/*today*/
+.card li.current{
+	border-top:2px solid rgba(255,0,0,0.5); 
+	border-bottom:2px solid rgba(255,0,0,0.5); 
+	/*
+	color:#FD6C6C; 
+	background:rgba(255,100,100,0.1);  
+	*/
+	padding:10px 0;
+	margin:5px 0;
+}
+.card li.current:before{content:"[Today]"; color:red; opacity:0.5;}

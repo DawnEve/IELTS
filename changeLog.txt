@@ -218,6 +218,7 @@ https://www.gutenberg.org
 	http://applybio.com/wordKing/backup/tmp/wordSearched_201912.txt
 > en0.2.32-9 add psg 2020.1.4
 > en0.2.33-0 add psg 2020.1.8
+> en0.2.33-1 reading/ 首页自动从前31个找并标明 today
 # ----------------> push to github
 # commited local
 

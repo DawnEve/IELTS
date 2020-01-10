@@ -20,23 +20,12 @@ to use: ./backup/resouce.txt
 <style>
 .card ol{padding-left: 30px; display:none;}
 .card ol.current{display:block;}
-.card li.sunday{
-	/*border-bottom:1px dotted green; background:rgba(255,255,181,0.2);
-    margin-bottom: 10px;
-    border: 2px dotted #ccc;
-    border-radius: 5px;
-	*/	
-	background: rgba(255,255,181,0.3);
-}
-.card li.sunday:before{content:"[Sunday]"; color:orange; opacity:0.5;}
-.card li.sunday:after{
-	content:"";
-    display: block;
-	margin-bottom:20px;
-}
+
+
 .card b.oldnew{/*熟词新义*/
 	color:orange;
 }
+
 </style>
 
 <div class=header>
@@ -69,7 +58,7 @@ to use: ./backup/resouce.txt
 		
 		<li>Atlantic | The Real Trouble With Silicon Valley<a target="_blank" href="2020/1/4.txt">[txt]</a> <span class=light>Jan 4, 2020 | 1848 words</span> <span class=bingo>Encoding in computers visual and manual skills sharpened by millennia of human evolution is no easy task.</span> </li>
 		
-		<li>science|U.S. tests ways to sweep space clean of radiation after nuclear attack<a target="_blank" href="2020/1/5.txt">[txt]</a> <span class=light>Jan 5, 2020 | 790 words</span> <span class=bingo></span> </li>
+		<li>science|U.S. tests ways to sweep space clean of radiation after nuclear attack<a target="_blank" href="2020/1/5.txt">[txt]</a> <span class=light>Jan 5, 2020 | 790 words</span> <span class=bingo>After all, what nuclear power would want to pollute space with particles that could take out its own satellites, critical for communication, navigation, and surveillance? </span> </li>
 		
 		<li>hbr | The Post-Holiday Funk Is Real<a target="_blank" href="2020/1/6.txt">[txt]</a> <span class=light>Jan 6, 2020 | 892 words</span> <span class=bingo></span> </li>
 		
@@ -204,6 +193,15 @@ window.onload=function(){
 		if("Sun"==new Date(date).toString().substring(0,3)){
 			oLi.setAttribute('class','sunday');
 		}
+		
+		// 如果是当前日期，则高亮显示li
+		if(i<31){
+			if( new Date(date).toString().substring(0,15) == new Date().toString().substring(0,15) ){
+				oLi.setAttribute('class', "current")
+				//console.log(oLi)
+			}
+		}
+		
 	}
 	//4 替换文章链接
 	for(var i in aA){
