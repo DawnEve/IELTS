@@ -3,10 +3,18 @@ from flask import Flask
 app = Flask(__name__)
 
 
+
+
+
+
 ##########
 # 引入模块
-import sys
+import sys,io
 sys.path.append('main/')
+
+# 防止编码错误
+#https://blog.csdn.net/jim7424994/article/details/22675759
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 
 # word 模块
 from main.word import *
