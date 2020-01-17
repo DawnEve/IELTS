@@ -1,0 +1,45 @@
+cnn | The rapid rise of electric vehicles could lead to a mountain of battery waste
+<span class=light>Jan 18, 2020 | 526 words
+By Katie Hunt, CNN Business | Updated 1806 GMT (0206 HKT) November 6, 2019</span>
+
+London (CNN Business)In 2017, more than 1 million electric vehicles were sold for the first time. That number doubled to 2 million in 2018 and by 2040 electric cars could make up more than half of all new sales.
+
+Electric vehicles will play a pivotal role in meeting global targets to reduce carbon emissions, but new research warns the world is unprepared to deal with the lithium-ion batteries that power these cars once they reach the end of their useful life span.
+
+==
+Europe's switch to electric cars is accelerating. Honda is advancing its plans by 3 years
+
+Based on the number of electric cars sold in 2017, researchers in the United Kingdom calculated that 250,000 metric tons, or half a million cubic meters, of unprocessed battery pack waste will result when these vehicles reach the end of their lives in about 15 to 20 years — enough to fill 67 Olympic swimming pools.
+
+"Landfill is clearly not an option for this amount of waste," said University of Leicester professor Andrew Abbott, co-author of the review that was published in the scientific journal Nature on Wednesday.
+
+"Finding ways to recycle EV (electric vehicle) batteries will not only avoid a huge burden on landfill, it will also help us secure the supply of critical materials, such as cobalt and lithium, that surely hold the key to a sustainable automotive industry," he said in a press statement.
+
+Lithium-ion batteries cannot be treated like normal waste; they are flammable and could release toxic chemicals into the environment.
+
+==
+Battery packs are assembled inside Audi's e-tron factory in Brussels.
+
+<b>When batteries retire</b>
+
+The report says that more needs to be done to identify uses for vehicle batteries once they reach retirement age. Even if they can't power a passenger car, the batteries may be able to do less demanding tasks such as store electricity from wind turbines and solar farms.
+
+The report also says better ways to gauge the health of a battery would make it easier to assess whether it can be reused or repaired.
+
+And if the batteries can no longer be used or, as forecast, the supply of batteries exceeds second-hand demand, rapid and more efficient recycling methods need to be developed that can extract the valuable raw materials such as lithium and cobalt, which can be environmentally damaging to mine.
+
+"We believe that it is possible to move to more advanced recycling technologies that can not only recover a larger proportion of the materials in the battery but also will be better able to handle the volume of EV waste batteries we anticipate coming through the system," Gavin Harper, Faraday Research Fellow at the University of Birmingham, who was the lead author on the paper, told CNN.
+
+Currently in the United Kingdom, there are no dedicated operating facilities for processing electric vehicle waste batteries. What batteries do get processed are exported and recycled using a pyrometallurgical method, which uses high temperatures to smelt the batteries and extract some reusable components. However, it's wasteful and inefficient, which means some materials can't be recovered, he said.
+
+There's also a general lack of technical know-how, with a 2015 survey from the UK Institute of the Motor Industry finding there were only 1,000 trained technicians in the country capable of servicing electric vehicles, with another 1,000 in training — less than 2% of the country's 170,000 motor technicians.
+
+The batteries produced by different manufacturers vary widely and the paper calls for more standardization to allow easier recycling. Current designs also don't lend themselves to easy deconstruction by hand or machine.
+
+"The recycling challenge is not straightforward: There is enormous variety in the chemistries, shapes and designs of lithium ion batteries used in EVs," said Harper.
+
+"If you look at lead acid batteries, we have really high recovery rates of around 95 % because the technology is there to recycle them and it makes economic sense ... the battery has a value."
+
+"We need to get to a similar place with EV batteries where they are seen as an opportunity and not a burden," he added.
+
+<span class=light>https://edition.cnn.com/2019/11/06/business/electric-vehicles-battery-waste-scn/index.html</span>

@@ -1,0 +1,36 @@
+CNN | New lithium-sulfur battery could charge your phone for five days, researchers say
+<span class=light>Jan 16, 2020 | 317 words
+By Rob Picheta, CNN Business | Updated 1637 GMT (0037 HKT) January 6, 2020</span>
+
+London (CNN Business)Australian researchers claim they have developed a battery that can keep a smartphone charged for five days or power an electric car for 1,000 kilometers (over 600 miles).
+
+If the technology comes to be used widely, it would represent a significant breakthrough in the hunt for greener, more efficient energy.
+
+The team from Monash University in Melbourne says the lithium-sulfur battery it has created is the "world's most efficient," and can outperform traditional batteries by four times.
+
+The researchers said they are "on the brink" of commercializing the innovation, and touted its benefits for the fight against climate change.
+
+Most commercial batteries are lithium-ion, but lithium-sulfur alternatives have long been attractive because of their higher energy density and ability to power objects for longer.
+
+==
+The electric car revolution will require us to build better batteries
+
+However, lithium-sulfur batteries tend to have a far shorter lifespan. They are used in some aircraft and cars, but previous attempts to bring them to mass production and phase out lithium-ion batteries have failed.
+
+According to battery experts The Faraday Institution, the widespread use of lithium-sulfur batteries faces "major hurdles" stemming from sulfur's "insulating nature," and degradation of the metallic lithium anode.
+
+The team in Australia, whose research was published in the journal Science Advances, reconfigured the design of sulfur cathodes so that they are able to withstand higher stress loads without seeing a drop in overall performance.
+
+Their work "will revolutionise the Australian vehicle market and provide all Australians with a cleaner and more reliable energy market," lead researcher Professor Mainak Majumder said in a press release.
+
+The group, whose work received funding from the Australian government, has patented the new battery and further testing is scheduled for later this year.
+
+==
+The rapid rise of electric vehicles could lead to a mountain of battery waste
+
+"This approach not only favours high performance metrics and long cycle life, but is also simple and extremely low-cost to manufacture, using water-based processes, and can lead to significant reductions in environmentally hazardous waste," Matthew Hill, who also worked on the team, said.
+
+However, the there are some challenges and limitations associated with the technology.
+
+<span class=light>CNN's Amy Woodyatt contributed to this report.
+https://edition.cnn.com/2020/01/06/tech/lithium-sulfur-battery-scli-intl-scn/index.html</span>
