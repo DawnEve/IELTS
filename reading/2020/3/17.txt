@@ -1,0 +1,54 @@
+scienceDaily | COVID-19 coronavirus epidemic has a natural origin
+<span class='light'>Mar 17, 2020 | 990 words
+March 17, 2020 | Scripps Research Institute</span>
+
+<b>An analysis of public genome sequence data from SARS-CoV-2 and related viruses found no evidence that the virus was made in a laboratory or otherwise engineered.</b>
+
+
+The novel SARS-CoV-2 coronavirus that emerged in the city of Wuhan, China, last year and has since caused a large scale COVID-19 epidemic and spread to more than 70 other countries is the product of natural evolution, according to findings published today in the journal Nature Medicine.
+
+The analysis of public genome sequence data from SARS-CoV-2 and related viruses found no evidence that the virus was made in a laboratory or otherwise engineered.
+
+"By comparing the available genome sequence data for known coronavirus strains, we can firmly determine that SARS-CoV-2 originated through natural processes," said Kristian Andersen, PhD, an associate professor of immunology and microbiology at Scripps Research and corresponding author on the paper.
+
+In addition to Andersen, authors on the paper, "The proximal origin of SARS-CoV-2," include Robert F. Garry, of Tulane University; Edward Holmes, of the University of Sydney; Andrew Rambaut, of University of Edinburgh; W. Ian Lipkin, of Columbia University.
+
+Coronaviruses are a large family of viruses that can cause illnesses ranging widely in severity. The first known severe illness caused by a coronavirus emerged with the 2003 Severe Acute Respiratory Syndrome (SARS) epidemic in China. A second outbreak of severe illness began in 2012 in Saudi Arabia with the Middle East Respiratory Syndrome (MERS).
+
+On December 31 of last year, Chinese authorities alerted the World Health Organization of an outbreak of a novel strain of coronavirus causing severe illness, which was subsequently named SARS-CoV-2. As of February 20, 2020, nearly 167,500 COVID-19 cases have been documented, although many more mild cases have likely gone undiagnosed. The virus has killed over 6,600 people.
+
+Shortly after the epidemic began, Chinese scientists sequenced the genome of SARS-CoV-2 and made the data available to researchers worldwide. The resulting genomic sequence data has shown that Chinese authorities rapidly detected the epidemic and that the number of COVID-19 cases have been increasing because of human to human transmission after a single introduction into the human population. Andersen and collaborators at several other research institutions used this sequencing data to explore the origins and evolution of SARS-CoV-2 by focusing in on several tell-tale features of the virus.
+
+The scientists analyzed the genetic template for spike proteins, armatures on the outside of the virus that it uses to grab and penetrate the outer walls of human and animal cells. More specifically, they focused on two important features of the spike protein: the receptor-binding domain (RBD), a kind of grappling hook that grips onto host cells, and the cleavage site, a molecular can opener that allows the virus to crack open and enter host cells.
+
+
+<b>Evidence for natural evolution</b>
+
+The scientists found that the RBD portion of the SARS-CoV-2 spike proteins had evolved to effectively target a molecular feature on the outside of human cells called ACE2, a receptor involved in regulating blood pressure. The SARS-CoV-2 spike protein was so effective at binding the human cells, in fact, that the scientists concluded it was the result of natural selection and not the product of genetic engineering.
+
+This evidence for natural evolution was supported by data on SARS-CoV-2's backbone -- its overall molecular structure. If someone were seeking to engineer a new coronavirus as a pathogen, they would have constructed it from the backbone of a virus known to cause illness. But the scientists found that the SARS-CoV-2 backbone differed substantially from those of already known coronaviruses and mostly resembled related viruses found in bats and pangolins.
+
+"These two features of the virus, the mutations in the RBD portion of the spike protein and its distinct backbone, rules out laboratory manipulation as a potential origin for SARS-CoV-2" said Andersen.
+
+Josie Golding, PhD, epidemics lead at UK-based Wellcome Trust, said the findings by Andersen and his colleagues are "crucially important to bring an evidence-based view to the rumors that have been circulating about the origins of the virus (SARS-CoV-2) causing COVID-19."
+
+"They conclude that the virus is the product of natural evolution," Goulding adds, "ending any speculation about deliberate genetic engineering."
+
+
+<b>Possible origins of the virus</b>
+
+Based on their genomic sequencing analysis, Andersen and his collaborators concluded that the most likely origins for SARS-CoV-2 followed one of two possible scenarios.
+
+In one scenario, the virus evolved to its current pathogenic state through natural selection in a non-human host and then jumped to humans. This is how previous coronavirus outbreaks have emerged, with humans contracting the virus after direct exposure to civets (SARS) and camels (MERS). The researchers proposed bats as the most likely reservoir for SARS-CoV-2 as it is very similar to a bat coronavirus. There are no documented cases of direct bat-human transmission, however, suggesting that an intermediate host was likely involved between bats and humans.
+
+In this scenario, both of the distinctive features of SARS-CoV-2's spike protein -- the RBD portion that binds to cells and the cleavage site that opens the virus up -- would have evolved to their current state prior to entering humans. In this case, the current epidemic would probably have emerged rapidly as soon as humans were infected, as the virus would have already evolved the features that make it pathogenic and able to spread between people.
+
+In the other proposed scenario, a non-pathogenic version of the virus jumped from an animal host into humans and then evolved to its current pathogenic state within the human population. For instance, some coronaviruses from pangolins, armadillo-like mammals found in Asia and Africa, have an RBD structure very similar to that of SARS-CoV-2. A coronavirus from a pangolin could possibly have been transmitted to a human, either directly or through an intermediary host such as civets or ferrets.
+
+Then the other distinct spike protein characteristic of SARS-CoV-2, the cleavage site, could have evolved within a human host, possibly via limited undetected circulation in the human population prior to the beginning of the epidemic. The researchers found that the SARS-CoV-2 cleavage site, appears similar to the cleavage sites of strains of bird flu that has been shown to transmit easily between people. SARS-CoV-2 could have evolved such a virulent cleavage site in human cells and soon kicked off the current epidemic, as the coronavirus would possibly have become far more capable of spreading between people.
+
+Study co-author Andrew Rambaut cautioned that it is difficult if not impossible to know at this point which of the scenarios is most likely. If the SARS-CoV-2 entered humans in its current pathogenic form from an animal source, it raises the probability of future outbreaks, as the illness-causing strain of the virus could still be circulating in the animal population and might once again jump into humans. The chances are lower of a non-pathogenic coronavirus entering the human population and then evolving properties similar to SARS-CoV-2.
+
+Funding for the research was provided by the US National Institutes of Health, the Pew Charitable Trusts, the Wellcome Trust, the European Research Council, and an ARC Australian Laureate Fellowship.
+
+<span class='light'>https://www.sciencedaily.com/releases/2020/03/200317175442.htm</span>
