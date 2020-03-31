@@ -147,6 +147,10 @@ $(document).click(function(event){
 			//如果单词长度为0，或者超过30，就不查了
 			return false;
 		}
+		//如果是短语，也不查了
+		if(word.split(' ').length>1){
+			return false;
+		}
 		
 		self.ajax({
 			method:"get",

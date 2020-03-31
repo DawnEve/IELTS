@@ -1,0 +1,88 @@
+latimes|The flu has killed far more people than coronavirus. So why all the frenzy about COVID-19?
+<span class=light>Mar 5, 2020 | 886 words
+By DEBORAH NETBURN |STAFF WRITER |MARCH 5, 20201:57 PM
+
+The flu kills tens of thousands of people each year. So why is everyone freaking out about the new coronavirus? (Irfan Khan/Los Angeles Times)</span>
+
+You’ve seen it on social media, heard it at a dinner party, and maybe you’ve even said it yourself.
+
+“The flu has killed tens of thousands more people,” the line goes. “So why is everyone freaking out about the coronavirus?”
+
+It’s a reasonable question. After all, both viruses produce similar symptoms — fever, body aches, cough, fatigue — and if you live in the United States, you are currently much more likely to catch the flu than the new coronavirus that originated in China late last year.
+
+An estimated 32 million Americans have come down with influenza since this year’s flu season began in late September, resulting in about 18,000 deaths, according to the Centers for Disease Control and Prevention.
+
+
+In contrast, as of Thursday, health officials have confirmed 97,876 cases of coronavirus infection resulting in 3,347 deaths across the entire globe.
+
+In the U.S., the number of reported coronavirus infections is significantly smaller, with 177 reported cases and 11 deaths. That is a minuscule fraction of the nearly 330 million people living in the country today.
+
+So why all the warnings from the CDC and other public health agencies about self-quarantines, school closures and other daily disruptions when we live through flu season each year?
+
+What are we so scared about?
+
+“I think a big part of it is fear of the unknown,” said Dr. Otto Yang, an infectious disease expert at UCLA. “The enemy you don’t know is much scarier than the enemy you know.”
+
+
+<b>No vaccines, no medications</b>
+
+Humanity has been contending with seasonal flu for centuries, so scientists have had a long time to study the influenza strains that circulate in the winter months.
+
+This research has led to the development of annual vaccines that protect large swaths of the population from getting the flu and reduce its severity in those who do become infected. In addition, there are medications available that can treat influenza symptoms and sometimes shorten the duration of the illness.
+
+Also, when individuals come down with the flu, their bodies build up immunity. That means not everyone who is exposed to the flu virus gets sick.
+
+But the coronavirus responsible for COVID-19 has been in existence for only about three months, so there is no natural immunity in the population.
+
+And unfortunately, there isn’t a vaccine that can pick up the slack. Although several experimental vaccines are in the works, none will be ready to roll out for at least 18 months, said Dr. Hilary Marston, a policy advisor at the National Institutes of Health.
+
+Nor are there any medications specifically designed to target this coronavirus, though researchers are testing existing antiviral medications to see if they can help patients with COVID-19.
+
+“Public health measures are what we are going to need to focus on for the foreseeable future,” Marston said. That includes basics like washing your hands and covering your cough, as well as more disruptive things like closing schools, canceling public gatherings and implementing quarantines for those who may have been exposed.
+
+
+<b>Still learning how it spreads</b>
+
+For public health officials, another cause for concern is the lack of information about how easily the coronavirus spreads.
+
+Scientists know that influenza is transmitted from person to person by droplets that leave a sick person’s mouth when they cough, sneeze or talk. Those droplets can travel three to six feet and infect anyone in their path.
+
+The coronavirus spreads through droplets as well, researchers say, and it may be capable of airborne transmission too. Airborne viruses, like measles and chickenpox, can drift from person to person in even smaller droplets that can travel on air currents.
+
+“That’s a very different thing,” said Abigail Carlson, an epidemiologist at Washington University School of Medicine in St. Louis. Among other things, it implies that an infected person can spread the virus to someone who is more than six feet away, “so that is also part of the rationale for keeping people at a distance from one another.”
+
+And researchers are still trying to determine how long the new virus can live on surfaces like handrails, doorknobs and elevator buttons that may be touched by hundreds or even thousands of people each day.
+
+It isn’t yet clear whether the coronavirus spreads as easily as the flu, but it has moved quickly. It has reached six continents in a matter of weeks with confirmed cases of COVID-19 in 89 countries and territories. Some of those patients became infected despite having no contact with anyone known to be exposed to the virus.
+
+
+<b>Higher fatality rate than seasonal flu</b>
+
+And here’s another reason health officials are sounding the alarm: It appears that COVID-19 has a higher fatality rate than the flu.
+
+Although four out of five cases of COVID-19 result in mild illness, the director-general of the World Health Organization said this week that the mortality rate of COVID-19 could be as high as 3.4%.
+
+That would be higher than the mortality rate of the 1918 Spanish flu, which is estimated to have killed at least 50 million people worldwide over two years. Among those who were infected, the death rate was around 2.5%.
+
+However, experts said the observed COVID-19 death rate is almost certainly an overestimate.
+
+That’s because the only people being tested for the coronavirus are those showing symptoms of infection. There could be just as many people — and perhaps even more — who have the virus but show no signs of infection, or have symptoms so mild they were not tested.
+
+Yang said it’s certainly possible that the true number of people who are infected is 10 times greater than the number of people who have confirmed cases of COVID-19. In that case, the true fatality rate would be closer to 0.2%, he said.
+
+But even that’s still higher than the seasonal flu, which had a fatality rate of up to 0.14% last flu season, according to data from the CDC.
+
+Ultimately, said Yang of UCLA,you might think of the coronavirus as a very bad flu that can infect a lot of people. That’s still cause for worry.
+
+“The flu is variable,” he said. “There are some horrible flus like the 1918 pandemic, and some mild ones. Coronavirus has the potential to be very bad.”
+
+<b>Containment still worth a try</b>
+
+And here’s one more reason to try to contain the coronavirus: Because we just might be able to do it.
+
+“We don’t even talk about containment for seasonal flu — it’s just not possible,” said Tedros Adhanom Ghebreyesus, director-general of the WHO. “But it is possible for COVID-19.”
+
+And if taking basic precautions saves even a few lives, isn’t that worth it?
+
+<span class=light>Deborah Netburn is a features writer at the Los Angeles Times. She joined the paper in 2006 and has covered entertainment, home and garden, national news, technology and most recently, science.
+https://www.latimes.com/science/story/2020-03-05/flu-killed-more-people-coronavirus-covid-19</span>
