@@ -141,6 +141,7 @@ $(document).click(function(event){
 	},
 	//做了冗余，可以在控制台查单词
 	trans:function(word,oDiv){
+		
 		var self=this;
 		//console.log('word==>'+word+';')
 		if(word.length==0 || word.length>30){
@@ -156,9 +157,10 @@ $(document).click(function(event){
 			method:"get",
 			//访问后台 //todo: 修改时要保证能访问到php文件
 			//url:location.protocol+"//ielts.dawneve.cc/wordKing/dawnDict.php?word="+word+'&source='+window.location, 
-			url:location.protocol+"//applybio.com/wordKing/dawnDict.php?word="+word+'&source='+window.location,  
+			url:location.protocol+"//applybio.com/wordKing/dawnDict.php?word="+word+'&source='+encodeURIComponent(window.location),  
 			
 			success:function(data){
+					console.log(word);
 				if(data.status){
 					if(data.res==''){
 						data.res="没有查到，请调整再试";

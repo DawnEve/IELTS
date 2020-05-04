@@ -5,6 +5,16 @@
 前台：先用普通页面，后期考虑Vue
 
 
+如何运行?
+后台运行本目录的 
+$ python index.py
+
+背完单词提交到后台，js控制台 
+$(document).trigger("feedback");
+
+
+
+
 
 大型项目的组织方式：
 https://blog.csdn.net/ying847782627/article/details/51189049
