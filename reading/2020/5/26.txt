@@ -1,0 +1,40 @@
+cnn | Supercomputer Simulates Neanderthal Extinction, Finds Humans Were to Blame for Our Ancient Relatives' Demise
+<span class=light>May 26, 2020 | 474 words
+BY JASON MURDOCK ON 5/22/20 AT 8:33 AM EDT</span>
+
+Competition for resources between Neanderthals and Homo sapiens was the reason for our ancient relatives' demise, new research suggests. Supercomputer simulations have found that Neanderthal extinction—believed to have occurred between 43 to 38 thousand years ago—was unlikely to have been caused by shifts in the climate or interbreeding with travelers from our species.
+
+Spearheaded by Axel Timmermann, director at the Institute for Basic Science's (IBS) Center for Climate Physics, South Korea, a team used mathematical models to simulate migration patterns of Neanderthals and Homo sapiens, and how they interacted over time.
+
+Until now, such models did not exist. "This is the first time we can quantify the drivers of Neanderthal extinction," Timmermann said in a statement. "In the model I can turn on and off... processes such as abrupt climate change, interbreeding or competition."
+
+Experts say that Neanderthals lived in Europe, southwest and central Asia from about 400,000 to 40,000 years ago and are considered to be the closest ancient human relatives, with evidence pointing to both species sharing a common ancestor.
+
+An in-depth profile from the British Natural History Museum explains Neanderthals lived alongside Homo sapiens for a period, with Europeans and Asians living today having around 2 percent of their DNA. Exactly why Neanderthals disappeared is uncertain.
+
+Some theories prevailed, however, including that their extinction was fueled by climate changes that caused fragmented populations, or inbreeding.
+
+Another theory was that their demise was tied to competition for resources with early modern humans who started to arrive in Europe over 40,000 years ago.
+
+The new research, published in the journal Quaternary Science Review, poured data through the "Aleph" supercomputer housed at the institute.
+
+In the model—based on several thousands of lines of code—both species compete for the same food resources and a small fraction was allowed to interbreed. The team said it also added climate simulations, genetic and demographic data.
+
+According to Timmermann, it showed "realistic extinction" was only feasible if Homo sapiens were able to better exploit natural resources than Neanderthals.
+
+"Neanderthals lived in Eurasia for the last 300,000 years and adapted to abrupt climate shifts that were even more dramatic than those that occurred during the time of Neanderthal disappearance," he said. "It is not a coincidence that Neanderthals vanished just at the time when Homo sapiens started to spread into Europe.
+
+"The new computer model simulations show clearly that this event was the first major extinction caused by our own species."
+
+His research paper suggests Homo sapiens, who initially evolved in Africa, may have had several potential competitive advantages over Homo Neanderthalensis. They may have been a combination of innovation—including blades and tools—more sophisticated hunting techniques and a stronger resistance to pathogens.
+
+Interbreeding, the supercomputer models found, was likely to have only been a minor contributor to Neanderthal extinction, and the same went for abrupt climate change. From here, the team said it will start work to improving its models.
+
+Any suggestions that the Neanderthals were simply primitive humans have since been dismissed, with discoveries showing they were intelligent, capable of surviving in hostile environments and of being altruistic, as Smithsonian Magazine reports.
+
+"[They] were highly intelligent, able to adapt to a wide variety of ecological zones, and capable of developing highly functional tools to help them do so," Fred H. Smith, anthropologist at Loyola University, Chicago, told the magazine. "They were quite accomplished."
+<span class=light>
+A skull is displayed as part of the Neanderthal exhibition at the Musee de l'Homme in Paris on March 26, 2018.
+STEPHANE DE SAKUTIN/AFP/GETTY
+
+https://www.newsweek.com/neanderthal-extinction-aleph-supercomputer-simulates-homo-sapiens-demise-competition-1505929</span>
