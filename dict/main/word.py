@@ -247,6 +247,7 @@ def  add_word_routes(app):
             2:'\n刷雅思单词......: 按照tag_ielts标签筛选',
             3:'\n刷易错单词......: 按照 听写的出错频率，可以不反馈到后台',
             4:'\n刷易错单词......: 按照 添加顺序倒序，可以不反馈到后台',
+            5:'\n从头到尾 刷单词......: 按照 添加顺序，可以不反馈到后台',
             
             100:"\n非0且没有指定sql，则刷生僻单词......: 牛津分级不是a1,a2,b1,b2,c1的词(可重复背诵);"
         }
@@ -270,6 +271,8 @@ def  add_word_routes(app):
             sql='select id, word,phoneticSymbol, meaning from word_ms where word in ( select tb.word from (select * from word_unknown order by wrong/(wrong+`right`) DESC, modi_time DESC,id DESC ) as tb ) limit ' + str((page-1)*100) +",100;";
         elif 4==aim:
             sql='select id, word,phoneticSymbol, meaning from word_ms where word in ( select tb.word from (select * from word_unknown order by add_time DESC, modi_time DESC,id DESC limit '+ str((page-1)*40) +',40 ) as tb );';
+        elif 5==aim:
+            sql='select id, word,phoneticSymbol, meaning from word_ms limit '+ str((page-1)*100) +',40;';
         else: 
             sql="select id, word, phoneticSymbol, meaning from word_ms where id>3000 and tag_ox is null limit "+ str((page-1)*100) +",100;";
         #

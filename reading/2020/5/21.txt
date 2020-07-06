@@ -1,0 +1,51 @@
+newsweek|Microplastics in the Ocean May Be Vastly Underestimated, With up to 125 Trillion Particles Floating Around, Study Says
+<span class=light>May 21, 2020 | 789 words
+BY ARISTOS GEORGIOU ON 5/20/20 AT 10:46 AM EDT</span>
+
+There may be far more microplastics floating in the world's oceans than previously estimated, a team of scientists has suggested.
+
+The researchers estimate that the oceans could be home to as many as 125 trillion microplastic particles, according to a study published in the journal Environmental Pollution.
+
+The tiny pieces of plastic—usually defined as plastic pieces measuring less than 5 millimeters across, according to the most recognized definition—are ubiquitous in the marine environment. However, accurately classifying and quantifying microplastics in the oceans has proven challenging for researchers.
+
+
+Typically, scientists use nets with a mesh size of 333 micrometers to sample microplastic particles in the water, but these do not account for smaller pieces of plastic debris.
+
+"It is quite well known what impact larger pieces of plastic have on marine animals, like turtles eating plastic bags mistaking them for jellyfish, but we wanted to know if microplastics are a problem to smaller marine animals like mussels or zooplankton," Pennie Lindeque, lead author of the study from Plymouth Marine Laboratory, told Newsweek
+
+"However, first we needed an accurate picture of how many small microplastics there are in the sea, and what sort of plastic they are. We are interested in really quite small microplastics—around 100 micrometers in size, similar to the width of a human hair—and suspected that the standard sampling methods using a net with pores about 333 micrometers in size, wouldn't give an accurate picture," she said.
+
+For the latest study, the scientists wanted to compare how many microplastics were collected from the sea using nets with different mesh sizes. They tested the standard 333 and 500 micrometer nets as well as finer ones with a mesh size of 100 micrometers.
+
+They focused on coastal waters where microplastics are predicted to have the biggest influence on marine life. Specifically, they conducted sampling in two locations on both sides of the Atlantic Ocean: the waters off the coast of Maine and the English Channel—a sea that separates the United Kingdom from northern France.
+
+"Microplastic pollution is a widespread pollutant, found all throughout the oceans, but working out how much is there has been a major challenge for scientists," Matthew Cole, co-lead author of this study from Plymouth Marine Laboratory in the U.K., said in a statement.
+
+"Typically, scientists use specialized nets to sieve out microplastics from the sea surface. Normally these nets are quite coarse so they don't get clogged up with microscopic plants and animals that live in the sea, but it also means they're unable to sieve out the very smallest plastics that are present," he said.
+
+The results from the sampling in both locations revealed that the finer 100 micrometer net captured ten and 2.5 times more microplastics than the 500 and 333 micrometer nets respectively. According to the study, the finer net picked up significantly thinner and shorter microplastic fibers.
+
+"Our research also shows that the microplastics sampled with a finer net were mostly fibers that were significantly smaller than those sampled with a coarser net," Pennie Lindeque, lead author of from Plymouth Marine Laboratory, told Newsweek.
+
+Extrapolating the data, the researchers estimate that sampling using a much finer net with a 1 micrometer mesh would capture more than 3,700 pieces of microplastics per cubic meter. They say the results suggest that previous estimates of marine microplastic concentrations could be significant underestimates.
+
+"I was surprised at the extent that we had been underestimating the microplastic abundance in the marine environment, I was also surprised how consistent the results were on both sides of the North Atlantic, the eastern seaboard of the U.S. and the southwest coast of the U.K., Lindeque said.
+
+Previous estimates, which are primarily modelled on studies using 333 micrometer nets, have put the number of microplastics floating in the global ocean at somewhere between 5 and 50 trillion particles. But based on their latest results, the scientists estimate that there may be closer to between 12.5 and 125 trillion particles.
+
+"Microplastics aren't a uniform type of pollutant, rather they come in all different shapes, sizes and polymer types; determining how many of which types are in the natural environment is rather like looking for needles in a haystack," Lindeque said in a statement.
+
+"Our results, based on sampling in the U.K. and U.S., suggests we are underestimating the really small pieces of plastic in the marine environment. We suggest microplastic concentrations could exceed 3,700 microplastics per cubic meter, that's far more than the number of, say, zooplankton you would find in a meter cubed of water."
+
+The researchers say that sampling with finer nets gives a better representation of the type and amount of microplastic in the marine environment, which could help researchers to better assess the risks that these tiny particles pose to marine life and ecosystems. This in turn can help to influence societal behavior and future policy interventions.
+
+Due to their small size, microplastics can be consumed by tiny animals that form the basis of the marine food webs. As such, these tiny particles can make their way up the food chain, accumulating in larger animals—even humans.
+
+Some studies have documented the potential negative impacts—including reduced fertility and altered behavior—of ingesting microplastics for some marine organisms. However, more research is needed to understand how consuming microplastics affects the behavior and physiology of marine animals, as well as the potential health risks further up the food chain for people who eat seafood.
+
+The microplastic particles in the ocean have either been directly manufactured—for example, microbeads in cosmetics—or they are the result of larger pieces of plastic degrading and fragmenting over time.
+
+"By design, plastics are resistant to degradation and as such are expected to persist in the natural environment for hundreds, if not thousands of years," the authors wrote in the study.
+<span class=light>
+This article was updated to include additional comments from Pennie Lindeque.
+https://www.newsweek.com/microplastics-ocean-vastly-underestimated-125-trillion-particles-floating-around-1505404</span>

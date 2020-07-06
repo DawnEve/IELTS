@@ -231,6 +231,7 @@ https://www.gutenberg.org
 > en0.2.33-9 怎样画马？
 > en0.2.34-0 add psg 2020.5.26
 > en0.2.34-1 fix mistake
+> en0.2.34-2 add psg 20200706
 # ----------------> push to github
 # commited local
 

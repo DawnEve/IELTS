@@ -1,0 +1,44 @@
+newsweek | Why Did the Space Shuttle Program End?
+<span class=light>May 23, 2020 | 740 words
+BY ARISTOS GEORGIOU ON 5/21/20 AT 8:00 AM EDT</span>
+
+Since the end of the space shuttle program in 2011, NASA has relied on the Russian Soyuz spacecraft to ferry its astronauts to and from the International Space Station (ISS).
+
+With next week's historic SpaceX launch, this era of reliance may be coming to an end. But why did NASA retire the space shuttle even though the space agency had no alternative launch vehicle?
+
+
+In February, 2003, the Space Shuttle Columbia disintegrated as it reentered the atmosphere, killing all seven crew members on board, the second fatal shuttle accident after the catastrophic launch failure of Challenger in 1986.
+
+Following the Columbia disaster, shuttle flights were suspended for more than two years. And in 2004, President George Bush revealed his administration's Vision for Space Exploration, announcing that the program would be terminated after the end of the construction of the International Space Station.
+
+"The proximate cause of the end of the shuttle program was the Columbia accident in 2003," NASA's chief historian Bill Barry told Newsweek. "[But] while it's easy to say the Columbia accident is what caused the end of the program, the reasons are [actually] pretty deep and they go back to the very beginning. The Columbia accident finally wiped away the facade that the shuttle program was ever going to be what it was originally cracked up to be when President Nixon approved it in 1972."
+
+"In the aftermath of Columbia, people realized that the vehicle was a lot more risky than generally thought. And most of the reasons for that were because of compromises made back in the 1970s when the shuttle was being designed due to cutbacks in the budget."
+
+But aside from the safety aspect, cost was also a major issue. When the program was retired, the three remaining shuttles were only about a third of the way through their flight lifetimes.
+
+"The bottom line answer is that it was too expensive. Way too expensive," former NASA Jet Propulsion Laboratory system engineer Mark Adler wrote in 2015. "The shuttle never met its promise for low-cost access to space by virtue of the system's reusability."
+
+"The shuttle and the space station completely dominated NASA's budget for human space flight, to the point that no significant new developments were possible. It has been made abundantly clear that NASA's budget will remain flat for the foreseeable future. Therefore to do anything beyond shuttle and station, at least one of them had to go. Station was just beginning to live up to its promise for research, so it was the older shuttle system that went," Adler said.
+
+According to Barry, the decision to end the space shuttle program was made easier in the geopolitical context of 2003-2004 when the United States and Russia were "good allies" and the cost of using the Soyuz spacecraft was essentially negligible.
+
+"The remit between the Russian Federation, the United States and the other partners on the ISS was that the different parties would just exchange services with each other. It wasn't until several years later Russia complained that, in fact, they were getting an unfair deal because they were being forced into providing vehicles that they hadn't budgeted for," Barry said.
+
+"Then the United States relented and said, 'okay, well, we'll buy services on a cash basis.' But the expectation even then was that Russia was good partner and there would be no issues with a long-term relationship where we would be going back and forth to the space station together," he said.
+
+"The geopolitical context has changed a bit, and that makes things a little less amenable to that kind of approach. So now, it is important that the United States has an independent capability of being able to launch people to space."
+
+Since the last Space Shuttle mission in July, 2011, NASA has relied on Soyuz to ferry its astronauts to and from the ISS, paying its Russian counterpart Roscosmos an average of around $86 million for each seat over a total of 35 launches.
+
+But next week, NASA astronauts Doug Hurley and Bob Behnken will take part in what will be the first manned orbital spaceflight launched from U.S. soil since the end of the shuttle program.
+
+The astronauts will make their way to and from the International Space Station ISS aboard SpaceX's Crew Dragon spacecraft, which has already completed one journey to the ISS, albeit unmanned.
+
+The latest mission, dubbed Crew Dragon Demo-2, could mark the end of the reliance on Soyuz, providing NASA with a new vehicle to launch astronauts to the ISS from U.S. soil. Demo-2 will be the first time that the Dragon spacecraft takes astronauts into space, and if the demonstration mission goes to plan, SpaceX is contracted to supply six more flights to the ISS.
+
+The return of launches to U.S. soil forms part of NASA's Commercial Crew Program (CCP), a collaboration with the American aerospace industry initiated in 2010 with the aim of developing launch systems capable of carrying crews to low-Earth orbit and the ISS.
+
+NASA awarded SpaceX more than $3 billion in funding to develop the Crew Dragon. They also gave American aerospace giant Boeing nearly $5 billion to develop their own spacecraft, the CST-100 Starliner, which is also designed to take astronauts to low-Earth orbit. Boeing is slightly behind SpaceX though, with the company hoping to conduct a manned test flight of the Starliner in 2021.
+<span class=light>
+https://www.newsweek.com/why-space-shuttle-program-end-1505594</span>

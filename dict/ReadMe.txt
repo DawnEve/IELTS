@@ -5,13 +5,41 @@
 前台：先用普通页面，后期考虑Vue
 
 
-如何运行?
-后台运行本目录的 
+1.部署方式:
+要不定期备份后台数据库。
+数据库位置定义在文件 /dict/dawnDictLib.py 中
+
+
+2.如何运行?
+后台运行 /dict/index.py 
 $ python index.py
 
-背完单词提交到后台，js控制台 
-$(document).trigger("feedback");
 
+3.背单词页面
+http://ielts.dawneve.cc/dict/scanWord.html
+
+记住了: 数字1，或减号
+下一个: 好几个键都可以(左箭头，下箭头，数字234)
+
+遇到错误的单词，修改: 点拂晓词典，里面有修改
+
+
+修改代码:
+前台页面定义在 /dict/scanWord.html中
+背单词的模式定义在文件 /dict/main/word.py
+
+
+
+4.背完单词提交到后台，js控制台输入 
+$(document).trigger("feedback");
+不提交就没有副作用
+
+
+#### 
+缺点1: 复数名词单独成词条，不好，怎么分流到已经认识的数据表中？或者冗余字段中
+	doubts; tons; pigments; 
+缺点2: 动词的ing, 过去式、过去分词怎么分流？
+	tackling; 
 
 
 

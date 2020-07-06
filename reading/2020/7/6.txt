@@ -1,0 +1,100 @@
+nature | Six months of coronavirus: the mysteries scientists are still racing to solve
+<span class=light>Jul 06, 2020 | 1781 words
+NEWS  03 JULY 2020 | Ewen Callaway, Heidi Ledford & Smriti Mallapaty</span>
+
+From immunity to the role of genetics, Nature looks at five pressing questions about COVID-19 that researchers are tackling.
+
+<span class=light>==
+SEM of SARS-CoV-2 coronavirus particles (orange) on an apoptotic cell (blue) from a US patient sample. SARS-CoV-2.
+A scanning electron microscope image of SARS-CoV-2 coronavirus particles (orange) on a cell (blue).Credit: NIAID/NIH/SPL</span>
+
+
+In late December 2019, reports emerged of a mysterious pneumonia in Wuhan, China, a city of 11 million people in the southeastern province of Hubei. The cause, Chinese scientists quickly determined, was a new coronavirus distantly related to the SARS virus that had emerged in China in 2003, before spreading globally and killing nearly 800 people.
+
+Six months and more than ten million confirmed cases later, the COVID-19 pandemic has become the worst public-health crisis in a century. More than 500,000 people have died worldwide. It has also catalysed a research revolution, as scientists, doctors and other scholars have worked at breakneck speed to understand COVID-19 and the virus that causes it: SARS-CoV-2.
+
+
+They have learnt how the virus enters and hijacks cells, how some people fight it off and how it eventually kills others. They have identified drugs that benefit the sickest patients, and many more potential treatments are in the works. They have developed nearly 200 potential vaccines — the first of which could be proved effective by the end of the year.
+
+But for every insight into COVID-19, more questions emerge and others linger. That is how science works. To mark six months since the world first learnt about the disease responsible for the pandemic, Nature runs through some of the key questions that researchers still don’t have answers to.
+
+
+
+<b>Why do people respond so differently?</b>
+
+One of the most striking aspects of COVID-19 is the stark differences in experiences of the disease. Some people never develop symptoms, whereas others, some apparently healthy, have severe or even fatal pneumonia. “The differences in the clinical outcome are dramatic,” says Kári Stefánsson, a geneticist and chief executive of DeCODE Genetics in Reykjavik, whose team is looking for human gene variants that might explain some of these differences.
+
+That search has been hampered by the relatively small number of cases in Iceland. But last month, an international team analysing the genomes of roughly 4,000 people from Italy and Spain turned up the first strong genetic links to severe COVID-19. People who developed respiratory failure were more likely to carry one of two particular gene variants than were people without the disease.
+
+One variant lies in the region of the genome that determines ABO blood type. The other is near several genes, including one that encodes a protein that interacts with the receptor the virus uses to enter human cells, and two others that encode molecules linked to immune response against pathogens. The researchers are part of the COVID-19 Host Genetics Initiative, a global consortium of groups that are pooling data to validate findings and uncover further genetic links.
+
+<span class=light>==
+A health worker makes a video-call with a relative of a 21-year-old COVID-19 infected patient, Bogota.
+A health worker helps a 21-year-old person with COVID-19 to speak to a relative over video call in Bogota.Credit: Juan Barreto/AFP/Getty</span>
+
+The variants identified so far seem to play a modest part in disease outcome. A team led by Jean-Laurent Casanova, an immunologist at the Rockefeller University in New York City, is looking for mutations that have a more substantial role.
+
+To find them, his team is combing the full genomes of otherwise healthy people under 50 who have experienced severe cases of COVID-19, he says, such as “the guy who runs a marathon in October, and now, five months later, he’s in the ICU, intubated and ventilated”. Extreme susceptibility to other infections, including tuberculosis and Epstein–Barr virus, a usually harmless pathogen that sometimes causes severe illness, have been pinned down to mutations in single genes. Casanova suspects the same will be true for some cases of COVID-19.
+
+
+
+<b>What’s the nature of immunity and how long does it last?</b>
+
+Immunologists are working feverishly to determine what immunity to SARS-CoV-2 could look like, and how long it might last. Much of the effort has focused on ‘neutralizing antibodies’, which bind to viral proteins and directly prevent infection. Studies have found that levels of neutralizing antibodies against SARS-CoV-2 remain high for a few weeks after infection, but then typically begin to wane.
+
+However, these antibodies might linger at high levels for longer in people who had particularly severe infections. “The more virus, the more antibodies, and the longer they will last,” says immunologist George Kassiotis of the Francis Crick Institute in London. Similar patterns have been seen with other viral infections, including SARS (severe acute respiratory syndrome). Most people who had SARS lost their neutralizing antibodies after the first few years. But those who had it really severely still had antibodies when re-tested 12 years later, says Kassiotis.
+
+Researchers don’t yet know what level of neutralizing antibodies is needed to fight off reinfection by SARS-CoV-2, or at least to reduce COVID-19 symptoms in a second illness. And other antibodies might be important for immunity. Virologist Andrés Finzi of the University of Montreal in Canada, for example, plans to study the role of antibodies that bind to infected cells and mark them for execution by immune cells — a process called antibody-dependent cellular cytotoxicity — in responses to SARS-CoV-2.
+
+Ultimately, a full picture of SARS-CoV-2 immunity is likely to extend beyond antibodies. Other immune cells called T cells are important for long-term immunity, and studies suggest that they are also being called to arms by SARS-CoV-2. “People are equating antibody to immunity, but the immune system is such a wonderful machine,” says Finzi. “It is so much more complex than just antibodies alone.”
+
+Because there is not yet a clear, measurable marker in the body that correlates with long-term immunity, researchers must piece together the patchwork of immune responses and compare it with responses to infections with other viruses to estimate how durable protection might be. Studies of other coronaviruses suggest that ‘sterilizing immunity’, which prevents infection, might last for only a matter of months. But protective immunity, which can prevent or ease symptoms, could last longer than that, says Shane Crotty, a virologist at the La Jolla Institute of Immunology in California.
+
+<span class=light>==
+A volunteer receives an injection during the country's first human clinical for a potential vaccine against COVID-19 in Soweto.
+A volunteer in Soweto, South Africa, receives an injection in a clinical trial for a potential COVID-19 vaccine.Credit: Felix Dlangamandla/Beeld/Gallo Images/Getty</span>
+
+
+
+<b>Has the virus developed any worrying mutations?</b>
+
+All viruses mutate as they infect people, and SARS-CoV-2 is no exception. Molecular epidemiologists have used these mutations to trace the global spread of the virus. But scientists are also looking for changes that affect its properties, for instance by making some lineages more or less virulent or transmissible. “It is a new virus; if it did become more severe, that’s something you would want to know about,” says David Robertson, a virologist at the University of Glasgow, UK, whose team is cataloguing SARS-CoV-2 mutations. Such mutations also have the potential to lessen the effectiveness of vaccines, by altering the ability of antibodies and T cells to recognize the pathogen.
+
+But most mutations will have no impact, and picking out the worrying ones is challenging. Versions of the coronavirus identified at the start of outbreaks in hotspots such as Lombardy in Italy or in Madrid, for instance, might look as if they are deadlier than those found at later stages or in other locations. But such associations are probably spurious, says William Hanage, an epidemiologist at Harvard University’s T.H. Chan School of Public Health in Boston, Massachusetts: health officials are more likely to identify severe cases in early, uncontrolled stages of an outbreak. Broad spread of certain mutations could also be due to ‘founder effects’, in which lineages that arise early in transmission centres such as Wuhan or northern Italy happen to have a mutation that is passed on when they seed outbreaks elsewhere.
+
+
+Researchers are debating whether the widespread prevalence of one mutation in the virus’s spike protein is the product of a founder effect — or an example of a consequential change to the virus’s biology. The mutation seems to have first emerged around February in Europe, where most circulating viruses now carry it, and it is now found in every region of the world. A spate of preprint studies has suggested that this mutation makes the SARS-CoV-2 virus more infectious to cultured cells, but it is not clear how this property translates to infections in humans.
+
+
+
+<b>How well will a vaccine work?</b>
+
+An effective vaccine might be the only way out of the pandemic. There are currently roughly 200 in development worldwide, with around a 20 in clinical trials. The first large-scale efficacy trials to find out whether any vaccines work are set to begin in the next few months. These studies will compare rates of COVID-19 infection between people who get a vaccine and those who receive a placebo.
+
+But there are already clues in data from animal studies and early-stage human trials, mainly testing safety. Multiple teams have conducted ‘challenge trials’ in which animals given a candidate vaccine are intentionally exposed to SARS-CoV-2 to see whether the jab can prevent infection. Studies in macaque monkeys suggest that vaccines might do a good job at preventing lung infection and resulting pneumonia, but not at blocking infection elsewhere in the body, such as the nose. Monkeys that received a vaccine developed by the University of Oxford, UK, and were then exposed to the virus had levels of viral genetic material in their noses comparable to levels in unvaccinated animals7. Results such as this raise the possibility of a COVID-19 vaccine that prevents severe disease — but not spread of the virus.
+
+Data in humans, although scant, suggest that COVID-19 vaccines prompt our bodies to make potent neutralizing antibodies that can block the virus from infecting cells. What isn’t yet clear is whether levels of these antibodies are high enough to stop new infections, or how long these molecules persist in the body.
+
+With government and industry pumping billions into vaccine development, testing and manufacturing, a vaccine could be available in record time, say scientists — it just might not be completely effective. “We might have vaccines in the clinic that are useful in people within 12 or 18 months,” Dave O’Connor, a virologist at the University of Wisconsin–Madison, told Nature in May. “But we’re going to need to improve on them.”
+
+<span class=light>==
+A Horseshoe bat hangs from a net inside an abandoned Israeli army outpost next to the Jordan River in the occupied West Bank.
+Horseshoe bats are a primary suspect in the search for the origin of the SARS-CoV-2 coronavirus.Credit: Menahem Kahana/AFP/Getty</span>
+
+
+
+<b>What is the origin of the virus?</b>
+
+Most researchers agree that the SARS-CoV-2 coronavirus probably originated in bats, specifically horseshoe bats. This group hosts two coronaviruses closely related to SARS-CoV-2. One, named RATG13, was found8 in intermediate horseshoe bats (Rhinolophus affinis) in the southwestern Chinese province of Yunnan in 2013. Its genome is 96% identical to that of SARS-CoV-2. The next-closest match is RmYN02, a coronavirus found in Malayan horseshoe bats (Rhinolophus malayanus), which shares 93% of its genetic sequence with SARS-CoV-29.
+
+A comprehensive analysis10 of more than 1,200 coronaviruses sampled from bats in China also points to horseshoe bats in Yunnan as the probable origin of the new coronavirus. But the study doesn’t exclude the possibility that the virus came from horseshoe bats in neighbouring countries, including Myanmar, Laos and Vietnam.
+
+The 4% difference between the genomes of RATG13 and SARS-CoV-2 represents decades of evolution. Researchers say this suggests that the virus might have passed through an intermediate host before spreading to people, in the same way that the virus that causes SARS is thought to have passed from horseshoe bats to civets before reaching people. A few candidates for this animal host were put forward early in the outbreak, with several groups homing in on pangolins12.
+
+Researchers isolated coronaviruses from Malayan pangolins (Manis javanica) confiscated during anti-smuggling operations in southern China11,12. These viruses share up to 92% of their genomes with the new coronavirus. The studies confirm that pangolins can host coronaviruses that share a common ancestor with SARS-CoV-2, but they do not prove that the virus jumped from pangolins to people.
+
+To unequivocally trace the virus’s journey to people, scientists would need to find an animal that hosts a version more than 99% similar to SARS-CoV-2 — a prospect complicated by the fact that the virus has spread so widely among people, who have also passed it to other animals, such as cats, dogs and farmed mink.
+
+Zhang Zhigang, an evolutionary microbiologist at Yunnan University in Kunming, says efforts by research groups in China to isolate the virus from livestock and wildlife, including civets, have turned up bare. Groups in southeast Asia are also searching for the coronavirus in tissue samples from bats, pangolins and civets.
+
+<span class=light>https://www.nature.com/articles/d41586-020-01989-z</span>
