@@ -233,6 +233,8 @@ https://www.gutenberg.org
 > en0.2.34-1 fix mistake
 > en0.2.34-2 add psg 20200706
 > en0.2.34-3 change order
+> en0.2.34-4 dict/tools/get_zip.py 添加压缩sql文件
+
 # ----------------> push to github
 # commited local
 

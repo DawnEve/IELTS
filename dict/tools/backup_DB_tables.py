@@ -19,6 +19,8 @@ tb_arr2=['cell_c1', 'feature_apa', 'feature_gene', ]
 #
 tb_arr=tb_arr1+tb_arr2;
 
+
+
 #2.备份主命令
 cmd=r"G:\xampp\mysql\bin\mysqldump -h y.biomooc.com -P 7070 -u root -p123456 wang %s > %s\tb_%s_%s.sql";
 # G:\xampp\mysql\bin\mysqldump -h y.biomooc.com -P 7070 -u root -p123456 wang word_unknown > G:\xampp\htdocs\IELTS\dict\backup\tb_word_unknown_20191127_1040.sql

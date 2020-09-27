@@ -6,28 +6,37 @@
 <style>
 .footer{height:100px; text-align:center;}
 .list{background:black; color:white; padding:5px;}
+.item ol.word{border:2px dashed #eee; background:#eee; margin:20px 0;}
+.blackBg{ background: black; color: white;}
 </style>
 </head>
 
 <body>
 <div class=wrap>
-	<h1>English Vocabulary <span class=small> <a href="/en">英语读报</a>@微信公众号 单词记忆研究所
-en0.0.1
+	<h1>English Vocabulary <span class=small> <a href="/en">英语读报</a> - 单词记忆研究所
+en0.0.2
 </span></h1>
 
 <div class=item>
-	<h2>Native speaker 词汇量随着年龄的变化曲线，你几岁水平？</h2>
+	<h2>How Many Words do Native English Speakers Absorb by Age? </h2>
 	<a target="_blank" href="https://www.douban.com/group/topic/145525116/"><img src="images/NativeVocabularySize_eachAge.png"></a>
-
+	<p>The researchers found that native adult speakers of English understand an average of 20,000 to 30,000 vocabulary words, and native speakers learn about one word a day from ages 16 to 50.</p>
 	<ul>
 		<li>Most adult native test-takers have a vocabulary range of about 20,000-35,000 words</li>
+		<li>Average native test-takers of age 8 already know 10,000 words</li>
+		<li>Average native test-takers of age 4 already know 5,000 words</li>
 		<li>Adult native test-takers learn almost 1 new word a day until middle age</li>
 		<li>Vocabulary growth stops at middle age</li>
 		<li>(English) 171,476 words in current use, and 47,156 obsolete words; 615,100 definitions</li>
+		<br>
+		<li>Foreign test-takers tend to reach over 10,000 words by living abroad</li>
+		<li>Foreign test-takers learn 2.5 new words a day while living in an English-speaking country</li>
+		<br>
+		<li>In a separate post, though, comes a surprising fact: the reading of fiction specifically is as important as reading generally. People who read "lots" and fiction "lots" outscore those who read "lots" but fiction only "somewhat" or "not much". This is because <b>a wider range of vocabulary is typically used in fiction than in non-fiction writing</b>.</li>
 	</ul>
 	<p>* According to 
 		<a target="_blank" href="https://www.economist.com/johnson/2013/05/29/lexical-facts">economist</a>, 
-		<a target="_blank" href="https://wordcounter.io/blog/how-many-words-does-the-average-person-know/">wordcounter.io</a>
+		<a target="_blank" href="https://wordcounter.io/blog/how-many-words-does-the-average-person-know/">wordcounter.io</a>, 
 		<a target="_blank" href="https://www.lexico.com/en/explore/how-many-words-are-there-in-the-english-language">lexico</a>
 	</p>
 </div>
@@ -37,7 +46,9 @@ en0.0.1
 
 
 <div class=item>
-	<h2>使用DIY单词王背单词</h2>
+	<h2>背单词</h2>
+	
+	<h3>1. 使用DIY单词王背单词</h3>
 	<p>TOEFL等高分的关键，听力要好，<b>词汇量要大</b>，迅速记笔记。</p>
 	<p>听力/口语/词汇/阅读/写作/</p>
 	<p>
@@ -49,6 +60,9 @@ en0.0.1
 		</ol>
 	</p>
 	<p>后续会研究整理出cet4-6词汇表等list。替换掉words.js中的数组即可。</p>
+	
+	<h3>2. 使用 刷单词神器 背单词</h3>
+	<a target="_blank" href="/dict/scanWord.html">刷单词神器</a>: 是一个用python写的，基于mysql数据库的本地web刷单词工具。
 
 </div>
 
@@ -60,17 +74,20 @@ en0.0.1
 
 
 
-<div class=item>
-	<h2>Word list: acadamic word</h2>
-	<ol>
+
+
+
+<div class='item blackBg'>
+	<h2>Word list: used in acadamic paper</h2>
 		<p class=list>nascent auxiliary canonical mitosis mitochondria intestine thymidine cryptic pervasive </p>
 		<p class=list>stochastic empirically polyadenylation adenosine </p>
 		<p class=list>aberrant attenuate dissect entangle disentangle interrogate</p>
 		<p class=list>consensus proliferation xenograft metastasis hypoxia dysplastic</p>
-		<li></li>
-	</ol>
-
+		<p class=list>heterogeneous concordance phylogenetic schematize epidemiology perturbation</p>
 </div>
+
+
+
 
 
 
@@ -80,12 +97,24 @@ en0.0.1
 
 <div class=item>
 	<h2>Word list (within sentences)</h2>
-	<ol>
-		<li>The lion will often <b>stalk</b> its <b>prey</b> for hours. 狮子经常悄然跟踪猎物达几个小时。</li>
-
 		<!-- out of 100, hard to remember 
 		<p class=list></p>
 		-->
+	
+		<!-- 更多生词记录在: http://blog.dawneve.cc/index.php?k=English&id=1_3
+		-->
+	
+	<ol class=word>2020.7
+		<li>The lion will often <b>stalk</b> its <b>prey</b> for hours. 狮子经常悄然跟踪猎物达几个小时。</li>
+		<li>xx</li>
+
+	</ol>
+	
+	
+	
+	<ol class=word>2019
+		<li>The lion will often <b>stalk</b> its <b>prey</b> for hours. 狮子经常悄然跟踪猎物达几个小时。</li>
+
 		<li>He could feel his fingers growing <b>numb</b> at their tips. 他能感觉到他的手指尖正在变得麻木。</li>
 		<li>Education is not filling of a <b>pail</b> but lighting of a fire. 教育的目的不是要灌满桶里的水，而是引燃一堆篝火。</li>
 		<li>She began to <b>rack</b> her brains to remember what had happened at the nursing home. 她开始绞尽脑汁地回忆在疗养院发生的事。</li>
@@ -93,9 +122,6 @@ en0.0.1
 		<li>I felt <b>wretched</b> about the way things had turned out. 事情落了这么个结局，我感到很难受。</li>
 		<li>Animals get <b>tangled</b> in fishing nets and drown. 动物被缠在渔网里淹死了。</li>
 		<li>He brought his arm up in a <b>futile</b> attempt to ward off the blow. 他出于挡住这一击的无谓企图抬起了他的胳膊。</li>
-		
-		<!-- 更多生词记录在: http://blog.dawneve.cc/index.php?k=English&id=1_3
-		-->
 	</ol>
 
 </div>
@@ -112,7 +138,7 @@ en0.0.1
 
 
 <div class=footer>
-	&copy; 英语读报 2020
+	&copy; <a href='/en/'>英语读报</a> 2020 @微信公众号
 </div>
 
 <script src="https://ielts.dawneve.cc/wordKing/dawnDict.js"></script>
