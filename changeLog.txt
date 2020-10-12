@@ -235,6 +235,7 @@ https://www.gutenberg.org
 > en0.2.34-3 change order
 > en0.2.34-4 dict/tools/get_zip.py 添加压缩sql文件 [2020.9.27]
 > en0.2.34-5 add psg; 注重速读; [2020.10.12]
+> en0.2.34-6 小说阅读器 reading/novelReader.html [2020.10.12]
 
 # commited local
 # ----------------> push to github

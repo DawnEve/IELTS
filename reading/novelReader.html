@@ -1,0 +1,169 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+<title>txtNovelReader v0.1</title>
+
+<style>
+/*
+version info:
+*/
+
+
+#text{
+	color:#a65628; 
+	background:black;
+	
+	font-size:25px; font-family:Roboto, 'Segoe UI',Arial,'Microsoft Yahei',sans-serif;
+	line-height:40px;
+}
+
+
+html, body, div, pre{margin:0; padding:0;}
+html{background-color: rgb(82, 86, 89);}
+
+#topMenu{
+	background:#333; color:white;
+	width:100%;
+	/*border-bottom:1px solid #aaa;*/
+	position:fixed;
+	padding-left:20px;
+	top:0;
+	height:25px;
+}
+#topMenu span{
+	font-weight:bold; 
+	display:inline-block; 
+	background:#9f00a7;
+	padding:1px;
+	border-radius:5px;
+}
+
+.wrap{width:800px; margin:25 auto;}
+pre{
+	word-wrap: break-word!important; 
+	white-space: pre-wrap;
+	padding-left:20px;
+	padding-right:20px;
+}
+#text{	
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+#status{width:50px;height: 20px; }
+
+#set{height:20px; height:20px; line-height:18px;}
+#set:hover{font-weight:bold; color:#f1f1f1;background:black;}
+
+#footer{background:black; color:white; text-align: center;}
+</style>
+</head>
+
+
+<body>
+<div id=topMenu><span>txtNovelReader</span> | Percent <input type='input' id=status value=0></inpyt>% <button id='set'>Set</button></div>
+
+<div class='wrap'>
+	<pre id='text'><br><br>Loading ...</pre>
+</div>
+
+
+<div id='footer'>The end<br> &copy;2020 biomooc.com</div>
+
+
+
+
+
+<script>
+//get obj
+function $2(s){return document.getElementById(s)}
+
+//获取url中的参数 https://www.cnblogs.com/vicky-li/p/9145026.html
+function getUrlParam(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+
+
+//get text from url
+function getText(){
+	textURI=getUrlParam('url')
+	if(textURI==null){
+		alert('Please specify url parameter in the url!')
+		return false;
+	}
+	//document.onclick=function(e){
+	var xmlhttp=new XMLHttpRequest(); //1.获取对象
+	//2.绑定回调函数
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			document.getElementById("text").innerHTML=xmlhttp.responseText;
+		}
+	}
+	//3.设定访问的url
+	xmlhttp.open("GET",textURI,true);
+	//4.发送请求
+	xmlhttp.send();
+	//}
+}
+
+/*
+关于窗体高度、滚动高度的获取和设定
+https://www.cnblogs.com/xiaomili/p/6841315.html 浏览器滚动过的高度
+https://blog.csdn.net/weixin_43040026/article/details/106930858 js元素距离顶部距离
+
+https://blog.csdn.net/a2500397/article/details/82385468
+*/
+
+window.onscroll=function(e){
+	var e =e || window.event;
+	var scrolltop=document.documentElement.scrollTop||document.body.scrollTop; //IE || chrome
+	
+	
+	var o=$2("text"); //get text box;
+	var h=-o.getBoundingClientRect().top;
+	//h=h+20
+	var total=o.offsetHeight || h
+	
+	var windowHeight = window.innerHeight;// 视窗高度
+	windowHeight=0
+	
+	var pct=Math.round( scrolltop/(total-windowHeight)*100000)/1000;
+	$2('status').value=pct;
+}
+
+
+// 点击set，滚动到对应百分比位置上
+function setTopct(){
+	var o=$2("text");
+	var h=-o.getBoundingClientRect().top;
+	var total=o.offsetHeight || h
+	var pct=$2('status').value/100;
+	
+	windowHeight=window.innerHeight
+	windowHeight=0
+	
+	document.body.scrollTop=pct*(total-windowHeight);
+}
+//点击set btn
+$2('set').onclick=setTopct
+//或者单击回车键
+$2('status').onkeydown =function(evt){
+	//获取键盘事件和数字
+	var evt = evt ||window.event;
+	var key=evt.which||evt.keyCode;
+	//console.log(key);//todo
+	
+	if (key==13){setTopct()}
+
+};
+
+
+
+window.onload=function(){
+	//尝试载入文本
+	getText()
+}
+
+</script>
+</body>
+</html>
