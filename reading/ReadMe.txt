@@ -9,3 +9,5 @@ http://ielts.dawneve.cc/reading/novelReader.html?url=novel/HarryPoter_1-7.txt
 大致正确，不是十分精确。不同高度时，同一个百分比显示文本有差异。
 纠正了上个错误，但是读完不是100%，勉强接受吧。
 
+改进的地方: 自动统计阅读速度，几百词一分钟?
+
