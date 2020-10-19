@@ -238,6 +238,13 @@ https://www.gutenberg.org
 > en0.2.34-6 小说阅读器 reading/novelReader.html [2020.10.12]
 	https://github.com/bradleyboehmke/harrypotter
 > en0.2.34-7 小说阅读器 优化界面 [2020.10.13]
+############# 小说阅读器 reading/novelReader.html v0.2
+#
+#
+========================
+#开始更改版本号，每位最多十进制
+========================
+en0.3.0-0 add psg 2020.10.19 [2020.10.19]
 # commited local
 # ----------------> push to github
 
