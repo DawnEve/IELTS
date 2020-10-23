@@ -1,0 +1,44 @@
+Economist | Sustainable forestry: If you go down to the woods today
+<span class=light>Oct 21, 2020 | 1040 words
+</span>
+ÄÄNEKOSKI
+A giant processing factory in Finland makes use of all parts of the tree.
+
+In finland’s vast forest lives a monster with a voracious appetite. Once, it would
+have been called a pulp mill. But after a recent makeover costing €1.2bn ($1.3bn) it is now known as a bioproducts mill—and as such is one of the biggest in the world. This sprawling plant, near Äänekoski, a town in the centre of the country, consumes 6.5m cubic metres of wood a year. That translates into the delivery of a large lorryload of felled tree trunks every six minutes, day and night, together with yet further logs arriving on 70 railway wagons a day. Apart from a brief break for maintenance once a year, the mill never stops working.
+
+On the face of things, such rapacious industrialisation of the Finnish forest, which covers three-quarters of the country’s landscape, looks the antithesis of tree-hugging environmentalism. The forest is home to wolves, bears, deer and many other species of wildlife, and its trees lock away carbon that would otherwise be in the air, warming the atmosphere. Yet Metsä Group, which operates the Äänekoski mill, claims the very opposite. 
+
+Metsä is ultimately controlled by a cooperative belonging to more than 100,000
+families who have each owned large chunks of the forest for generations. For every tree harvested, four saplings are planted. These are allowed to grow for a few years and are then thinned to encourage the best specimens to develop vigorously. The thinnings, however, are not wasted. They are sent to the mill. The mature trees, meanwhile, are harvested when they are between six and ten decades old. The consequence of this husbandry, according to Finland’s Natural Resources Institute, is that the annual growth of trees in Finland exceeds the volume of felling and natural loss by over 20m cubic metres, despite the increasing demand for wood.
+
+As for the mill itself, Metsä’s stated aim is to make best use of every part of a tree, both to maximise the value of its wood and, where possible, to continue to lock up its carbon. To this end, besides the bread-andbutter business of turning out planks and plywood, the firm has come up with several new ideas. Three are of particular interest. One is a better way of converting wood pulp into fibre that can be turned into textiles. A second is to produce plastic-free cardboard cartons which can be used as food containers and then recycled. The third is to find employment for lignin, a by-product of the pulping process which is, at the moment, usually burned.
+
+
+<b>Waste not, want not</b>
+
+Everything starts in the forest. The main species growing there are pine, spruce and birch. Large areas are now being mapped digitally, using drones. This permits owners to monitor their trees using a mobilephone app, and to arrange for contractors to thin or harvest an area when appropriate. That job is carried out not by lumberjacks with axes, but by giant eight-wheeled harvesting machines, which fell, trim and cut the trunks to the required sizes. Information about the different grades of timber being harvested is relayed electronically to the mill, to schedule deliveries.
+
+The mill’s main work is familiar stuff. Logs are either sawn into planks or spun by giant lathes fitted with blades that peel away their wood to create sheets suitable for making plywood and other forms of “engineered” timber. But even here there is environmental benefit. Peeling permits the grains of sheets to be arranged in ways that create composite materials far stronger than the original timber. These materials are increasingly being used by architects as substitutes for steel and concrete, even in some high-rise buildings. Not only does this keep the wood’s carbon locked up, it also reduces the need for steel and concrete. This, in turn, saves both the fossil fuels involved in making those materials, and the carbon dioxide that their manufacture releases as an inevitable consequence of the chemical processes involved in creating the iron and cement which are their principal ingredients.
+
+Pieces of timber too small to process as logs—including offcuts and thinnings from the forest—are chipped and pulped to make paper. Much of this papermaking is done by other firms, but the Äänekoski mill itself produces a lightweight board that has a shiny surface suitable for high-quality printing. It does this by squeezing together layers of wood pulp that have had their fibres carefully arranged. The mill churns out enough of this paperboard to be folded into 32m cartons a day. 
+
+Metsä has also teamed up with Itochu, a Japanese trading company with a large clothing business, to make fabric that will compete with oil-based synthetic fibres and provide an alternative to cotton, the growing of which requires a lot of land, irrigation and pesticides. Some fabrics—rayon, for example—can be made from wood. This is done by dissolving cellulose, a natural polymer that is the main constituent of plants’ cell walls, in chemicals like caustic soda and carbon disulphide and then turning the solution into soft filaments which can be spun into fibres. 
+
+Caustic soda and carbon disulphide are, however, toxic and bad for the environment. Metsä’s researchers have come up with an alternative process involving a solvent based on salt. This is, according to Katariina Kemppainen, a development manager at Metsä, a more environmentally friendly alternative. To start with, a pilot plant will produce up to 500 tonnes of textile fibres a year. If successful, a much bigger plant with more capacity will be built. 
+
+Another environmental problem confronting Metsä is the recycling of food cartons. In theory, for containers made of paper and cardboard, this should not be hard. It just means mashing the materials up into a slurry similar to that from which they were produced in the first place. But many countries’ hygiene regulations do not allow food to be placed in direct contact with paper. There must be a barrier between contents and container, and this is usually made of plastic. Unfortunately, such plastic inserts often render containers non-recyclable. Though she is coy about the details, Heli Kuorikoski, who runs the technology centre at Äänekoski, says Metsä has come up with an alternative, grease-and-waterproof mineral-based barrier material that can go into the recycling mash without causing difficulties.
+
+
+<b>Overcoming resistance</b>
+
+The complex processes involved in processing wood result in several “sidestreams”. These are wastes that become raw materials for other processes. They include sulphuric acid, which is re-used by the mill, and biogas, tall oil (a byproduct of papermaking) and lignin—carbon-rich materials burnt to produce electricity. This powers the mill, and yields a surplus which is exported to the national grid. As a consequence, unlike some wood mills, the Äänekoski plant uses no fossil fuels. 
+
+In the case of lignin, though, burning it seems unambitious. Like cellulose, lignin is a cell-wall polymer. It provides strength, without which trees could not reach the heights they do. But it needs to be removed from pulp before paper is made, meaning that, around the world, some 60m tonnes of the stuff has to be disposed of every year. And it is famously resistant to chemical manipulation, which makes it resistant to efforts to do anything useful with it.
+
+People are, however, still trying. Some, for instance, think that it, too, might form the basis of a textile industry. Metsä’s contribution is more prosaic than this. It is working on a lignin-based material which acts as a “plasticiser”, permitting concrete to flow more easily when being pumped onto building sites. But, in the quest to add value to every part of a tree, wasting nothing, even that is not a bad idea.
+
+<span class=light>
+http://y.biomooc.com:8000/file/audio/2019-10-19audio/075 Science and technology - Sustainable forestry.mp3
+https://music.163.com/#/program?id=2069884970
+</span>
