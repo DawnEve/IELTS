@@ -1,0 +1,78 @@
+TED | How climate change could make our food less nutritious
+<span class=light>Oct 29, 2020 | 1212 words
+TED2019 | April 2019 | Kristie Ebi · Public health researcher
+At the Center for Health and the Global Environment, Kristie Ebi studies and develops interventions to help at-risk populations deal with climate change. </span>
+
+Yogi Berra, a US baseball player and philosopher, said, "If we don't know where we're going, we might not get there." Accumulating scientific knowledge is giving us greater insights, greater clarity, into what our future might look like in a changing climate and what that could mean for our health. I'm here to talk about a related aspect, on how our emissions of greenhouse gases from burning of fossil fuels is reducing the nutritional quality of our food. 
+
+
+00:46
+We'll start with the food pyramid. You all know the food pyramid. We all need to eat a balanced diet. We need to get proteins, we need to get micronutrients, we need to get vitamins. And so, this is a way for us to think about how to make sure we get what we need every day so we can grow and thrive. 
+
+
+01:05
+But we eat not just because we need to, we also eat for enjoyment. Bread, pasta, pizza -- there's a whole range of foods that are culturally important. We enjoy eating these. And so they're important for our diet, but they're also important for our cultures. 
+
+
+01:25
+Carbon dioxide has been increasing since the start of the Industrial Revolution, increasing from about 280 parts per million to over 410 today, and it continues to increase. The carbon that plants need to grow comes from this carbon dioxide. They bring it into the plant, they break it apart into the carbon itself, and they use that to grow. They also need nutrients from the soil. And so yes, carbon dioxide is plant food. 
+
+
+01:58
+And this should be good news, of rising carbon dioxide concentrations, for food security around the world, making sure that people get enough to eat every day. About 820 million people in the world don't get enough to eat every day. So there's a fair amount written about how higher CO2 is going to help with our food security problem. We need to accelerate our progress in agricultural productivity to feed the nine to 10 billion people who will be alive in 2050 and to achieve the Sustainable Development Goals, particularly the Goal Number 2, that is on reducing food insecurity, increasing nutrition, increasing access to the foods that we need for everyone. We know that climate change is affecting agricultural productivity. The earth has warmed about one degree centigrade since preindustrial times. That is changing local temperature and precipitation patterns, and that has consequences for the agricultural productivity in many parts of the world. And it's not just local changes in temperature and precipitation, it's the extremes. Extremes in terms of heat waves, floods and droughts are significantly affecting productivity. 
+
+
+03:20
+And that carbon dioxide, besides making plants grow, has other consequences as well, that plants, when they have higher carbon dioxide, increase the synthesis of carbohydrates, sugars and starches, and they decrease the concentrations of protein and critical nutrients. And this is very important for how we think about food security going forward. 
+
+
+03:48
+A couple of nights ago in the table talks on climate change, someone said that they're a five-sevenths optimist: that they're an optimist five days of the week, and this is a topic for the other two days. 
+
+
+04:02
+When we think about micronutrients, almost all of them are affected by higher CO2 concentrations. Two in particular are iron and zinc. When you don't have enough iron, you can develop iron deficiency anemia. It's associated with fatigue, shortness of breath and some fairly serious consequences as well. When you don't have enough zinc, you can have a loss of appetite. It is a significant problem around the world. There's about one billion people who are zinc deficient. It's very important for maternal and child health. It affects development. The B vitamins are critical for a whole range of reasons. They help convert our food into energy. They're important for the functions of many of the physiologic activities in our bodies. And when you have higher carbon in a plant, you have less nitrogen, and you have less B vitamins. 
+
+
+04:56
+And it's not just us. Cattle are already being affected because the quality of their forage is declining. In fact, this affects every consumer of plants. And give a thought to, for example, our pet cats and dogs. If you look on the label of most of the pet and dog food, there's a significant amount of grain in those foods. So this affects everyone. 
+
+
+05:20
+How do we know that this is a problem? We know from field studies and we know from experimental studies in laboratories. In the field studies -- and I'll focus primarily on wheat and on rice -- there's fields, for example, of rice that are divided into different plots. And the plots are all the same: the soil's the same, the precipitation's the same -- everything's the same. Except carbon dioxide is blown over some of the plots. And so you can compare what it looks like under today's conditions and under carbon dioxide conditions later in the century. 
+
+
+06:02
+I was part of one of the few studies that have done this. We looked at 18 rice lines in China and in Japan and grew them under conditions that you would expect later in the century. And when you look at the results, the white bar is today's conditions, the red bar is conditions later in the century. So protein declines about 10 percent, iron about eight percent, zinc about five percent. These don't sound like really big changes, but when you start thinking about the poor in every country who primarily eat starch, that this will put people who are on the edge over the edge into frank deficiencies, creating all kinds of health problems. 
+
+
+06:51
+The situation is more significant for the B vitamins. When you look at vitamin B1 and vitamin B2, there's about a 17 percent decline. Pantothenic acid, vitamin B5, is about a 13 percent decline. Folate is about a 30 percent decline. And these are averages over the various experiments that were done. Folate is critical for child development. Pregnant women who don't get enough folate are at much higher risk of having babies with birth defects. So these are very serious potential consequences for our health as CO2 continues to rise. 
+
+
+07:33
+In another example, this is modeling work that was done by Chris Weyant and his colleagues, taking a look at this chain from higher CO2 to lower iron and zinc -- and they only looked at iron and zinc -- to various health outcomes. They looked at malaria, diarrheal disease, pneumonia, iron deficiency anemia, and looked at what the consequences could be in 2050. And the darker the color in this, the larger the consequences. So you can see the major impacts in Asia and in Africa, but also note that in countries such as the United States and countries in Europe, the populations also could be affected. They estimated about 125 million people could be affected. They also modeled what would be the most effective interventions, and their conclusion was reducing our greenhouse gases: getting our greenhouse gas emissions down by mid-century so we don't have to worry so much about these consequences later in the century. 
+
+
+08:38
+These experiments, these modeling studies did not take climate change itself into account. They just focused on the carbon dioxide component. So when you put the two together, it's expected the impact is much larger than what I've told you. 
+
+
+08:53
+I'd love to be able to tell you right now how much the food you had for breakfast, the food you're going to have for lunch, has shifted from what your grandparents ate in terms of its nutritional quality. But I can't. We don't have the research on that. I'd love to tell you how much current food insecurity is affected by these changes. But I can't. We don't have the research on that, either. There's a lot that needs to be known in this area, including what the possible solutions could be. We don't know exactly what those solutions are, but we've got a range of options. We've got advancements in technologies. We've got plant breeding. We've got biofortification. Soils could make a difference. And, of course, it will be very helpful to know how these changes could affect our future health and the health of our children and the health of our grandchildren. And these investments take time. It will take time to sort all of these issues out. There is no national entity or business group that is funding this research. We need these investments critically so that we do know where we're going. 
+
+
+10:13
+In the meantime, what we can do is ensure that all people have access to a complete diet, not just those in the wealthy parts of the world but everywhere in the world. We also individually and collectively need to reduce our greenhouse gas emissions to reduce the challenges that will come later in the century. 
+
+
+10:37
+It's been said that if you think education is expensive, try ignorance. Let's not. Let's invest in ourselves, in our children and in our planet. 
+
+
+10:50
+Thank you. 
+<span class=light>
+https://www.ted.com/talks/kristie_ebi_how_climate_change_could_make_our_food_less_nutritious/transcript#t-643114
+文本: https://www.ted.com/talks/kristie_ebi_how_climate_change_could_make_our_food_less_nutritious/transcript
+https://music.163.com/#/program?id=2070107373</span>

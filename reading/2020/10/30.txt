@@ -1,0 +1,132 @@
+NPR | The Case Against Google
+<span class=light>Oct 30, 2020 | 1437 words
+The Indicator from Planet Money | October 22, 20206:42 PM ET</span>
+
+A few days ago, The Department of Justice filed an antitrust lawsuit against Google.
+
+Google is responsible for around 90% of searches worldwide, which is why the DOJ chose to focus its case on the company's dominance in search. Among other things, The Department highlighted examples of Google establishing agreements with companies like Apple, paying billions of dollars a year to be the default Safari browser.
+
+But Google is more than just a search engine.
+
+Valued at more than $1 trillion, Google is involved in industries ranging from software development to home security. Google runs Youtube, Waze, Android, and its entire line of Workspace products — including Gmail, Google Docs, and Google Slides.
+
+Brian Chen of the New York Times joins the show to break down the lawsuit, talk about what it could mean for the future of the company, and about how important Google has become to many of our daily lives.
+
+Music by Drop Electric. Find us: Twitter / Facebook / Newsletter.
+
+
+
+
+<hr>UNIDENTIFIED PERSON, BYLINE: NPR.
+
+(SOUNDBITE OF DROP ELECTRIC SONG, "WAKING UP TO THE FIRE")
+
+STACEY VANEK SMITH, HOST:
+
+This week, the Justice Department filed an antitrust suit against Google. The case focuses on Google's Search business. Though Search, of course, is only one part of Google's vast empire. There's Google Docs, Google Maps, Google Hangout, Google Calendar, YouTube, Gmail, Chrome, Android, Chrome Books, Google Wallet, Waze and many, many, many more. It is amazing how many parts of our lives Google is involved in. And that, in fact, is the topic of an essay by New York Times tech reporter Brian Chen. Brian, in fact, still remembers the first time he used Google about 20 years ago.
+
+BRIAN CHEN: I remember more than 20 years ago, one of the first searches I made was for DMV sample tests because I was learning how to drive, right? And, you know, I found that the results on Google were really good. They were more relevant. They got me to where I wanted to be quicker than other search engines. So I stuck with Google from there on.
+
+VANEK SMITH: This is THE INDICATOR FROM PLANET MONEY. I'm Stacey Vanek Smith. Today on the show, Google. The company is only about 20 years old, but in that short time, it has become central to our lives. Brian Chen joins us to talk about Google's history, the lawsuit and what this could all mean for the company.
+
+(SOUNDBITE OF MUSIC)
+
+VANEK SMITH: Brian Chen of The New York Times, thank you so much for joining us. So Google is obviously a massive, global company with hundreds of different products and services. But if you will, walk us through some of the big ones.
+
+CHEN: So the heart of the antitrust suit this focusing on Search. But I think what I was trying to convey with my essay was how much more Google's tentacles stretch to every corner of our lives, right? There's Maps. When you're looking for something like a bakery, you type in the bakery in Search, it's going to load a Google Map. If you click on an article, chances are it's loading an advertisement that is served by Google. Chances are it's also loading analytics that is run by Google for website designers to figure out what you're clicking on. More than 80% of sites have some sort of Google tracker embedded. And, of course, Google offers Android, which is the most widely used operating system for mobile in the world. By default, they're going to have Google Search as the prominent search tool when you use these products. And then if you look at some of the acquisitions that Google's made over the past decade or so, they acquired Nest, which is the maker of this very popular thermostat. And...
+
+VANEK SMITH: You have a Nest, I think you said.
+
+CHEN: Yeah. I moved into a house that already had a Nest installed. So, you know, there I am. Google's in my home now, even if I didn't really intend for it to be. Dropcam - I bought a Dropcam back when it was a cool, little startup. And it started out as this cool security camera you could plug into your wall and connect to your Wi-Fi, and you would have your own personal security camera that you could point anywhere to catch people, you know, trying to steal your packages on your porch, for example. That was one of the cooler products I bought. And yeah, so Nest acquired them, and then Google acquired Nest. So what was that old song with, like, I ate a fly and then, you know, whatever - anyway (laughter).
+
+VANEK SMITH: "The Old Lady Who Swallowed A Fly" (ph).
+
+CHEN: Yeah, the one where, like, the old lady swallows a fly (laughter).
+
+VANEK SMITH: And then there's, like, the spider - she gets the fly, and then finally, like, she eats a horse and dies, of course (laughter).
+
+CHEN: Yeah. Yeah, exactly. It's pretty much impossible to escape Google and what it knows about you.
+
+VANEK SMITH: I mean, this is the thing. I mean, as I was reading your essay, it occurred to me that, like, Google owns me. They have all my photos, all my emails. We do all of our work for the show in Google Docs. I do all of my own writing...
+
+CHEN: Same here.
+
+VANEK SMITH: ...In Google Docs.
+
+CHEN: Same here.
+
+VANEK SMITH: I use Google Maps for everything. I mean, if Google vanished tomorrow, like, I mean, it would be beyond disruptive. It would be devastating to my life and to my work. But OK, it's very clear that they're everywhere. But you could just make the argument, like, listen; like, they just do a really good job. You know, I mean, what's the - what's the problem?
+
+CHEN: Right. And I think this is what the Justice Department and Google are going to be fighting over for years to come, right? How much of this is consumer choice versus consumers being forced into using these products? But if you look at this tool called My Activity on your Google account, you can see all the different types of information through the different types of products they offer that they collect about you.
+
+VANEK SMITH: Oh, really? Can I get there now? I have Google open.
+
+CHEN: Yeah. Yeah, just type myactivity.google.com.
+
+VANEK SMITH: OK. My activity...
+
+CHEN: I'll do the same thing.
+
+VANEK SMITH: OK.
+
+CHEN: If you scroll through this, you're going to start seeing the view of the searches you made, the things that you've clicked on. It's going to show...
+
+VANEK SMITH: Oh, yeah. I have Brian Chen email (laughter).
+
+CHEN: Yep. Yep.
+
+VANEK SMITH: Photoreal Roman Emperor Project, hyperborean, weekly horoscopes - that's embarrassing.
+
+(LAUGHTER)
+
+CHEN: Not at all.
+
+VANEK SMITH: You know.
+
+CHEN: For me, it's all home improvement crap. Here's mine. Are dishwasher racks interchangeable?
+
+VANEK SMITH: (Laughter).
+
+CHEN: I hate my dishwasher rack. Here's me looking at TripAdvisor stock because I wanted to see how screwed TripAdvisor was during the pandemic. I don't even remember doing all these things. But, you know, it's all here. And you can set these things to auto-delete every three months or so, but a lot of people don't do that. There's a saying in technology that the devil's in the defaults, right?
+
+VANEK SMITH: Oh.
+
+CHEN: Right? So there's this - kind of this record that's compiled about you. But yeah, just going through this tool, you'll get an idea of how widely reaching Google has been beyond Search and how detailed of a history it has about you.
+
+VANEK SMITH: Now that I'm thoroughly terrified, like, what exactly is the meat of the lawsuit? What is the Justice Department complaining about specifically?
+
+CHEN: They're really simplifying this approach and just focusing mostly on Search. Some people wish that they had gone farther, you know, like looking into some of the areas that we've talked about. But the low-hanging fruit is Search. They're saying, you know, because you cut these deals with companies like Apple, phone carriers, other device-makers that make Android phones to feature prominently Google Search for so many years, it made it very difficult for others to compete.
+
+It's similar to the antitrust argument that was brought against Microsoft when they were loading Internet Explorer on PCs as the default web browser. The DOJ brought antitrust charges against Microsoft and accused them of being anti-competitive when it came to browser dominance. They were able to argue that Microsoft, you know, did this in ways that made it impossible for other browsers to come on the market. If you were to look at what happened with Microsoft, like, look at where Microsoft is now. They really were distracted by that lawsuit. They're not really, you know, one of the dominant tech companies anymore, beyond Windows. They're not really the cool kid on the block anymore, right?
+
+VANEK SMITH: Do you think the lawsuit is partly responsible for that?
+
+CHEN: People argue that the lawsuit distracted them and also made them more gun-shy when it came to making really aggressive moves with the products that they offer. And people, you know, are speculating that this could really harm Google in that it could be distracting for them and also make them less aggressive with, you know, their expansion into different spaces in the future. But it's tough to say that anything is going to change because at the end of the day, Google has the most money when it comes to making these bids. They pay more than - I think it was $8 billion a year to Apple to be the default search engine on Safari for the iPhone.
+
+VANEK SMITH: Woah.
+
+CHEN: So who else is going to come up with that amount of money, you know?
+
+VANEK SMITH: That's like a GDP. That's not even - that's crazy.
+
+CHEN: (Laughter) Right. You're not going to see DuckDuckGo, this tiny little company, pay Apple $8 billion to be the default search engine on the iPhone.
+
+VANEK SMITH: No.
+
+CHEN: Even if they did, even if they had the money, would people be happy with that? Because we're so used to using Google for however many years it's been.
+
+VANEK SMITH: Yeah, ever since you first Googled a sample test for driver's ed.
+
+CHEN: Yeah, 20 years ago.
+
+VANEK SMITH: Well, Brian, thank you so much for talking with me.
+
+CHEN: Thanks so much. Pleasure talking to you.
+
+(SOUNDBITE OF MUSIC)
+
+VANEK SMITH: This episode of THE INDICATOR was produced by Jamila Huxtable and fact-checked by Sean Saldana. Our editor is Paddy Hirsch. And THE INDICATOR is a production of NPR.
+
+<span class=light>(SOUNDBITE OF MUSIC)
+https://www.npr.org/transcripts/926833264
+</span>

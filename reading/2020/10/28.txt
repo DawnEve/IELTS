@@ -1,0 +1,152 @@
+science | Early approval of a COVID-19 vaccine could cause ethical problems for other vax candidates, and ‘upcycling’ plastic bags
+<span class=light>
+SciencePodcast_201023</span>
+
+[music]
+00:06 Meagan Cantwell: Welcome to the Science Podcast for October 23rd, 2020. I'm Meagan Cantwell. Each week, we feature the most interesting news and research published in Science and its sister journals. First up, Senior Producer Sarah Crespi talks with staff writer Jon Cohen about an interesting conundrum. What should ethically happen in all of the other vaccine candidate trials once the first COVID-19 vaccine gets approved? Next, we have researcher Bert Weckhuysen. He speaks with me about upcycling plastic waste into valuable chemical products.
+
+00:40 Sarah Crespi: Now we have staff writer, Jon Cohen. He wrote a story this week about an interesting question: What happens to all the other COVID-19 vaccine candidates when the first one is approved? Hi, Jon.
+
+00:54 Jon Cohen: Hi, Sarah, how are you?
+
+00:55 SC: I'm good, as we could be right now.
+
+00:58 JC: Let's be honest, we're both sick of the pandemic.
+
+01:01 SC: Yeah, absolutely. Let me leave my house. Let my child leave the house. That's all I want.
+
+01:06 JC: Yeah. Normal.
+
+01:07 SC: Yeah, normal. Well, let's talk about vaccine candidates. How many are in studies now, under study now, and what does the trial landscape look like at this moment?
+
+01:16 JC: There are 42 in human clinical trials according to the WHO list, the World Health Organization does an update list, that was as of October 2nd, and there are about 200 in development. Of the 42 in clinical trials, 10 are in the last stage of efficacy trials, the phase three.
+
+01:34 SC: We're gonna be mostly talking about what's going on in the US. Do those numbers reflect worldwide vaccine development?
+
+01:40 JC: That's global. The US has four efficacy studies underway right now.
+
+01:44 SC: And these are all part of what they like to call warp speed?
+
+01:47 JC: All part of Operation Warp Speed. Yeah.
+
+01:49 SC: Yeah. And so they're going through trials or going through all the same steps, but that could change once one of them gets approval. Why would something change about what's going on with the other COVID vaccines?
+
+
+02:02 JC: The concern is that the mediocre might be the enemy of the better or the best. The way that we've set things up in the United States is the Food and Drug Administration has a mechanism called an Emergency Use Authorization. It's received a lot of attention because of hydroxychloroquine(羟化氯喹), and because of remdesivir(瑞德西韦), and because of convalescent plasma, and because of diagnostic testing. All of those have used this pathway for approval. And the authorization essentially is short of a full approval. And it says, hey, we're in an emergency, we only need minimal data that gives us an idea if this stuff's working, and then we'll let it be used widely.
+
+02:43 SC: So why are we worried about the other possible COVID-19 vaccines if, for example, one gets a EUA by November 1st?
+
+02:51 JC: The FDA has said in a document issued in June that the EUA could be issued for 50% efficacy. That's a pretty low standard to begin with. As soon as you authorize the use of one vaccine, first of all, this is an ongoing study, because they're going to use data for an EUA, most likely from an interim analysis. So when a vaccine efficacy trial is scheduled to take six months, an independent safety and monitoring board looks at the data at certain pre-scheduled time points. In the case of these efficacy trials, they look at the data early, based on what they call events. Events are basically the end points of the study. The studies are primarily asking the question, "Do they prevent symptomatic disease?" That's the number one question they're asking, so that's an event if somebody gets a symptomatic disease.
+
+03:45 JC: And these trials are scheduled to have 150 events to reach their final conclusions, but they're gonna take peeks at the data at 50 events and at 100 events, roughly. At 50 events, a company, if it had strong evidence that the people in the vaccinated group as opposed to the placebo group were doing better, they could seek an EUA based on 50% efficacy. At that moment, they ethically are in a quandary because the people who are still in this trial blindly are receiving either a vaccine or a placebo. Ethically, you could argue, you gotta un-blind and tell the people who are receiving a placebo, we've got a vaccine that looks good, do you wanna get it? So you've undermined that study from reaching its real end points of 150 events.
+
+04:34 JC: What's more, every other study underway has to let the participants know that the EUA has issued, and ethically, you have to give people the option of taking a vaccine that's received the FDA's blessing. People might walk out of trials who are in trials. If you were staging a new clinical trial, you may well have to compare your vaccine to the one that has received the authorization. Well, it's much easier to prove that something is better than nothing, but what if you have a vaccine that's 50% effective, and that becomes the comparator, not a placebo?
+
+05:09 JC: Well, then this new vaccine, let's say it has 62% efficacy. You're comparing 62% to 50%, not 50% to zero. It's really hard to see that small  difference, or even if they're equivalent, let's say they're both 50%, so you need a much larger study and it needs to go on for a longer period of time, and it costs a lot more money.
+
+05:32 SC: We don't have... It's not likely that people involved in trials for other vaccines or even the people in the placebo arm of the one that does get approved, would have access to this vaccine.
+
+05:44 JC: That's a critical consideration. If supply doesn't meet demand, then we have an EUA where we're only giving out, let's say, 20 million doses to the top priority people, healthcare workers. Then for the people in other clinical trials, they have no other option, then the issue is not this great ethical dilemma. But remember, we're speeding things up with Operation Warp Speed in order to pump out 300 million doses of vaccine from one company by as early as the end of January. So this problem, it's not here today because supply doesn't meet demand, but it sure could be here in late January and come February, March, April, who knows what we're gonna have in terms of efficacy data and who knows what we're gonna have in terms of trials and their enrollment.
+
+06:30 JC: Remember, we have a couple of trials that have been stopped because of side effects. When you put a trial on hold, that means it's not gonna reach its end point for even longer. And that's happening right now with two of the Warp Speed vaccines.
+
+06:45 SC: As you write in your story, we don't want just one vaccine. There's some good reasons to  continue to investigate and to look further afield even after one is approved. Can you talk about some of those?
+
+06:57 JC: For one thing, we may need different vaccines for different populations. The elderly, we know with influenza, they need a much higher dose because their immune systems don't work as well as they age. We may need one that's tailored for pregnant women. Pregnant women are gonna tolerate a risk factor much, much lower than everyone else. You might need a vaccine that's simpler to deliver for some parts of the world that doesn't have a cold chain issue where you need to keep it at minus 70 degrees centigrade. You might need a vaccine that's cheaper for many countries, even though it's maybe 62% versus 68% effective, it might be a better deal at the end of the day because more people can get it for the amount of money you have. On top of all that, we want a lot of vaccines because more vaccines means more supply. We have an insurance policy if something goes wrong at a manufacturing plant, if a side effect crops up when it goes into wider use, we have this backup of other vaccines. So there are loads of reasons why we want a whole portfolio of vaccines ultimately to prove safe and effective.
+
+08:01 SC: That's the case that you have to make to participants, people who might be involved in trials. Do you think that it's gonna be effective? Do you think people are gonna still volunteer to get a vaccine or not a vaccine that hasn't been approved?
+
+08:14 JC: You've put your finger on a really important issue, and that's who enrolls in a vaccine trial? Why? It's not like you have cancer that's going to kill you and you're enrolling in a trial because you've exhausted all medicines and you're hoping beyond hope that this new treatment will work and save your life. That's a completely different motivation to join a trial than a vaccine when you are healthy. You're joining this to prevent something from happening. So ethically, you can argue that, well, that person... Most of these people are doing it for altruistic reasons. They're really doing it to help other people. And you can ethically approach people in a study and say, "Hey, look, this one vaccine got EUA based on the early data that it's 58% effective, we'd like to keep you in this trial, and it's a blinded study, and we promise at the end of the study," as one of the bioethicists I interviewed said, "We promise at the end, we're gonna give you the better vaccine. But will you stick with this for a while so that we can figure out if the vaccine that isn't authorized for use is worth pursuing?"
+
+09:18 SC: Going back to your cancer example, there are cases where a clinical trial is happening, the people in the treatment group are doing so well that it's no longer ethical to continue to deny that treatment to the placebo arm. That's not what's happening here?
+
+09:33 JC: It is a different equation. Some ethicists argue that even in a vaccine study, a person has a right to know if they're a participant, whether they're receiving a placebo or a vaccine, if there is convincing and compelling evidence that the vaccine is working. But keep in mind too, and this is something that I think a lot of people have a hard time getting their heads around, wearing a mask and social distancing goes a long way toward protecting you from this virus, maybe even more than a 50% effective vaccine.
+
+10:04 SC: 'Cause then you're walking around with none of this protection or you're not taking it as seriously.
+
+10:10 JC: Exactly, and that's called behavioral disinhibition. If a vaccine leads to behavioral disinhibition and people drop their guard, stop wearing masks, stop social distancing, they may well be putting themselves at more risk even though they have a vaccine in their bodies.
+
+10:26 SC: And the other side, though, as people do get this vaccine, we get that herd immunity that we've heard so much about.
+
+10:32 JC: That's another giant question mark. It really all depends on, number one, how effective is a vaccine and what exactly does it do? We're asking the question, does it prevent symptomatic disease? It's possible that it does prevent symptomatic disease, but doesn't really lower transmission rates very much. There's a tremendous amount of uncertainty about what a vaccine is gonna do for us. It is not in all likelihood going to magically flip a switch and make all of this go away and return us to 2019.
+
+11:04 SC: Especially because we don't know, another big unknown, if immunity will last a long time, if it's conveyed by...
+
+11:12 JC: Well, I would love to have that problem. Give me a vaccine that creates immunity for six months, and boy, if it does it with a 90% effectiveness, we're ahead of the game, we're in a better position than we are with influenza. And the influenza vaccine, it has a range of effectiveness from as low as 15%, 16% to at best, 50%, 60%. It's not a great vaccine, but what does it do? It prevents severe disease, it keeps people out of the ICUs, it saves people's lives. And if we get that out of a COVID-19 vaccine, we're all gonna be cheering. It's gonna be a good thing. Is it going to be herd immunity? Is it going to be durable? Those are add-ons.
+
+11:54 SC: How will we know what the vaccine is doing as opposed to just knowing, "Oh, we're not seeing symptomatic infections?" We know what is actually going on under the hood before approval, after approval?
+
+12:07 JC: We may or may not. There are sub-studies in each of these vaccine trials that are looking at these questions of, are people less infectious after they get vaccinated? Are the vaccines preventing severe disease? So those questions are being looked at in smaller numbers of people in the studies.
+
+12:26 SC: Going back to this idea of looking under the hood and seeing how a person's immune system is reacting to the vaccine, is that something that can help with other vaccines that are being developed?
+
+12:37 JC: Yeah, and that's one of the more hopeful aspects here. If we can find a good vaccine and we can figure out why it worked. Let's say lots of people are banking on a special kind of antibodies called neutralizing antibodies against the surface protein on the virus called spike. Let's say neutralizing antibodies against spike correlate with the protection seen in the vaccine efficacy study that leads to an EUA. You can then use that information to judge the worth of other vaccines, even without a placebo. You can say, "Hey, did vaccine B create the level of neutralizing antibodies that vaccine A, which we know works, created?" And that's called a bridging study, and we do that right now with influenza each year. We have a seasonal influenza vaccine that changes every year. We don't run large efficacy trials with placebo controls, we bridge based on unknown correlative protection. So you're right, there is a shortcut that could kick in of bridging studies that allows us to evaluate other vaccines without the full-blown efficacy trial that compares the vaccine to a placebo in 30,000 people.
+
+13:48 SC: Do you think that there might be something that at least gets the emergency use approval in maybe early 2021?
+
+13:55 JC: My crystal ball says there will be data that emerge before the end of the year.
+
+14:00 SC: Okay.
+
+14:00 JC: And my crystal ball says it'll be a topic for a lot of discussion and whether those data lead to an authorization, or an approval, or convince people that this is the vaccine that we should start using, that's up in the air. My crystal ball gets really, really cloudy at that moment. The truth of the matter is there are a lot of rigorous studies under way. That's a very good thing, and moreso than we've ever had for any disease in parallel. We've never seen anything like this, Sarah, ever.
+
+14:30 SC: Yeah.
+
+14:31 JC: That's a good thing. Whatever anyone thinks of, the crash programs to move vaccines forward, yes, they have to be monitored closely and they have to be stopped if safety problems emerge, which is exactly what's been happening. That's all for the good, and we are not gonna get anything out of a vaccine that people don't trust and believe in. The data have to be vetted, they have to be rigorous, they have to be compelling. I think we're gonna get there in early 2021, where there are data that you look at, that I look at, that scientists look at, and that everyone says, "Wow, give me this. This looks good." I think we're gonna get there.
+
+15:11 SC: Alright, thank you so much, Jon.
+
+15:12 JC: Yeah, you bet.
+
+15:13 SC: Jon Cohen is a staff news writer for Science. You can find a link to his story and all of our Coronavirus coverage at sciencemag.org/podcast.
+
+
+
+
+
+
+
+
+<hr>
+15:22 MC: Stay tuned for my interview with Bert Weckhuysen about creating value from plastic waste.
+
+[music]
+
+15:33 MC: Most plastic in the United States ends up in landfills or is burned. It's not usually recycled. Properly sorting and melting down plastic for reuse is costly. Once it's reused once or twice it usually degrades. In many places the current way of processing plastic waste is not working, which begs the question, is there a better use for all this waste? Which is why I'm here with Bert Weckhuysen to discuss the different ways to create value from plastic waste. Thanks so much for joining me, Bert. 
+
+16:02 Bert Weckhuysen: It's a pleasure.
+
+16:04 MC: So you wrote a perspective where you outlined a process of upcycling, making a new product out of plastic rather than recycling it. Could you talk first about why does plastic degrade so quickly?
+
+16:15 BW: Plastic itself is actually a very stable product; however, its properties are changing. So we have different ways to recycle plastics. There's for example, mechanical recycling. However, that leads to lower quality of plastics. When you always reuse, reuse, reuse the plastic, after a while, you cannot reach anymore the standards which we usually require for plastics, so we have to find alternative ways. A common alternative way to recycle or cycle plastic is pyrolysis. Pyrolysis is nothing else than heating it up and then you end up with a liquid. That liquid, you can process again, like crude oil can be processed, and then you arrive at compounds like ethylene and propylene, which are the building blocks for plastic. Now, I think it's time that we are changing the way we do this, and we would like to do what we call up-conversion. We would like to do upcycling of plastics. That means that you try to cut the plastic in pieces in such a way you still can have the original building blocks. If you can do that, then you can arrive and turn plastic waste into a more valuable product.
+
+17:27 MC: So there's a new upcycling process which was published in Science this week. Could you explain how this team created a valuable chemical compound from polyethylene, which is one of the more common plastics used today?
+
+17:39 BW: What the authors of this study have been doing is they have been using catalyst, a solid catalyst, which is platinum-alumina, and that catalyst has been added to polyethylene. That has been added to a reactor, a reactor system at high temperature. What they found was the polyethylene must convert to building block for making detergents. That building block they could really steer the composition of, hence, they could also arrive then on more valuable products from this low value polyethylene waste. It still has to be stated that they are not yet there. I think they have made a nice process. They have shown the concept of it, and also I think very important is in the study... Authors have also been using it in a practical application. For this they have been using plastic which originates from a plastic bag as well as the cap of a water bottle. By doing so, they have not shown only that it works for immobile compounds but also works for a real-life plastic.
+
+18:35 MC: Is there an advantage to creating these chemical building blocks from plastic waste rather than how it's currently manufactured?
+
+18:43 BW: So their proposal is to make detergents from alkylated benzene or aromatics. Now, aromatics are made in several ways. You can make them from fossil resource, you can also make it from biomass, for example, lithium compounds. The current way is really fossil-based. Is this now an attractive manner economically? Well, that the future will have to tell if that really will work. A lot of people have been working on polylactic acid or other things, but polyethylene and polypropylene are difficult, actually, to recycle.
+
+19:15 MC: This is specifically for polyethylene. Can a similar approach be used for other types of plastic, or are there ideas about other types of plastic being used as different building blocks?
+
+19:27 BW: These different reactions which the authors now reports are also possible to be used for other plastic waste. The future will tell how universal their method is. In any case, this cycling, as showcased, really shows the potential of this way of working. By doing this, we save carbon atoms. We actually do not need them anymore to come from fossil resources. However, it's also fair to say that current cycling or recycling process are not 100% efficient, and still a carbon input should come from, for example, fossil resources or biomass or other carbon sources.
+
+20:08 MC: Again, this is something that's in development. It hasn't been applied at scale yet to plastic, but are there any examples where this kind of life cycle has been made circular successfully at scale?
+
+20:20 BW: We use for bottles polyethylene terephthalate. It's used, for example, when you have Coca-Cola or Pepsi or whatever. That is, for example, in these bottles. Now these manufacturers are trying to recycle the plastic, but also trying to make them in a more renewable manner. An example is not only to make polyethylene terephthalate, PET, but for example, a bio-based alternative, which is called PEF. PEF stands for polyethylene furandicarboxylate. You can already hear that PEF and PET seems to be very similar although chemically they are different. Now with these kind of efforts where people are trying to make plastics directly from renewable resources or by trying to recycle them, both options will lead to a lower carbon footprint.
+
+21:18 MC: What do you think the timeline is for how much of industry will switch to biomass as the source for creating plastic? Do you think that besides it being more sustainable, is there an incentive for people to want to change the source of what's making plastic?
+
+21:33 BW: I think that we will see in the years to come that more and more companies will request that their products have a more neutral or a lower CO2 footprint. And because of this, consumers will see more and more products, for example, in supermarkets, which are made not from oil or gas resources, but from renewable resources or via, for example, plastic recycling or polymer recycling. Manufacturers of products will start to analyze each of their steps and to see where they can save CO2, where they can save energy. For example, recently, IKEA has announced that they want to buy again your old furniture, your bookcase, and then give a credit for it to buy a new one. That's one step, but the same will happen for paint industry, also coatings. They will try to see if they can buy back your paint, which you do not use, for example, to paint a wall or something else in your house. These kind of things where we see the end product, not as a waste, but as a kind of starting product, again, in other words, a resource.
+
+22:50 MC: Thank you so much for taking the time to talk to me. Bert Weckhuysen is a professor of inorganic chemistry at Utrecht University. You can find a link to his perspective at sciencemag.org/podcast.
+
+23:02 MC: And that concludes this edition of the Science Podcast. If you have any comments or suggestions for the show, write to us at sciencepodcast@aaas.org. You can listen to the show on the Science website at sciencemag.org/podcasts. On the site, you will find links to the research and news discussed in the episode, and of course, you can subscribe anywhere you get your podcasts. 
+
+This show was edited and produced by Sarah Crespi and Meagan Cantwell with production help from Podigy and Joel Goldberg. Jeffrey Cook composed the music. On behalf of Science Magazine and its publisher, AAAS, thanks for joining us.
+
+<span class=light>
+https://www.sciencemag.org/podcast/early-approval-covid-19-vaccine-could-cause-ethical-problems-other-vax-candidates-and
+文字: https://www.sciencemag.org/sites/default/files/SciencePodcast_201023.pdf
+</span>
