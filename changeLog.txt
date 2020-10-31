@@ -247,6 +247,7 @@ https://www.gutenberg.org
 en0.3.0-0 add psg 2020.10.19 [2020.10.19]
 en0.3.0-1 听力练习方法和url [2020.10.23]
 en0.3.0-2 add psg; 听力练习方法和url [2020.10.30]
+en0.3.0-3 修改主页菜单格式 [2020.10.31]
 # commited local
 # ----------------> push to github: dawneve master
 

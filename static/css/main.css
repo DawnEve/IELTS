@@ -8,16 +8,21 @@ a{
     color: #2eb398; padding:0 5px;}
 a:hover{text-decoration:underline}
 
-a.red{background:red; color:white; border-radius:5px;}
+a.red{/*background:red;*/ color:black; border-radius:5px;}
 a.red:hover{background:white; color:red;}
 
 .version{font-size:10px; color:orange;}
 
-.wrap div{padding:5px; border:1px dashed #ccc; margin:20px 0;}
+.wrap div{ /*padding:5px; border:1px dashed #ccc; */ margin:20px 0;}
 .wrap div h2{border-bottom:1px solid #ccc; color:#ddd;}
 .wrap div h3{margin:10px 2px; padding:0 5px; background:#eee;}
 .wrap div h2 .note{color:black;}
 
+#nav{
+	background: #f6f6f6;
+    padding: 1px 10px;
+    border-radius: 10px;
+}
 
 
 .item{ margin:10px 5px; 
