@@ -64,6 +64,7 @@ function $(s){
 * 只有第一个参数是必须的。
 * 其余2个参数可选。
 * v0.2 第二个参数如果是obj,则append
+* v0.3 换有道词典
 */
 function createElement(tag, json, innerHTML){
 	var json=json||{};
@@ -107,9 +108,10 @@ window.onload=function(){
 	//显示单词
 	for (var w in words.slice(0,500)){
 		var oA=createElement("a", {
-			href:"https://fanyi.baidu.com/#en/zh/"+words[w],
+			//href:"https://fanyi.baidu.com/#en/zh/"+words[w],
 			//href:"http://dict.youdao.com/w/eng/"+words[w],
 			//href:"https://cn.bing.com/dict/SerpHoverTrans?q="+words[w],
+			href:"https://cn.bing.com/dict/search?q="+words[w]+"&go=Search&qs=ds&form=Z9LH5",
 			target:"view_window2"
 		}, words[w]);
 		

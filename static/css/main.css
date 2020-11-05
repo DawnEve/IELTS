@@ -1,6 +1,6 @@
 div,body,h1,h2,h3,p{margin:0;padding:0;}
 .wrap{margin:0 auto; width:800px; }
-.current{background:#2eb398;color:white;}
+.current{background:#2eb398;color:white; border-radius: 3px;}
 
 a{
 	font-weight: bold;
@@ -19,10 +19,12 @@ a.red:hover{background:white; color:red;}
 .wrap div h2 .note{color:black;}
 
 #nav{
-	background: #f6f6f6;
     padding: 1px 10px;
     border-radius: 10px;
+	background-image: linear-gradient(to bottom,#f3f3f3 0,#e3e3e3 100%);
+	border-bottom: 1px solid #d3d3d3;
 }
+#nav div{margin:5px 0px;}
 
 
 .item{ margin:10px 5px; 
