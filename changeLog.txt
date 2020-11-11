@@ -250,6 +250,7 @@ en0.3.0-2 add psg; 听力练习方法和url [2020.10.30]
 en0.3.0-3 修改主页菜单格式 [2020.10.31]
 en0.3.0-4 单词页添加词典链接 [2020.11.05]
 	/wordKing/ 调整词库
+en0.3.0-5 add psg [2020.11.11]
 # commited local
 # ----------------> push to github: dawneve master
 

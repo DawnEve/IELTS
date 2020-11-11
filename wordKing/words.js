@@ -2,11 +2,17 @@
 目前mysql中一共8000多个单词，一天100个，需要80天过一遍。
 前面的简单，一天多几点。
 dict/scanWord.html?page=3&aim=5
-日期 背诵, 复习
+日期 新背诵, 复习
 2020.11.2 2-6;
 2020.11.3 7,5-7;
 2020.11.4 8-9,7;
-2020.11.5 10, 8-9; todo 11
+2020.11.5 10, 8-9;
+2020.11.6 11-12, 10;
+2020.11.7 , 10;
+2020.11.8 13-14, 11-12; 周日复习
+2020.11.9 15, 14;
+2020.11.10 16, 15;
+2020.11.11 17, 15-16;
 
 
 
@@ -35,9 +41,20 @@ var words=["escort", "antenna", "gallery", "conviction", "liberal", "imperial", 
 "excerpt", "sane", "excess", "consent", "persevere", "outfit", 
 //10
 "bleak", "disperse", "superfluous", "brittle", "clash", "withstand", "abdomen", "dispose", "precedent", "reservoir",
-
-
-
+//11
+"revelation", "contend", "tramp", "customary", "prevalent", "heap", "lubricate",
+//12
+"distort", "desolate", "symmetry", "embody", "feminine", "perplex", "arithmetic", "advent", "temperament", "shove", "preach", "conceive", "tram", "sarcastic", "suspicion", "temperament", 
+//13
+"dew", "patron", "repertoire", "symposium", "panorama", "allege", "scramble", 
+//14
+"bullet", "doctorate", "lever", "constituent", "stalk", "perceive", "solitary", "intact", 
+//15
+"miniature", "spade", "glare", "brace", "advisable", "divine", "beloved", "resultant", "plumber", "abide", "orthodox", "hum", "scarf", "tempt", "gallop",
+//16
+"swamp", "compassion", "consensus", "pendulum", "verdict", "rally", "lofty", "indicative", 
+//17
+"prone", "diffuse", "snatch", "intermittent", "conspicuous", "diminish", 
 
 
 

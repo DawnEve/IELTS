@@ -1,0 +1,25 @@
+SA | Nobelist Talks CRISPR Uses
+<span class=light>Nov 06, 2020 | 368 words
+By Steve Mirsky on October 8, 2020</span>
+
+New Nobel laureate in chemistry Jennifer Doudna talks about various applications of the gene-editing tool CRISPR.
+
+<hr>
+STEVE MIRSKY: On October 7, Jennifer Doudna and Emmanuelle Charpentier shared the 2020 Nobel Prize in Chemistry for the development of the gene-editing tool called CRISPR. Last April I spoke with Doudna at an event in Washington, D.C.
+
+MIRSKY: A few months ago, I was at a talk about wine, and CRISPR came up. And it was it was an appropriate thing to bring up. What is it like to be in this field right now, where everyone is talking about the work that you do and its implications?
+
+DOUDNA: Well, I have to say it’s very exciting. And as a scientist, it’s wonderful to see all the creative work that’s going on with gene editing. It’s just a fascinating opportunity to see the innovation that people come up with when they have a tool that’s so broadly useful across biology.
+
+MIRSKY: You do a million interviews, and you make a lot of public talks. What do people not talk to you about that you would love to talk about regarding CRISPR?
+
+DOUDNA: Well, I think a lot of the discussion around CRISPR right now focuses on biomedical applications, which clearly are very exciting. I think something that I don’t hear as much—although I’m happy to hear that you had this conversation at a wine event—are the opportunities in agriculture. I think they’re going to be huge. And I’m really, really excited about the opportunities to use gene editing to create plants that will be drought-tolerant, pest-resistant, maybe more nutritious—give farmers opportunities to grow plants in environments where, in the past, they’ve been really challenging to grow.
+
+MIRSKY: Yeah, the range of applications is just seemingly endless. I think in the wine talk, we were discussing the threats to viniculture from global warming, right. And one of the possible applications there is to get the more heat- tolerant organisms to chip in, help the wine grapes. You talk about the ethical considerations a lot. Anything you’d like to discuss?  
+
+DOUDNA: I think the ethical considerations are incredibly important. People get very excited and concerned, appropriately, I think, on occasion about opportunities to use gene editing in systems where, you know, we really need to be thoughtful about the responsible use—where there are great opportunities but also big, big challenges. And of course, a very obvious one is in the human-germ-line-embryo editing but also, frankly, also in microbes and other organisms that could be released into the environment—using gene editing to spread genetic traits in a mode called gene drives. So that’s another area where there’s a lot of discussion about how careful we need to be. How do we regulate this technology appropriately? How do we encourage science to advance but do it in a way that’s responsible?
+
+<span class=light>
+—Steve Mirsky
+https://www.scientificamerican.com/podcast/episode/nobelist-talks-crispr-uses/
+</span>

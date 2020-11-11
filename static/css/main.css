@@ -23,6 +23,7 @@ a.red:hover{background:white; color:red;}
     border-radius: 10px;
 	background-image: linear-gradient(to bottom,#f3f3f3 0,#e3e3e3 100%);
 	border-bottom: 1px solid #d3d3d3;
+	font-size:1em;
 }
 #nav div{margin:5px 0px;}
 
