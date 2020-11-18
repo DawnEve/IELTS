@@ -251,6 +251,9 @@ en0.3.0-3 修改主页菜单格式 [2020.10.31]
 en0.3.0-4 单词页添加词典链接 [2020.11.05]
 	/wordKing/ 调整词库
 en0.3.0-5 add psg [2020.11.11]
+en0.3.0-6 add psg; 爬微信句子到DB并添加查询页 [2020.11.18]
+	/dict/ 添加微信句子查询接口，导入db接口在 /py/jupyter页
+	/en/ 更新wx句子链接
 # commited local
 # ----------------> push to github: dawneve master
 

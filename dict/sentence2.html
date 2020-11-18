@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>微信公众号全英文句子 拂晓语料库 v0.5</title>
+<!--
+version
+v0.1 可用
+v0.2 能url分页
+v0.3 分页按钮
+v0.4 添加句子按钮
+v0.5 从拂晓语料复制过来，修改界面
+
+-->
+
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<style>
+/*
+#1AAD19
+*/
+body{background:#9CE99B;}
+.wrap{max-width:800px;  margin:10px auto; font-size:1em; background:white;}
+div,p,span{margin:0;padding:0;}
+.box{
+	/*
+	background:#fff;
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+	border:1px solid #eee;
+    border-radius: 5px;
+	margin:5px;
+	*/
+	padding:0px 0px 10px 10px;/*top,right,b,l*/
+	border-left:3px solid #eee;
+}
+.box:hover{border-left-color:#f00;}
+.box a{text-decoration: none;}
+.box a:hover{text-decoration: underline;}
+.even{background: rgba(239,245,221,0.6);}
+
+.light,.light a{color:#ddd; font-size:smaller;}
+
+.highlight{color:red;font-weight:bold; /*font-style: italic;*/ }
+
+span.highlight2,
+span.highlight{border-bottom:thin dotted rgba(255,0,0,0.4);}
+
+.pages{width:300px; margin:0 auto; padding:0; text-align:center;}
+.pages button{padding:10px;width:100px; cursor:pointer; opacity: 0.2;}
+
+.middle{width:300px; margin:30px auto; padding:0; text-align:center;}
+.middle a{ text-decoration:none; 
+	padding:5px;
+	background-color: rgba(255,206,206,0.5);
+	color: #FD6C6C;
+}
+.middle a:hover{color:red;}
+
+h4{margin:0;padding:0;}
+</style>
+
+</head>
+
+
+
+<body>
+<div class='pages'>
+	<button>Previous</button>
+	<button>Next</button>
+</div>
+
+<div class=wrap>
+	<div id='boxes'></div>
+</div>
+
+<div class='pages'>
+	<button>Previous</button>
+	<button>Next</button>
+</div>
+
+<!-- 
+<div class=middle>
+	<a href="addSentence.html">add sentence</a>
+</div>
+-->
+
+<script>
+print=console.log
+//http://127.0.0.1:20180/api/sentence/word/
+
+//获取url中的参数 https://www.cnblogs.com/vicky-li/p/9145026.html
+function getUrlParam(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+
+
+$(document).ready(function(){
+	//var word=location.search.split('=')[1]
+	var word=getUrlParam('word')
+	var id=getUrlParam('id')
+	var page=getUrlParam('page')
+	var url='http://127.0.0.1:20180/api/sentence2/word/'
+	
+	if(word!=null){
+		url+=word
+	}else{
+		url+="null2"
+	}
+	if(id!=null){
+		url='http://127.0.0.1:20180/api/sentence2/id/'+id
+	}
+	if(page!=null){
+		url+="?page="+page
+	}
+	console.log(url)
+	$.get(url,function(res,status){
+		//wjl=res;
+		if(res.length==0){
+			html="<div class=box>Nothing found.</div>"
+			$('#boxes').append(html)
+			return false;
+		}
+		for(var i in res){
+			var lineInfo=res[i], sid=lineInfo[0], line=lineInfo[7], source=lineInfo[1];
+			var title=lineInfo[5], desc=lineInfo[6], date=lineInfo[3];
+			//一行分成多个句子
+			//var arr=line.split(/[.?!]+\s/);
+			//console.log(arr)
+			
+			//如果有单词，则自动高亮显示
+			var sentence=line;
+			if(word!=null){
+				//分成句子，还保留分隔符？ https://www.iteye.com/blog/happyqing-2077629
+				lineWithVertical = line.replace(/\./g, ".|").replace(/\?/g, "?|").replace(/\!/g, "!|");			
+				var arr=lineWithVertical.split("|");
+				//console.log(i, line,arr)
+				//正则动态替换
+				var regLoose,reg;
+				regLoose=new RegExp( word,'ig')
+				reg=new RegExp( '\\b'+word+'\\b','ig'); //标记单词边界
+				if(id==null){//没有指定id，则最小化显示句子
+					for(var j in arr){
+						//最后一个空字符元素不要
+						//print('01=====>',j,arr)
+						if(arr[j].length==0){
+							continue;
+						}
+						if(arr[j].match(reg)){
+							//sentence=arr[j].replace(/word/ig,function(word){	
+							sentence=arr[j].replace(reg,function(keyword,index,originText){
+								//console.log(reg,keyword,index,originText)//关键词  位置 原文
+								return("<span class=highlight>"+keyword+'</span>')
+							})
+							break;
+						}else if(arr[j].match(regLoose)){
+							sentence=arr[j].replace(regLoose,function(keyword,index,originText){
+								//console.log(keyword,index,originText)//关键词  位置 原文
+								return("<span class=highlight2>"+keyword+'</span>')
+							})
+							break;
+						}
+					}
+				}else{//有id，则一行全部显示
+					sentence=line.replace(reg,function(a){
+						return("<span class=highlight>"+word+'</span>')
+					})
+				}
+			}
+			//链接信息
+			var wordPara=""
+			if(word!=null){
+				wordPara='&word='+word
+			}
+			
+			var even=i%2==0?"":" even";
+			html="<div class='box"+even+"'>"+
+				'<span class=light><a target=_blank href="?id='+sid+wordPara+'">#'+sid+'</a> | <a href="'+source+'">'+date+'</a></span><h4>'+title+'</h4>'+
+				'<p class=light>'+desc+'</p>'+
+				'<p>'+sentence+'</p>'+
+			"</div>"
+			
+			//console.log(rs)
+			$('#boxes').append(html)
+		}
+	})
+	
+	//为翻页添加事件
+	$('.pages button').click(function(){
+		//获取当前url，替换其中的页码
+		var url=''
+		if(this.innerHTML=='Previous'){
+			//console.log('pre')
+			url=location.href.replace(/page=(\d+)/,function(a,b){
+				b=b<=1?1:--b;
+				return 'page='+b;
+			})
+		}else{
+			//console.log('next')
+			url=location.href.replace(/page=(\d+)/,function(a,b){
+				//这个不知道界限，为节省查询，先暂时这样吧
+				return 'page='+(++b)
+			})
+		}
+		location=url;
+	})
+});
+
+
+
+
+
+
+
+
+
+var s=document.createElement("script");s.src="https://ielts.dawneve.cc/wordKing/dawnDict.js";document.body.append(s);
+</script>
+
+</body>
+</html>

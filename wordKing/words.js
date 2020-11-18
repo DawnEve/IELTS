@@ -10,9 +10,19 @@ dict/scanWord.html?page=3&aim=5
 2020.11.6 11-12, 10;
 2020.11.7 , 10;
 2020.11.8 13-14, 11-12; 周日复习
+
 2020.11.9 15, 14;
 2020.11.10 16, 15;
 2020.11.11 17, 15-16;
+2020.11.12 18, _;
+2020.11.13 19, 16-18;
+2020.11.14 20, 19; 
+2020.11.15 21, 20; 周日复习
+
+2020.11.16 22, 21; 
+
+2020.11.18 23?, ; 
+
 
 
 
@@ -55,8 +65,19 @@ var words=["escort", "antenna", "gallery", "conviction", "liberal", "imperial", 
 "swamp", "compassion", "consensus", "pendulum", "verdict", "rally", "lofty", "indicative", 
 //17
 "prone", "diffuse", "snatch", "intermittent", "conspicuous", "diminish", 
+"scrutiny", "restraint", "foul", "orient", 
 
-
+//18
+"whirl", "swarm", "constitute", "textile", "stake", "instantaneous", "clutch", "intrude", "overtake", "plausible", "linen", 
+//19
+"deem", "sovereign", "assault", "sham", "prompt", "kin", "integrity", "siege", "bolt", "staple", "descendant", "inferior", "lumber", 
+//20
+"aural", "rip", "retrospect", "fertile", "priest", "stun", "militant", 
+"intricate", "immerse", 
+//21
+"meditate", "circumference", "crust", "paradigm", "eternal", "stumble", "canal", "incur", "municipal", "stool", "rein", "desperate", "fable", "affection", "hypocrisy", "apt", "invariably", 
+//22
+"homogeneous", "epoch", "fume", "overpass", "trolley", "grope", "cordial", "astronaut", "deteriorate", "poultry", "canoe", 
 
 
 

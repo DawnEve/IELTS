@@ -10,6 +10,7 @@ v0.5 添加修改单词功能；
 v1.0 代码重构，分成好几个小py文件
 v1.1 增加词典链接;url接收单词 http://ielts.dawneve.cc/dict/index.html?word=corrupt
 v1.2 查词时，自动更新url
+v1.3 添加微信语料库
 
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 -->
@@ -126,12 +127,13 @@ var showTrans=function(){
 				'<a target=_blank href="https://www.macmillandictionary.com/dictionary/british/'+word+'">麦克</a> | '+
 				'<a target=_blank href="https://www.dictionary.com/browse/'+word+'">dict</a> | '+
 				'<a target=_blank href="https://www.ahdictionary.com/word/search.html?q='+word+'">ahdict</a> | '+
-				'<a target=_blank href="https://www.thefreedictionary.com/'+word+'">freedict</a> | '+
+				'<a target=_blank href="https://www.thefreedictionary.com/'+word+'">free</a> | '+
 				'<a target=_blank href="https://www.lexico.com/en/definition/'+word+'">lexico</a> | '+
 				//
-				'<a target=_blank href="https://sentencedict.com/'+word+'.html">s句子</a> | '+
-				'<a target=_blank href="https://sentence.yourdictionary.com/'+word+'">Y句子</a> | '+
+				'<a target=_blank href="https://sentencedict.com/'+word+'.html">s句</a> | '+
+				'<a target=_blank href="https://sentence.yourdictionary.com/'+word+'">Y句</a> | '+
 				'<a target=_blank href="sentence.html?page=1&word='+word+'">拂晓语料</a> | '+
+				'<a target=_blank href="sentence2.html?page=1&word='+word+'">wx</a> | '+
 				
 				'</div>'
 			)
@@ -183,7 +185,8 @@ $(document).ready(function(){
 	<a target="_blank" href='stat.html' class=light>统计信息</a> | 
 	<a target="_blank" href='addWord.html' class=light>添加生词</a>
 	<a target="_blank" href='addSentence.html' class=light>添加语料</a>
-	<a target="_blank" href='sentence.html?page=1' class=light>查看语料库</a> | 
+	<a target="_blank" href='sentence.html?page=1' class=light>查看拂晓语料库</a> | 
+	<a target="_blank" href='sentence2.html?page=1' class=light>查看wx语料库</a> | 
 	<a target="_blank" href='recite.html' class=light>背单词拼写</a>
 	<a target="_blank" href='scanWord.html?page=1' class=light>刷单词</a>
 </div>

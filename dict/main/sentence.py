@@ -6,7 +6,7 @@ from __init__ import *
 
 def  add_sentence_routes(app):
 
-    # 按照单词id，返回句子接口
+    # 按照句子id，返回句子接口
     @app.route('/api/sentence/id/<id>', methods=['GET'])
     def sentenceById(id):
         sql="select * from sentence_dawn where id="+id;
@@ -143,4 +143,29 @@ def  add_sentence_routes(app):
         })
     #
 
-    
+    ##########
+    # 微信句子
+    ##########
+    # 按照句子id，返回句子接口
+    @app.route('/api/sentence2/id/<id>', methods=['GET'])
+    def sentenceById2(id):
+        sql="select * from msg_English where msg_id="+id;
+        rs=mydb.query(sql)
+        return cors(rs)
+        
+    # 按照单词，返回句子接口2 (微信句子)
+    @app.route('/api/sentence2/word/<word>', methods=['GET'])
+    def sentenceByWord2(word):
+        # 获取分页，默认是第一页
+        page=int(request.args.get('page',1))
+        size=10 #每页条目
+        
+        if word=='null2':
+            sql="select * from msg_English order by msg_date DESC, msg_id DESC limit %d,%d;" % ( (page-1)*size, size );
+        else:
+            initSite=(page-1)*size
+            sql="select * from msg_English where msg_content like '%"+word+"%' order by msg_date DESC, msg_id DESC limit "+str(initSite)+","+str(size)+";";
+            #sql=sql % ( (page-1)*size, size );
+        #print('************>>>word=',word,sql)
+        rs=mydb.query(sql)
+        return cors(rs)

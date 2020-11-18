@@ -3,3 +3,4 @@ dustbin
 backup
 
 __pycache__
+.ipynb_checkpoints
