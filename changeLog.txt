@@ -254,6 +254,7 @@ en0.3.0-5 add psg [2020.11.11]
 en0.3.0-6 add psg; 爬微信句子到DB并添加查询页 [2020.11.18]
 	/dict/ 添加微信句子查询接口，导入db接口在 /py/jupyter页
 	/en/ 更新wx句子链接
+en0.3.0-7 刷单词工具改名百词刷；微调wx句子页 [2020.11.19]
 # commited local
 # ----------------> push to github: dawneve master
 

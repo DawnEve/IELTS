@@ -10,15 +10,17 @@ v0.2 能url分页
 v0.3 分页按钮
 v0.4 添加句子按钮
 v0.5 从拂晓语料复制过来，修改界面
+v0.6 淡化标题
+v0.7 纠正标题颜色浅的问题: h4 to h5
 
 -->
 
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <style>
 /*
-#1AAD19
+#1AAD19#9CE99B
 */
-body{background:#9CE99B;}
+body{background:#95a295;}
 .wrap{max-width:800px;  margin:10px auto; font-size:1em; background:white;}
 div,p,span{margin:0;padding:0;}
 .box{
@@ -55,7 +57,7 @@ span.highlight{border-bottom:thin dotted rgba(255,0,0,0.4);}
 }
 .middle a:hover{color:red;}
 
-h4{margin:0;padding:0;}
+h5{margin:0;padding:0; color:#ddd;}
 </style>
 
 </head>
@@ -175,7 +177,7 @@ $(document).ready(function(){
 			
 			var even=i%2==0?"":" even";
 			html="<div class='box"+even+"'>"+
-				'<span class=light><a target=_blank href="?id='+sid+wordPara+'">#'+sid+'</a> | <a href="'+source+'">'+date+'</a></span><h4>'+title+'</h4>'+
+				'<span class=light><a target=_blank href="?id='+sid+wordPara+'">#'+sid+'</a> | <a href="'+source+'">'+date+'</a></span><h5>'+title+'</h5>'+
 				'<p class=light>'+desc+'</p>'+
 				'<p>'+sentence+'</p>'+
 			"</div>"

@@ -21,7 +21,7 @@ dict/scanWord.html?page=3&aim=5
 
 2020.11.16 22, 21; 
 
-2020.11.18 23?, ; 
+2020.11.18 23, 22; 
 
 
 
@@ -78,6 +78,10 @@ var words=["escort", "antenna", "gallery", "conviction", "liberal", "imperial", 
 "meditate", "circumference", "crust", "paradigm", "eternal", "stumble", "canal", "incur", "municipal", "stool", "rein", "desperate", "fable", "affection", "hypocrisy", "apt", "invariably", 
 //22
 "homogeneous", "epoch", "fume", "overpass", "trolley", "grope", "cordial", "astronaut", "deteriorate", "poultry", "canoe", 
+
+//23
+"flush", "cosy", "scrap", "discreet", "autonomy", "shed", "radiant", "mourn", 
+
 
 
 
