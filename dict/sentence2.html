@@ -12,6 +12,8 @@ v0.4 添加句子按钮
 v0.5 从拂晓语料复制过来，修改界面
 v0.6 淡化标题
 v0.7 纠正标题颜色浅的问题: h4 to h5
+v0.8 添加半透明背景：画像和星空切换
+v0.9 js中转义
 
 -->
 
@@ -19,25 +21,31 @@ v0.7 纠正标题颜色浅的问题: h4 to h5
 <style>
 /*
 #1AAD19#9CE99B
-*/
 body{background:#95a295;}
-.wrap{max-width:800px;  margin:10px auto; font-size:1em; background:white;}
+*/
 div,p,span{margin:0;padding:0;}
+.wrap{max-width:800px;  margin:10px auto; font-size:1em; }
+
+#boxes{}
+
 .box{
-	/*
-	background:#fff;
+	opacity: 0.6;
+	background:rgba(255,255,255, 1);
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
-	border:1px solid #eee;
-    border-radius: 5px;
-	margin:5px;
-	*/
-	padding:0px 0px 10px 10px;/*top,right,b,l*/
+    border-radius: 10px;
+	margin-bottom:10px;
+	
+	padding:0px 10px 10px 10px;/*top,right,b,l*/
 	border-left:3px solid #eee;
+	
+	box-shadow: 0 2px 10px #999;
+    -moz-box-shadow: #999 0 2px 10px;
+    -webkit-box-shadow: #999 0 2px 10px;
 }
-.box:hover{border-left-color:#f00;}
+.box:hover{border-left-color:#f00; opacity: 1;}
 .box a{text-decoration: none;}
 .box a:hover{text-decoration: underline;}
-.even{background: rgba(239,245,221,0.6);}
+.even{background: rgba(239,245,221,1);}
 
 .light,.light a{color:#ddd; font-size:smaller;}
 
@@ -49,22 +57,61 @@ span.highlight{border-bottom:thin dotted rgba(255,0,0,0.4);}
 .pages{width:300px; margin:0 auto; padding:0; text-align:center;}
 .pages button{padding:10px;width:100px; cursor:pointer; opacity: 0.2;}
 
+
+
+
+/* button in the middle */
 .middle{width:300px; margin:30px auto; padding:0; text-align:center;}
 .middle a{ text-decoration:none; 
 	padding:5px;
-	background-color: rgba(255,206,206,0.5);
+	/*background-color: rgba(255,206,206,0.5);*/
+	border:1px solid #FD6C6C;
 	color: #FD6C6C;
 }
 .middle a:hover{color:red;}
 
 h5{margin:0;padding:0; color:#ddd;}
+
+
+
+
+/* add blur background picture */
+.blur_bj{
+/*
+	background-image:url(/static/image/bg.jpg);
+*/
+	background-image:url(/static/image/stary_night.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	
+	position: fixed;
+	/*position: absolute*/ 
+	top: 0; left:0;
+	
+	filter: blur(5px);
+	/*backdrop-filter: blur(6px); */
+	
+	z-index: -1;
+	opacity: 0.5;
+}
+
+
+/*footer*/
+.bgBlack{text-align:center; color:#666; }
+.bgBlack a{color:#666; text-decoration:none;}
+.bgBlack a:hover{color:red; text-decoration:underline;}
 </style>
 
 </head>
 
 
-
 <body>
+<div class='blur_bj'></div>
+
+
 <div class='pages'>
 	<button>Previous</button>
 	<button>Next</button>
@@ -81,9 +128,17 @@ h5{margin:0;padding:0; color:#ddd;}
 
 <!-- 
 <div class=middle>
-	<a href="addSentence.html">add sentence</a>
 </div>
 -->
+
+
+<div class='wrap bgBlack'>
+	&copy;2020 
+	<a target="_blank" href="/en/">英语读报</a> |
+	<a target="_blank" href="/">首页</a> | 
+	<a target="_blank" href="index.html">拂晓词典</a>
+</div>
+
 
 <script>
 print=console.log
@@ -110,7 +165,7 @@ $(document).ready(function(){
 		url+="null2"
 	}
 	if(id!=null){
-		url='http://127.0.0.1:20180/api/sentence2/id/'+id
+		url='http://127.0.0.1:20180/api/sentence2/id/'+id;
 	}
 	if(page!=null){
 		url+="?page="+page
@@ -124,8 +179,14 @@ $(document).ready(function(){
 			return false;
 		}
 		for(var i in res){
-			var lineInfo=res[i], sid=lineInfo[0], line=lineInfo[7], source=lineInfo[1];
+			var lineInfo=res[i], sid=lineInfo[0], line=lineInfo[7], url=lineInfo[1], source=lineInfo[2];
 			var title=lineInfo[5], desc=lineInfo[6], date=lineInfo[3];
+			
+			//js 转义
+			title=decodeURI(title);
+			desc=desc.replace(/\\x26#39;/g, '’');
+
+			
 			//一行分成多个句子
 			//var arr=line.split(/[.?!]+\s/);
 			//console.log(arr)
@@ -176,8 +237,14 @@ $(document).ready(function(){
 			}
 			
 			var even=i%2==0?"":" even";
+			
+			var html_title='<h5>'+title+'</h5>'
+			if(id!=null){
+				html_title='<h4>'+title+'</h4>'
+			}
+			
 			html="<div class='box"+even+"'>"+
-				'<span class=light><a target=_blank href="?id='+sid+wordPara+'">#'+sid+'</a> | <a href="'+source+'">'+date+'</a></span><h5>'+title+'</h5>'+
+				'<span class=light><a target=_blank href="?id='+sid+wordPara+'">#'+sid+'</a> | <a href="'+url+'">['+source+', '+date+']</a></span>'+html_title+
 				'<p class=light>'+desc+'</p>'+
 				'<p>'+sentence+'</p>'+
 			"</div>"
@@ -212,10 +279,22 @@ $(document).ready(function(){
 
 
 
+/* 随机替换背景图 */
+var BgObj=document.getElementsByClassName('blur_bj')[0]
+// 使用github做图床 https://github.com/DawnEve/IELTS/issues/8
+var picURLs=["/static/image/face.jpg", "/static/image/stary_night.png", //2个默认背景图
+	//'https://user-images.githubusercontent.com/5974903/99779125-9361c100-2b4f-11eb-9e2b-76952c92d72d.jpg', //bird
+	'https://user-images.githubusercontent.com/5974903/99779243-bd1ae800-2b4f-11eb-969f-351e59f40870.jpg', //peach
+	//'https://user-images.githubusercontent.com/5974903/99779247-bf7d4200-2b4f-11eb-8a64-74f21ff63a03.jpg', //peach-2
+]
+var picURL=picURLs[new Date().getTime() % picURLs.length] //随机选取一张
+BgObj.style['backgroundImage']='url('+picURL+')';
 
 
 
 
+
+/* 载入划词搜索：仅单个单词*/
 var s=document.createElement("script");s.src="https://ielts.dawneve.cc/wordKing/dawnDict.js";document.body.append(s);
 </script>
 
