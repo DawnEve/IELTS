@@ -25,7 +25,12 @@ dict/scanWord.html?page=3&aim=5
  
 2020.11.20 24, 23; 
 2020.11.21 25, ; 
-2020.11.22 26, ; 
+2020.11.22 26, 25; 
+2020.11.23 27, 26; 
+
+2020.11.25 28, 26-27; 
+2020.11.26 29, ; 
+2020.11.27 30, 28-29; 
 
 
 
@@ -92,7 +97,19 @@ var words=["escort", "antenna", "gallery", "conviction", "liberal", "imperial", 
 "sniff", "plead", "deficit", "exert", "wreck", "mock", "clap", "favorable", "jaw", "fountain", "metric", "distress", "conspiracy", 
 //26
 "extravagant", "erroneous", "implication", "slack", 
+"formulate", "liberate", 
+//27
+"petty", "pretext", "indulge", "drastic", "jargon", "impetus", "formidable", "niece", "mercury", "blunder", "slit", "obstruction", 
+
+//28
+"contrive", "appal", "dine", "turbine", "transcend", "feudal", "slum", "exquisite", "overhead", "withhold", 
+"lodge", "vague", "spiral", "freight", "modest", 
+//29
+"disgrace", "stern", "flap", "barn", "racket", "skull", "ashore", "outlet", "knob", "splash", "huddle", "exaggerate", "liquor", 
+
+//30
+"reciprocal", "elastic", "shady", "vowel", "caress", "faculty", "compulsory", 
 
 
-"withhold", "lodge", "turbine", "vague", "spiral", "freight", "modest", "exquisite"]
 
+]
