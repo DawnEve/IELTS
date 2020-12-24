@@ -32,7 +32,27 @@ dict/scanWord.html?page=3&aim=5
 2020.11.26 29, ; 
 2020.11.27 30, 28-29; 
 
+2020.11.30 31, ; 
 
+2020.12.2 32, 30-31; 
+
+2020.12.4 33, 31-32; 
+
+2020.12.6 34, 32-33; 
+2020.12.7 35, ; 
+2020.12.10 36-38, 34-35; 
+2020.12.11 39, 37-38; 
+2020.12.13 40-41, 39; 周日复习
+
+2020.12.15 42-43, 40-41;
+2020.12.16 44, 43;
+2020.12.17 45-46, 44;
+2020.12.18 47, 46;
+2020.12.19 48-50, 46-47;
+
+2020.12.21 51, 49-50;
+2020.12.22 52-53, 50-51;
+2020.12.23 54, ;
 
 
 
@@ -110,6 +130,69 @@ var words=["escort", "antenna", "gallery", "conviction", "liberal", "imperial", 
 //30
 "reciprocal", "elastic", "shady", "vowel", "caress", "faculty", "compulsory", 
 
+//31
+"eccentric", "stoop", "captive", "dividend", "bowl", "contempt", "crane", "agony", "ample", "cardinal",
+//32
+"muscular", "tow", "inhale", "abound", "psychiatry", "aspire", "spectator", "colonel", "biscuit", 
+//33
+"trivial", "vulgar", "statute", "concede", "remnant", "despise", "ebb", "grim", "bore", "orchestra", "arrogant", "recede", "Catholic", "intrigue", "divert", "clergy", "obedience", 
+"friction", 
 
+//compose 组成，构成
+//34
+"envisage", "biography", "emigrate", "stall", "verbal", "veil", "tub", "creep", "veteran", "endow", 
+"torment", 
+//35
+"mob", "fragrant", "bow", "addict", "prestige", "linguistic", "wrench", "maneuver", "clasp", "excessive", "gown",
+"enclosure", "transient", 
+//36
+"indignant", "trifle", "wink", 
+//37
+"susceptible", "liable", "premium", "noble", "descent", "contract",
+"expend", "inverse", "cohesive", "refuge",
+//38
+"rigid", "breach", "orchard", "conscientious", "intimate", "interim", "moss", "hospitality", "savage", "contrast", "strife", "commodity",
+"mischief", "ascertain", "integral", 
+//39
+"hinge", "plaster", "avert", "aggravate", "persecute", "illiterate", "steward", "verge", "hostile", "tumble",
+"utmost", "reckon",
+//40
+"wrinkle", "monopoly", "treason", "beverage", "obscure", "spin", "jolly", "librarian", "detain", "tuck", "irritate", "discrepancy", "comrade", "cafeteria",
+//41
+"notwithstanding", "howl", "plateau", "propel", "cunning", "provision", "riddle",
+"contemplate", "exotic",
+//42
+"scorn", "synthesis", "oriental", "composite", "entail", "diversion", "elaborate",
+//43
+"grind", "juvenile", "gum", "slender", "confess", "fracture", "scratch", "pedestrian", "preliminary", "hoist", "outset",
+"progressive", "piston",
+//44
+"outward", "fraud", "amiable", "moderate", "mortgage", "scold", "expedition",
+//45
+"malignant", "preferable", "wreath", "alloy",
+//46
+"hysterical", "revolt", "proposition", "convict", "perpetual",
+"refute", "denounce", "renovate",
+"sentiment", "edible", "screw", "rap", "insult",
+//47
+"pirate", "wholesome", "mould", "lounge", "concession", "tribe", "pitch", "fabulous", "sew", "dissipate", "genius", "retort", 
+"fabric", 
+//48
+"legitimate", "tiresome", "credential", "crawl", "relish", "grab", "seam", "cricket", "humid", "expenditure", "feasible",
+//49
+"recur", "imperative", "sly", "agitate",
+"pathetic", "permeate", 
+//50
+"precede", "cape", "corrode", "foster", "consecutive", "gracious", "uproar", "preclude", "shaft", "soak", "irony", "sprout", 
+"applicable", "drain",  
+//51
+"gratitude", "preside", "orientation", "bracket", "bibliography", "setback", "squeeze", "analytic", "unanimous", "magnitude", "stale",
+"groan", "dread", 
+//52
+"assassinate", "subordinate", "stroll", "prose", "humidity", "speciality", "stationary", "artery", "hut", "memorial", "verse", "exploit",
+//53
+"ballot", "futile", "wretched", "hop", "obsolete", "numb", "thrift", "lest", "deprive", "likewise", "stitch", 
+//54
+"stubborn", "shrewd", "nucleus", "cognitive", "booth", "cord", "brim", "ingenious", 
 
 ]

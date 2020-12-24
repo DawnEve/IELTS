@@ -257,6 +257,7 @@ en0.3.0-6 add psg; 爬微信句子到DB并添加查询页 [2020.11.18]
 en0.3.0-7 刷单词工具改名百词刷；微调wx句子页 [2020.11.19]
 en0.3.0-8 wx句子页 dict/sentence2.html微调，加背景图 [2020.11.22]
 en0.3.0-9 首页添加音标link [2020.11.27]
+en0.3.1-0 reading中有网易云的添加播放外链 [2020.12.24]
 # commited local
 # ----------------> push to github: dawneve master
 
