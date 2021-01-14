@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.4.7 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.4.8 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -21,6 +21,7 @@ v0.4.5 更改音频后要转移焦点！防止空格或箭头触发下一个
 v0.4.6 补充帮助文档
 v0.4.7 修改停止播放切换方法;
 	本地版只需要提供音频服务器即可: 有同源策略，太复杂；
+v0.4.8 添加快捷键提示;
 #
 
 
@@ -72,7 +73,7 @@ a:hover {text-decoration: underline;}
 
 <body>
 <div id='topTitle'>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.7</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.8</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -97,6 +98,15 @@ a:hover {text-decoration: underline;}
 
 <div class="control">
 	<button id='showHelp'>Show Help</button>
+	<br /> 
+	<span class=grey>Shortcuts: 
+		<b>F12</b>[open Console]
+		<b>A</b>[set pointA]; 
+		<b>B</b>[set pointB]; 
+		<b>C</b>[continue]; 
+		<b>R</b>[repeat]; 
+		<b>Space,Enter</b>[stop/continue];
+	</span>
 	<button id='showHelp2'>doNothing</button>
 </div>
 
@@ -107,7 +117,7 @@ a:hover {text-decoration: underline;}
 
 
 <pre id=help>
-<h1>听力王v0.4.7 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.4.8 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -655,6 +665,8 @@ addEvent(window,'load',function(){
 	$('hostName').href='//'+hostName+"/audio/";
 })
 
+
+console.log('Add new audio from Console, F12 to toggle Console: \n>%cinit(\"http://path/to/your/audio.mp3\")', 'color:red; font-size:20px;');
 </script>
 </body>
 </html>

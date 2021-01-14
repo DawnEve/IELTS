@@ -53,7 +53,13 @@ dict/scanWord.html?page=3&aim=5
 2020.12.21 51, 49-50;
 2020.12.22 52-53, 50-51;
 2020.12.23 54, ;
+2020.12.24 , 53-54;
+2020.12.25 55-56?, 53;
 
+第56开始，词汇有很多+s, +ing, +ed等变体。
+
+有问题的词条
+tacking
 
 
 */
@@ -192,7 +198,15 @@ var words=["escort", "antenna", "gallery", "conviction", "liberal", "imperial", 
 "assassinate", "subordinate", "stroll", "prose", "humidity", "speciality", "stationary", "artery", "hut", "memorial", "verse", "exploit",
 //53
 "ballot", "futile", "wretched", "hop", "obsolete", "numb", "thrift", "lest", "deprive", "likewise", "stitch", 
+"zeal", "offset", "eloquent", "religious",
 //54
 "stubborn", "shrewd", "nucleus", "cognitive", "booth", "cord", "brim", "ingenious", 
+"commonplace", "fixture", 
+//55
+"revert", "predecessor", "mathematical", "affluent", "opaque", "townhouse", "hermit", "cellar", "commission", "gox", 
+
+//56
+
+
 
 ]
