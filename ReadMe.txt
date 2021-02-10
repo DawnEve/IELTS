@@ -26,6 +26,10 @@ local: ielts.dawneve.cc/en/
 	#
 	写易错单词 /dict/recite.html
 #
+单词发音 (英语单词复(ting)读(xie)机 https://github.com/onebigear/IELTS-Repeater/)
+http://dict.youdao.com/dictvoice?type=1&audio=repeat
+http://dict.youdao.com/dictvoice?type=2&audio=repeat
+
 
 
 ==================================== 读
