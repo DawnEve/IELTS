@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.4.8 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.4.9 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -22,6 +22,7 @@ v0.4.6 补充帮助文档
 v0.4.7 修改停止播放切换方法;
 	本地版只需要提供音频服务器即可: 有同源策略，太复杂；
 v0.4.8 添加快捷键提示;
+v0.4.9 update help
 #
 
 
@@ -73,7 +74,7 @@ a:hover {text-decoration: underline;}
 
 <body>
 <div id='topTitle'>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.8</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.9</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -117,7 +118,7 @@ a:hover {text-decoration: underline;}
 
 
 <pre id=help>
-<h1>听力王v0.4.8 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.4.9 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -189,15 +190,20 @@ chrome浏览器，F12快捷键，点开console
 
 
 <hr>
+
 <h1>Method1: 在线版播放器添加音频</h1>
 支持静态服务器跨服务器调用文件，需要音频文件支持跨域访问，也就是开启 'Access-Control-Allow-Origin' header 。
 
-1.下载/获取文件列表: 点击打开<a target="_blank" href="http://a2.biomooc.com/audio/">音频服务器</a> 输入音频文件url点击下载，下载音频到该服务器，右击中括号给出的外链 - 复制外链；
-2.到本播放器的console(F12)输入
-init('http://a2.biomooc.com/audio/static.php?file=icrc-laws-war-remain-relevant-today-despite-new-challenges.mp3'); //回车
+1. 自己架设 静态服务器，比如 <a href="https://github.com/DawnEve/webPan.py">webPan.py</a>，设置好路径，放好mp3资源文件，
+在网页界面右击文件末尾的外链 - 选择复制链接。
+2. Chrome浏览器打开 <a href="http://ielts.biomooc.com/listening/player.html">在线版播放器</a>。
+3. 按F12，打开浏览器的控制台console，输入
+init("http://127.0.0.1:8005/file/fry_3_01.mp3"); //回车
 就可以更新音频了。
 注意：括号内是外链音频文件链接。加载时间取决于网速和音频文件长度。
 
+如果使用xampp-php版本的后端，使用 scholar: https://github.com/miostudio/DawnScholar
+输入 init('http://127.0.0.1/audio/static.php?file=xx.mp3'); //回车
 
 
 
@@ -220,7 +226,7 @@ tips: 本软件不定期修正bug，建议及时更新；发现问题请及时�
 以win10系统为例(苹果没用过，用linux的大神肯定会启服务器)：
 1. 先安装pyhton3.6(其他版本没测试过);
 2. 使用 我的电脑 一路双击找到存放player.html和wavesurfer.min.js文件的文件夹，在地址栏输入 cmd 回车，弹出黑窗口；
-3. 输入 python -m http.server 8888 并回车，如下:
+3. 在黑窗口中输入 python -m http.server 8888 并回车，显示如下:
 G:\xampp\htdocs\IELTS\listening>python -m http.server 8888
 Serving HTTP on 0.0.0.0 port 8888 (http://0.0.0.0:8888/) ...
 
