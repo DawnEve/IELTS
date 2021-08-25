@@ -273,6 +273,7 @@ en0.3.2-1 听力/ HP 3_10, 39% [2021.7.12]
 en0.3.2-2 听力/ HP 3_10, 100% [2021.8.12]
 en0.3.2-3 听力/ HP 3_11: 33% [2021.8.20]
 en0.3.2-4 听力/ HP 3_11: 60% [2021.8.24]
+en0.3.2-5 听力/ HP 3_11: 72% [2021.8.25]
 #
 # commited local
 # ----------------> push to github: dawneve master
@@ -285,11 +286,6 @@ en0.3.2-4 听力/ HP 3_11: 60% [2021.8.24]
 
 
 
-长难句几个模仿对象：
-唐迟老师 https://mp.weixin.qq.com/s?__biz=MzI2MDU1MDM0MQ==&mid=2247488382&idx=1&sn=357e0070e04dfca2dc69186695907f1e
-唐迟老师 https://mp.weixin.qq.com/s?__biz=MzI2MDU1MDM0MQ==&mid=2247488563&idx=1&sn=9b395add55320f624fdce2131edb785b
-
-
 天下事有难易乎，
 为之，则难者亦易矣；
 不为，则易者亦难矣。
@@ -300,11 +296,6 @@ url: ielts.biomooc.com/en/
 local: ielts.dawneve.cc/en/
 mobile test tmp: m.biomooc.com
 
-公众号html样式素材:
-http://bj.96weixin.com/
-
-英语句子解析与仿写
-https://www.sohu.com/a/248581597_290050
 
 2018.9.29 热烈庆祝公众号[英语读报]关注人数超过500人！ 
 2019.6.2 热烈庆祝公众号[英语读报]关注人数超过1000人！ 
