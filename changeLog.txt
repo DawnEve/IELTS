@@ -276,6 +276,7 @@ en0.3.2-4 听力/ HP 3_11: 60% [2021.8.24]
 en0.3.2-5 听力/ HP 3_11: 72% [2021.8.25]
 en0.3.2-6 听力/ HP 3_11: 90% [2021.8.29]
 en0.3.2-7 听力/ HP 3_11: 100% [2021.8.30]
+en0.3.2-8 听力/ HP 3_12: 12% [2021.8.31]
 #
 # commited local
 # ----------------> push to github: dawneve master
@@ -297,6 +298,7 @@ en0.3.2-7 听力/ HP 3_11: 100% [2021.8.30]
 url: ielts.biomooc.com/en/
 local: ielts.dawneve.cc/en/
 mobile test tmp: m.biomooc.com
+百度统计 https://tongji.baidu.com/web/6529810/trend/latest?siteId=11440620
 
 
 2018.9.29 热烈庆祝公众号[英语读报]关注人数超过500人！ 
