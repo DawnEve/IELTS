@@ -1,0 +1,59 @@
+seattletimes | AI’s ability to read is hailed as milestone, but there’s still long way to go
+<span class=light>Sep 20, 2021 | 816 words
+By Drew Harwell | The Washington Post | Originally published January 21, 2018 at 5:00 pm Updated January 23, 2018 at 1:52 am</span>
+
+Alibaba and Microsoft announced this month that their computer models surpassed humans for the first time in a reading-comprehension test. But AI experts say computers still aren’t that close to understanding words and processing meaning with the same ease as humans.
+
+
+When computer models designed by tech giants Alibaba and Microsoft this month surpassed humans for the first time in a reading-comprehension test, both companies celebrated the success as a historic milestone.
+
+Luo Si, the chief scientist for natural-language processing at Alibaba’s AI research unit, struck a poetic note, saying, “Objective questions such as ‘what causes rain’ can now be answered with high accuracy by machines.”
+
+Teaching a computer to read has for decades been one of artificial intelligence’s holiest grails, and the feat seemed to signal a coming future in which AI could understand words and process meaning with the same fluidity humans take for granted every day.
+
+But computers aren’t there yet — and aren’t even really that close, said AI experts who reviewed the test results. Instead, the accomplishment highlights not just how far the technology has progressed, but also how far it still has to go.
+
+
+“It’s a large step” for the companies’ marketing “but a small step for humankind,” said Oren Etzioni, chief executive of the Allen Institute for Artificial Intelligence, a Seattle-based AI research group funded by Microsoft co-founder Paul Allen.
+
+“These systems are brittle, in that small changes to paragraphs result in very bad behavior” and misunderstandings, Etzioni said. And when it comes to, say, drawing conclusions from two sentences or understanding implied ideas, the models lag even further behind: “These kind of implications that we do naturally, without even thinking about it, these systems don’t do.”
+
+The test involved Stanford University’s Question Answering Dataset, a collection of more than 100,000 questions that has become one of the AI world’s top battlegrounds for testing how machines read and comprehend.
+
+The models are given short paragraphs taken from more than 500 Wikipedia pages spanning a range of subjects, including Jacksonville, Florida; economic inequality; and the black death. Fed a paragraph about Super Bowl 50, for instance, the models are then asked which musicians headlined the halftime show.
+
+The first test in August 2016, of a model created by researchers at Singapore Management University, lagged behind a measure of human performance — people on crowdsourced systems, such as Amazon’s Mechanical Turk, who earned money for taking surveys or completing small tasks.
+
+But after dozens of following tests, researchers this month submitted proof that their models had narrowly and finally beaten the humans — an 82.6 for Microsoft Research Asia’s models, compared with the humans’ 82.3.
+
+As both Microsoft and the Chinese tech powerhouse Alibaba claimed first-in-AI victories, a flood of glowing media reports followed, positing that AI could not just read better than humans but would also, as Luo Si said in a statement, decrease “the need for human input in an unprecedented way.”
+
+Microsoft said it is using similar models in its Bing search engine, and Alibaba said its technology could be used for “customer service, museum tutorials and online responses to medical inquiries.”
+
+
+But AI experts say the test is far too limited to compare to real reading. The answers aren’t generated from understanding the text, but from the system finding patterns and matching terms in the same short passage. The test was done only on cleanly formatted Wikipedia articles — not the wide-ranging corpus of books, news articles and billboards that fill most humans’ waking hours.
+
+Adding gibberish into the passages that a human would easily ignore often tended to confuse the AI, making it spit out the wrong result. And every passage was guaranteed to include the answer, preventing the models from having to process concepts or reason with other ideas.
+
+Stephen Merity, a research scientist who works on language AI at cloud-computing giant Salesforce, said it was an “amazing achievement” but added that calling it superhuman was “madness.” “There’s no built-in ability for the model to determine or signal that it thinks the paragraph is insufficient to answer the question,” he said. “It’ll always spit you back something.”
+
+Even Pranav Rajpurkar, a Stanford AI researcher who helped design the Stanford test, said there remains “actually quite a big jump” before machines can truly read and understand.
+
+“The goal has always been to get to human-level performance, and it’s been inching closer and closer there,” Rajpurkar said.
+
+The real miracle of reading comprehension, AI experts said, is in reading between the lines: connecting concepts, reasoning with ideas and understanding implied messages that aren’t specifically outlined in the text.
+
+In those realms, AI is still very much a work in progress. Computer models tested by the Winograd Schema Challenge, which asks them to comprehend the meaning of vague sentences that a human would nevertheless understand, have shown mixed results. Merity outlined one example in which today’s AI systems might still struggle to reasonably comprehend: asking the difference between a car “filled with gas,” “filled with petrol” and “filled with oranges.”
+
+AI researchers said they’re eager to push on to new challenges of comprehension beyond basic Wiki-reading: The Allen Institute, for example, is training AI to answer SAT-style math problems and middle-school-level science questions.
+
+But AI experts said people should be less concerned about losing their jobs to machines that thoughtfully read passages about the rain — or anything else.
+
+“Technically it’s an accomplishment, but it’s not like we have to begin worshipping our robot overlords,” said Ernest Davis, a New York University professor of computer science and longtime AI researcher.
+
+“When you read a passage, it doesn’t come out of the clear blue sky: It draws on a lot of what you know about the world,” Davis said. “We really need to deal much more deeply with the problem of extracting the meaning of a text in a rich sense. That problem is still not solved.”
+
+<span class=light>Drew Harwell
+https://www.seattletimes.com/business/ais-ability-to-read-is-hailed-as-milestone-but-theres-still-long-way-to-go/
+https://www.washingtonpost.com/business/economy/ais-ability-to-read-hailed-as-historical-milestone-but-computers-arent-quite-there/2018/01/16/04638f2e-faf6-11e7-a46b-a3614530bd87_story.html
+</span>
