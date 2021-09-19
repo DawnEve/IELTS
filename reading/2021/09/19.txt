@@ -1,0 +1,42 @@
+usatoday | Robots are better at reading than humans
+<span class="light">Sep 19, 2021 | 323 words
+Brett Molina | USA TODAY | Published 1:08 p.m. ET Jan. 16, 2018</span>
+
+At this point, is there anything humans can do better than robots?
+
+The latest example of our inferiority: Artificial intelligence systems from Alibaba and Microsoft performed better than humans in a reading comprehension test.
+
+The systems used Stanford University's SQuAD, a reading comprehension dataset consisting of questions based on a set of Wikipedia articles.
+
+The human score registered on SQuAD is 82.304. Alibaba's AI model finished the same set of questions with a score of 82.44, while Microsoft's AI posted an 82.65.
+
+
+"It is our great honor to witness the milestone where machines surpass humans in reading comprehension," said Luo Si, chief scientist for Natural Language Processing at Alibaba's Institute of Data Sciences and Technologies, in a statement.
+
+In a blog post published Monday, Microsoft said this type of AI would help many professionals quickly scan through countless pages of text for information.
+
+"These tools also could let doctors, lawyers and other experts more quickly get through the drudgery of things like reading through large documents for specific medical findings or rarified legal precedent," read an excerpt.
+
+
+Other companies including Salesforce, Samsung and Tencent have submitted their own models for testing to Stanford's SQuAD, considered one of the top reading comprehension tests in the world.
+
+AI is viewed as arguably the most important technology, capable of changing how humans live and work. Among its biggest supporters are Facebook CEO Mark Zuckerberg, who believes the technology could have significant impact in the health and automotive industries through advances in self-driving vehicles.
+
+
+# More: Elon Musk says AI could doom human civilization. Zuckerberg disagrees. Who's right?
+
+Signs of AI's impact on health are already popping up. Last October, Japanese researchers created an AI that could identify and analyze polyps for cancer found during a colonoscopy in less than a second.
+
+# More:Facebook says artificial intelligence has sped up removal of terrorist content
+# More:Alibaba to invest $15B into artificial intelligence, other futuristic tech
+
+However, AI has its critics who worry the technology could spell trouble for humans. Elon Musk, CEO of Tesla and SpaceX, warns it could pose a "fundamental risk" without the appropriate regulations enacted by governments.
+
+Scientist Stephen Hawking is also wary, admitting that while AI could transform human lives in a positive, it could be abused.
+
+"Success in creating effective AI could be the biggest event in the history of our civilization, or the worst," he said during November's Web Summit in Portugal.
+
+<span class="light">Follow Brett Molina on Twitter: @brettmolina23.
+https://www.usatoday.com/story/tech/news/2018/01/16/robots-better-reading-than-humans/1036420001/
+https://www.newsweek.com/robots-china-ai-reading-comprehension-stanford-781836
+</span>

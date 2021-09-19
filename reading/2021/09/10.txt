@@ -1,5 +1,5 @@
 NewYorker | The Other Afghan Women
-<div class="light">Sep 10, 2021 | 3446 words</div>
+<span class="light">Sep 10, 2021 | 3446 words</span>
 <b>In the countryside, the endless killing of civilians turned women against the occupiers who claimed to be helping them.</b>
 
 ==
@@ -77,4 +77,4 @@ The incident didn’t affect Dado’s relationship with U.S. Special Forces, who
 
 Shakira’s friends and neighbors were too terrified to speak out, but the United Nations began agitating for Dado’s removal. The U.S. repeatedly blocked the effort, and a guide for the U.S. Marine Corps argued that although Dado was “far from being a Jeffersonian Democrat” his form of rough justice was “the time-tested solution for controlling rebellious Pashtuns.”
 
-<div class="light">https://www.newyorker.com/magazine/2021/09/13/the-other-afghan-women</div>
+<span class="light">https://www.newyorker.com/magazine/2021/09/13/the-other-afghan-women</span>
