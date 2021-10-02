@@ -284,6 +284,8 @@ en0.3.3-2 听力/ HP 3_12: 100% [2021.9.8]
 en0.3.3-3 长文 NewYorker | The Other Afghan Women [2021.9.10]
 en0.3.3-4 短文 1 [2021.9.19]
 en0.3.3-5 短文 1 [2021.9.20]
+en0.3.3-6 听力/ HP 3_13: 14% [2021.9.22]
+en0.3.3-7 听力/ HP 3_13: 38% [2021.10.2]
 #
 # commited local
 # ----------------> push to github: dawneve master
