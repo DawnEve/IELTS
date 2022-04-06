@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.4.9 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.5.0 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -23,6 +23,7 @@ v0.4.7 修改停止播放切换方法;
 	本地版只需要提供音频服务器即可: 有同源策略，太复杂；
 v0.4.8 添加快捷键提示;
 v0.4.9 update help
+v0.5.0 support url input //todo
 #
 
 
@@ -51,6 +52,7 @@ pre a{color: orange;}
 }
 
 .grey{color:#ddd;}
+.grey b{color:#bbb;}
 #help{display:none;}
 #showHelp2{opacity:0}
 
@@ -74,7 +76,7 @@ a:hover {text-decoration: underline;}
 
 <body>
 <div id='topTitle'>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.4.9</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.5.0</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -106,7 +108,7 @@ a:hover {text-decoration: underline;}
 		<b>B</b>[set pointB]; 
 		<b>C</b>[continue]; 
 		<b>R</b>[repeat]; 
-		<b>Space,Enter</b>[stop/continue];
+		<b>Space / Enter</b>[stop/continue];
 	</span>
 	<button id='showHelp2'>doNothing</button>
 </div>
@@ -118,7 +120,7 @@ a:hover {text-decoration: underline;}
 
 
 <pre id=help>
-<h1>听力王v0.4.9 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.5.0 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -245,7 +247,7 @@ Contact me: jimmymall at 163 dot com
 
 
 <div id=footer>
-	<p>&copy;2020 <a target=_blank href="/en">英语读报</a> 荣誉出品 </p>
+	<p>&copy;2022 <a target=_blank href="/en">英语读报</a> 荣誉出品 </p>
 	<p><a target=_blank href="https://mp.weixin.qq.com/s?__biz=MzI0NDcxNzc5Mg==&mid=2247485239&idx=2&sn=8846604b1ccbcafd8180246002f9b3e4">怎么快速提高英语听力水平?精听</a></p>
 	<p> 不疯魔，不成活！其实又有哪件事不是如此呢？</p>
 </div>
@@ -268,7 +270,14 @@ bug2:按下B键，进入自动播放模式，然后按下空格，不会停止�
 */
 
 
+
+
+
+
+//#################################
 //tools 
+//#################################
+
 //默认保存2位小数，四舍五入
 function digital(num,n){
 	var n=n||2
@@ -291,6 +300,22 @@ function addEvent(obj,ev,fn){
 		obj.attachEvent('on'+ev,fn);
 	}
 }
+
+
+//获取url中的参数 https://www.cnblogs.com/vicky-li/p/9145026.html
+function getUrlParam(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+
+
+
+
+
+//#################################
+// player settins
+//#################################
 
 //播放器状态
 var Mstatus={'on':1, 'showHelp':-1, 'ready':0, 'repeats':0 }
@@ -422,11 +447,13 @@ function init(musicPath){
 
 
 
+
 /**
 * 控制播放的主程序
 * version: 0.2 可播放
 * version: 0.3 可复读
 * version: 0.4 支持外链音频
+* version: 0.5 支持 url=音频路径
 */
 window.onload=function(){
 	var musicPath='002.mp3';
@@ -440,6 +467,9 @@ window.onload=function(){
 	//wavesurfer.load('audio.wav');
 	//wavesurfer.load('201910/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3');
 	//https://www.51voa.com/VOA_Special_English/us-officials-twin-births-drop-to-lowest-level-in--years-83068.html
+	
+	//try to get audio path from url
+	musicPath= getUrlParam('url') || musicPath;
 	
 	//初始化播放器
 	init(musicPath)
