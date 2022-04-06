@@ -83,7 +83,10 @@ var dragBar={
 	},
 	init:function(){
 		var oDiv=document.createElement('div');
-		oDiv.setAttribute('style','	color:blue;	position:fixed;	display:block;	width:400px;	height:100px;	bottom:0;	cursor:move;	border:2px dashed #000;	background:rgba(0,0,0,0.4);z-index:9999;');
+		oDiv.setAttribute('style','	color:blue;	position:fixed;	display:block;	width:600px;	height:250px;	bottom:0;	cursor:move;	\
+		border-radius: 20px; box-shadow: 5px 5px 5px #000; font-size:5em;	\
+		background:#A349A4;		z-index:9999;');
+		
 		oDiv.setAttribute('draggable',true);
 		document.body.append(oDiv);
 		//功能
