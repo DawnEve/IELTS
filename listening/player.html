@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.5.0 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.5.1 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -23,7 +23,8 @@ v0.4.7 修改停止播放切换方法;
 	本地版只需要提供音频服务器即可: 有同源策略，太复杂；
 v0.4.8 添加快捷键提示;
 v0.4.9 update help
-v0.5.0 support url input //todo
+v0.5.0 support url input
+v0.5.1 [e]on/off echo method mode: wait for same time
 #
 
 
@@ -76,7 +77,7 @@ a:hover {text-decoration: underline;}
 
 <body>
 <div id='topTitle'>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.5.0</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.5.1</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -88,6 +89,7 @@ a:hover {text-decoration: underline;}
 	<p><span id="time">CurrentTime: 0.00/Total time(0.00%)</span> | <span id="speed">Speed: 1.00</span></p>
 	<div id="div1" class=grey>Status: player status will be shown here.</div>
 	<div id="path" class=grey>AudioPath: AudioPath</div>
+	<div id="echo" class=grey>Echo mode: off</div>
 
 	<div id='showList'>
 		<span class=grey>Available Audio on the <a id='hostName' target="_blank" href="http://a2.biomooc.com/audio/">Audio Server</a>:</span>
@@ -109,6 +111,8 @@ a:hover {text-decoration: underline;}
 		<b>C</b>[continue]; 
 		<b>R</b>[repeat]; 
 		<b>Space / Enter</b>[stop/continue];
+
+		<b>E</b>[on/off echo mode]; 
 	</span>
 	<button id='showHelp2'>doNothing</button>
 </div>
@@ -120,7 +124,7 @@ a:hover {text-decoration: underline;}
 
 
 <pre id=help>
-<h1>听力王v0.5.0 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.5.1 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -133,6 +137,11 @@ a:hover {text-decoration: underline;}
 	r键repeat，继续ab复读;
 	    该键只能在按下c之后，又想回到原AB复读时有效;
 	    如果没有指定A点则指向起点，如果没有指定B点则指向终点，所以，开头直接按r键就是单曲循环；
+
+echo method 回音模式:
+	e 键打开或关闭回音模式
+	echo 模式打开时，音频在ab播放前都会等待ab之间等长发的时间。
+
 
 (3)左右箭头，前进后退2s; 
 shift+左右箭头，前进后退2%; 对于100s以上的音频，使用百分号移动的更快。
@@ -185,6 +194,21 @@ chrome浏览器，F12快捷键，点开console
 
 
 <b>不疯魔，不成活。其实又有哪件事不是如此呢？</b>
+
+
+
+
+
+
+<hr>
+<h1>回音法 - 提高英语口语，纠正口音</h1>
+熟悉的材料，有文字、有录音。
+听一句，3-5秒，不超过10个单词；
+聆听刚才那句话的回音；
+然后说出来。
+三个步骤：listen - echo - repeat.
+
+
 
 
 
@@ -249,6 +273,7 @@ Contact me: jimmymall at 163 dot com
 <div id=footer>
 	<p>&copy;2022 <a target=_blank href="/en">英语读报</a> 荣誉出品 </p>
 	<p><a target=_blank href="https://mp.weixin.qq.com/s?__biz=MzI0NDcxNzc5Mg==&mid=2247485239&idx=2&sn=8846604b1ccbcafd8180246002f9b3e4">怎么快速提高英语听力水平?精听</a></p>
+	<p><a target=_blank href="https://mp.weixin.qq.com/s/N8OS79oVpFSibW0MnukJdw">怎么提高英语口语?如何纠音?回音法</a></p>
 	<p> 不疯魔，不成活！其实又有哪件事不是如此呢？</p>
 </div>
 
@@ -318,7 +343,7 @@ function getUrlParam(name) {
 //#################################
 
 //播放器状态
-var Mstatus={'on':1, 'showHelp':-1, 'ready':0, 'repeats':0 }
+var Mstatus={'on':1, 'showHelp':-1, 'ready':0, 'repeats':0, "echo": false }
 
 //初始化
 var wavesurfer = WaveSurfer.create({
@@ -389,12 +414,24 @@ function repeatPlay(){
 	}
 	
 	//开始播放
+	var timer2=null; //回音计时器
 	Mstatus.timer1=setInterval(function(){
 		var ct=wavesurfer.getCurrentTime();
 		if(ct<Mstatus['pointA'] || ct>=Mstatus['pointB']){
-			wavesurfer.play(Mstatus['pointA'],Mstatus['pointB'])
-			//播放器重复次数
-			show('AB Repeat again. Repeats: '+(++Mstatus.repeats))
+			var sleepTime=Mstatus['echo']?(Mstatus['pointB']-Mstatus['pointA'])*1000:0;
+			// 是否回音
+			if(Mstatus['echo']){
+				console.log( "Echo time:",  Math.round(sleepTime/100)/10, "seconds" )
+			}
+			timer2=timer2 || setTimeout(function(){
+				wavesurfer.play(Mstatus['pointA'],Mstatus['pointB']);
+				//console.log( "sleep time:", sleepTime )
+				clearTimeout(timer2); //清空回音计时器
+				timer2=null; //清空回音计时器
+
+				//播放器重复次数
+				show('AB Repeat again. Repeats: '+(++Mstatus.repeats))
+			},  sleepTime)
 		}
 	}, 300)
 }
@@ -430,6 +467,10 @@ function init(musicPath){
 			if($('path').innerHTML!='AudioPath: '+Mstatus['audio']){
 				$('path').innerHTML='AudioPath: '+Mstatus['audio'];
 			}
+			//echo mode
+			if($('echo').innerHTML!='Echo mode: '+(Mstatus['echo']?"on":"off") ){
+				$('echo').innerHTML='Echo mode: '+(Mstatus['echo']?"on":"off");
+			}
 		},500)//每0.5s刷新一次状态
 		Mstatus.ready=1;
 		show('ready now, press Enter or Space key to play')
@@ -454,6 +495,7 @@ function init(musicPath){
 * version: 0.3 可复读
 * version: 0.4 支持外链音频
 * version: 0.5 支持 url=音频路径
+* version: 0.5.1 支持 [e] echo mode
 */
 window.onload=function(){
 	var musicPath='002.mp3';
@@ -496,6 +538,7 @@ window.onload=function(){
 		var evt = event ||window.event;
 		var key=event.which||event.keyCode;
 		console.log(key);//打印当前按键码
+		wjl=event
 		
 		if(Mstatus.ready==0 && key!=123){
 			var alert2='Nothing can be done before loading is completed!'
@@ -536,6 +579,10 @@ window.onload=function(){
 		//空格32/回车13控制着暂停与否
 		else if( [32,13].indexOf(key)!=-1 ){
 			wavesurfer.playPause()
+			if(key==32){ //阻止空格翻页 默认事件
+				event.preventDefault();
+				return false;
+			}
 			/*
 			Mstatus.on*=-1
 			if(Mstatus.on>0){
@@ -574,11 +621,17 @@ window.onload=function(){
 			repeatPlay();
 		}
 		//ab复读，按c则continue，不再ab复读
-		else if(key==67){
+		//if ctrl+c, then do nothing
+		else if(key==67 & event.ctrlKey!=true){
 			show('[c] continue to play')
 			clearInterval(Mstatus.timer1) //清除定时器
 			Mstatus['on']*=-1
 			wavesurfer.play();
+		}
+		//echo 模式，按字母e则修改状态
+		else if(key==69){
+			Mstatus['echo']=!Mstatus['echo'];
+			show('[e] change echo mode: '+ (Mstatus['echo']?"on":"off"));
 		}
 	};
 }
