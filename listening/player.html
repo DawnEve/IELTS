@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王0.5.2 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.5.3 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -26,6 +26,7 @@ v0.4.9 update help
 v0.5.0 support url input
 v0.5.1 [e]on/off echo method mode: wait for same time
 v0.5.2 echo method should waite 2 times time;
+v0.5.3 按[e]立刻退出等待时间 
 #
 
 
@@ -78,7 +79,7 @@ a:hover {text-decoration: underline;}
 
 <body>
 <div id='topTitle'>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> 0.5.2</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.5.3</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -125,7 +126,7 @@ a:hover {text-decoration: underline;}
 
 
 <pre id=help>
-<h1>听力王0.5.2 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.5.3 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -344,7 +345,8 @@ function getUrlParam(name) {
 //#################################
 
 //播放器状态
-var Mstatus={'on':1, 'showHelp':-1, 'ready':0, 'repeats':0, "echo": false }
+var Mstatus={'on':1, 'showHelp':-1, 'ready':0, 'repeats':0, 
+	"echo": false }
 
 //初始化
 var wavesurfer = WaveSurfer.create({
@@ -415,7 +417,7 @@ function repeatPlay(){
 	}
 	
 	//开始播放
-	var timer2=null; //回音计时器
+	Mstatus.timer2=null; //回音计时器
 	Mstatus.timer1=setInterval(function(){
 		var ct=wavesurfer.getCurrentTime();
 		if(ct<Mstatus['pointA'] || ct>=Mstatus['pointB']){
@@ -424,11 +426,11 @@ function repeatPlay(){
 			if(Mstatus['echo']){
 				console.log( "Echo time:",  Math.round(sleepTime/100)/10, "seconds" )
 			}
-			timer2=timer2 || setTimeout(function(){
+			Mstatus.timer2 = Mstatus.timer2 || setTimeout(function(){
 				wavesurfer.play(Mstatus['pointA'],Mstatus['pointB']);
 				//console.log( "sleep time:", sleepTime )
-				clearTimeout(timer2); //清空回音计时器
-				timer2=null; //清空回音计时器
+				clearTimeout(Mstatus.timer2); //清空回音计时器
+				Mstatus.timer2=null; //清空回音计时器
 
 				//播放器重复次数
 				show('AB Repeat again. Repeats: '+(++Mstatus.repeats))
@@ -447,6 +449,11 @@ function init(musicPath){
 		clearInterval(Mstatus.timer0);
 	}
 	wavesurfer.load(Mstatus['audio']);
+	
+	// set point A
+	if(!('pointA' in Mstatus)){
+		Mstatus['pointA']=0
+	}
 
 	wavesurfer.on('ready', function () {
 		Mstatus['duration']=wavesurfer.getDuration();
@@ -633,6 +640,10 @@ window.onload=function(){
 		else if(key==69){
 			Mstatus['echo']=!Mstatus['echo'];
 			show('[e] change echo mode: '+ (Mstatus['echo']?"on":"off"));
+			if(Mstatus['echo']==false){
+				clearTimeout(Mstatus.timer2); //清空回音计时器
+				Mstatus.timer2=null; //清空回音计时器
+			}
 		}
 	};
 }
