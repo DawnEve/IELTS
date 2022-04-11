@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.5.4 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.5.5 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -28,6 +28,7 @@ v0.5.1 [e]on/off echo method mode: wait for same time
 v0.5.2 echo method should waite 2 times time;
 v0.5.3 按[e]立刻退出等待时间 
 v0.5.4 添加按钮控制
+v0.5.5 大按钮，适应移动端
 #
 
 
@@ -58,7 +59,7 @@ pre a{color: orange;}
 .grey{color:#ddd;}
 
 /*ctrl buttons*/
-button.btn{color:#000; padding: 5px 10px; margin:5px;}
+button.btn{color:#000; padding: 10px 10px; margin-top:20px; display:block; font-size: 25px;}
 button.btn:hover {
     background-color: black;
 	color:white;
@@ -96,7 +97,7 @@ a:hover {text-decoration: underline;}
 
 <body>
 <div id='topTitle'>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.5.4</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.5.5</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -130,7 +131,7 @@ a:hover {text-decoration: underline;}
 	<button class="btn"><b>R</b>[repeat]</button>
 	<button class="btn"><b>Space / Enter</b>[stop/continue]</button>
 	
-	<br>
+	<hr>
 	<button class="btn"><b>F12</b>[open Console]</button>
 	<button class="btn"><b>E</b>[on/off echo mode]</button>
 	<button class="btn" id='showHelp'>Show Help</button>
@@ -146,7 +147,7 @@ a:hover {text-decoration: underline;}
 
 
 <pre id=help>
-<h1>听力王v0.5.4 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.5.5 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
