@@ -319,6 +319,7 @@ en0.3.5-9 听力/ HP 3_17: 76% [Aril 9th, 2022 Sat.]
 en0.3.6-0 听力/ HP 3_17: 89% [Aril 9th, 2022 Sat.]
 en0.3.6-1 听力王 增加 echo mode,取消空格翻页默认行为 [2022.4.9]
 en0.3.6-2 听力/ HP 3_17: 100% [Aril 9th, 2022 Sat.]
+en0.3.6-3 听力/ HP 3_18: 50% [Aril 11th, 2022 Mon.]
 
 #
 # commited local
