@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.5.3 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.5.4 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -27,6 +27,7 @@ v0.5.0 support url input
 v0.5.1 [e]on/off echo method mode: wait for same time
 v0.5.2 echo method should waite 2 times time;
 v0.5.3 按[e]立刻退出等待时间 
+v0.5.4 添加按钮控制
 #
 
 
@@ -55,7 +56,23 @@ pre a{color: orange;}
 }
 
 .grey{color:#ddd;}
-.grey b{color:#bbb;}
+
+/*ctrl buttons*/
+button.btn{color:#000; padding: 5px 10px; margin:5px;}
+button.btn:hover {
+    background-color: black;
+	color:white;
+	cursor:pointer;
+}
+
+
+
+fieldset {
+    border: 1px solid #E7E8EA;
+    background: #fff;
+}
+
+
 #help{display:none;}
 #showHelp2{opacity:0}
 
@@ -79,7 +96,7 @@ a:hover {text-decoration: underline;}
 
 <body>
 <div id='topTitle'>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.5.3</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.5.4</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -103,21 +120,24 @@ a:hover {text-decoration: underline;}
 
 
 
-<div class="control">
-	<button id='showHelp'>Show Help</button>
-	<br /> 
-	<span class=grey>Shortcuts: 
-		<b>F12</b>[open Console]
-		<b>A</b>[set pointA]; 
-		<b>B</b>[set pointB]; 
-		<b>C</b>[continue]; 
-		<b>R</b>[repeat]; 
-		<b>Space / Enter</b>[stop/continue];
 
-		<b>E</b>[on/off echo mode]; 
-	</span>
+<fieldset class=control id="control">
+	<legend>Shortcuts[Description]</legend>
+
+	<button class="btn" data='A'><b>A</b>[set pointA]</button>
+	<button class="btn" data="B"><b>B</b>[set pointB]</button>
+	<button class="btn" data="C"><b>C</b>[continue]</button>
+	<button class="btn"><b>R</b>[repeat]</button>
+	<button class="btn"><b>Space / Enter</b>[stop/continue]</button>
+	
+	<br>
+	<button class="btn"><b>F12</b>[open Console]</button>
+	<button class="btn"><b>E</b>[on/off echo mode]</button>
+	<button class="btn" id='showHelp'>Show Help</button>
+	
 	<button id='showHelp2'>doNothing</button>
-</div>
+</fieldset>
+
 
 
 
@@ -126,7 +146,7 @@ a:hover {text-decoration: underline;}
 
 
 <pre id=help>
-<h1>听力王v0.5.3 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.5.4 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -541,12 +561,11 @@ window.onload=function(){
 	
 
 	//全键盘控制的播放器
-	document.onkeydown =function(event){
+	document.onkeydown =function(event){		
 		//获取键盘事件和数字
 		var evt = event ||window.event;
 		var key=event.which||event.keyCode;
-		console.log(key);//打印当前按键码
-		wjl=event
+		console.log(key, evt.key);//打印当前按键码
 		
 		if(Mstatus.ready==0 && key!=123){
 			var alert2='Nothing can be done before loading is completed!'
@@ -646,6 +665,45 @@ window.onload=function(){
 			}
 		}
 	};
+	
+	
+	
+	// 按钮被按下，则触发键盘事件
+	var keyCode_Dict={
+		"A":65,
+		"B":66,
+		"C":67,
+		"R":82,
+		//" ":32,
+		//"ENTER":13,
+		"SPACE / ENTER":13,
+		"F12":123,
+		"E":69
+	}
+	// get button
+	var controls=$("control").getElementsByTagName("button")
+	for (let i=0; i< (controls.length-2); i++){
+		let elem=controls[i];
+		let key=String(elem.getElementsByTagName('b')[0].innerHTML).toUpperCase();
+		// get event
+		//var event = document.createEvent("KeyboardEvent", {
+		let event = new KeyboardEvent("keydown", {
+			isTrusted: true,
+			altKey: false,
+			key: key,
+			code: "Key"+key,
+			keyCode: keyCode_Dict[key]
+		});
+		
+		// when click on the button, trigger the key event
+		elem.addEventListener('click', function (e) {
+		  // e.target matches elem
+		  document.dispatchEvent(event);
+		}, false);
+	}
+	
+	
+	
 }
 //end of window.onload
 </script>
