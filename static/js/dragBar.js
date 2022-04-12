@@ -26,14 +26,19 @@ var dragBar={
 		}
 		return [left,top]
 	},
+	
+	// 鼠标拖动
 	dragFactory: function(obj){
 		var IsMousedown, LEFT, TOP;
 		var _this=this;
+		// 鼠标按下
 		obj.onmousedown=function(e) {
 			IsMousedown = true;
 			e = e||event;
 			LEFT = e.clientX - obj.offsetLeft;
 			TOP = e.clientY - obj.offsetTop;
+
+			//鼠标移动
 			document.onmousemove = function(e) {
 				var e = e||event;
 				var left=e.clientX - LEFT,top=e.clientY - TOP;
@@ -48,11 +53,16 @@ var dragBar={
 				return false;
 			}
 
+			//鼠标抬起
 			document.onmouseup=function(){
 				IsMousedown=false;
+				document.onmousemove=null;
+				document.onmouseup=null;
 			}
 		}
 	},
+	
+	// 键盘方向键
 	moveFactory:function(obj){
 		var _this=this;
 		document.onkeydown=function(e){
@@ -99,4 +109,5 @@ var dragBar={
 		console.log('1.设置大小 > dragBar.obj.style.width="500px";  \n2.能鼠标拖动位置，或者键盘按键移动位置，按下shift和箭头一次移动1px，仅用箭头一次移动5px；');
 	}
 };
+
 dragBar.init();
