@@ -156,8 +156,8 @@ $(document).click(function(event){
 		self.ajax({
 			method:"get",
 			//访问后台 //todo: 修改时要保证能访问到php文件
-			//url:location.protocol+"//ielts.dawneve.cc/wordKing/dawnDict.php?word="+word+'&source='+window.location, 
-			url:location.protocol+"//applybio.com/wordKing/dawnDict.php?word="+word+'&source='+encodeURIComponent(window.location),  
+			url:location.protocol+"//ielts.dawneve.cc/wordKing/dawnDict.php?word="+word+'&source='+window.location, 
+			//url:location.protocol+"//applybio.com/wordKing/dawnDict.php?word="+word+'&source='+encodeURIComponent(window.location),  
 			
 			success:function(data){
 					console.log(word);
