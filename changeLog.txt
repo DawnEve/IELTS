@@ -319,6 +319,7 @@ en0.3.5-9 听力/ HP 3_17: 76% [Aril 9th, 2022 Sat.]
 en0.3.6-0 听力/ HP 3_17: 89% [Aril 9th, 2022 Sat.]
 en0.3.6-1 听力王 增加 echo mode,取消空格翻页默认行为 [2022.4.9]
 en0.3.6-2 听力/ HP 3_17: 100% [Aril 9th, 2022 Sat.]
+
 en0.3.6-3 听力/ HP 3_18: 50% [Aril 11th, 2022 Mon.]
 en0.3.6-4 听力王 fix: echo mode 应该等待2倍时间, time for echo and repeat [2022.4.11]
 en0.3.6-5 听力王 v0.5.3 按[e]立刻退出等待时间 [2022.4.11]
@@ -328,9 +329,11 @@ en0.3.6-8 听力/ HP 3_18: 77% [Aril 12th, 2022 Tue.]
 en0.3.6-9 听力王 v0.5.6 大按钮 可隐藏 [2022.4.12]
 en0.3.7-0 fix: drag bar 拖动后 不可选文字 [2022.4.12]
 en0.3.7-1 add 听力原文 NPR [2022.4.14]
+
 en0.3.7-2 听力/ HP 3_19: 18% [Aril 16th, 2022 Sat.]
 en0.3.7-3 听力/ NCE3: one [Aril 17th, 2022 Sun.]
 en0.3.7-4 听力/ HP 3_19: 38%
+en0.3.7-5 听力/ HP 3_19: 48% [Aril 18th, 2022 Mon.]
 #
 # commited local
 # ----------------> push to github: dawneve master
