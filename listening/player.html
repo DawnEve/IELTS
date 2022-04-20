@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.5.7 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王v0.5.8 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
 local: http://ielts.dawneve.cc/listening/player.html
@@ -31,6 +31,7 @@ v0.5.4 添加按钮控制
 v0.5.5 大按钮，适应移动端
 v0.5.6 大按钮 可以隐藏
 v0.5.7 可以接收中文url
+v0.5.8 美化移动端按钮: 去掉 F12 button，按钮美化 //todo
 #
 
 
@@ -99,7 +100,7 @@ a:hover {text-decoration: underline;}
 
 <body>
 <div id='topTitle'>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.5.7</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.5.8</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -149,7 +150,6 @@ a:hover {text-decoration: underline;}
 	<button class="btn"><b>Space / Enter</b>[stop/continue]</button>
 	
 	<hr>
-	<button class="btn"><b>F12</b>[open Console]</button>
 	<button class="btn"><b>E</b>[on/off echo mode]</button>
 	<button class="btn" id='showHelp'>Show Help</button>
 	
@@ -164,7 +164,7 @@ a:hover {text-decoration: underline;}
 
 
 <pre id=help>
-<h1>听力王v0.5.7 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.5.8 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -712,6 +712,7 @@ window.onload=function(){
 		//"ENTER":13,
 		"SPACE / ENTER":13,
 		"F12":123,
+		"H":72,
 		"E":69
 	}
 	// get button

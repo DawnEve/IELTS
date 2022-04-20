@@ -336,6 +336,8 @@ en0.3.7-4 听力/ HP 3_19: 38%
 en0.3.7-5 听力/ HP 3_19: 48% [Aril 18th, 2022 Mon.]
 en0.3.7-6 fix 听力王 v0.5.7 可以接收中文url
 en0.3.7-7 听力/ HP 3_19: 70%
+en0.3.7-8 听力/ HP 3_19: 90% [Aril 20th, 2022 Wed.]
+	reading/ ARTIFICIAL INTELLIGENCE: A Guide for Thinking Humans
 #
 # commited local
 # ----------------> push to github: dawneve master
