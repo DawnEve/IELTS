@@ -340,6 +340,8 @@ en0.3.7-8 听力/ HP 3_19: 90% [Aril 20th, 2022 Wed.]
 	reading/ ARTIFICIAL INTELLIGENCE: A Guide for Thinking Humans
 en0.3.7-9 听力/ HP 3_19: 100%; add reading/novel/flipped [Aril 22th, 2022 Fri.]
 
+en0.3.8-0 update NCE/
+
 
 #
 # commited local
