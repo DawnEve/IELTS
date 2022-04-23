@@ -342,6 +342,7 @@ en0.3.7-9 听力/ HP 3_19: 100%; add reading/novel/flipped [Aril 22th, 2022 Fri.
 
 en0.3.8-0 update NCE/
 en0.3.8-1 听力/ HP 3_20: 40%
+en0.3.8-2 听力/ HP 3_20: 61% [Aril 23th, 2022 Sat.]
 #
 # commited local
 # ----------------> push to github: dawneve master
