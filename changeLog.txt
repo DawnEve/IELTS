@@ -349,6 +349,7 @@ en0.3.8-4 听力/ HP 3_20: 100% [Aril 24th, 2022 Sun.]
 en0.3.8-5 听力/ HP 3_21: 8% [Aril 26th, 2022 Tue.]
 en0.3.8-6 听力/ HP 3_21: 17%
 en0.3.8-7 听力/ HP 3_21: 29%; 硅谷 S01E01; [Aril 27th, 2022 Wed.]
+en0.3.8-8 听力/ HP 3_21: 39%; 硅谷 S01E01 第二遍; [Aril 28th, 2022 Thu.]
 
 #
 # commited local
