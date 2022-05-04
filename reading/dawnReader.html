@@ -89,11 +89,10 @@ b.h1{font-size:x-large;}
 
 
 	<div class=footer>
-	&copy;2009-2021
+	&copy;2009-2022
 	dawnReader. All rights reserved. | <a class=grey href='/reading/index2.html'>Home</a>
 	</div>
 
-	<script src='/wordKing/dawnDict.js'></script>
 </body>
 
 
@@ -157,7 +156,16 @@ window.onload=function(){
 		openText(date)
 	}
 }
+
+
+//"<script src='/wordKing/dawnDict.js'>< /script>"
+console.log( "划词搜索, F12 console>>\n", 'var s=document.createElement("script");s.src="https://ielts.dawneve.cc/wordKing/dawnDict.js";document.body.append(s);')
 </script>
 
-<script src="http://applybio.com/track/dawnTrack.js?time="+new Date().getTime()></script>
+<script>
+var src="/track/dawnTrack.js?time="+new Date().getTime()
+var oJS=document.createElement("script");
+oJS.setAttribute("src", src)
+document.getElementsByTagName("body")[0].appendChild(oJS);
+</script>
 </html>
