@@ -357,6 +357,7 @@ en0.3.9-2 听力/ HP 3_21: 89%; [May 3rd, 2022 Tue.]
 en0.3.9-3 听力/ [精听-56] NPR - 10min length; [May 4nd, 2022 Wed.]
 
 en0.3.9-4 听力/ HP 3_22: 13%; 硅谷 S01E03 1+1; [May 12th, 2022 Thu.]
+en0.3.9-5 听力/ HP 3_22: 20%; NCE 3-8; [May 14th, 2022 Sat.]
 #
 # commited local
 # ----------------> push to github: dawneve master
