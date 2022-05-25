@@ -35,9 +35,10 @@ v0.0.4 加入写作body段-交通题材，口语-事件类，阅读-填空；
 	> v0.1.8.2 en/links.html modify css
 	> v0.1.8.3 en/links.html add theAtlantic
 	> v0.1.8.4 en/links.html edit links
-	> v0.1.8.5 add 百度统计 code	[https://tongji.baidu.com: 亲自走路/Bd12345678]
+	> v0.1.8.5 add 百度统计 code	
+		作废掉 at en0.4.0-2) [https://tongji.baidu.com: 亲自走路/Bd12345678]
 	> v0.1.8.6 添加百度统计查看按钮
-		https://tongji.baidu.com/web/welcome/ico?s=e8bfc4624d292f16f30358abd921d748
+		作废掉 at en0.4.0-2) https://tongji.baidu.com/web/welcome/ico?s=e8bfc4624d292f16f30358abd921d748
 	> v0.1.8.7 调整描述。
 	> v0.1.8.8 add 英文标题。
 	> v0.1.8.9 去掉viewport。
@@ -144,7 +145,7 @@ https://www.gutenberg.org
 > en0.2.26-2 添加浏览器logo图 favicon.ico
 > en0.2.26-3 订阅超过1000人
 > en0.2.26-4 添加目录和统计信息(code,statistics 在 txtBlog/data/English/)
-	添加 js/tongji.js
+	更新掉 at en0.4.0-2): 添加 js/tongji.js
 > en0.2.26-5 2019高考真题全国卷I阅读来源
 > en0.2.26-6 微调样式表 a的颜色
 > en0.2.26-7 微调link页
@@ -365,6 +366,10 @@ en0.3.9-9 听力/ HP 3_22: 73%; [May 20th, 2022 Fri.]
 en0.4.0-0 听力/ HP 3_22: 90%; 硅谷 S01E04 1+1; [May 23th, 2022 Mon.]
 en0.4.0-1 听力/ HP 3_22: 100%(HP3单独一篇); NEC3_54, 30% [May 25th, 2022 Wed.]
 ======> HP3 end;
+
+en0.4.0-2 调整统计代码 [May 25th, 2022 Wed.]
+
+听力/ HP 4_1: 0% //todo
 #
 # commited local
 # ----------------> push to github: dawneve master
@@ -385,15 +390,24 @@ en0.4.0-1 听力/ HP 3_22: 100%(HP3单独一篇); NEC3_54, 30% [May 25th, 2022 W
 url: ielts.biomooc.com/en/
 local: ielts.dawneve.cc/en/
 mobile test tmp: m.biomooc.com
-百度统计 https://tongji.baidu.com/web/6529810/trend/latest?siteId=11440620
 
+百度统计 https://tongji.baidu.com/web/10000032076/trend/latest?siteId=18008118
+  <script src="/static/js/tongji.js"></script>
+  $ find . | grep -v "\.git" | xargs  grep -n "tongji.js"  --color=auto 2>/dev/null
+--------
+Windows:
+http://ielts.dawneve.cc/listening.html
+http://y.biomooc.com:8000/file/audio/NCE3/新概念第三册.pdf
+http://y.biomooc.com:8000/list?fpath=./audio/NCE3/NCE3-MP3-En/
 
+--------
 2018.9.29 热烈庆祝公众号[英语读报]关注人数超过500人！ 
 2019.6.2 热烈庆祝公众号[英语读报]关注人数超过1000人！ 
 2019.11.26 公众号[英语读报]停止更新全文。 
 2021.10.10 上周看到新规定：禁止非公有资本转载境外媒体新闻。
 2022.4.1 录屏 10min，上传到B站、知乎等。
-
+	周更，其他时间只听不录屏
+2022.4.27 开始看硅谷，现代商业竞争，现代语料，适合反复看几十遍。
 		<p>
 			<a class="button red" target='_blank' href="xx">xx</a>
 			<span>xx</span>
