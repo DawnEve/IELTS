@@ -368,6 +368,8 @@ en0.4.0-1 听力/ HP 3_22: 100%(HP3单独一篇); NEC3_54, 30% [May 25th, 2022 W
 ======> HP3 end;
 
 en0.4.0-2 调整统计代码 [May 25th, 2022 Wed.]
+en0.4.0-3 备份 mysql 数据库的py 代码 [2022.5.25]
+
 
 听力/ HP 4_1: 0% //todo
 #
@@ -381,12 +383,17 @@ en0.4.0-2 调整统计代码 [May 25th, 2022 Wed.]
 
 
 
+
+
 天下事有难易乎，
 为之，则难者亦易矣；
 不为，则易者亦难矣。
 
 
+
+
 --------
+Where is this repo:
 url: ielts.biomooc.com/en/
 local: ielts.dawneve.cc/en/
 mobile test tmp: m.biomooc.com
@@ -395,12 +402,13 @@ mobile test tmp: m.biomooc.com
   <script src="/static/js/tongji.js"></script>
   $ find . | grep -v "\.git" | xargs  grep -n "tongji.js"  --color=auto 2>/dev/null
 --------
-Windows:
+Windows to open:
 http://ielts.dawneve.cc/listening.html
 http://y.biomooc.com:8000/file/audio/NCE3/新概念第三册.pdf
 http://y.biomooc.com:8000/list?fpath=./audio/NCE3/NCE3-MP3-En/
 
 --------
+History logs:
 2018.9.29 热烈庆祝公众号[英语读报]关注人数超过500人！ 
 2019.6.2 热烈庆祝公众号[英语读报]关注人数超过1000人！ 
 2019.11.26 公众号[英语读报]停止更新全文。 

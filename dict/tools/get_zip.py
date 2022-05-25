@@ -59,9 +59,9 @@ if __name__ == '__main__':
   
   # 生成压缩文件的名字: 当前年月日-时分秒
   today = time.strftime("%Y%m%d-%H%M%S", time.localtime())  #"20191127_1110" #备份时间戳 '20190517-140223'
-  zipFileName=today+'.zip'
+  zipFileName="IELTS_tables_"+today+'.zip'
   print("zipFileName:",zipFileName)
   zip_file_path(r".", '.', zipFileName)
 
   #
-  print('==end==')
+  print('==end of zip these .sql files to .zip file==:', zipFileName)
