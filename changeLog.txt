@@ -363,6 +363,8 @@ en0.3.9-7 听力/ HP 3_22: 48%; [May 18th, 2022 Wed.]
 en0.3.9-8 听力/ HP 3_22: 69%; [May 19th, 2022 Thu.]
 en0.3.9-9 听力/ HP 3_22: 73%; [May 20th, 2022 Fri.]
 en0.4.0-0 听力/ HP 3_22: 90%; 硅谷 S01E04 1+1; [May 23th, 2022 Mon.]
+en0.4.0-1 听力/ HP 3_22: 100%(HP3单独一篇); NEC3_54, 30% [May 25th, 2022 Wed.]
+======> HP3 end;
 #
 # commited local
 # ----------------> push to github: dawneve master

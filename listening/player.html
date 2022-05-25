@@ -31,7 +31,7 @@ v0.5.4 添加按钮控制
 v0.5.5 大按钮，适应移动端
 v0.5.6 大按钮 可以隐藏
 v0.5.7 可以接收中文url
-v0.5.8 美化移动端按钮: 去掉 F12 button，按钮美化 //todo
+v0.5.8 美化移动端按钮: 去掉 F12 button，按钮美化
 #
 
 
@@ -115,7 +115,7 @@ a:hover {text-decoration: underline;}
 	<div id="echo" class=grey>Echo mode: off</div>
 
 	<div id='showList'>
-		<span class=grey>Available Audio on the <a id='hostName' target="_blank" href="http://a2.biomooc.com/audio/">Audio Server</a>:</span>
+		<span class=grey>Available Audio on the <a id='hostName' target="_blank" href="">Audio Server</a>:</span>
 		<select id="sel1">
 			<option value="">Please set a file to play</option>
 		</select>
@@ -815,7 +815,7 @@ function initSelect(hostName){
 	//从另一个服务器获取json格式的音频名字列表
 	ajax({
 		method:"get",
-		url:"http://"+hostName+"/audio/static.php",
+		url:"//"+hostName+"/audio/static.php",
 		success:function(arr){
 			//console.log(arr)
 			for(var i=0;i<arr.length;i++){
@@ -854,9 +854,15 @@ addEvent(window,'load',function(){
 	}
 	var hostName=location.hostname == 'ielts.biomooc.com'?"a2.biomooc.com":"scholar.wjl.com";
 	//如果是在线版，则可以直接使用音频服务器
-	$('showList').style.display='block';
-	initSelect(hostName);
-	$('hostName').href='//'+hostName+"/audio/";
+	
+	//暂时没有在线版音频服务器
+	if(hostName == "a2.biomooc.com"){
+		return false;
+	}else{
+		$('showList').style.display='block';
+		initSelect(hostName);
+		$('hostName').href='//'+hostName+"/audio/";
+	}
 })
 
 
