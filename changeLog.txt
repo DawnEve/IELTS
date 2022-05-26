@@ -371,6 +371,14 @@ en0.4.0-2 调整统计代码 [May 25th, 2022 Wed.]
 en0.4.0-3 备份 mysql 数据库的py 代码 [2022.5.25]
 
 en0.4.0-4 听写 NEC3_54 55%; [May 26th, 2022 Thu.]
+
+en0.4.0-5 如果有百度 cdn 资源，尽量改为本地 [2022.5.26]
+	$ find . | grep -v -P '\.git' | grep -v -P "backup" | xargs grep -i "baidu" 2>/dev/null --color=auto
+	http://libs.baidu.com/jquery/1.11.1/jquery.min.js
+	/static/js/jquery-1.11.1.min.js
+	/static/js/jquery.min.js
+
+
 听力/ HP 4_1: 0% //todo
 #
 # commited local
