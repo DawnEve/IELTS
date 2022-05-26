@@ -378,7 +378,7 @@ en0.4.0-5 如果有百度 cdn 资源，尽量改为本地 [2022.5.26]
 	/static/js/jquery-1.11.1.min.js
 	/static/js/jquery.min.js
 
-
+en0.4.0-6 听写 NEC3_54 100%; [May 26th, 2022 Thu.]
 听力/ HP 4_1: 0% //todo
 #
 # commited local
