@@ -378,8 +378,8 @@ en0.4.0-5 如果有百度 cdn 资源，尽量改为本地 [2022.5.26]
 	/static/js/jquery-1.11.1.min.js
 	/static/js/jquery.min.js
 
-en0.4.0-6 听写 NEC3_54 100%; [May 26th, 2022 Thu.]
-听力/ HP 4_1: 0% //todo
+en0.4.0-6 听写 NCE3_54 100%; [May 26th, 2022 Thu.]
+en0.4.0-7 听力/ HP 4_1: 1st + 1.25%; NCE3_54 again; 硅谷S1E5 1st; [May 27th, 2022 Fri.]
 #
 # commited local
 # ----------------> push to github: dawneve master
