@@ -380,6 +380,7 @@ en0.4.0-5 如果有百度 cdn 资源，尽量改为本地 [2022.5.26]
 
 en0.4.0-6 听写 NCE3_54 100%; [May 26th, 2022 Thu.]
 en0.4.0-7 听力/ HP 4_1: 1st + 1.25%; NCE3_54 again; 硅谷S1E5 1st; [May 27th, 2022 Fri.]
+en0.4.0-8 听力/ HP 4_1: 27%; [May 28th, 2022 Sun.]
 #
 # commited local
 # ----------------> push to github: dawneve master
@@ -423,7 +424,7 @@ History logs:
 2021.10.10 上周看到新规定：禁止非公有资本转载境外媒体新闻。
 2022.4.1 录屏 10min，上传到B站、知乎等。
 	周更，其他时间只听不录屏
-2022.4.27 开始看硅谷，现代商业竞争，现代语料，适合反复看几十遍。
+2022.4.27 开始看美剧 硅谷，现代商业竞争，现代语料，适合反复看几十遍。
 		<p>
 			<a class="button red" target='_blank' href="xx">xx</a>
 			<span>xx</span>
