@@ -381,6 +381,7 @@ en0.4.0-5 如果有百度 cdn 资源，尽量改为本地 [2022.5.26]
 en0.4.0-6 听写 NCE3_54 100%; [May 26th, 2022 Thu.]
 en0.4.0-7 听力/ HP 4_1: 1st + 1.25%; NCE3_54 again; 硅谷S1E5 1st; [May 27th, 2022 Fri.]
 en0.4.0-8 听力/ HP 4_1: 27%; [May 28th, 2022 Sun.]
+en0.4.0-8 听力/ HP 4_1: 34%; [May 31th, 2022 Teu.]
 #
 # commited local
 # ----------------> push to github: dawneve master
