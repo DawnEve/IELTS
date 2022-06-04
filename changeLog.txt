@@ -383,6 +383,7 @@ en0.4.0-7 听力/ HP 4_1: 1st + 1.25%; NCE3_54 again; 硅谷S1E5 1st; [May 27th,
 en0.4.0-8 听力/ HP 4_1: 27%; [May 28th, 2022 Sun.]
 en0.4.0-9 听力/ HP 4_1: 34%; [May 31th, 2022 Tue.]
 en0.4.1-0 听力/ HP 4_1: 45%; [Jun 3rd, 2022 Fri.]
+en0.4.1-1 听力/ HP 4_1: 64%; [Jun 4th, 2022 Sat.]
 NCE3_54 中译英 //todo
 #
 # commited local
