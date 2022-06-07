@@ -385,6 +385,7 @@ en0.4.0-9 听力/ HP 4_1: 34%; [May 31th, 2022 Tue.]
 en0.4.1-0 听力/ HP 4_1: 45%; [Jun 3rd, 2022 Fri.]
 en0.4.1-1 听力/ HP 4_1: 64%; [Jun 4th, 2022 Sat.]
 en0.4.1-2 听力/ HP 4_1: 75%; [Jun 6th, 2022 Mon.]
+en0.4.1-3 听力/ HP 4_1: 82%; [Jun 7th, 2022 Tue.]
 NCE3_54 中译英 //todo
 #
 # commited local
