@@ -393,6 +393,7 @@ en0.4.1-6 NCE3_54 中译英 page; 美剧 硅谷 page; [Jun 9th, 2022 Thu.]
 	根据中文翻译成英文，与原文对比，重点学习翻译不好的语句、单词短语。注意同意替换。
 
 en0.4.1-7 听力/ HP 4_2: 1st + 10.5%; [Jun 10th, 2022 Fri.]
+en0.4.1-8 听力/ HP 4_2: 20.7%; [Jun 11th, 2022 Sat.]
 #
 # commited local
 # ----------------> push to github: dawneve master
