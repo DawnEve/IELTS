@@ -395,6 +395,7 @@ en0.4.1-6 NCE3_54 中译英 page; 美剧 硅谷 page; [Jun 9th, 2022 Thu.]
 en0.4.1-7 听力/ HP 4_2: 1st + 10.5%; [Jun 10th, 2022 Fri.]
 en0.4.1-8 听力/ HP 4_2: 20.7%; [Jun 11th, 2022 Sat.]
 en0.4.1-9 听力/ HP 4_2: 32%; [Jun 12th, 2022 Sun.]
+en0.4.2-0 听力/ HP 4_2: 48%; [Jun 13th, 2022 Mon.]
 #
 # commited local
 # ----------------> push to github: dawneve master
