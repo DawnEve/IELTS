@@ -415,6 +415,7 @@ en0.4.3-3 听力/ HP 4_4: 34%; [Jul 6th, 2022]
 en0.4.3-4 听力/ HP 4_4: 56%; [Jul 19th, 2022]
 en0.4.3-5 听力/ HP 4_4: 65%; [Jul 26th, 2022]
 en0.4.3-6 听力/ HP 4_4: 73%; [Jul 27th, 2022]
+en0.4.3-7 听力/ HP 4_4: 88%; [Jul 29th, 2022]
 #
 # commited local
 # ----------------> push to github: dawneve master
@@ -440,6 +441,8 @@ Where is this repo:
 url: ielts.biomooc.com/en/
 local: ielts.dawneve.cc/en/
 mobile test tmp: m.biomooc.com
+file: G:\xampp\htdocs\IELTS
+
 
 百度统计 https://tongji.baidu.com/web/10000032076/trend/latest?siteId=18008118
   <script src="/static/js/tongji.js"></script>
