@@ -429,6 +429,7 @@ en0.4.4-6 听力/ HP 4_5: 65%; [Aug 18th, 2022]
 en0.4.4-7 听力/ HP 4_5: 73%; [Aug 20th, 2022]
 en0.4.4-8 听力/ HP 4_5: 80%; [Aug 23rd, 2022]
 en0.4.4-9 听力/ HP 4_5: 90%; [Aug 24th, 2022]
+en0.4.5-0 听力/ HP 4_5: 100%; [Aug 29th, 2022]
 #
 # commited local
 # ----------------> push to github: dawneve master
