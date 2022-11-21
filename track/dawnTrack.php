@@ -68,10 +68,10 @@ $msg .= "\n--------------------\n";
 #$date = date("Ymd");
 $date = date("Ym");
 #
-$dir = './tmp';
+$dir = './dustbin/';
 is_dir($dir) OR mkdir($dir, 0777, true); // 如果文件夹不存在，将以递归方式创建该文件夹
 #
-$file_name = 'tmp/'.$date.'.txt';
+$file_name = $dir.$date.'.txt';
 
 //记录信息
 $wordfile_handler = fopen($file_name, "a");

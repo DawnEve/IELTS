@@ -447,6 +447,7 @@ en0.4.6-2 听力/ HP 4_7: 10%; [Oct 20th, 2022]
 en0.4.6-3 听力/ HP 4_7: 15%; add 14day plan img to index [Oct 21th, 2022]
 en0.4.6-4 听力/ HP 4_7: 19%; [Nov 4th, 2022]
 en0.4.6-5 听力/ HP 4_7: 23%; [Nov 8th, 2022]
+en0.4.6-6 阅读 baby boom; add Animal Farm; [Nov 21th, 2022]
 // todo 小说阅读器，进度写到url，实现刷新后定位
 #
 # commited local
