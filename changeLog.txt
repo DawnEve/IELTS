@@ -450,6 +450,7 @@ en0.4.6-5 听力/ HP 4_7: 23%; [Nov 8th, 2022]
 en0.4.6-6 阅读 baby boom; add Animal Farm; [Nov 21th, 2022]
 en0.4.6-7 add google adsense on /en/links.html [Nov 21th, 2022]
 en0.4.6-8 听力/ HP 4_7: 26%; [Nov 22th, 2022]
+en0.4.6-9 阅读 baby boom 100%; [Nov 22th, 2022]
 // todo 小说阅读器，进度写到url，实现刷新后定位
 #
 # commited local
