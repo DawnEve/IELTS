@@ -45,13 +45,18 @@ window.onload=function(){
 	//insert nav
 	ajax({
 		method:"get",
-		url:"static/nav.html",
+		url:"/static/nav.html",
 		data:{},
 		success:function(text){
 			$('nav').innerHTML=text
 			//class="current"
 			var url=document.location.href
 			var aA=$('nav').getElementsByTagName('a');
+			/*
+			console.log(url, location.pathname)
+			wjl=location.pathname
+			*/
+
 			if(url.search('.html')==-1){
 				aA[0].setAttribute('class',"current")
 				return '';
@@ -67,5 +72,5 @@ window.onload=function(){
 			console.log(text)
 		},
 		type: "text"
-	})	
+	})
 }
