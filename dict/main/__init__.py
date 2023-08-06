@@ -2,7 +2,7 @@
 
 # 该包内的文件所需要的包可以一次性导入。
 from flask import Flask, jsonify,make_response,request
-import requests
+# import requests
 import re,time,datetime,json
 
 

@@ -16,11 +16,19 @@ class DBUtil():
     """mysql 辅助工具"""
     _db=None
     #在这里配置自己的SQL服务器
-    _config = {
+    _config_Y = {
         'host':"y.biomooc.com",
         'port':7070,
         'username':"root",
         'password':'123456',
+        'database':"wang",
+        'charset':"utf8"
+    }
+    _config = {
+        'host':"localhost",
+        'port':3306,
+        'username':"root",
+        'password':'',
         'database':"wang",
         'charset':"utf8"
     }
