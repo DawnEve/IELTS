@@ -17,11 +17,11 @@ class DBUtil():
     _db=None
     #在这里配置自己的SQL服务器
     _config = {
-        'host':"y.biomooc.com",
-        'port':7070,
+        'host':"s3.biomooc.com",
+        'port':3306,
         'username':"root",
         'password':'123456',
-        'database':"wang",
+        'database':"english",
         'charset':"utf8"
     }
     #返回db，方便使用函数
