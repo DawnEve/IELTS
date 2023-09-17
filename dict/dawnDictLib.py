@@ -17,14 +17,14 @@ class DBUtil():
     _db=None
     #在这里配置自己的SQL服务器
     _config_Y = {
-        'host':"y.biomooc.com",
-        'port':7070,
+        'host':"s3.biomooc.com",
+        'port':3306,
         'username':"root",
         'password':'123456',
-        'database':"wang",
+        'database':"english",
         'charset':"utf8"
     }
-    _config = {
+    _config_L = {
         'host':"localhost",
         'port':3306,
         'username':"root",
@@ -32,6 +32,8 @@ class DBUtil():
         'database':"wang",
         'charset':"utf8"
     }
+    _config = _config_L;
+    
     #返回db，方便使用函数
     def db(self):
         return self._db

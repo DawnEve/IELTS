@@ -19,31 +19,43 @@ $ docker start 740 #断电继续
 
 (2) 如果没启动过
 # 创建
-$ sudo docker run -p 7070:3306 -d -it -e MYSQL_ROOT_PASSWORD=123456 -v /home/wangjl/dockerFile:/var/lib/mysql dawneve/mysql
+$ sudo docker run -p 3306:3306 -d -it -e MYSQL_ROOT_PASSWORD=123456 -v /home/wangjl/dockerFile:/var/lib/mysql dawneve/mysql
 
 # 可能还要建表
 
 # 查看表格
-$ mysql -h y.biomooc.com -P 7070 -u root -p
+$ mysql -h s3.biomooc.com -P 3306 -u root -p
 ## 密码是123456
-mysql> use wang;
+mysql> use english;
 mysql> show tables;
 mysql> select * from word_ms order by id desc limit 1,2;
 ## 8027
+
+
+(3) 导入数据
+$ mysql -h192.168.1.3 -P3306 -uroot -p english < D:\xampp\htdocs\IELTS\dict\backup\IELTS_tables_20220525-135332\tb_20220525-135200_msg_English.sql
+
+D:\xampp\mysql\bin>mysql -h192.168.1.3 -P3306 -uroot -p123456 english < D:\xampp\htdocs\IELTS\dict\backup\IELTS_tables_20220525-135332\tb_20220525-135200_user.sql
 
 
 
 
 
 2.如何运行?
-后台运行 /dict/index.py 
+依赖库
+$ pip3 install requests -i https://pypi.douban.com/simple/
+$ pip3 install pymysql -i https://pypi.douban.com/simple/
+
+后台运行 /dict/index.py
 $ python index.py
 
 
 
 
+
+
 3.背单词页面
-http://ielts.dawneve.cc/dict/scanWord.html
+http://ielts.dawneve.com/dict/scanWord.html
 
 记住了: 数字1，或减号
 下一个: 好几个键都可以(左箭头，下箭头，数字234)
