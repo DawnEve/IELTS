@@ -4,3 +4,6 @@ backup
 
 __pycache__
 .ipynb_checkpoints
+
+# no sql file by default
+*.sql

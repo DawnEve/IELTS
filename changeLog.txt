@@ -490,6 +490,9 @@ en0.4.9-6@hzNB 适配本地笔记本 [Aug 6th, 2023]
 #
 en0.4.9-7@hzBig 听力/ Eco 20230826 - 012: 17%; [Sep 14th, 2023]
 en0.4.9-8@hzNB merge [2023/9/17]
+en0.4.9-9@hzBig 听力/ Eco 20230826 - 012: 38%; [2023/9/25]
+
+
 
 // todo 小说阅读器，进度写到url，实现刷新后定位
 #
@@ -515,8 +518,7 @@ en0.4.9-8@hzNB merge [2023/9/17]
 Where is this repo:
 url: ielts.biomooc.com/en/
 local: ielts.dawneve.cc/en/
-mobile test tmp: m.biomooc.com
-file: G:\xampp\htdocs\IELTS
+file: D:\xampp\htdocs\IELTS
 
 
 百度统计 https://tongji.baidu.com/web/10000032076/trend/latest?siteId=18008118
@@ -541,3 +543,5 @@ History logs:
 			<a class="button red" target='_blank' href="xx">xx</a>
 			<span>xx</span>
 		</p>
+2023.9.20 开始记录 经济学人 听力，每天 20min: Eco_20230826.html 新模板
+

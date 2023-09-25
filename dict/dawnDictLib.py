@@ -2,7 +2,7 @@
 # lib file: 放一些工具函数，与具体业务无直接关系
 ##################
 
-
+import requests
 import pymysql
 import time
 # 单例模式 https://blog.csdn.net/qq_32539403/article/details/83343581
@@ -32,7 +32,7 @@ class DBUtil():
         'database':"wang",
         'charset':"utf8"
     }
-    _config = _config_L;
+    _config = _config_Y;
     
     #返回db，方便使用函数
     def db(self):
