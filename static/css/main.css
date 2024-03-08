@@ -1,16 +1,25 @@
 div,body,h1,h2,h3,p{margin:0;padding:0;}
 .wrap{margin:0 auto; width:800px; }
-.current{background:#2eb398;color:white; border-radius: 3px;}
-
+.current{background:#C80000;color:white; border-radius: 3px;}
+/*
+#2eb398 green
+#C80000 dark red
+*/
 a{
 	font-weight: bold;
     text-decoration: none;
-    color: #2eb398; padding:0 5px;}
+    color: #C80000; padding:0 5px;}
 a:hover{text-decoration:underline}
 
-a.red{/*background:red;*/ color:black; border-radius:5px;}
-a.red:hover{background:white; color:red;}
-
+a.red{
+	/*
+	background:#C80000;
+	border-radius:5px;
+	*/ 
+	color:#C80000; 
+	border-bottom: 2px solid #C80000; 
+}
+a.red:hover{background:#C80000; color:white;}
 .version{font-size:10px; color:orange;}
 
 .wrap div{ /*padding:5px; border:1px dashed #ccc; */ margin:20px 0;}
@@ -39,8 +48,10 @@ a.red:hover{background:white; color:red;}
 }
 .wrap div.item{border-width:0;}
 .item:hover{
+	/*
 	transition:box-shadow .25s;
 	box-shadow:0 8px 17px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.19)
+	*/
 }
 
 

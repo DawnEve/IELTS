@@ -54,6 +54,9 @@ body {
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 	
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 .button.red {    background-color: #FF0000;}/*e62727  E33100  2DAEBF*/
 .button.orange {    background-color: #ff5c00;}
