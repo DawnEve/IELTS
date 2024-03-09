@@ -19,7 +19,7 @@ $ docker start 740 #断电继续
 
 (2) 如果没启动过
 # 创建
-$ sudo docker run -p 3306:3306 -d -it -e MYSQL_ROOT_PASSWORD=123456 -v /home/wangjl/dockerFile:/var/lib/mysql dawneve/mysql
+$ docker run -p 3306:3306 -d -it -e MYSQL_ROOT_PASSWORD=123456 -v /home/wangjl/dockerFile:/var/lib/mysql dawneve/mysql
 
 # 可能还要建表
 

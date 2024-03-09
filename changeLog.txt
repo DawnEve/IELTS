@@ -502,6 +502,7 @@ en0.5.0-8@hzBig 听力/ Eco 20230826 - 012: 100%; 073:35% [2023/12/20]
 	073 Culture - The Monkey King
 en0.5.0-8@hzBig 听力/ Eco 20230826 - 073:54% [2023/12/27]
 en0.5.0-9@sust 改版 微调css to red [2024/3/8]
+en0.5.1-0@sust add links; add text X 4;[2024/3/9]
 // todo 小说阅读器，进度写到url，实现刷新后定位
 #
 # commited local

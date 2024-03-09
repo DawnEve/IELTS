@@ -1,0 +1,51 @@
+CNN | How Microsoft conquered China
+<span class=light>Mar 09, 2024 | 1170 words
+FORTUNE Magazine | By David Kirkpatrick, Fortune senior editor | July 17 2007: 9:58 AM EDT</span>
+
+<b>Or is it the other way around? Fortune's David Kirkpatrick goes on the road to Beijing with Bill Gates, who threw his business model out the window.</b>
+
+(Fortune Magazine) -- Mr. Bill Gates! Mr. Bill Gates!" a young woman shrieks as the black car pulls up. A pallid student in a nylon windbreaker pushes his way through the security line and hands the world's richest man a small envelope with a floral design. "It's very important," he pants.
+
+Another day in China, another round of adulation. Today the Microsoft (Charts, Fortune 500) chairman is being named an honorary trustee of Peking University. Yesterday it was an honorary doctorate from Beijing's Tsinghua University - the 13th in the school's 82-year history. Gates, wearing the same lopsided grin he has had on his face for the past few days, takes the envelope from the young man. For him this is a triumphant visit to China, a victory lap of sorts, on which I've been invited to tag along. The country is his.
+
+<div class=light>
+gates_china_A.03.jpg Bill Gates at a gala dinner with government leaders in Beijing.
+gates_china_B.03.jpg Gates' trip included chummy meetings like this one with Tsinghua University president Gu Binglin.
+gates_china_C.03.jpg Gates groupies: Computer scence students wait for a glimpse at Tsinghua.
+gates_china_D.03.jpg In China, Microsoft does things the Chinese way. |2007 FORTUNE Global 500
+</div>
+
+No other Fortune 500 CEO gets quite the same treatment in China. While most would count themselves lucky to talk with one of China's top leaders, Gates will meet with four members of the Politburo on this four-day April trip. As one government leader put it while introducing Gates at a business conference, the Microsoft chairman is "bigger in China than any movie star." Last spring President Hu Jintao toured the Microsoft campus in Redmond, Wash., and was feted at a dinner at Gates' home. "You are a friend to the Chinese people, and I am a friend of Microsoft," Hu told his host. "Every morning I go to my office and use your software."
+
+<b>In pictures: Gates goes to China</b>
+It was not always so. Microsoft bumbled for years after entering China in 1992, and its business was a disaster there for a decade. It finally figured out that almost none of the basic precepts that led to its success in the U.S. and Europe made sense in China. There Microsoft had to become the un-Microsoft - pricing at rock bottom instead of charging hundreds of dollars for its Windows operating system and Office applications; abandoning the centerpiece of its public-policy approach elsewhere, the protection of its intellectual property at all costs; and closely partnering with the government instead of fighting it as in the U.S., a stance that has opened the company to criticism from human rights groups.
+
+"It took Microsoft 15 years and billions of dollars of lost revenue to learn how to do business in China," says Sigurd Leung, who follows the company at research firm Analysys International in Beijing. "We were a naive American company," concedes Gates in an interview in his car as he is driven to yet another meeting with government leaders. "You've got to just keep trying and trying and trying." But now, he says, snacking on Pringles and Diet Coke, "we have a wonderful position in China, and we're going to see great growth every year for the next five years."
+
+Gates says he's certain China will eventually be Microsoft's biggest market, though it may take ten years. Projected sales this year are already three times what they were in 2004, yet still less than annual revenue in California. (Microsoft will not disclose figures, but Fortune estimates China revenue will exceed $700 million in 2007, about 1.5% of global sales.) Now Microsoft even has its own five-year plan in China, formulated to match up with the government's. Says Robert Hormats, a longtime China watcher at Goldman Sachs: "It's a great turnaround story with wonderful lessons for other companies."
+
+<b>False start</b>
+The story begins 15 years ago, when Microsoft sent a couple of sales managers into China from Taiwan. Their mission? Sell software at the same prices the company charged elsewhere. Says Craig Mundie, the top Microsoft executive who now guides its China strategy: "It was the classic model - hang out a shingle and say, 'Microsoft: Open for business.'" But the model didn't work.
+
+The problem wasn't brand acceptance; everyone was using Windows. It's just that no one was paying. Counterfeit copies could be bought on the street for a few dollars. As Ya-Qin Zhang, who heads Microsoft's Chinese R&D, puts it: "In China we didn't have problems with market share. The issue is how do we translate that into revenue."
+
+Microsoft fought bitterly to protect its intellectual property. It sued companies for using its software illegally but lost regularly in court. Its executives, who often disagreed with the strategy, failed in its implementation. Country managers came and went - five in one five-year period. Two of them later wrote books criticizing the company. One, Juliet Wu, whose "Up Against the Wind" became a local bestseller, wrote that Microsoft heartlessly sought sales by any means, that its antipiracy policy was needlessly heavy-handed, and that her own efforts to help bosses in Redmond understand China had been rebuffed.
+
+Then a different form of resistance emerged. Beijing's city government started installing free open-source Linux operating systems on workers' PCs. (The Chinese Academy of Sciences promoted a version called Red Flag Linux.) Meanwhile security officials were troubled that government and military operations depended on Microsoft software made in the U.S. Could the technology be spying on China?
+
+In 1999, Gates sent Mundie, who heads the company's public-policy efforts, to figure out why Microsoft was so reviled. On the trip he had an epiphany: "I remember going back to Redmond and saying, 'Our business is just broken in China,'" Mundie recalls. He concluded that the company was assigning executives too junior and that selling per se was overemphasized. "But where we were most broken," he says, "was that our business practices and our engagement did not reflect the importance of having a collaborative approach with the government."
+
+Mundie started visiting China four or five times a year. He brought 25 of the company's 100 vice presidents for a week-long "China Immersion Tour." He hired former Secretary of State Henry Kissinger to advise him and open doors. And he told leaders that Microsoft wanted to help China develop its own software industry, an urgent government priority. The company even commissioned a McKinsey study for Chinese officials in 2001 that, among other things, recommended improving the protection of intellectual property.
+
+Mundie also began talks with Chinese security officials to convince them that Microsoft's software was not a secret tool of the U.S. government. As a result, in 2003 the company offered China and 59 other countries the right to look at the fundamental source code for its Windows operating system and to substitute certain portions with their own software - something Microsoft had never allowed in the past. Now when China uses Windows in President Hu's office, or for that matter in its missile systems, it can install its own cryptography.
+
+But it was a relatively small step in 1998 - the opening of a research center in Beijing - that proved a turning point. "We just started it here because we thought they'd do great research," says Gates, who raves about the quality of the country's computer scientists. The lab was what Gates calls a "windfall" for Microsoft's image. It began accumulating an impressive record of academic publications, helped lure back smart émigré scientists, and contributed key components to globally released products like the Vista operating system. The lab soon became, according to polls, the most desirable place in the country for computer scientists to work.
+
+By 2001, Microsoft executives were coming to the conclusion that China's weak IP-enforcement laws meant its usual pricing strategies were doomed to fail. Gates argued at the time that while it was terrible that people in China pirated so much software, if they were going to pirate anybody's software he'd certainly prefer it be Microsoft's.
+
+<b>Today Gates openly concedes that tolerating piracy turned out to be Microsoft's best long-term strategy. That's why Windows is used on an estimated 90% of China's 120 million PCs.</b> "It's easier for our software to compete with Linux when there's piracy than when there's not," Gates says. "Are you kidding? You can get the real thing, and you get the same price." Indeed, in China's back alleys, Linux often costs more than Windows because it requires more disks. And Microsoft's own prices have dropped so low it now sells a $3 package of Windows and Office to students.
+
+<div class=light>
+https://money.cnn.com/magazines/fortune/fortune_archive/2007/07/23/100134488/
+https://saylordotorg.github.io/text_fundamentals-of-global-strategy/s06-02-global-strategy-as-business-mo.html
+</div>

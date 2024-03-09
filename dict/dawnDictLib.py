@@ -17,13 +17,14 @@ class DBUtil():
     _db=None
     #在这里配置自己的SQL服务器
     _config_Y = {
-        'host':"s3.biomooc.com",
-        'port':3306,
+        'host':"y.biomooc.com",
+        'port':7070,
         'username':"root",
         'password':'123456',
-        'database':"english",
+        'database':"wang",
         'charset':"utf8"
     }
+    # s3 english
     _config_L = {
         'host':"localhost",
         'port':3306,

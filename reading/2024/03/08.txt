@@ -1,0 +1,32 @@
+fortune | Yes, Chinese Piracy Has Lost Microsoft a Lot of Windows Revenue. But the Story Isn’t So Simple
+<span class=light>Mar 08, 2024 | 445 words
+BYDAVID MEYER | November 2, 2018 at 8:31 PM GMT+8</span>
+
+Former Microsoft CEO Steve Ballmer is unhappy about software piracy in China, accusing businesses in the country of ripping off his former firm. However, the issue is not so simple as it may appear.
+
+
+Ballmer told Fox Business on Thursday that, when he left Microsoft a few years ago, 90% of Chinese companies were using Windows, but only 1% were paying for it. This piracy, he said, was costing Microsoft $10 billion or more in profit.
+
+However, when asked what the U.S. government should be doing about it—and bear in mind that the Trump administration is using Chinese intellectual property theft as a key reason for its tariffs on China—Ballmer responded cautiously.
+
+“I’m a free trader, by nature. I went to the school of economics–it’s the best thing for the world,” he said. “This one’s a tricky issue because it’s absolutely clear that the rules don’t apply in China, and the U.S. government needs to do something. Whether tariffs are right or wrong—I’m silent on that point.”
+
+The issue is indeed tricky, and not just because of the difficulty in figuring out an appropriate response.
+
+In 2015, the year after Ballmer stepped down as CEO, it was indeed the case that more than 97% of PCs in China were running Windows. However, Microsoft’s operating system achieved that position of extreme dominance through piracy.
+
+That proved lucrative for the company, because it meant Microsoft could fend off the threat of the free alternative to Windows, the Linux operating system, by slashing its prices in China in order to get people there to convert to paid Windows users. Note that the Linux threat has always been particularly prevalent in China, as the government has enthusiastically backed local versions of the open-source OS.
+
+Back in 2007, Microsoft co-founder Bill Gates described the strategy clearly, telling Fortune: “It’s easier for our software to compete with Linux when there’s piracy than when there’s not. Are you kidding? You can get the real thing, and you get the same price.”
+
+However, even with those low prices—we’re talking $3 for a bundle of Windows and Office—Microsoft still faced a serious piracy problem in China. So, after Ballmer left, the company essentially capitulated, offering Windows users in the country a free upgrade to the genuine (and new at the time) Windows 10, even if they had been running a bootleg copy of the OS.
+
+Those who have not taken Microsoft up on that offer have perhaps had cause to regret their decision. When a ransomware attack swept the world last year, it proved particularly destructive in China because of the number of pirated copies of Windows that were not fully benefiting from Microsoft’s security updates.
+
+While Ballmer is correct to say Windows piracy remains a big deal in China, and that this denies Microsoft some enterprise revenue, it is also worth noting that Microsoft has moved much more to a services model where it charges for cloud offerings such as storage and email, using Windows to draw people in. These days it even provides regular, free updates for Windows 10, rather than moving to new versions of the OS and charging for them.
+
+Times have changed, and piracy doesn’t have quite the same effect on the operating system market that it once did. And in Microsoft’s case, that effect was never entirely negative anyway.
+
+<span class=light>
+https://fortune.com/2018/11/02/ballmer-china-windows-piracy/
+</span>
