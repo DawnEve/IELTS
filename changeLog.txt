@@ -535,6 +535,7 @@ en0.5.3-6@picb 听力/ HP 4_9: 88%; [2024/9/14]
 en0.5.3-7@picb 听力/ HP 4_9: 93%; [2024/9/21]
 en0.5.3-8@picb 听力/ HP 4_9: 100%; [2024/9/25]
 	update bottom year;
+en0.5.3-9@picb add .gitattributes [2024/9/28]
 #
 // todo 小说阅读器，进度写到url，实现刷新后定位
 #
