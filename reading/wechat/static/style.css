@@ -1,0 +1,116 @@
+.content{
+	width: 677px; margin:0 auto; 
+	padding: 8px;
+	font-family: -apple-system-font, BlinkMacSystemFont, Arial, sans-serif;
+}
+
+h2{
+	/* 湖蓝，白字
+	color:white;
+	background:#5bc4ba;
+	*/
+	
+	/* 荧光绿，白字
+	color:white;
+	background:#3ac96d;
+	*/
+
+	/* 西瓜红，白字
+	color:white;
+	background:#ff546b;
+	*/
+	
+	
+	/* 浅绿底绿字
+	color: #53AF4D;
+	background:#C5E0B3;
+	*/
+
+	/* 荧光绿
+	红底 : #DF3A64; #EB8260
+	*/
+
+
+	/* 黄底橙字
+	*/
+	color: #FDD64B;
+	background:#FBF0CA;
+	
+	/* 黄底橙字 dark
+    color: #FF8000;
+	background-color: #FDBF70;
+	*/
+	
+	
+	padding:5px 10px;
+	font-size: 26px;
+	text-align:center;
+	
+	margin: 30px auto;
+	margin-top: 60px;
+    width: 70px;
+}
+
+
+p{
+	font: 20px/1.5 system-ui,-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Hiragino Sans GB,Microsoft YaHei UI,Microsoft YaHei,Arial,sans-serif;
+}
+p b{
+	color: deeppink;
+}
+
+.grey{color: #B2B2B2;}
+.synonym{
+	/*color:#b5e61d;*/
+	color: rgb(72, 106, 183);
+	
+	font-size: 16px;
+}
+
+.small{font-size:16px;}
+
+.english{
+	border: 1px solid #ddd;
+	border-left-width: 4px;
+	padding: 10px;
+	/*margin-bottom:0;*/
+}
+.center{text-align:center;}
+.cn{
+	color: #ccc;
+	font-size:16px;
+}
+ul{
+	margin:20px 0;
+	padding-left:30px;
+}
+
+.top{
+	color:#ddd;
+	text-align:center;
+	padding:0;
+	margin:0;
+	font-size:20px;
+}
+.middle{
+	font-size:14px;
+	color:#ddd;
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+.last{
+	/*color:#D92142;*/
+	text-align:right;
+	font-size:12px;
+}
+
+
+section p{
+	font-size:12px; 
+	margin-top:0;
+	margin-bottom:0;
+}
+
+.green{color:green;}
+.dark{color:#999;}

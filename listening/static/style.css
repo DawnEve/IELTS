@@ -1,0 +1,77 @@
+/* 右下角菜单 */
+#rightMenu::-webkit-scrollbar {display:none}
+#rightMenu{
+	position:fixed;
+	right:0;
+	bottom:0px;
+	border:2px solid #ccc;
+	border-right-width: 0;
+	border-bottom-width: 0;
+	color:#ccc;
+    opacity: 0.85;
+	border-top-left-radius: 10px;
+	background:#fefefe;
+	/*
+	background:#f1f1f1;
+	border-bottom-left-radius: 20px;
+	z-index: 1000;
+	*/
+
+	max-width:300px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	
+	font-size: 14px;
+}
+#rightMenu ul{
+	opacity: 1;
+	margin:0;
+	padding:10px;
+	list-style: none;
+}
+
+#rightMenu ul li a{
+	color:#999;
+}
+
+#rightMenu ul li a:hover,
+#rightMenu ul li a.cur{
+	color:#0096ff;
+	font-weight:bold;
+}
+
+
+#cli_title{
+	width:300px;
+	height:30px;
+	line-height:30px;
+	float:left;
+	/*
+	*/
+	background:#E3E3E3; /*ac8932*/
+	text-align:left;
+	color:#6a737d;
+	/*
+	border-radius:5px;
+	margin-bottom:10px;
+	*/
+}
+#cli_title b{padding: 8px 10px; 
+	cursor:pointer;
+}
+
+
+
+/* 回到顶部 */
+#gotoTop{
+	position: fixed;
+    bottom: 35px;
+    right: 2px;
+    background: rgb(238, 238, 238);
+    color: rgb(153, 153, 153);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+    z-index: 10;
+}
