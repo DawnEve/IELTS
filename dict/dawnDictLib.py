@@ -33,7 +33,16 @@ class DBUtil():
         'database':"wang",
         'charset':"utf8"
     }
-    _config = _config_Y;
+    # J1 server
+    _config_J1 = {
+        'host':"10.10.117.156",
+        'port':8070,
+        'username':"root",
+        'password':'123456',
+        'database':"wang",
+        'charset':"utf8"
+    }
+    _config = _config_J1;
     
     #返回db，方便使用函数
     def db(self):

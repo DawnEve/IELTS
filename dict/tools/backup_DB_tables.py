@@ -7,6 +7,8 @@ import os,time
 ###################################
 # 备份相关 mysql table 的流程:
 ###################################
+# 已备份 ./dict/sql/**-v2.sql
+
 # 1.生成日期，表名字；开始备份为 .sql 文件；
 # $ python backup_DB_tables.py
 # 2.删掉几个不用的sql表(与单词无关的3个sql文件)，压缩 /backup 文件夹内的 sql文件 为 zip 文件; 

@@ -1,25 +1,41 @@
 拂晓词典v0.1
 
-整体架构
+
+
+# 0 整体架构
 后台：采用python3 flask + mysql的方式
 前台：先用普通页面，后期考虑Vue
 
+目前集成功能：
+  查单词
+  找例句
+    (1).sentence.html[拂晓语料：句子库] 对应数据表 sentence_dawn。可web添加句子
+    (2).sentence2.html[微信语料：文章库] 对应数据表 msg_English。
+
+
 
 1.部署方式:
+
 要不定期备份后台数据库。
-数据库位置定义在文件 /dict/dawnDictLib.py 中
+  sql文件在 ./dict/sql/
+
+数据库位置定义在文件 /dict/dawnDictLib.py 中: 
+  设置host/用户名/密码
+
 
 
 ###########
-# y 工作站，启动docker
+# server 启动docker
 ###########
 (1) 如果启动过
 $ docker start 740 #断电继续
 
-
-(2) 如果没启动过
+(2) 如果没启动过 docker
 # 创建
 $ docker run -p 3306:3306 -d -it -e MYSQL_ROOT_PASSWORD=123456 -v /home/wangjl/dockerFile:/var/lib/mysql dawneve/mysql
+
+# On J1 server:
+$ docker run -p 8070:3306 -d -it -e MYSQL_ROOT_PASSWORD=123456 -v /datapool/wangjl/dockerFile:/var/lib/mysql dawneve/mysql
 
 # 可能还要建表
 
@@ -33,6 +49,7 @@ mysql> select * from word_ms order by id desc limit 1,2;
 
 
 (3) 导入数据
+更多数据库导入/导出，请参考 ./dict/sql/ReadMe.txt
 $ mysql -h192.168.1.3 -P3306 -uroot -p english < D:\xampp\htdocs\IELTS\dict\backup\IELTS_tables_20220525-135332\tb_20220525-135200_msg_English.sql
 
 D:\xampp\mysql\bin>mysql -h192.168.1.3 -P3306 -uroot -p123456 english < D:\xampp\htdocs\IELTS\dict\backup\IELTS_tables_20220525-135332\tb_20220525-135200_user.sql
@@ -304,6 +321,10 @@ aim=1:
 select a.id, a.word,a.phoneticSymbol,a.meaning,familiarScore,unfamiliarScore,viewed from word_ms a left join ( select * from  word_scan where uid=1 ) b on a.id=b.wid where a.word="posture";
 
 
+
+
+
+
 ####################################
 
 1.写一个简易的接口，使用web页面或js输入错误单词列表，默认是生词，
@@ -339,6 +360,7 @@ https://www.cambridgeenglish.org/Images/22105-ket-vocabulary-list.pdf
 
 
 6.备份表
+见 ./dict/sql/
 mysqldump -u 用户名 -p 数据库名 表名> 导出的文件名
 G:\xampp\mysql\bin\mysqldump -h y.biomooc.com -P 7070 -u root -p wang word_unknown > G:\xampp\htdocs\IELTS\dict\backup\tb_word_unknown_20191127.sql
 有更好用的脚本： tools/backup_DB_tables.py
@@ -358,6 +380,7 @@ v1.0 代码重构，分成好几个小py文件
 	__all__ =[] 也不好用
 v1.1 反馈结果新增 viewed 字段，影响筛选单词时的排序;
 v1.2 备份脚本 tools/get_zip.py
+v1.3 update ReadMe
 
 
 todo

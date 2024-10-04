@@ -191,7 +191,7 @@ $(document).click(function(event){
 		oDiv.id='ht_content';
 		oDiv2.append(oDiv);
 		var oClose=document.createElement("div");
-		oClose.innerHTML='拂晓词典 | X';
+		oClose.innerHTML='拂晓划词词典 | X';
 		oClose.title="Close this box";
 		oClose.id='ht_close';
 		oDiv2.append(oClose);

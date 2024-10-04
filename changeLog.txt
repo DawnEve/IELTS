@@ -537,11 +537,17 @@ en0.5.3-8@picb 听力/ HP 4_9: 100%; [2024/9/25]
 	update bottom year;
 en0.5.3-9@picb add .gitattributes [2024/9/28]
 en0.5.4-0@picb add bottom right menu, gotoTop [2024/10/2]
-	in /listening/*.html, add
+	(1)in /listening/*.html, add
 	<link rel="stylesheet" type="text/css" href="static/style.css" />
 	<script src="static/startMove.js"></script>
 	<script src="static/H_menu.js"></script>
-	add /wechat/ for 公众号 英语读报
+	(2)add /wechat/ for 公众号 英语读报
+#====> 新增重要功能
+en0.5.4-1@picb get dict work on J1 [2024/10/4]
+	everything search ca-bundle.trust.crt,
+	from R/ ssl to D:\xampp\apache\bin/
+	rename to curl-ca-bundle.trust.crt, curl-ca-bundle.crt
+
 #
 // todo 小说阅读器，进度写到url，实现刷新后定位
 #

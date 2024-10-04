@@ -20,14 +20,20 @@ local: ielts.dawneve.cc/en/
 2.查单词的js工具工具 dawnDict
 
 3.基于mysql的背单词工具 
-远端开 docker 版的 mysql 服务, 端口 7070:
-本地win10 开20180 端口服务: PS G:\xampp\htdocs\IELTS\dict> python index.py
+(1)远端开 docker 版的 mysql 服务, 端口 7070(Y) / 8070(J1):
+(2)本地win10 开20180 端口服务: PS G:\xampp\htdocs\IELTS\dict> python index.py
 
 	背单词 /dict/scanWord.html?page=20&aim=5 共7个aim可供选择
 	查单词 /dict/index.html?word=dwell
 	语料库 /dict/sentence.html?id=433&word=dwell
 	#
 	写易错单词 /dict/recite.html
+(3)web划词搜索
+reading/dawnReader.html F12
+划词搜索, F12 console>>
+var s=document.createElement("script");s.src="https://ielts.dawneve.cc/wordKing/dawnDict.js";document.body.append(s);
+
+
 #
 单词发音 (英语单词复(ting)读(xie)机 https://github.com/onebigear/IELTS-Repeater/)
 http://dict.youdao.com/dictvoice?type=1&audio=repeat

@@ -67,5 +67,8 @@ $url="https://cn.bing.com/dict/SerpHoverTrans?q=".$word; //必应词典
 
 //返回结果
 $data['url']=$url;
-$data['res']=file_get_contents($url);
+$data['res']=file_get_contents($url); //only http, no https
+
+
+
 echo json_encode($data);

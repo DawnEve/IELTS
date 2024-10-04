@@ -20,6 +20,9 @@ feature_apa
 win11 xampp 本地系统。
 > mysql -u root -p wang < D:\xampp\htdocs\IELTS\dict\sql\IELTS.wang-v2.sql
 
+to J1 server:
+> mysql -h 10.10.117.156 -u root -P8070 -p wang < D:\xampp\htdocs\IELTS\dict\sql\IELTS.wang-v2.sql
+
 
 (3) navicat 查看 
 已经导入。
@@ -28,7 +31,8 @@ win11 xampp 本地系统。
 
 2. 尝试启动项目
 (1) 安装依赖包
-> pip3 install pymysql  -i https://pypi.douban.com/simple/ 
+> pip3 install requests  -i https://pypi.doubanio.com/simple/ 
+> pip3 install pymysql  -i https://pypi.doubanio.com/simple/ 
 
 (2) 启动
 D:\xampp\htdocs\IELTS\dict> python index.py
