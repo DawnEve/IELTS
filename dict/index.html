@@ -100,12 +100,22 @@ var showTrans=function(){
 	if(word=='')return;//空单词啥也不做
 
 	$.get('http://127.0.0.1:20180/api/dict/'+word, function(res){
+		console.log(res.status, "res.data:", res.data)
+
+		//status==0 表示：查询到0条，就是失败
 		if(res.status==0){
 			$('#show').html(res.data.msg)
 		}else{
 			//console.log(res)
 			data=res.data
-			$('#show').html( '<b>'+data.word +'</b> <a class="fix" target=_blank href="updateWord.html?id='+data.id+'">[修改]</a>'+'<br><span class=phonetic>'+ data.phoneticSymbol +'</span><br>'+data.meaning);
+
+			//如果是新词
+			addButtonHtml=""
+			if(data.isNewWord){
+				addButtonHtml='<button style="color:red;cursor:pointer;" onclick=\"addWord2DB(\''+word+'\')\">添加生词到数据库</button>'
+			}
+
+			$('#show').html( '<b>'+data.word +'</b> <a class="fix" target=_blank href="updateWord.html?id='+data.id+'">[修改]</a>'+addButtonHtml+'<br><span class=phonetic>'+ data.phoneticSymbol +'</span><br>'+data.meaning);
 			
 			//添加其他词典的链接 悬浮显示
 			$('#show').append('<div id=otherDict>本窗口: <a target=box2 href="http://dict.youdao.com/w/eng/'+word+'/#keyfrom=dict2.index">有道词典</a> | '+
@@ -150,6 +160,28 @@ var showTrans=function(){
 	
 	//不刷新，更新url
 	history.replaceState({}, "", "/dict/index.html?word="+word);
+}
+
+
+// 添加新单词到数据库
+function addWord2DB(word){
+	console.log("you clicked with word=", word)
+
+	var word=$('#word').val().trim(); //两头去空格
+	if(word=='')return;//空单词啥也不做
+
+	$.get('http://127.0.0.1:20180/api/dict/'+word+"?save=yes", function(res){
+		console.log(res.status, "res.data:", res.data)
+		if(res.status==0){
+			$('#show').html(res.data.msg)
+		}else{
+			console.log("Save the word |", word ,"| to DB. ", res.data.isNewWord==1?"new(not in DB)":"old(in DB)")
+			alert("Save to DB now!")
+			//data=res.data
+			//强制刷新
+			document.location=document.location
+		}
+	})
 }
 
 

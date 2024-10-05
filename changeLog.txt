@@ -547,6 +547,7 @@ en0.5.4-1@picb get dict work on J1 [2024/10/4]
 	everything search ca-bundle.trust.crt,
 	from R/ ssl to D:\xampp\apache\bin/
 	rename to curl-ca-bundle.trust.crt, curl-ca-bundle.crt
+en0.5.4-2@picb dict 默认不保存新词，提供按钮，用户点击才保存 [2024/10/5]
 
 #
 // todo 小说阅读器，进度写到url，实现刷新后定位

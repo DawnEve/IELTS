@@ -8,6 +8,8 @@
 
 目前集成功能：
   查单词
+    旧单词：在数据库中的直接显示
+    新单词：给出按钮，可以手动点击加入数据库
   找例句
     (1).sentence.html[拂晓语料：句子库] 对应数据表 sentence_dawn。可web添加句子
     (2).sentence2.html[微信语料：文章库] 对应数据表 msg_English。
@@ -105,7 +107,7 @@ $(document).trigger("feedback");
 	doubts; tons; pigments; 
 缺点2: 动词的ing, 过去式、过去分词怎么分流？
 	tackling; 
-#
+#已部分解决：新词提供按钮，用户决定是否添加到数据库
 
 
 
@@ -381,7 +383,7 @@ v1.0 代码重构，分成好几个小py文件
 v1.1 反馈结果新增 viewed 字段，影响筛选单词时的排序;
 v1.2 备份脚本 tools/get_zip.py
 v1.3 update ReadMe
-
+v1.4 查单词，对新词(不在数据库)默认不保存到数据库，提供按钮手工决定是否保存
 
 todo
 1.浏览语料库，删除质量不高的部分

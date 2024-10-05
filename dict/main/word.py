@@ -80,19 +80,30 @@ def  add_word_routes(app):
         rs=mydb.execute(sql)
         print('002=================>searched:rs=', rs)
         
-        #sql语句
+        #sql语句：查询单词
         sql='select * from word_ms where word="'+word+'";'
         print('003=================>word_ms:sql=',sql)
         # 执行sql语句
         results=mydb.query(sql)
 
-        #如果本地没有，则请求bing，并把查到的单词插入数据库
+        #是否是新词: 0在数据库, 1不在
+        isNewWord=False;
+
+        #如果本地没有，则请求bing，不把查到的单词插入数据库，但是给出前台按钮，用户决定是否保存
         if len(results)==0:
             print('004========New=========>',word,': Can not find the word in local db!', '='*30)
+            isNewWord=True; #不在数据库，就是新词
             result=getwordByBing(word)
+            print('004B=======New=========>', result)
+
             if result[0]==1:
+                # 查询参数，是否保存到数据库
+                isSave=request.args.get("save", "no")
                 #保存到数据库
-                result[0]=saveToDB(result[1:]) #返回值是插入db的id
+                if isSave=="yes":
+                    result[0]=saveToDB(result[1:]) #返回值是插入db的id
+                    isNewWord=False; #已经在数据库了，不是新词了
+                    print('004C=====Save========>',word, result)
         else:
             result=results[0]
         #调试用
@@ -106,7 +117,8 @@ def  add_word_routes(app):
                     'id': result[0], 
                     'word': result[1], 
                     'phoneticSymbol':result[2], 
-                    'meaning':result[3]
+                    'meaning':result[3],
+                    'isNewWord':1 if isNewWord==True else 0
                 }
             })
         else:

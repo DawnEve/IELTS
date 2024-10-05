@@ -16,8 +16,14 @@ local: ielts.dawneve.cc/en/
 /en/word.html
 
 
-1.本地基于文件的背单词工具 /wordKing/ 
-2.查单词的js工具工具 dawnDict
+1.本地基于文件的背单词工具 /wordKing/
+
+
+2.查单词的js工具工具 dawnDict.js: web划词搜索，使用bing词典
+reading/dawnReader.html F12
+划词搜索, F12 console>>
+var s=document.createElement("script");s.src="https://ielts.dawneve.cc/wordKing/dawnDict.js";document.body.append(s);
+
 
 3.基于mysql的背单词工具 
 (1)远端开 docker 版的 mysql 服务, 端口 7070(Y) / 8070(J1):
@@ -28,11 +34,6 @@ local: ielts.dawneve.cc/en/
 	语料库 /dict/sentence.html?id=433&word=dwell
 	#
 	写易错单词 /dict/recite.html
-(3)web划词搜索
-reading/dawnReader.html F12
-划词搜索, F12 console>>
-var s=document.createElement("script");s.src="https://ielts.dawneve.cc/wordKing/dawnDict.js";document.body.append(s);
-
 
 #
 单词发音 (英语单词复(ting)读(xie)机 https://github.com/onebigear/IELTS-Repeater/)

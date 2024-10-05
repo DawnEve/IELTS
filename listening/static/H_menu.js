@@ -1,3 +1,4 @@
+//@charset "UTF-8";
 /**
 * name: 为html生成 右下角目录 + 去顶部
 * version: 0.2 修订
