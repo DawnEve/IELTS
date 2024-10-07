@@ -549,6 +549,8 @@ en0.5.4-1@picb get dict work on J1 [2024/10/4]
 	rename to curl-ca-bundle.trust.crt, curl-ca-bundle.crt
 en0.5.4-2@picb dict 默认不保存新词，提供按钮，用户点击才保存 [2024/10/5]
 en0.5.4-3@picb add 1 long read [2024/10/6]
+en0.5.4-4@picb add dict/sql/updateBlog.py [2024/10/7]
+	如何添加文章到 语料库，使用py脚本，帮助见 dict/ReadMe.txt 0(2)
 
 #
 // todo 小说阅读器，进度写到url，实现刷新后定位

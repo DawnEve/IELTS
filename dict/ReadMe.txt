@@ -6,13 +6,40 @@
 后台：采用python3 flask + mysql的方式
 前台：先用普通页面，后期考虑Vue
 
-目前集成功能：
+
+(1)目前集成功能：
   查单词
     旧单词：在数据库中的直接显示
     新单词：给出按钮，可以手动点击加入数据库
   找例句
     (1).sentence.html[拂晓语料：句子库] 对应数据表 sentence_dawn。可web添加句子
     (2).sentence2.html[微信语料：文章库] 对应数据表 msg_English。
+
+
+
+(2)文章加入数据库 msg_English 方式
+1) 在navicate中手动添加除Blob外的数据
+2) 添加Blob内容，参考/py/ 的代码和 /dict/sql/updateBlob.py，写python脚本，否则太长的命令shell不识别而报错。
+
+参考命令：
+查询：
+select * from msg_English where msg_id=617 \G
+更新：
+LOCK TABLES `msg_English` WRITE;
+update `msg_English` set msg_content='chairman of Common Cause, a member of the American Academy of Arts and Sciences and co-creator of the award-winning documentary Inequality for All. His latest documentary, Saving Capitalism, is streaming on Netflix.' where msg_id=617;
+UNLOCK TABLES;
+
+脚本书写：
+  py脚本首行写：# -*- coding: utf-8 -*-
+  Blob内容不含title
+
+运行命令：
+  $ cd /dict/sql/
+  $ python updateBlob.py
+
+
+
+
 
 
 
