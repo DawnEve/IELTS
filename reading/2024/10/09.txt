@@ -1,0 +1,44 @@
+firstpost | In a first, AI scientists win Nobel Prize; Meet John Hopfield, Geoffrey Hinton, fathers of modern-day AI
+<span class="light">Oct 09, 2024 | 392 words
+FP Staff • October 9, 2024, 10:58:47 IST</span>
+
+<b>John Hopfield and Geoffrey Hinton, considered the fathers of modern-day AI & ML have been awarded the Nobel Prize in Physics for their groundbreaking work in AI. Their research has not only fuelled scientific progress but also sparked discussions on the potential risks of AI misuse.</b>
+
+> Figure: John Hopfield & Geoffrey Hinton's work on neural networks are at the core of today’s AI, driving advances in technology that impact everything from facial recognition to medical diagnosis. Image Credit: Reuters, Cornell University
+
+<hr>
+In a historic moment, AI scientists have been awarded the Nobel Prize in Physics. John Hopfield and Geoffrey Hinton, often considered the father of modern-day artificial intelligence have been awarded the Nobel Prize in Physics for their groundbreaking work in AI.
+
+Their research, which has revolutionised the field of AI, particularly in machine learning, has not only fuelled scientific progress but also sparked discussions on the potential risks of AI misuse.
+
+Hinton, who left Google last year to speak more openly about AI’s future, expressed his surprise at the honour. Speaking at the award ceremony, he emphasised the vast potential AI holds, especially in areas like healthcare and productivity.
+
+
+However, he also cautioned about the possible dangers, warning that AI systems could one day evolve beyond human control.
+
+
+<b>Revolutionary contributions to AI</b>
+
+Hopfield and Hinton were awarded the Nobel Prize for their pivotal discoveries in machine learning which dates back to the 1980s. Their work focused on developing artificial neural networks, which mimic the way the human brain processes information.
+
+These neural networks are at the core of today’s AI, driving advances in technology that impact everything from facial recognition to medical diagnosis.
+
+Hopfield, a physicist from the US, created an artificial neural network designed to store and recreate patterns.
+
+Hinton, a British-Canadian computer scientist, expanded on this research, developing the Boltzmann machine, which could classify images and generate new ones based on patterns it had learned.
+
+Together, their efforts laid the foundation for the explosive growth in machine learning that we see today.
+
+
+
+<b>Ethical concerns around AI</b>
+
+Hinton is widely regarded as one of the “godfathers” of AI, with his work being compared to the impact of the Industrial Revolution. However, he notes that unlike past technological advancements, AI has the potential to surpass humans in intellectual ability, a development for which we have no precedent.
+
+Their work has opened new doors in both technology and brain research, with AI systems helping us better understand how the human brain functions. But as AI continues to evolve, there are growing concerns about its future, from political misuse to machines developing autonomy. The Nobel committee acknowledged the immense benefits of AI, but also stressed the responsibility of ensuring it is used safely and ethically for the good of humanity.
+
+This award marks a major milestone in the journey of AI, with Hopfield and Hinton’s contributions continuing to shape the future of this rapidly developing field.
+
+<span class="light">
+https://www.firstpost.com/tech/in-a-first-ai-scientists-win-nobel-prize-meet-john-hopfield-geoffrey-hinton-fathers-of-modern-day-ai-13823503.html
+</span>

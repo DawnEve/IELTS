@@ -1,0 +1,44 @@
+CNN | Nobel Prize in medicine goes to Victor Ambros and Gary Ruvkun for work on the discovery of microRNA
+<span class="light">Oct 07, 2024 | 457 words
+By Christian Edwards and Katie Hunt, CNN | Updated 6:53 AM EDT, Mon October 7, 2024</span>
+
+This year’s Nobel Prize in physiology or medicine has been awarded to Victor Ambros and Gary Ruvkun for their work on the discovery of microRNA, a fundamental principle governing how gene activity is regulated.
+
+Their research revealed how genes give rise to different cells within the human body, a process known as gene regulation.
+
+Gene regulation by microRNA – a family of molecules that helps cells control the sort of proteins they make – has been at work for hundreds of millions of years, but was first revealed by Ambros and Ruvkun.
+
+The Nobel Prize committee announced the prestigious honor, seen as the pinnacle of scientific achievement, in Sweden on Monday.
+
+It praised the American biologists’ “groundbreaking discovery,” which the committee said “revealed an entirely new dimension to gene regulation.”
+
+Ambros, a professor of natural science at the University of Massachusetts Medical School, conducted the research that earned him the prize at Harvard University. Ruvkun conducted his research at Massachusetts General Hospital, and is a professor of genetics at Harvard Medical School.
+
+
+> Figure. Nobel Committee Secretary General Thomas Perlmann speaks to the media in front of a picture of this year's laureates Victor Ambros and Gary Ruvkum during the announcement of the Nobel Prize in medicine winners on Monday. Jonathan Nackstrand/AFP/Getty Images
+
+
+“The information stored within our chromosomes can be likened to an instruction manual for all cells in our body. Every cell contains the same chromosomes, so every cell contains exactly the same set of genes and exactly the same set of instructions,” the committee said in a statement, detailing the duo’s work.
+
+And yet, different cell types – such as muscle and nerve cells – have different characteristics. The two biologists have spent their careers investigating how these differences arise.
+
+“The answer lies in gene regulation, which allows each cell to select only the relevant instructions. This ensures that only the correct set of genes is active in each cell type,” the committee said.
+
+
+Gene regulation by microRNA has aided the evolution of increasingly complex organisms. If gene regulation goes awry, it can lead to cancer and other conditions found in humans and other animals, like hearing loss and skeletal disorders.
+
+In their early work, the pair studied the genetic make-up of a tiny 1 millimeter-long roundworm, C. elegans. Despite its small size, this worm possesses many specialized cell types, such as nerve and muscle cells, that are also found in larger, more complex animals, making it a useful model for investigating how tissues develop and mature in multicellular organisms.
+
+“The first micro RNA was discovered by Victor Ambros in 1993 but it was thought to be an oddity, peculiar to a small worm, C. elegans, for more than seven years,” said Olle Kämpe, a professor in endocrinology at the Karolinksa Institutet and vice chair of the Nobel medicine committee.
+
+That 1993 discovery was met by “deafening silence” and initially thought irrelevant to humans, the committee said, until Ruvkun published his discovery of another microRNA present throughout the animal kingdom.
+
+“Then the field exploded,” said Kämpe. “Now, more than tens of thousands of microRNAs have been identified in different organisms.”
+
+Last year, the prize was awarded to Katalin Karikó and Drew Weissman for their work on MRNA vaccines, a crucial tool in curtailing the spread of Covid-19.
+
+The prize carries a cash award of 11 million Swedish kronor ($1 million).
+
+<span class="light">
+https://edition.cnn.com/2024/10/07/science/nobel-medicine-prize-discovery-microrna-victor-ambros-gary-ruvkun-intl/index.html
+</span>
