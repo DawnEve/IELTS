@@ -554,6 +554,10 @@ en0.5.4-4@picb add dict/sql/updateBlog.py [2024/10/7]
 en0.5.4-5@picb 听力/ HP 4_10: 25%; [2024/10/10]
 	add r/ 股市; 诺奖-生理-Hinton
 en0.5.4-6@picb 听力/ HP 4_10: 34%; [2024/10/11]
+#==> only submit once a week, if all 听力;
+en0.5.4-7@picb 听力/ HP 4_10: 43%; [2024/10/13]
+	听力/ HP 4_10: 43% [10.13]
+	update 网站文字
 
 #
 // todo 小说阅读器，进度写到url，实现刷新后定位
