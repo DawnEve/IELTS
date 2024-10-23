@@ -12,9 +12,10 @@
 When you are ready on the web page, please check:
 1. change title number;
 2. manually insert ads in the middle;
-3. change the desc for picture at bottom;
-4. insert logo at bottom
-
+3. add cover fig and desc
+4. change the desc for picture at bottom;
+5. insert logo at bottom
+6. 合集
 
 
 # History
