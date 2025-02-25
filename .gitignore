@@ -7,3 +7,6 @@ __pycache__
 
 # no sql file by default
 *.sql
+
+# not wechat html
+reading/wechat/*.html
