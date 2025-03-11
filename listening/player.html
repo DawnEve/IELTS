@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-	<title>听力王v0.5.9 - DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<title>听力王
+v0.6.0
+- DIY英语听写神器 AB复读机(英语读报出品)</title>
 	<script src="/static/js/tongji.js"></script>
 <!--
 server: http://ielts.biomooc.com/listening/player.html
@@ -34,6 +36,7 @@ v0.5.6 大按钮 可以隐藏
 v0.5.7 可以接收中文url
 v0.5.8 美化移动端按钮: 去掉 F12 button，按钮美化
 v0.5.9 添加底部js库链接
+v0.6.0 添加本地上传音频文件功能
 #
 
 
@@ -95,6 +98,8 @@ a:hover {text-decoration: underline;}
 #showList{display:none;}
 
 #footer{text-align:center; color:#ddd; padding-top:50px;}
+
+#files{visibility:hidden; position:absolute;}
 </style>
 </head>
 
@@ -102,7 +107,9 @@ a:hover {text-decoration: underline;}
 
 <body>
 <div id='topTitle'>
-	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version> v0.5.9</span></h2>
+	<h2><a target=_blank href="/en" title="返回首页">听力王</a><span class=version>
+v0.6.0
+</span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
 
@@ -122,6 +129,15 @@ a:hover {text-decoration: underline;}
 			<option value="">Please set a file to play</option>
 		</select>
 	</div>
+
+	<!-- 上传mp3文件 -->
+	<div class="grey">
+		Upload audio:
+		<input type="file" id="files" name="files[]" />
+		<button id='uploadFile'>Upload File</button>
+		<span id="audioFileName"></span>
+	</div>
+
 </div>
 
 
@@ -166,7 +182,7 @@ a:hover {text-decoration: underline;}
 
 
 <pre id=help>
-<h1>听力王v0.5.9 AB复读机播放器使用说明书</h1>
+<h1>听力王v0.6.0 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -314,7 +330,9 @@ Contact me: jimmymall at 163 dot com
 
 <div id=footer>
 	<p>
-		&copy;2024 <a target="_blank" href="/en">英语读报</a> 荣誉出品
+		&copy;2017 -
+		2025
+		<a target="_blank" href="/en">英语读报</a> 荣誉出品
 		|
 		Powered by <a target="_blank" href="https://github.com/katspaugh/wavesurfer.js">wavesurfer.js</a>
 	</p>
@@ -386,7 +404,7 @@ function getUrlParam(name) {
 
 
 //#################################
-// player settins
+// player settings
 //#################################
 
 //播放器状态
@@ -584,7 +602,35 @@ window.onload=function(){
 		//转移焦点
 		$('showHelp2').focus()
 	}
-	
+
+
+
+	// 上传文件按钮
+	$('uploadFile').onclick=function(){
+		//console.log("you clicked uploadFile button")
+		$('files').click() //触发 文件按钮 点击事件
+	}
+	// 文件按钮 点击事件
+	$('files').onchange=function(evt){
+		var files = evt.target.files; // FileList object
+		var file = files[0];
+		console.log("Filename: ", file.name);
+		$("audioFileName").innerHTML="Filename: " + file.name;
+
+		// 转为链接
+		if (window.webkitURL) window.URL = window.webkitURL;
+		var objectURL = window.URL.createObjectURL(file);
+		console.log("File URL: ", objectURL);
+
+		// 传入文件链接给播放器
+		//myAudio.src = objectURL;
+		//myAudio.play();
+		init(objectURL)
+	}
+
+
+
+
 	//显示按钮 按钮，单击事件
 	$('showButtons').onclick=function(){
 		Mstatus.showButtons*=-1

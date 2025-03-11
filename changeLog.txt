@@ -588,6 +588,8 @@ en0.5.5-8@picb 听力/ HP 4_11: 100%; [2025/2/25]
 	听力/ HP 4_11: 80% [2025/2/18]
 	听力/ HP 4_11: 89% [2025/2/19]
 	听力/ HP 4_11: 100%% [2025/2/25]
+en0.5.5-9@picb 听力王: 添加本地上传音频文件功能 [2025/3/11]
+	听力/ HP 4_12: 11% [2025/3/4]
 
 
 #
@@ -613,8 +615,8 @@ en0.5.5-8@picb 听力/ HP 4_11: 100%; [2025/2/25]
 
 --------
 Where is this repo:
-url: ielts.biomooc.com/en/
-local: ielts.dawneve.cc/en/
+url: ielts.biomooc.com
+local: ielts.dawneve.cc
 file: D:\xampp\htdocs\IELTS
 
 
