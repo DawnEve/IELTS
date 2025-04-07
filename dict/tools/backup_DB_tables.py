@@ -22,19 +22,26 @@ import os,time
 
 #1. settings 
 today = time.strftime("%Y%m%d-%H%M%S", time.localtime())  #"20191127_1110" #备份时间戳 '20190517-140223'
-db_backup_dir =r"G:\xampp\htdocs\IELTS\dict\backup"; # 本地备份目录
+db_backup_dir =r"D:\xampp\htdocs\IELTS\dict\backup"; # 本地备份目录
 BACKUP_SAVE_DAYS='20'
 
 # 指定要备份的表名字
 tb_arr1=['word_ms', 'word_unknown', 'word_searched','word_scan', 'sentence_dawn','user', 'msg_English',]
-tb_arr2=['cell_c1', 'feature_apa', 'feature_gene', ]
-#
-tb_arr=tb_arr1+tb_arr2;
+#tb_arr2=['cell_c1', 'feature_apa', 'feature_gene', ]
+#tb_arr=tb_arr1+tb_arr2;
+
+tb_arr=tb_arr1
+
+# 查看 是否需要保存表：结论 那几个带2结尾的都不需要
+# $ find . | grep -v "sql$" | xargs grep -in dawn2 --color=auto 2>/dev/null
 
 
 
-#2.备份主命令
-cmd=r"G:\xampp\mysql\bin\mysqldump -h y.biomooc.com -P 7070 -u root -p123456 wang %s > %s\tb_%s_%s.sql";
+
+
+
+#2.备份主命令：修改路径、端口、密码等
+cmd=r"D:\xampp\mysql\bin\mysqldump -h j1.biomooc.com -P 8070 -u root -p123456 wang %s > %s\tb_%s_%s.sql";
 # G:\xampp\mysql\bin\mysqldump -h y.biomooc.com -P 7070 -u root -p123456 wang word_unknown > G:\xampp\htdocs\IELTS\dict\backup\tb_word_unknown_20191127_1040.sql
 #循环执行
 i=0

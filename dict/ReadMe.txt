@@ -389,12 +389,21 @@ https://www.cambridgeenglish.org/Images/22105-ket-vocabulary-list.pdf
 
 
 6.备份表
-见 ./dict/sql/
+
+(1)见 ./dict/sql/
 mysqldump -u 用户名 -p 数据库名 表名> 导出的文件名
 G:\xampp\mysql\bin\mysqldump -h y.biomooc.com -P 7070 -u root -p wang word_unknown > G:\xampp\htdocs\IELTS\dict\backup\tb_word_unknown_20191127.sql
-有更好用的脚本： tools/backup_DB_tables.py
-备份到 backup/目录下，git不跟踪，自行发送到Email中。
 
+- 之前保存的文件就不更新了: dict/sql/IELTS.wang-v2.sql 8M
+
+
+(2)有更好用的备份脚本： tools/backup_DB_tables.py
+备份到 backup/目录下，git不跟踪，自行发送到Email中。
+- 需要修改程序路径，保存路径。
+- 新建 dict/backup/ 目录
+- 执行备份脚本: > python backup_DB_tables.py
+- 执行压缩脚本，把sql压缩为 zip 文件: 需要先修改路径名，然后执行 > python get_zip.py
+- dict/backup/IELTS_tables_20250407-194617.zip 上传到 https://github.com/DawnEve/IELTS/issues/9
 
 
 

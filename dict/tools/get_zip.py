@@ -54,7 +54,7 @@ def zip_file_path(input_path, output_path, output_name):
 # 主程序
 if __name__ == '__main__':
   # 工作目录
-  os.chdir(r"G:\xampp\htdocs\IELTS\dict\backup");
+  os.chdir(r"D:\xampp\htdocs\IELTS\dict\backup");
   print('Working path:', os.getcwd())
   
   # 生成压缩文件的名字: 当前年月日-时分秒
