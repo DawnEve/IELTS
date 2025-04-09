@@ -24,7 +24,12 @@ a.red:hover{background:#C80000; color:white;}
 
 .wrap div{ /*padding:5px; border:1px dashed #ccc; */ margin:20px 0;}
 .wrap div h2{border-bottom:1px solid #ccc; color:#ddd;}
-.wrap div h3{margin:10px 2px; padding:0 5px; background:#eee;}
+.wrap div h3{
+	margin:10px 2px; 
+	padding:5px; 
+	background:#eee;
+	border-radius: 5px;
+}
 .wrap div h2 .note{color:black;}
 
 #nav{
@@ -67,4 +72,52 @@ a.red:hover{background:#C80000; color:white;}
 table { border-collapse:collapse; } 
 
 .hide{display:none;}
+
+p{
+	margin:5px 0; 
+	text-indent:2em;
+}
+
+pre{
+	word-wrap: break-word!important; 
+	white-space: pre-wrap;
+}
+
+code{
+	font-family: monospace;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 5px;
+}
+code.red{
+	/*
+    background-color: #eaeaea;
+    font-size: 85%;
+	*/
+    color: #d63200;
+    background-color: rgba(0,0,0,0.04);
+}
+
+blockquote{
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    /*
+    color: #888;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-left: 5px solid #1e90ff;
+    */
+    font-weight: 500;
+    font-family: Georgia, Helvetica, arial, sans-serif;
+    padding: 10px 15px;
+    margin: 10px;
+    border: 1px solid #eee;
+    border-left: 5px solid #eee;
+    background: none;
+}
+
+blockquote.green{
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    border-left: 5px solid #4F8A10;
+}
 

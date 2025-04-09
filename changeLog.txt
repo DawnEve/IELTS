@@ -604,9 +604,13 @@ en0.5.6-0@picb 听力/ HP 4_12: 92% [2025/4/1]
 	听力/ HP 4_12: 80% [2025/3/28]
 	听力/ HP 4_12: 85% [2025/3/31]
 	听力/ HP 4_12: 92% [2025/4/1]
-en0.5.6-0@picb update 音标 speaking/IPA.html; dict/备份DB步骤 [2025/4/7]
+en0.5.6-1@picb update 音标 speaking/IPA.html; dict/备份DB步骤 [2025/4/7]
 	听力/ HP 4_12: 100% [4/2]
 	听力/ HP 4_13: 7% [4/3]
+en0.5.6-2@picb update to ABplayer.html; 全站格式微调 [2025/4/9]
+	听力/ HP 4_13: 12% [4/8]
+	阅读: 科技论文阅读提速方法;
+	格式: p 空两格; 添加 <code class=red> 高亮; 谷歌翻译url修正;
 
 
 

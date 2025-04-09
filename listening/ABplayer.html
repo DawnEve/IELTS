@@ -1,0 +1,941 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+	<title>听力王 ABplayer
+v0.6.1
+- DIY英语听写神器 AB复读机(英语读报出品)</title>
+	<script src="/static/js/tongji.js"></script>
+<!--
+server: http://ielts.biomooc.com/listening/player.html
+local: http://ielts.dawneve.cc/listening/player.html
+audio local: G:\xampp\htdocs\DawnScholar\audio\
+
+v0.3 键盘操作的AB复读机，加帮助文档。
+v0.3.1 完善帮助文档
+v0.3.2 修复bug1
+v0.3.3 美化顶部标题
+v0.4 支持在线初始化，可以加载外链音频文件
+v0.4.1 添加外链下拉框显示可用音频列表(仅online版显示)
+v0.4.2 状态没变化的就不刷新了
+v0.4.3 记录循环的总次数，显示到状态中
+v0.4.4 显示copy right和鸡汤、微信号文章
+v0.4.5 更改音频后要转移焦点！防止空格或箭头触发下一个
+v0.4.6 补充帮助文档
+v0.4.7 修改停止播放切换方法;
+	本地版只需要提供音频服务器即可: 有同源策略，太复杂；
+v0.4.8 添加快捷键提示;
+v0.4.9 update help
+v0.5.0 support url input
+v0.5.1 [e]on/off echo method mode: wait for same time
+v0.5.2 echo method should waite 2 times time;
+v0.5.3 按[e]立刻退出等待时间 
+v0.5.4 添加按钮控制
+v0.5.5 大按钮，适应移动端
+v0.5.6 大按钮 可以隐藏
+v0.5.7 可以接收中文url
+v0.5.8 美化移动端按钮: 去掉 F12 button，按钮美化
+v0.5.9 添加底部js库链接
+v0.6.0 添加本地上传音频文件功能
+v0.6.1 按钮悬空时手形标志；修改文件名 ABplayer.html，原位置自动跳转
+#
+
+
+
+//版本号还需要修改三个地方: title中，顶部标签中，正文帮助文档中
+//音频标记为波形图 https://blog.csdn.net/dongchengxuyuan/article/details/82759287
+-->
+<style>
+html,body,h2,#topTitle,p{padding:0px; margin:0;}
+#topTitle{text-align:center;}
+#topTitle h2{display:block;padding:5px; background:#000; color:orange;}
+#topTitle a{color:white; text-decoration:none;}
+#topTitle a:hover{text-decoration:underline;}
+#topTitle div{font-weight:bold;}
+pre{
+	border:1px dashed #000;
+	padding:5px;
+	background:rgb(44,0,30);color:white;
+}
+pre a{color: orange;}
+
+.control,
+.status{padding:10px; margin:5px 10px; border:1px solid #eee; background:#fdfdfd;}
+.control{
+
+}
+
+.grey{color:#ddd;}
+
+/*ctrl buttons*/
+button{cursor: pointer;}
+button.btn{color:#000; padding: 10px 10px; margin-top:20px; display:block; font-size: 25px;}
+button.btn:hover {
+    background-color: black;
+	color:white;
+	cursor:pointer;
+}
+
+
+
+fieldset {
+    border: 1px solid #E7E8EA;
+    background: #fff;
+}
+
+#control,
+#help{display:none;}
+#showHelp2{opacity:0}
+
+.version{font-size:smaller;}
+.red{color:red;}
+
+/*links*/
+a {
+    color:#0593d3; /*#366799;*/
+    text-decoration: none;
+}
+a:hover {text-decoration: underline;}
+
+#showList{display:none;}
+
+#footer{text-align:center; color:#ddd; padding-top:50px;}
+
+#files{visibility:hidden; position:absolute;}
+</style>
+</head>
+
+
+
+<body>
+<div id='topTitle'>
+	<h2><a target=_blank href="/en" title="返回首页">听力王 ABplayer</a><span class=version>
+v0.6.1
+</span></h2>
+	<div>支持AB复读 听写神器</div>
+</div>
+
+
+<div id="waveform"></div>
+
+
+<div class="status">
+	<p><span id="time">CurrentTime: 0.00/Total time(0.00%)</span> | <span id="speed">Speed: 1.00</span></p>
+	<div id="div1" class=grey>Status: player status will be shown here.</div>
+	<div id="path" class=grey>AudioPath: AudioPath</div>
+	<div id="echo" class=grey>Echo mode: off</div>
+
+	<div id='showList'>
+		<span class=grey>Available Audio on the <a id='hostName' target="_blank" href="">Audio Server</a>:</span>
+		<select id="sel1">
+			<option value="">Please set a file to play</option>
+		</select>
+	</div>
+
+	<!-- 上传mp3文件 -->
+	<div class="grey">
+		Upload audio:
+		<input type="file" id="files" name="files[]" />
+		<button id='uploadFile'>Upload File</button>
+		<span id="audioFileName"></span>
+	</div>
+
+</div>
+
+
+
+<div class="control">
+	<button id='showHelp'>Show Help</button>
+	<button id='showButtons'>Show Buttons</button>
+	<br /> 
+	<span class=grey>Shortcuts: 
+		<b>F12</b>[open Console]
+		<b>A</b>[set pointA]; 
+		<b>B</b>[set pointB]; 
+		<b>C</b>[continue]; 
+		<b>R</b>[repeat]; 
+		<b>E</b>[Echo mode on/off];
+		<b>Space / Enter</b>[stop/continue];
+	</span>
+	<button id='showHelp2'>doNothing</button>
+</div>
+
+
+<fieldset class=control id="control">
+	<legend>Shortcuts[Description]</legend>
+
+	<button class="btn" data='A'><b>A</b>[set pointA]</button>
+	<button class="btn" data="B"><b>B</b>[set pointB]</button>
+	<button class="btn" data="C"><b>C</b>[continue]</button>
+	<button class="btn"><b>R</b>[repeat]</button>
+	<button class="btn"><b>Space / Enter</b>[stop/continue]</button>
+	
+	<hr>
+	<button class="btn"><b>E</b>[on/off echo mode]</button>
+	<button class="btn hide" id='showHelp2'>Show Help2</button>
+	
+	<button id='showHelp2'>doNothing</button>
+</fieldset>
+
+
+
+
+
+
+
+
+<pre id=help>
+<h1>听力王 ABplayer v0.6.1 AB复读机播放器使用说明书</h1>
+鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
+
+建议键盘控制：
+(1)空格/Enter  开始播放、暂停，如果不好用，就多按几次空格 和 c字母；
+
+(2)AB复读功能:
+	a键记录位置A;
+	b键记录位置B, 暂停, 并开始AB复读;
+	c键continue播放，不再ab复读;
+	r键repeat，继续ab复读;
+	    该键只能在按下c之后，又想回到原AB复读时有效;
+	    如果没有指定A点则指向起点，如果没有指定B点则指向终点，所以，开头直接按r键就是单曲循环；
+
+echo method 回音模式:
+	e 键打开或关闭回音模式
+	echo 模式打开时，音频在ab播放前都会等待ab之间等长发的时间。
+
+
+(3)左右箭头，前进后退2s; 
+shift+左右箭头，前进后退2%总时长; 对于100s以上的音频，使用百分号移动的更快。
+
+(4)上下箭头 播放速度，支持0.3-3倍速播放，每次增减0.05倍;
+
+Tips:
+1) 从想反复听的位置按下A，到一句话结束按下B，这时会自动反复AB区间播放；按下c键退出重复模式;
+2) 如果想让B点靠后一点，则按下C键，到达预定位置按下B键；
+3) 如果想让B点靠前一点，则播放过程中按下B键即可；
+4) 如果想让A点靠后一点，则播放过程中按下A键；
+5) 如果想让A点靠前一点，则按下c键后按下空格暂停，按下左箭头，或者shift+左箭头，到合适位置，按下A键，再按下R键即用原B点播放；
+6) 如果按下c键后，还想听刚才设置的AB点之间，只需要按下r键即可；
+7) 感觉说的太慢？试试向上箭头，最高支持3倍速播放。
+
+高级攻略：
+chrome浏览器，F12快捷键，点开console
+1) 输入 Mstatus 回车，这是控制music status的全局js状态变量; 可以看到A和B点的时间，单位是秒; 
+2) 如何随意指定A点? 输入 Mstatus.pointA=15 回车
+3) 如何随意指定B点？输入 Mstatus.pointB=30 回车
+4) 如何按照自定义好的AB点复读呢？按下r键即可，退出复读模式呢？按下c键即可。
+
+
+
+
+
+<hr>
+<h1>刻意练习法 - 精听训练方法</h1>
+准备纸和黑笔、蓝笔、红笔。
+1.找音频文件，一定要有英文文本！最好3-5分钟的。
+包括新概念英语，46级听力材料，雅思听力材料/剑桥雅思听力，托福听力，TPO，BBC/VOA，经济学人，BEC等；，
+
+2.听一遍，感觉听到了什么就记录下来要点，这就是以后正常听力的状态。
+3.逐句听，听到实在写不出一个单词为止，保证每个单词、标点都正确、准确，大概15-30遍；
+4.对照文本批改，人名地名用蓝笔改错，其他错误用红笔修改。
+找到听错了或者没有听写出来的部分，花大量时间去研究和复习。
+问自己这些问题：为什么听错呢？
+是因为这个词不认识？那就赶紧背单词去。。。
+是因为读音不熟悉？那就跟着正确的读音多读几遍。。。
+还是自己本来这个音就读错了？赶快自我纠正，防止以后有类似音的词搞错。
+
+5.再听，注意听错的地方的发音，开始跟读，注意弱读、连读、爆破音等
+7.选取其中约2min左右长度的内容，标注文本发音要点，反复模仿。
+影子跟读 shadowing，就是发音、重音、声调、喘息都要一模一样，是更严格的实时跟读。
+
+
+总之，听写只是找出自己的弱点，而之后的修正才是最最重要的地方。基本上做30-40篇听写，就能基本听出95%的内容。
+然后提高一个难度等级，继续做30-40篇听写。
+提高的同时，词汇量一定也要同时提高。毕竟如果单词不认识，那就不可能听得出来的啊。
+
+
+<b>不疯魔，不成活。其实又有哪件事不是如此呢？</b>
+
+
+
+
+
+
+<hr>
+<h1>回音法 - 提高英语口语，纠正口音</h1>
+熟悉的材料，有文字、有录音。
+听一句，3-5秒，不超过10个单词；
+聆听脑海中刚才那句话的回音；
+然后说出来，尽可能模仿原录音。
+三个步骤：listen - echo - repeat.
+
+
+
+
+
+
+
+
+<hr>
+
+<h1>Method1: 在线版播放器添加音频</h1>
+支持静态服务器跨服务器调用文件，需要音频文件支持跨域访问，也就是开启 'Access-Control-Allow-Origin' header 。
+
+1. 自己架设 静态服务器，比如 <a href="https://github.com/DawnEve/webPan.py">webPan.py</a>，设置好路径，放好mp3资源文件，
+在网页界面右击文件末尾的外链 - 选择复制链接。
+2. Chrome浏览器打开 <a href="http://ielts.biomooc.com/listening/player.html">在线版播放器</a>。
+3. 按F12，打开浏览器的控制台console，输入
+init("http://127.0.0.1:8005/file/fry_3_01.mp3"); //回车
+就可以更新音频了。
+注意：括号内是外链音频文件链接。加载时间取决于网速和音频文件长度。
+
+如果使用xampp-php版本的后端，使用 scholar: https://github.com/miostudio/DawnScholar
+输入 init('http://127.0.0.1/audio/static.php?file=xx.mp3'); //回车
+
+
+
+
+
+<hr>
+<h1>Method2: 本地版</h1>
+需要有静态服务器，如apache,nginx等，如果都没有，使用python也可以快速搭建，详见下文。
+1. 下载mp3等英语音频文件(比如from https://www.51voa.com/)到本地web服务器文件夹中；
+2. 下载<a href="http://ielts.biomooc.com/listening/player.html">本html文件</a>(右击-链接另存为)和<a href="http://ielts.biomooc.com/listening/wavesurfer.min.js">wavesurfer.min.js文件</a>(右击-链接另存为)到相同文件夹；
+3. 修改player.html中 wavesurfer.load() 中的var musicPath='002.mp3' 地址为本地mp3等音频文件的相对地址。
+4. 启动本地web服务器，chrome浏览器打开该web页面，刷新后即可练习听写了。
+
+tips: 本软件不定期修正bug，建议及时更新；发现问题请及时报告，描述清晰，并截图，反馈邮箱见结尾。
+
+
+
+<h2>如何快速搭建静态服务器?</h2>
+以win10系统为例(苹果没用过，用linux的大神肯定会启服务器)：
+1. 先安装pyhton3.6(其他版本没测试过);
+2. 使用 我的电脑 一路双击找到存放player.html和wavesurfer.min.js文件的文件夹，在地址栏输入 cmd 回车，弹出黑窗口；
+3. 在黑窗口中输入 python -m http.server 8888 并回车，显示如下:
+G:\xampp\htdocs\IELTS\listening>python -m http.server 8888
+Serving HTTP on 0.0.0.0 port 8888 (http://0.0.0.0:8888/) ...
+
+4. 在浏览器中输入 http://127.0.0.1:8888 回车后出现文件名列表，点击player.html，即可看到播放器了：http://127.0.0.1:8888/player.html
+5. 同名目录下保存自己的英语听力文件，修改player.html的 var musicPath='002.mp3'; 
+把引号内部分替换成自己的音频文件，回到浏览器 shift+F5 刷新即可。
+
+
+
+
+
+
+<hr>
+<h1>Method3: 直接上传音频文件(推荐)</h1>
+从 v0.6.0 开始，支持本地上传功能
+1. 点击网页上的按钮 Upload File
+2. 选择电脑上的音频文件，点确定
+3. 可以正常使用本复读机。
+
+
+
+
+
+Contact me: jimmymall at 163 dot com
+
+--the end --
+</pre>
+
+
+
+
+
+<div id=footer>
+	<p>
+		&copy;2017 -
+		2025
+		<a target="_blank" href="/en">英语读报</a> 荣誉出品
+		|
+		Powered by <a target="_blank" href="https://github.com/katspaugh/wavesurfer.js">wavesurfer.js</a>
+	</p>
+	<p><a target="_blank" href="https://mp.weixin.qq.com/s?__biz=MzI0NDcxNzc5Mg==&mid=2247485239&idx=2&sn=8846604b1ccbcafd8180246002f9b3e4">怎么快速提高英语听力水平?精听</a></p>
+	<p><a target="_blank" href="https://mp.weixin.qq.com/s/N8OS79oVpFSibW0MnukJdw">怎么提高英语口语?如何纠音?回音法</a></p>
+	<p> 不疯魔，不成活！其实又有哪件事不是如此呢？</p>
+</div>
+
+
+
+
+
+
+<script src="wavesurfer.min.js"></script>
+<script>
+//"https://unpkg.com/wavesurfer.js"
+/*
+播放器 https://wavesurfer-js.org/
+方法 http://wavesurfer-js.org/docs/methods.html
+事件 http://wavesurfer-js.org/docs/events.html
+
+bug1:开头按下B，按下c播放，播放一会按下A，然后按下R，会报错：
+bug2:按下B键，进入自动播放模式，然后按下空格，不会停止，再次按下空格才能停止；fixed.
+*/
+
+
+
+
+
+
+//#################################
+//tools 
+//#################################
+
+//默认保存2位小数，四舍五入
+function digital(num,n){
+	var n=n||2
+	//return Math.round(num*10**2)/10**2
+	return num.toFixed(n)
+}
+
+//选择元素
+function $(s){
+	return document.getElementById(s);
+}
+
+//给obj增加事件的自定义函,兼容IE/chrome/ff
+function addEvent(obj,ev,fn){
+	if(obj.addEventListener){
+		//ff:addEventListener
+		obj.addEventListener(ev,fn,false);
+	}else{
+		//IE:attachEvent
+		obj.attachEvent('on'+ev,fn);
+	}
+}
+
+
+//获取url中的参数 https://www.cnblogs.com/vicky-li/p/9145026.html
+function getUrlParam(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	//if (r != null) return unescape(r[2]); return null; //返回参数值，会导致很多链接在url中打不开
+	if (r != null) return (r[2]); return null; //ok
+}
+
+
+
+
+
+//#################################
+// player settings
+//#################################
+
+//播放器状态
+var Mstatus={'on':1, 'showHelp':-1, 'ready':0, 'repeats':0, 
+	'showButtons':-1,
+	"echo": false }
+
+//初始化
+var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: 'violet',
+    progressColor: 'purple',
+	scrollParent: true,
+});
+
+
+//控制台和web显示状态
+function show(text){
+	$('div1').innerHTML='Status: '+text;
+	return '';
+	console.log(Mstatus)
+}
+
+
+//快进
+function forward(n){
+	var n=n||2
+	var prevpage="#forward";
+	//location = prevpage;
+	show('前进'+n+'s')
+	wavesurfer.skip(n)
+}
+
+//快退
+function backward(n){
+	var n=n||2
+	var nextpage="#backward";
+	//location = nextpage;
+	show('后退'+n+'s')
+	wavesurfer.skip(-n)
+}
+
+
+
+//重复播放
+function repeatPlay(){
+	//清除定时器
+	if('timer1' in Mstatus){
+		clearInterval(Mstatus.timer1);
+	}
+	//如果没有定义a点，则a点为开头
+	if(!('pointA' in Mstatus)){
+		Mstatus['pointA']=0
+	}
+	//如果没有定义b点，则b点为结尾
+	if(!('pointB' in Mstatus)){
+		Mstatus['pointB']=Mstatus['duration']-0.01;//如果B点和终点完全相等，则会到终点停止
+	}
+	//如果a比b大呢？交换a和b
+	if(Mstatus['pointA']>Mstatus['pointB']){
+		//swap(Mstatus['pointA'],Mstatus['pointB'])
+		var tmp=Mstatus['pointA'];
+		Mstatus['pointA']=Mstatus['pointB']
+		Mstatus['pointB']=tmp
+	}
+	//如果A和B之间的距离很小呢？比如完全一样，暂时无解，只能提醒用户按下c键继续了
+	if(Math.abs( Mstatus['pointA']-Mstatus['pointB'] )<0.1){
+		//暂停
+		wavesurfer.pause();
+		Mstatus.on*=-1;
+		//高亮提醒
+		show("<span class=red>Time between pointA and pointB is too short! Press C to continue.</span>")
+		return false;
+	}
+	
+	//开始播放
+	Mstatus.timer2=null; //回音计时器
+	Mstatus.timer1=setInterval(function(){
+		var ct=wavesurfer.getCurrentTime();
+		if(ct<Mstatus['pointA'] || ct>=Mstatus['pointB']){
+			var sleepTime=Mstatus['echo']?(Mstatus['pointB']-Mstatus['pointA'])*1000:0;
+			// 是否回音
+			if(Mstatus['echo']){
+				console.log( "Echo time:",  Math.round(sleepTime/100)/10, "seconds" )
+			}
+			Mstatus.timer2 = Mstatus.timer2 || setTimeout(function(){
+				wavesurfer.play(Mstatus['pointA'],Mstatus['pointB']);
+				//console.log( "sleep time:", sleepTime )
+				clearTimeout(Mstatus.timer2); //清空回音计时器
+				Mstatus.timer2=null; //清空回音计时器
+
+				//播放器重复次数
+				show('AB Repeat again. Repeats: '+(++Mstatus.repeats))
+			},  sleepTime*2) //waite for 2 times the sound time;
+		}
+	}, 300)
+}
+
+//刷新播放器内容和事件绑定
+function init(musicPath){
+	Mstatus['audio']=musicPath;
+	Mstatus.ready=0;
+	show("<span style='color:red'>loading ...</span>");
+	//清除定时器
+	if('timer0' in Mstatus){
+		clearInterval(Mstatus.timer0);
+	}
+	wavesurfer.load(Mstatus['audio']);
+	
+	// set point A
+	if(!('pointA' in Mstatus)){
+		Mstatus['pointA']=0
+	}
+
+	wavesurfer.on('ready', function () {
+		Mstatus['duration']=wavesurfer.getDuration();
+		//wavesurfer.play();
+		//监视播放状态
+		Mstatus['timer0']=setInterval(function(){
+			//进度: 显示时间、总时间和百分比
+			var tm=wavesurfer.getCurrentTime()
+			var strTime='CurrentTime: '+digital(tm)+'s/'+ digital(Mstatus.duration)+'s('+ digital(tm/Mstatus.duration*100) +'%)'
+			if($('time').innerHTML!=strTime){
+				$('time').innerHTML=strTime
+			}
+			//速度
+			var spd=wavesurfer.getPlaybackRate()
+			if($('speed').innerHTML!="Speed: "+ digital(spd)){
+				$('speed').innerHTML="Speed: "+ digital(spd);
+			}
+			//歌曲
+			if($('path').innerHTML!='AudioPath: '+Mstatus['audio']){
+				$('path').innerHTML='AudioPath: '+Mstatus['audio'];
+			}
+			//echo mode
+			if($('echo').innerHTML!='Echo mode: '+(Mstatus['echo']?"on":"off") ){
+				$('echo').innerHTML='Echo mode: '+(Mstatus['echo']?"on":"off");
+			}
+		},500)//每0.5s刷新一次状态
+		Mstatus.ready=1;
+		show('ready now, press Enter or Space key to play')
+	});
+
+	wavesurfer.on('finish', function () {
+		Mstatus.on*=-1
+		show('finish now, press Enter or Space key to play again')
+	})
+	//wavesurfer.pause(), wavesurfer.skipForward(), wavesurfer.toggleMute()
+}
+//end of tools
+
+
+
+
+
+
+/**
+* 控制播放的主程序
+* version: 0.2 可播放
+* version: 0.3 可复读
+* version: 0.4 支持外链音频
+* version: 0.5 支持 url=音频路径
+* version: 0.5.1 支持 [e] echo mode
+*/
+window.onload=function(){
+	var musicPath='002.mp3';
+	//musicPath='dustbin/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3';
+	//musicPath='dustbin/s-korea-donates-rice-money-feed-hungry-n-korea.mp3';
+	//musicPath='http://ielts.biomooc.com/listening/002.mp3';
+	//musicPath='http://a2.biomooc.com/audio/s-korea-donates-rice-money-feed-hungry-n-korea.mp3';
+	//musicPath='http://a2.biomooc.com/audio/static.php?file=s-korea-donates-rice-money-feed-hungry-n-korea.mp3';
+	//musicPath='http://localhost/IELTS/listening/dustbin/static.php?file=us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3';
+	//musicPath='http://ielts.dawneve.cc/listening/dustbin/static.php?file=s-korea-donates-rice-money-feed-hungry-n-korea.mp3';
+	//wavesurfer.load('audio.wav');
+	//wavesurfer.load('201910/us-officials-twin-births-drop-to-lowest-level-in-10-years.mp3');
+	//https://www.51voa.com/VOA_Special_English/us-officials-twin-births-drop-to-lowest-level-in--years-83068.html
+	
+	//try to get audio path from url
+	musicPath= getUrlParam('url') || musicPath;
+	
+	//初始化播放器
+	init(musicPath)
+	
+	
+	//帮助按钮，单击事件
+	$('showHelp').onclick=function(){
+		Mstatus.showHelp*=-1
+		if(Mstatus.showHelp>0){
+			$('help').style.display='block';
+			this.innerHTML="Hide Help"
+		}else{
+			$('help').style.display='none';
+			this.innerHTML="Show Help"
+		}
+		//转移焦点
+		$('showHelp2').focus()
+	}
+
+
+
+	// 上传文件按钮
+	$('uploadFile').onclick=function(){
+		//console.log("you clicked uploadFile button")
+		$('files').click() //触发 文件按钮 点击事件
+	}
+	// 文件按钮 点击事件
+	$('files').onchange=function(evt){
+		var files = evt.target.files; // FileList object
+		var file = files[0];
+		console.log("Filename: ", file.name);
+		$("audioFileName").innerHTML="Filename: " + file.name;
+
+		// 转为链接
+		if (window.webkitURL) window.URL = window.webkitURL;
+		var objectURL = window.URL.createObjectURL(file);
+		console.log("File URL: ", objectURL);
+
+		// 传入文件链接给播放器
+		//myAudio.src = objectURL;
+		//myAudio.play();
+		init(objectURL)
+	}
+
+
+
+
+	//显示按钮 按钮，单击事件
+	$('showButtons').onclick=function(){
+		Mstatus.showButtons*=-1
+		if(Mstatus.showButtons>0){
+			$('control').style.display='block';
+			this.innerHTML="Hide Buttons"
+		}else{
+			$('control').style.display='none';
+			this.innerHTML="Show Buttons"
+		}
+		//转移焦点
+		$('showHelp2').focus()
+	}
+	
+
+	//全键盘控制的播放器
+	document.onkeydown =function(event){		
+		//获取键盘事件和数字
+		var evt = event ||window.event;
+		var key=event.which||event.keyCode;
+		console.log(key, evt.key);//打印当前按键码
+		
+		if(Mstatus.ready==0 && key!=123){
+			var alert2='Nothing can be done before loading is completed!'
+			console.log(alert2);
+			alert(alert2);
+			return false;
+		}
+		
+		//前进 后退，左右键
+		//if ([33,39].indexOf(key)!=-1){pre();}
+		if(key==39){ 
+			if(event.shiftKey==1){
+				//shift 则按照2%前进
+				forward( Mstatus.duration*0.02 );
+			}else{
+				forward(2);
+			}
+		}
+		else if(key==37){
+			if(event.shiftKey==1){
+				//shift 则按照2%后退
+				backward( Mstatus.duration*0.02 );
+			}else{
+				backward(2);
+			}
+		}
+		
+		//播放速度，上下键
+		else if(key==38){
+			if(wavesurfer.getPlaybackRate()<3)
+				wavesurfer.setPlaybackRate( wavesurfer.getPlaybackRate() +0.05 );
+		}
+		else if(key==40){
+			if(wavesurfer.getPlaybackRate()>0.25)
+				wavesurfer.setPlaybackRate( wavesurfer.getPlaybackRate() -0.05 );
+		}
+		
+		//空格32/回车13控制着暂停与否
+		else if( [32,13].indexOf(key)!=-1 ){
+			wavesurfer.playPause()
+			if(key==32){ //阻止空格翻页 默认事件
+				event.preventDefault();
+				return false;
+			}
+			/*
+			Mstatus.on*=-1
+			if(Mstatus.on>0){
+				wavesurfer.pause();
+				show('Pause')
+			}else{
+				wavesurfer.play();
+				show('Go on playing.')
+			}
+			*/
+		}
+		
+		//ab复读，a记录a位置
+		else if(key==65){
+			Mstatus['pointA']=wavesurfer.getCurrentTime()
+			show('pointA:'+Mstatus['pointA'])
+		}
+		//ab复读，b记录b位置
+		else if(key==66){
+			Mstatus['pointB']=wavesurfer.getCurrentTime()
+			show('pointB:'+Mstatus['pointB'])
+			//暂停播放
+			wavesurfer.pause();
+			//Mstatus['on']*=-1
+			//开始从a点到b点反复播放
+			show('[b] AB repeat mode now.')
+			repeatPlay()
+		}
+		//ab复读，r开始a到b播放repeat播放
+		else if(key==82){
+			show('[r] AB repeat mode now.')
+			//开始播放
+			if(!(wavesurfer.isPlaying()) ){
+				wavesurfer.play();
+			}
+			repeatPlay();
+		}
+		//ab复读，按c则continue，不再ab复读
+		//if ctrl+c, then do nothing
+		else if(key==67 & event.ctrlKey!=true){
+			show('[c] continue to play')
+			clearInterval(Mstatus.timer1) //清除定时器
+			Mstatus['on']*=-1
+			wavesurfer.play();
+		}
+		//echo 模式，按字母e则修改状态
+		else if(key==69){
+			Mstatus['echo']=!Mstatus['echo'];
+			show('[e] change echo mode: '+ (Mstatus['echo']?"on":"off"));
+			if(Mstatus['echo']==false){
+				clearTimeout(Mstatus.timer2); //清空回音计时器
+				Mstatus.timer2=null; //清空回音计时器
+			}
+		}
+	};
+	
+	
+	
+	// 按钮被按下，则触发键盘事件
+	var keyCode_Dict={
+		"A":65,
+		"B":66,
+		"C":67,
+		"R":82,
+		//" ":32,
+		//"ENTER":13,
+		"SPACE / ENTER":13,
+		"F12":123,
+		"H":72,
+		"E":69
+	}
+	// get button
+	var controls=$("control").getElementsByTagName("button")
+	for (let i=0; i< (controls.length-2); i++){
+		let elem=controls[i];
+		let key=String(elem.getElementsByTagName('b')[0].innerHTML).toUpperCase();
+		// get event
+		//var event = document.createEvent("KeyboardEvent", {
+		let event = new KeyboardEvent("keydown", {
+			isTrusted: true,
+			altKey: false,
+			key: key,
+			code: "Key"+key,
+			keyCode: keyCode_Dict[key]
+		});
+		
+		// when click on the button, trigger the key event
+		elem.addEventListener('click', function (e) {
+		  // e.target matches elem
+		  document.dispatchEvent(event);
+		}, false);
+	}
+	
+	
+	
+}
+//end of window.onload
+</script>
+
+
+
+<script>
+//使用ajax获取可用的音频文件列表
+/*封装的ajax函数
+* v0.1 https://www.cnblogs.com/wang-zhang/p/9883654.html
+* v0.2 添加了json类型自动转换
+*/
+function ajax(options){
+    //创建一个ajax对象
+    var xhr = new XMLHttpRequest() || new ActiveXObject("Microsoft,XMLHTTP");
+    //数据的处理 {a:1,b:2} a=1&b=2;
+    var str = "";
+    for(var key in options.data){
+        str+="&"+key+"="+options.data[key];
+    }
+    str = str.slice(1)
+    if(options.method == "get"){
+        var url = options.url+"?"+str;
+        xhr.open("get",url);
+        xhr.send();
+    }else if(options.method == "post"){
+        xhr.open("post",options.url);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        xhr.send(str)
+    }
+    //监听
+    xhr.onreadystatechange = function(){
+        //当请求成功的时候
+        if(xhr.readyState == 4 && xhr.status == 200){
+            var text = xhr.responseText;
+			if(options.type=="json"){
+				text=JSON.parse(text);
+			}
+            //将请求的数据传递给成功回调函数
+            options.success&&options.success(text)
+        }else if(xhr.status != 200){
+            //当失败的时候将服务器的状态传递给失败的回调函数
+            options.error&&options.error(xhr.status);
+        }
+    }
+}
+
+/** 返回创建的dom元素
+* 只有第一个参数是必须的。
+* 其余2个参数可选。
+*/
+function createElement(tag, json, innerHTML){
+	var json=json||{};
+	var dom=document.createElement(tag);
+	
+	if(json!=undefined){
+		for(var key in json){
+			dom.setAttribute(key,json[key]);
+		}
+	}
+	
+	if(innerHTML!=undefined){
+		dom.innerHTML=innerHTML;
+	}
+	return dom;
+}
+
+
+//初始化下拉框控件
+function initSelect(hostName){
+	var oSel=$("sel1");
+	var hostName=hostName||"a2.biomooc.com";
+	console.log('Loading audio list from:',hostName)
+	//从另一个服务器获取json格式的音频名字列表
+	ajax({
+		method:"get",
+		url:"//"+hostName+"/audio/static.php",
+		success:function(arr){
+			//console.log(arr)
+			for(var i=0;i<arr.length;i++){
+				var arr2=arr[i].split('.');
+				//console.log('>>>>', arr2);
+				if( ['mp3','wav'].indexOf(arr2[arr2.length-1])>-1 ){
+					//音频文件列表
+					//console.log(arr[i]);
+					//添加到dom中
+					var oOp=createElement('option',{'value':arr[i]},arr[i])
+					oSel.append(oOp);
+				}
+			}
+		},
+		error: function(num){
+			console.log(num);
+		},
+		type: "json"
+	})
+
+	//改变值事件
+	oSel.onchange=function(){
+		if(this.value=="") return;//如果选择第一行，啥也不做 
+		var outerURL="http://"+hostName+"/audio/static.php?file="+this.value
+		//console.log(outerURL)
+		init(outerURL)
+		//转移焦点
+		$('showHelp2').focus()
+	}
+}
+
+//如果不是在线版，则退化为v0.4
+addEvent(window,'load',function(){
+	if( ['ielts.biomooc.com','ielts.dawneve.cc'].indexOf(location.hostname)<0 ){
+		return false;
+	}
+	var hostName=location.hostname == 'ielts.biomooc.com'?"a2.biomooc.com":"scholar.wjl.com";
+	//如果是在线版，则可以直接使用音频服务器
+	
+	//暂时没有在线版音频服务器
+	if(hostName == "a2.biomooc.com"){
+		return false;
+	}else{
+		$('showList').style.display='block';
+		initSelect(hostName);
+		$('hostName').href='//'+hostName+"/audio/";
+	}
+})
+
+
+console.log('Add new audio from Console, F12 to toggle Console: \n>%cinit(\"http://path/to/your/audio.mp3\")', 'color:red; font-size:20px;');
+</script>
+</body>
+</html>
