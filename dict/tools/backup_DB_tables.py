@@ -30,6 +30,17 @@ tb_arr1=['word_ms', 'word_unknown', 'word_searched','word_scan', 'sentence_dawn'
 #tb_arr2=['cell_c1', 'feature_apa', 'feature_gene', ]
 #tb_arr=tb_arr1+tb_arr2;
 
+# 表格          用途
+##单词表：
+# word_ms       单词表 【最重要的基础表】
+# word_unknown  听写测试中写错的单词
+# word_searched 点击查词的精确时间
+# word_scan     过单词的记录
+##句子:
+# msg_English   微信文章，提供 wx 语料，一行一篇文章。
+# sentence_dawn 拂晓预料库，一行一行句子。
+# 
+
 tb_arr=tb_arr1
 
 # 查看 是否需要保存表：结论 那几个带2结尾的都不需要
