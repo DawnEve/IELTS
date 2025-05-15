@@ -52,17 +52,18 @@ window.onload=function(){
 			//class="current"
 			var url=document.location.href
 			var aA=$('nav').getElementsByTagName('a');
+
 			/*
-			console.log(url, location.pathname)
-			wjl=location.pathname
+			console.log(url, location.pathname, aA[0].href)
 			*/
+			var keyword=location.pathname.split(/\//)[1]; // get keyword from path;
 
 			if(url.search('.html')==-1){
 				aA[0].setAttribute('class',"current")
 				return '';
 			}
 			for(var i=0; i<aA.length; i++){
-				if(aA[i].href==url){
+				if(aA[i].href==url || aA[i].href.search(keyword) !=-1 ){
 					aA[i].setAttribute('class',"current")
 					break;
 				}

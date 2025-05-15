@@ -7,8 +7,8 @@ v0.6.1
 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 	<script src="/static/js/tongji.js"></script>
 <!--
-server: http://ielts.biomooc.com/listening/player.html
-local: http://ielts.dawneve.cc/listening/player.html
+server: http://ielts.biomooc.com/listening/ABplayer.html
+local: http://ielts.dawneve.cc/listening/ABplayer.html
 audio local: G:\xampp\htdocs\DawnScholar\audio\
 
 v0.3 键盘操作的AB复读机，加帮助文档。
@@ -283,7 +283,7 @@ chrome浏览器，F12快捷键，点开console
 
 1. 自己架设 静态服务器，比如 <a href="https://github.com/DawnEve/webPan.py">webPan.py</a>，设置好路径，放好mp3资源文件，
 在网页界面右击文件末尾的外链 - 选择复制链接。
-2. Chrome浏览器打开 <a href="http://ielts.biomooc.com/listening/player.html">在线版播放器</a>。
+2. Chrome浏览器打开 <a href="http://ielts.biomooc.com/listening/ABplayer.html">在线版播放器</a>。
 3. 按F12，打开浏览器的控制台console，输入
 init("http://127.0.0.1:8005/file/fry_3_01.mp3"); //回车
 就可以更新音频了。
@@ -300,8 +300,8 @@ init("http://127.0.0.1:8005/file/fry_3_01.mp3"); //回车
 <h1>Method2: 本地版</h1>
 需要有静态服务器，如apache,nginx等，如果都没有，使用python也可以快速搭建，详见下文。
 1. 下载mp3等英语音频文件(比如from https://www.51voa.com/)到本地web服务器文件夹中；
-2. 下载<a href="http://ielts.biomooc.com/listening/player.html">本html文件</a>(右击-链接另存为)和<a href="http://ielts.biomooc.com/listening/wavesurfer.min.js">wavesurfer.min.js文件</a>(右击-链接另存为)到相同文件夹；
-3. 修改player.html中 wavesurfer.load() 中的var musicPath='002.mp3' 地址为本地mp3等音频文件的相对地址。
+2. 下载<a href="http://ielts.biomooc.com/listening/ABplayer.html">本html文件</a>(右击-链接另存为)和<a href="http://ielts.biomooc.com/listening/wavesurfer.min.js">wavesurfer.min.js文件</a>(右击-链接另存为)到相同文件夹；
+3. 修改ABplayer.html中 wavesurfer.load() 中的var musicPath='002.mp3' 地址为本地mp3等音频文件的相对地址。
 4. 启动本地web服务器，chrome浏览器打开该web页面，刷新后即可练习听写了。
 
 tips: 本软件不定期修正bug，建议及时更新；发现问题请及时报告，描述清晰，并截图，反馈邮箱见结尾。
@@ -311,13 +311,13 @@ tips: 本软件不定期修正bug，建议及时更新；发现问题请及时�
 <h2>如何快速搭建静态服务器?</h2>
 以win10系统为例(苹果没用过，用linux的大神肯定会启服务器)：
 1. 先安装pyhton3.6(其他版本没测试过);
-2. 使用 我的电脑 一路双击找到存放player.html和wavesurfer.min.js文件的文件夹，在地址栏输入 cmd 回车，弹出黑窗口；
+2. 使用 我的电脑 一路双击找到存放ABplayer.html和wavesurfer.min.js文件的文件夹，在地址栏输入 cmd 回车，弹出黑窗口；
 3. 在黑窗口中输入 python -m http.server 8888 并回车，显示如下:
 G:\xampp\htdocs\IELTS\listening>python -m http.server 8888
 Serving HTTP on 0.0.0.0 port 8888 (http://0.0.0.0:8888/) ...
 
-4. 在浏览器中输入 http://127.0.0.1:8888 回车后出现文件名列表，点击player.html，即可看到播放器了：http://127.0.0.1:8888/player.html
-5. 同名目录下保存自己的英语听力文件，修改player.html的 var musicPath='002.mp3'; 
+4. 在浏览器中输入 http://127.0.0.1:8888 回车后出现文件名列表，点击ABplayer.html，即可看到播放器了：http://127.0.0.1:8888/player.html
+5. 同名目录下保存自己的英语听力文件，修改ABplayer.html的 var musicPath='002.mp3'; 
 把引号内部分替换成自己的音频文件，回到浏览器 shift+F5 刷新即可。
 
 

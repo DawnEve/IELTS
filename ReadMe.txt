@@ -65,7 +65,7 @@ http://dict.youdao.com/dictvoice?type=2&audio=repeat
 
 ==================================== 听
 听力王
-/listening/player.html 
+/listening/ABplayer.html 
 听力王播放器，支持AB复读，专业听写工具
 
 听力mp3材料放到webPan项目中，可生成外链： https://github.com/DawnEve/webPan.py
