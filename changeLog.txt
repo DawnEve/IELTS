@@ -623,7 +623,8 @@ en0.5.6-7@picb 听力/ HP 4_14: 64% [2025/5/22]
 	听力/ HP 4_14: pct[mon/day] 30%[5/16]; 40%[5/19]; 46%[5/20]; 54%[5/21]; 64%[5/22];
 en0.5.6-8@picb 听力/ HP 4_14: 100% [2025/6/8]
 	听力/ HP 4_14: 73%[5/28]; 88[6/2]; 100[6/8]
-
+en0.5.6-9@picb update listening/words_HarryPotter4.html 顶部目录 自动添加 [2025/6/11]
+	add a class="external_link"
 
 #
 // todo 小说阅读器，进度写到url，实现刷新后定位
@@ -632,6 +633,7 @@ en0.5.6-8@picb 听力/ HP 4_14: 100% [2025/6/8]
 # ----------------> push to github: dawneve master
 # 数据库 how to 季度备份? dict/ReadMe.txt 6
 
+# 新文字模板 with 顶部目录 & 右下角目录: listening/words_HarryPotter4.html
 
 
 

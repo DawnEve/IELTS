@@ -2,14 +2,17 @@
 /**
 * name: 为html生成 右下角目录 + 去顶部
 * version: 0.2 修订
-* v3: 无侵入html的添加 bottom right menu + gotoTop
+* v0.3: 无侵入html的添加 bottom right menu + gotoTop
+* v0.4: 替换全局变量名为 store; 自动添加顶部目录
+	正文标题只需要写<h2>xx</h2>即可，不需要手写<a name=xx></a>标签
+	使用文档片段;
 
 window.addEventListener("load", fun, false);
 */
 
 
 // global parameters here
-window.ielts={
+window.store={
 };
 
 
@@ -65,6 +68,55 @@ addEvent(oBtn,'click',function(){
 
 
 // ==============事件处理函数 及 事件注册 ==============
+//生成顶部菜单
+var freshTopMenu=function(oUl){
+	//0.非空
+	if(typeof(oUl)=="string"){
+		oUl=document.getElementById(oUl);
+	}
+	if(typeof(oUl)=="undefined"){
+		console.log("Error: Object oUl is undefined")
+		return;
+	}
+
+	//1.创建 dom
+	/* html:
+	<ul id="top_menu">
+		<li><a href="#05">2025/05</a> (n=xx)</li>
+	</ul>
+	*/
+	//文档片段，减少dom直接操作次数，用来提速
+	var oFragment = document.createDocumentFragment();
+	//获取a标签
+	var arrHead=document.querySelectorAll(["h1", "h2", "h3", "h4", "h5", "h6"]);
+	for(var i=1; i<arrHead.length; i++){
+		//(1) 菜单链接
+		var oH=arrHead[i];
+		var text=oH.textContent;
+		var oLi=document.createElement("li");
+		var oA=document.createElement("a");
+		var oSpan=document.createElement("span");
+		//最多40个字
+		//oSpan.innerHTML=text.length>40? text.substr(0,38)+"...":text;
+		oSpan.innerHTML=text;
+		oA.appendChild( oSpan );
+		oA.setAttribute("href", "#"+i);
+
+		oLi.appendChild(oA);
+		//(2)插入文档片段
+		oFragment.appendChild( oLi );
+	}
+	//2.一次插入文档流
+	oUl.appendChild( oFragment );
+}
+// 顶部菜单，载入时更新
+window.addEventListener('load',function(e){
+	console.log("--> init top menu.")
+	freshTopMenu("top_menu")
+},false);
+
+
+
 
 //生成右侧菜单
 var createRightMenu=function(){
@@ -158,6 +210,7 @@ function highlight_curent_munu(){
 
 // 注册事件: 关于右边的菜单
 window.addEventListener("load", function(){
+	console.log("--> init right menu.")
 	//1.创建右侧菜单
 	createRightMenu();
 
@@ -175,20 +228,20 @@ window.addEventListener("load", function(){
 
 
 //右侧菜单放大与缩小
-window.ielts.flag=true; //true 右侧菜单 打开状态
+window.store.flag=true; //true 右侧菜单 打开状态
 var rightMenu_toggle=function(){
 	var oMenu=$("rightMenu");
-	var flag=window.ielts.flag;
+	var flag=window.store.flag;
 	if(flag){
-		window.ielts.height=getComputedStyle(oMenu)['height'];
+		window.store.height=getComputedStyle(oMenu)['height'];
 	}
 	//set
 	oMenu.style.right = flag?'-270px':0;
-	oMenu.style.height = flag?'30px':window.ielts.height;
+	oMenu.style.height = flag?'30px':window.store.height;
 	this.innerHTML=flag?"+":"-";
 
 	//
-	window.ielts.flag = !flag;
+	window.store.flag = !flag;
 }
 
 

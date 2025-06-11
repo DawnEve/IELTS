@@ -22,6 +22,14 @@ a.red{
 a.red:hover{background:#C80000; color:white;}
 .version{font-size:10px; color:orange;}
 
+a.external_link::before {
+    background-color: deeppink;
+    content: "->";
+    color: white;
+    opacity: 0.3;
+}
+
+
 .wrap div{ /*padding:5px; border:1px dashed #ccc; */ margin:20px 0;}
 .wrap div h2{border-bottom:1px solid #ccc; color:#ddd;}
 .wrap div h3{
