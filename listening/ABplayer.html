@@ -3,7 +3,6 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
 	<title>听力王 ABplayer
-v0.6.1
 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 	<script src="/static/js/tongji.js"></script>
 <!--
@@ -38,11 +37,12 @@ v0.5.8 美化移动端按钮: 去掉 F12 button，按钮美化
 v0.5.9 添加底部js库链接
 v0.6.0 添加本地上传音频文件功能
 v0.6.1 按钮悬空时手形标志；修改文件名 ABplayer.html，原位置自动跳转
+v0.6.2 add btn: 语速
 #
 
 
 
-//版本号还需要修改三个地方: title中，顶部标签中，正文帮助文档中
+//版本号需修改2个地方: 顶部标签中，正文帮助文档中
 //音频标记为波形图 https://blog.csdn.net/dongchengxuyuan/article/details/82759287
 -->
 <style>
@@ -102,6 +102,11 @@ a:hover {text-decoration: underline;}
 #footer{text-align:center; color:#ddd; padding-top:50px;}
 
 #files{visibility:hidden; position:absolute;}
+
+#path{
+	word-wrap: break-word!important;
+	white-space: pre-wrap;
+}
 </style>
 </head>
 
@@ -110,7 +115,7 @@ a:hover {text-decoration: underline;}
 <body>
 <div id='topTitle'>
 	<h2><a target=_blank href="/en" title="返回首页">听力王 ABplayer</a><span class=version>
-v0.6.1
+v0.6.2
 </span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
@@ -154,9 +159,13 @@ v0.6.1
 		<b>B</b>[set pointB]; 
 		<b>C</b>[continue]; 
 		<b>R</b>[repeat]; 
-		<b>E</b>[Echo mode on/off];
 		<b>Space / Enter</b>[stop/continue];
+		<br>
+		<b>E</b>[Echo mode on/off];
+		<b>↑</b>[Increase Speed];
+		<b>↓</b>[Decrease Speed];
 	</span>
+	<!-- 用于转移焦点 focus -->
 	<button id='showHelp2'>doNothing</button>
 </div>
 
@@ -169,11 +178,14 @@ v0.6.1
 	<button class="btn" data="C"><b>C</b>[continue]</button>
 	<button class="btn"><b>R</b>[repeat]</button>
 	<button class="btn"><b>Space / Enter</b>[stop/continue]</button>
-	
+
+	<button class="btn" data="I"><b>↑</b>[Increase Speed]</button>
+	<button class="btn" data="D"><b>↓</b>[Decrease Speed]</button>
+
 	<hr>
 	<button class="btn"><b>E</b>[on/off echo mode]</button>
-	<button class="btn hide" id='showHelp2'>Show Help2</button>
-	
+
+	<!-- 用于转移焦点 focus -->
 	<button id='showHelp2'>doNothing</button>
 </fieldset>
 
@@ -185,7 +197,7 @@ v0.6.1
 
 
 <pre id=help>
-<h1>听力王 ABplayer v0.6.1 AB复读机播放器使用说明书</h1>
+<h1>听力王 ABplayer v0.6.2 AB复读机播放器使用说明书</h1>
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -210,13 +222,14 @@ shift+左右箭头，前进后退2%总时长; 对于100s以上的音频，使用
 (4)上下箭头 播放速度，支持0.3-3倍速播放，每次增减0.05倍;
 
 Tips:
-1) 从想反复听的位置按下A，到一句话结束按下B，这时会自动反复AB区间播放；按下c键退出重复模式;
+1) 从想反复听的开始位置按下A，到结束位置按下B，这时会自动反复在AB区间播放；按下c键退出重复播放模式;
 2) 如果想让B点靠后一点，则按下C键，到达预定位置按下B键；
 3) 如果想让B点靠前一点，则播放过程中按下B键即可；
 4) 如果想让A点靠后一点，则播放过程中按下A键；
 5) 如果想让A点靠前一点，则按下c键后按下空格暂停，按下左箭头，或者shift+左箭头，到合适位置，按下A键，再按下R键即用原B点播放；
 6) 如果按下c键后，还想听刚才设置的AB点之间，只需要按下r键即可；
-7) 感觉说的太慢？试试向上箭头，最高支持3倍速播放。
+7) 感觉说的太慢？试试向上箭头，最高支持3x倍速播放。
+8) 感觉说的太快？试试向下箭头，最低支持0.25x倍速播放。
 
 高级攻略：
 chrome浏览器，F12快捷键，点开console
@@ -251,7 +264,7 @@ chrome浏览器，F12快捷键，点开console
 
 总之，听写只是找出自己的弱点，而之后的修正才是最最重要的地方。基本上做30-40篇听写，就能基本听出95%的内容。
 然后提高一个难度等级，继续做30-40篇听写。
-提高的同时，词汇量一定也要同时提高。毕竟如果单词不认识，那就不可能听得出来的啊。
+提高的听力的前提是，词汇量一定也要同时提高。毕竟如果单词不认识，那就不可能听得出来。
 
 
 <b>不疯魔，不成活。其实又有哪件事不是如此呢？</b>
@@ -277,8 +290,18 @@ chrome浏览器，F12快捷键，点开console
 
 
 <hr>
+<h1>Method1: 直接上传音频文件(推荐)</h1>
+从 v0.6.0 开始，支持本地上传功能
+1. 点击网页上的按钮 Upload File
+2. 选择电脑上的音频文件，点确定
+3. 可以正常使用本复读机。
 
-<h1>Method1: 在线版播放器添加音频</h1>
+
+
+
+
+<hr>
+<h1>Method2: 在线版播放器添加音频</h1>
 支持静态服务器跨服务器调用文件，需要音频文件支持跨域访问，也就是开启 'Access-Control-Allow-Origin' header 。
 
 1. 自己架设 静态服务器，比如 <a href="https://github.com/DawnEve/webPan.py">webPan.py</a>，设置好路径，放好mp3资源文件，
@@ -289,15 +312,18 @@ init("http://127.0.0.1:8005/file/fry_3_01.mp3"); //回车
 就可以更新音频了。
 注意：括号内是外链音频文件链接。加载时间取决于网速和音频文件长度。
 
+<!--
 如果使用xampp-php版本的后端，使用 scholar: https://github.com/miostudio/DawnScholar
 输入 init('http://127.0.0.1/audio/static.php?file=xx.mp3'); //回车
+-->
 
 
 
 
 
-<hr>
-<h1>Method2: 本地版</h1>
+
+<!--
+<h1>Method3: 本地版</h1>
 需要有静态服务器，如apache,nginx等，如果都没有，使用python也可以快速搭建，详见下文。
 1. 下载mp3等英语音频文件(比如from https://www.51voa.com/)到本地web服务器文件夹中；
 2. 下载<a href="http://ielts.biomooc.com/listening/ABplayer.html">本html文件</a>(右击-链接另存为)和<a href="http://ielts.biomooc.com/listening/wavesurfer.min.js">wavesurfer.min.js文件</a>(右击-链接另存为)到相同文件夹；
@@ -320,21 +346,11 @@ Serving HTTP on 0.0.0.0 port 8888 (http://0.0.0.0:8888/) ...
 5. 同名目录下保存自己的英语听力文件，修改ABplayer.html的 var musicPath='002.mp3'; 
 把引号内部分替换成自己的音频文件，回到浏览器 shift+F5 刷新即可。
 
-
-
-
+-->
 
 
 <hr>
-<h1>Method3: 直接上传音频文件(推荐)</h1>
-从 v0.6.0 开始，支持本地上传功能
-1. 点击网页上的按钮 Upload File
-2. 选择电脑上的音频文件，点确定
-3. 可以正常使用本复读机。
-
-
-
-
+Powered by <a target="_blank" href="https://github.com/katspaugh/wavesurfer.js">wavesurfer.js</a>
 
 Contact me: jimmymall at 163 dot com
 
@@ -350,8 +366,7 @@ Contact me: jimmymall at 163 dot com
 		&copy;2017 -
 		2025
 		<a target="_blank" href="/en">英语读报</a> 荣誉出品
-		|
-		Powered by <a target="_blank" href="https://github.com/katspaugh/wavesurfer.js">wavesurfer.js</a>
+
 	</p>
 	<p><a target="_blank" href="https://mp.weixin.qq.com/s?__biz=MzI0NDcxNzc5Mg==&mid=2247485239&idx=2&sn=8846604b1ccbcafd8180246002f9b3e4">怎么快速提高英语听力水平?精听</a></p>
 	<p><a target="_blank" href="https://mp.weixin.qq.com/s/N8OS79oVpFSibW0MnukJdw">怎么提高英语口语?如何纠音?回音法</a></p>
@@ -700,10 +715,14 @@ window.onload=function(){
 		else if(key==38){
 			if(wavesurfer.getPlaybackRate()<3)
 				wavesurfer.setPlaybackRate( wavesurfer.getPlaybackRate() +0.05 );
+			else
+				console.log("Max rate: 3");
 		}
 		else if(key==40){
 			if(wavesurfer.getPlaybackRate()>0.25)
 				wavesurfer.setPlaybackRate( wavesurfer.getPlaybackRate() -0.05 );
+			else
+				console.log("Min rate: 0.25");
 		}
 		
 		//空格32/回车13控制着暂停与否
@@ -782,13 +801,19 @@ window.onload=function(){
 		"SPACE / ENTER":13,
 		"F12":123,
 		"H":72,
-		"E":69
+		"E":69,
+
+		"↑": 38,
+		// "ArrowUp": 38,
+		"↓": 40,
+		//"ArrowDown": 40,
 	}
 	// get button
 	var controls=$("control").getElementsByTagName("button")
 	for (let i=0; i< (controls.length-2); i++){
 		let elem=controls[i];
 		let key=String(elem.getElementsByTagName('b')[0].innerHTML).toUpperCase();
+		//console.log("bind btn event for: key=",key)
 		// get event
 		//var event = document.createEvent("KeyboardEvent", {
 		let event = new KeyboardEvent("keydown", {
