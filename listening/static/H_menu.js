@@ -6,6 +6,7 @@
 * v0.4: 替换全局变量名为 store; 自动添加顶部目录
 	正文标题只需要写<h2>xx</h2>即可，不需要手写<a name=xx></a>标签
 	使用文档片段;
+* v0.5: 右下角缓动动画
 
 window.addEventListener("load", fun, false);
 */
@@ -236,8 +237,16 @@ var rightMenu_toggle=function(){
 		window.store.height=getComputedStyle(oMenu)['height'];
 	}
 	//set
+	/*
 	oMenu.style.right = flag?'-270px':0;
 	oMenu.style.height = flag?'30px':window.store.height;
+	*/
+	//改为自定义运动：属性值需要是数字
+	startMove(oMenu, {
+		"right": parseFloat( flag?'-270px':0 ),
+		"height": parseFloat( flag?'30px':window.store.height ),
+	});
+
 	this.innerHTML=flag?"+":"-";
 
 	//
