@@ -10,6 +10,7 @@ https://v2.h5player.bytedance.com/gettingStarted/
 
 v0.2.0 基本可用; 支持使用 ?url=xx.mp4 传递参数; 按钮控制可用;
 v0.2.1 上传文件: 视频开始只有音频，没有画面; 注释掉 player.ready事件后正常
+v0.2.2 放小视频示例
 
 # 版本号需要修改2个地方：本记录，还有页面顶部
 
@@ -110,7 +111,7 @@ a:hover {text-decoration: underline;}
 <body>
 <div id='topTitle'>
 	<h2><a target=_blank href="/en" title="返回首页">听力王 Video ABplayer</a><span class=version>
-v0.2.1
+v0.2.2
 </span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
@@ -237,7 +238,6 @@ Contact me: QQ 314649593
 
 
 </body>
-
 </html>
 
 
@@ -283,6 +283,7 @@ function getUrlParam(name) {
 //#################################
 // player settings
 //#################################
+
 var Mstatus = {
     'on': -1,
     'showHelp': -1,
@@ -294,11 +295,11 @@ var Mstatus = {
 	'duration': 0,
 };
 
-// 替换为你的视频 URL
-var videoUrl = 'dustbin/IandMyFathers.mp4';
-//var videoUrl = 'dustbin/S01E01.mp4';
-videoUrl= getUrlParam('url') || videoUrl;
+// 设置为你的本地视频路径
+var videoUrl = 'static/Silicon_Valley_cutout.mp4';
 
+//如果有url提供视频，则优先替换
+videoUrl= getUrlParam('url') || videoUrl;
 
 
 //控制台和web显示状态
