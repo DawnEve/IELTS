@@ -11,6 +11,7 @@ https://v2.h5player.bytedance.com/gettingStarted/
 v0.2.0 基本可用; 支持使用 ?url=xx.mp4 传递参数; 按钮控制可用;
 v0.2.1 上传文件: 视频开始只有音频，没有画面; 注释掉 player.ready事件后正常
 v0.2.2 放小视频示例
+v0.2.3 上下箭头，去掉默认行为
 
 # 版本号需要修改2个地方：本记录，还有页面顶部
 
@@ -105,15 +106,20 @@ a:hover {text-decoration: underline;}
 	word-wrap: break-word!important;
 	white-space: pre-wrap;
 }
+
+.hide{
+	display: none;
+}
   </style>
+
 </head>
 
 <body>
 <div id='topTitle'>
-	<h2><a target=_blank href="/en" title="返回首页">听力王 Video ABplayer</a><span class=version>
-v0.2.2
+	<h2><a target=_blank href="/en" title="返回首页">Video ABplayer</a><span class=version>
+v0.2.3
 </span></h2>
-	<div>支持AB复读 听写神器</div>
+	<div class="hide">支持AB复读 听写神器</div>
 </div>
 
 
@@ -604,12 +610,18 @@ window.onload = function () {
 				updatePlaybackRate(0.05);
 			else
 				console.log("Max rate: 3");
+			//取消键盘的默认
+			event.preventDefault();
+			return false;
 		}
 		else if(key==40){
 			if(player.playbackRate>0.25)
 				updatePlaybackRate(-0.05);
 			else
 				console.log("Min rate: 0.25");
+			//取消键盘的默认
+			event.preventDefault();
+			return false;
 		}
 		
 		//空格32/回车13控制着暂停与否
