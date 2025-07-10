@@ -9,8 +9,14 @@ https://v2.h5player.bytedance.com/gettingStarted/
 <link href="https://cdn.jsdelivr.net/npm/xgplayer@3.0.19/dist/xgplayer.min.css" rel="stylesheet">
 
 v0.2.0 基本可用; 支持使用 ?url=xx.mp4 传递参数; 按钮控制可用;
-todo: 
-- 上传文件
+v0.2.1 上传文件: 视频开始只有音频，没有画面; 注释掉 player.ready事件后正常
+
+# 版本号需要修改2个地方：本记录，还有页面顶部
+
+bug:
+- 上下箭头和音频高低有冲突，不好解决。先单击视频下区域，再键盘控制上下键可转为控制播放速度。
+- 有时候页面时间更新异常，可能和C键功能相关，不确定原因
+
 -->
   <style>
     .control-panel {
@@ -104,7 +110,7 @@ a:hover {text-decoration: underline;}
 <body>
 <div id='topTitle'>
 	<h2><a target=_blank href="/en" title="返回首页">听力王 Video ABplayer</a><span class=version>
-v0.2.0
+v0.2.1
 </span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
@@ -114,7 +120,7 @@ v0.2.0
   <div id="player-container"></div>
 
   <div class="control-panel">
-	<div class="speed-display">速度: 1x</div>
+	<div class="speed-display">播放速度: 1x</div>
   </div>
 
 
@@ -185,7 +191,47 @@ v0.2.0
 
 
 
+<pre id=help>
+<h1>听力王 Video ABplayer  视频AB复读机播放器使用说明书</h1>
 
+1.键盘操作：
+空格/Enter 键: 开始和停止播放；
+A - 设置A点
+B - 设置B点，并开始AB之间循环播放
+C - 继续播放
+R - 进入AB之间循环播放
+
+↑ - 增大播放速度
+↓ - 降低播放速度
+
+
+2.上传文件
+方法1: 支持从url传入web视频
+格式: ?ulr=xx.mp3
+示例: http://ielts.dawneve.cc/listening/VideoABplayer.html?url=http://j3.biomooc.com:8000/file/video/S01E01.mp4
+
+方法2：支持上传本地电脑视频
+点击页面的按钮"Upload File"，选择一个mp4文件，点击确定。
+
+
+Contact me: QQ 314649593
+
+--the end --
+</pre>
+
+
+
+<div id=footer>
+	<p>
+		&copy;2017 -
+		2025
+		<a target="_blank" href="/en">英语读报</a> 荣誉出品
+
+	</p>
+	<p><a target="_blank" href="https://mp.weixin.qq.com/s?__biz=MzI0NDcxNzc5Mg==&mid=2247485239&idx=2&sn=8846604b1ccbcafd8180246002f9b3e4">怎么快速提高英语听力水平?精听</a></p>
+	<p><a target="_blank" href="https://mp.weixin.qq.com/s/N8OS79oVpFSibW0MnukJdw">怎么提高英语口语?如何纠音?回音法</a></p>
+	<p> 不疯魔，不成活！其实又有哪件事不是如此呢？</p>
+</div>
 
 
 
@@ -248,6 +294,12 @@ var Mstatus = {
 	'duration': 0,
 };
 
+// 替换为你的视频 URL
+var videoUrl = 'dustbin/IandMyFathers.mp4';
+//var videoUrl = 'dustbin/S01E01.mp4';
+videoUrl= getUrlParam('url') || videoUrl;
+
+
 
 //控制台和web显示状态
 function show(text){
@@ -272,8 +324,8 @@ function backward(n){
 	var nextpage="#backward";
 	//location = nextpage;
 	show('后退'+n+'s')
-	//player.seek(player.currentTime - n)
-	player.currentTime=player.currentTime - n
+	//player.seek(player.currentTime - n) //精确到秒
+	player.currentTime=player.currentTime - n //更精确
 }
 
 
@@ -285,16 +337,10 @@ https://v2.h5player.bytedance.com/config/#%E5%B0%81%E9%9D%A2%E5%9B%BE
 其他示例
 https://agrahn.gitlab.io/ABLoopPlayer/
 */
-var player;
 
-function initPlayer(videoUrl) {
-	//清除定时器
-	if('timer0' in Mstatus){
-		clearInterval(Mstatus.timer0);
-	}
 
-    // 创建 xgplayer 实例
-    player = new Player({
+// 创建 xgplayer 实例
+var player = new Player({
         id: 'player-container',
         url: videoUrl,
         //autoplay: false,
@@ -307,20 +353,32 @@ function initPlayer(videoUrl) {
         //preload: 'auto',
 		videoInit: true, //显示视频首帧
 		//poster: '//abc.com/**/*.png', //和首帧互斥
+
         httpConfig: {
             withCredentials: false,
         },
+
+        cors: true,       // 处理跨域资源
+        codec: 'avc1.42E01E',  // 明确H.264编码
 
 		width: '100%',
 		height: '500px',
 		playbackRate: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.5, 3], // 预设速度选项
 		defaultPlaybackRate: 1.0,
     });
+
+function initPlayer(videoUrl) {
+	//清除定时器
+	if('timer0' in Mstatus){
+		clearInterval(Mstatus.timer0);
+	}
+
+	player.src=videoUrl;
 	
 	Mstatus['video']=videoUrl;
 
 	// 设置播放器就绪状态
-    player.on('ready', function () {
+    //player.on('ready', function () {
 		// 监视播放器状态
 		Mstatus['timer0']=setInterval(function(){
 			if(Mstatus.on==-1) return;
@@ -347,7 +405,7 @@ function initPlayer(videoUrl) {
 		}, 500); //每0.5s刷新一次状态
         Mstatus.ready = 1;
 		show('ready now, press Enter or Space key to play')
-    });
+    //});
 
 	// 绑定播放结束事件
     player.on('ended', function () {
@@ -424,7 +482,7 @@ function updatePlaybackRate(increment=0.05){
 	if(player.playbackRate<0.25) player.playbackRate=0.25;
 	//player.playbackRate = newRate;
 	const newRate=player.playbackRate;
-	speedDisplay.textContent = `速度: ${newRate}x`;
+	speedDisplay.textContent = `播放速度: ${newRate}x`;
 
 	// 添加动画效果
 	speedDisplay.style.transform = 'scale(1.2)';
@@ -442,16 +500,53 @@ function updatePlaybackRate(increment=0.05){
 
 
 
-// 替换为你的视频 URL
-var videoUrl = 'dustbin/IandMyFathers.mp4'; 
-//var videoUrl = 'dustbin/S01E01.mp4';
-videoUrl= getUrlParam('url') || videoUrl;
+
 
 // 页面加载完成后初始化
 window.onload = function () {
 	const speedDisplay = document.querySelector('.speed-display');
 
     initPlayer(videoUrl);
+
+	//帮助按钮，单击事件
+	$('showHelp').onclick=function(){
+		Mstatus.showHelp*=-1;
+		if(Mstatus.showHelp>0){
+			$('help').style.display='block';
+			this.innerHTML="Hide Help"
+		}else{
+			$('help').style.display='none';
+			this.innerHTML="Show Help"
+		}
+		//转移焦点
+		$('showHelp2').focus();
+	}
+
+
+	// 上传文件按钮
+	$('uploadFile').onclick=function(){
+		//console.log("you clicked uploadFile button")
+		$('files').click() //触发 文件按钮 点击事件
+	}
+	// 文件按钮 点击事件
+	$('files').onchange=function(evt){
+		var files = evt.target.files; // FileList object
+		if (files.length==0) return;
+		var file = files[0];
+		console.log("Filename: ", file.name);
+		$("VideoFileName").innerHTML="Filename: " + file.name;
+
+		// 转为链接
+		if (window.webkitURL) window.URL = window.webkitURL;
+		var objectURL = window.URL.createObjectURL(file);
+		console.log("File URL: ", objectURL);
+
+		// 传入文件链接给播放器
+		//myAudio.src = objectURL;
+		//myAudio.play();
+		initPlayer(objectURL)
+	}
+
 
 
 	//显示按钮 按钮，单击事件
@@ -554,7 +649,7 @@ window.onload = function () {
 		else if(key==67 & event.ctrlKey!=true){
 			show('[c] continue to play')
 			clearInterval(Mstatus.timer1) //清除定时器
-			Mstatus['on']*=-1; //为什么按下c会停止更新当前时间？// todo
+			Mstatus['on']=1;
 			player.play();
 		}
 

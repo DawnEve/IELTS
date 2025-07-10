@@ -630,6 +630,7 @@ en0.5.7-0@picb 听力/ HP 4_15: 64% [2025/7/2]
 en0.5.7-1@picb update: ABplayer add 语速 btn; [2025/7/4]
 en0.5.7-2@picb Video ABplayer 基本可用 [2025/7/9]
 	听力/ HP 4_15: 74[7/7];
+en0.5.7-3@picb Video ABplayer 支持上传文件 [2025/7/10]
 
 
 #
