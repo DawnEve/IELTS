@@ -17,3 +17,11 @@ https://www.51en.com/news/npr/49161.html
 
 5.Podcast: Mapping childhood mortality, and evolving ‘de novo’ genes
 https://www.nature.com/articles/d41586-019-03144-9#MO0
+
+
+
+##########
+1.怎么下载新的 min.js 文件
+<script src="https://unpkg.com/wavesurfer.js@7"></script>
+https://unpkg.com/wavesurfer.js@7.10.0/dist/wavesurfer.min.js
+

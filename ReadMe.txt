@@ -1,17 +1,24 @@
 英语读报，保鲜英文，备考英语！
-英语读报，为精通英语提供工具
+英语读报，为掌握英语提供工具和方法。
 
 
 英语水平提高的秘诀：精听，转述，影读，仿写。
 
+- 单词是基石
+- 重复是捷径
+
+- 听读先行
+- 输出（说和写）倒逼输入
+
+
 
 ====================================
 访问方法:
-url: ielts.biomooc.com/en/
-local: ielts.dawneve.cc/en/
+url: ielts.biomooc.com
+local: ielts.dawneve.cc
 
 
-==================================== 基石
+==================================== 单词基石
 背单词：英语国家13岁就达到2万单词了。
 /en/word.html
 
@@ -58,6 +65,8 @@ http://dict.youdao.com/dictvoice?type=2&audio=repeat
 
 2. 小说
 哈利波特
+动物农场
+傲慢与偏见
 指环王
 
 
@@ -65,11 +74,13 @@ http://dict.youdao.com/dictvoice?type=2&audio=repeat
 
 ==================================== 听
 听力王
-/listening/ABplayer.html 
-听力王播放器，支持AB复读，专业听写工具
+/listening/ABplayer.html
+- 听力王播放器，支持AB复读，专业听写工具
+- 听力mp3材料放到webPan项目中，可生成外链： https://github.com/DawnEve/webPan.py
 
-听力mp3材料放到webPan项目中，可生成外链： https://github.com/DawnEve/webPan.py
 
+/listening/VideoABplayer.html
+- 听力王-视频版
 
 
 
@@ -77,6 +88,7 @@ http://dict.youdao.com/dictvoice?type=2&audio=repeat
 录音展示
 网易云音乐 https://music.163.com/#/djradio?id=334046051
 
+网盘： https://pan.baidu.com/s/1qXHOpHi?pwd=x7ur
 
 
 
