@@ -1,4 +1,5 @@
 div,body,h1,h2,h3,p{margin:0;padding:0;}
+body{background: rgb(244, 246, 249);}
 .wrap{margin:0 auto; width:800px; }
 .current{background:#C80000;color:white; border-radius: 3px;}
 /*
