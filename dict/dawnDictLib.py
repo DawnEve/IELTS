@@ -159,12 +159,32 @@ class DBUtil():
 
 
 
+# 允许的来源列表
+ALLOWED_ORIGINS = [
+    'http://163.dawneve.cc',
+    'http://ielts.dawneve.cc',
+    'http://ielts.dawneve.com',
+    'http://ielts.biomooc.com'
+]
+
+
+# 默认只需要一个参数
+# 如果特殊情况，需要post数据，则需要指定para2=非0，同时设置para3=请求
 from flask import jsonify
 #CORS (Cross-Origin Resource Sharing)
-def cors(arrOrStr):
+def cors(arrOrStr, changeReq=0, request=0):
     res=jsonify(arrOrStr)
-    res.headers.add('Access-Control-Allow-Origin', '*')
-    res.headers.add('Backend', 'wjl_dawnDict_server/0.3')
+    res.headers['Access-Control-Allow-Origin']="*" #不能设置*，还只能设置一个值
+
+    if changeReq != 0:
+        origin = request.headers.get('Origin')
+        if origin in ALLOWED_ORIGINS:
+            res.headers['Access-Control-Allow-Origin']=origin
+    #
+    res.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+    res.headers.add('Access-Control-Allow-Headers', 'Content-Type') # 必须添加
+    res.headers.add('Access-Control-Allow-Credentials', 'true')
+    res.headers.add('Backend', 'wjl_dawnDict_server/0.4')
     res.headers.add('Email', 'jimmymall at 163 dot com')
     return res;
 #

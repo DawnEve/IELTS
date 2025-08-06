@@ -1,4 +1,7 @@
 #拂晓词典的后台
+
+# v2 接收监控的输入信息：复读机的播放文件信息
+
 from flask import Flask
 app = Flask(__name__)
 
@@ -28,6 +31,11 @@ add_sentence_routes(app)
 from main.statistic import *
 add_statistic_routes(app)
 
+##########
+
+# 监控记录 模块
+from main.tracker import *
+add_tracker_routes(app)
 ##########
 
 

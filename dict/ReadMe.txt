@@ -1,6 +1,11 @@
 拂晓词典v0.1
 
 
+依赖的库:
+	$ pip3 install requests
+
+
+
 
 # 0 整体架构
 后台：采用python3 flask + mysql的方式

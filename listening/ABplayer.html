@@ -5,6 +5,7 @@
 	<title>听力王 ABplayer
 - DIY英语听写神器 AB复读机(英语读报出品)</title>
 	<script src="/static/js/tongji.js"></script>
+	<script src="static/AB_tracker.js"></script>
 <!--
 server: http://ielts.biomooc.com/listening/ABplayer.html
 local: http://ielts.dawneve.cc/listening/ABplayer.html
@@ -38,6 +39,8 @@ v0.5.9 添加底部js库链接
 v0.6.0 添加本地上传音频文件功能
 v0.6.1 按钮悬空时手形标志；修改文件名 ABplayer.html，原位置自动跳转
 v0.6.2 add btn: 语速
+v0.6.3 add AB_tracker.js
+v0.6.4 上下箭头取消默认行为
 #
 
 
@@ -544,6 +547,12 @@ function repeatPlay(){
 //刷新播放器内容和事件绑定
 function init(musicPath){
 	Mstatus['audio']=musicPath;
+
+	// tracker resource path
+	setTimeout(function(){
+		reportVideoToMonitor(musicPath, "load");
+	}, 100)
+
 	Mstatus.ready=0;
 	show("<span style='color:red'>loading ...</span>");
 	//清除定时器
@@ -723,12 +732,18 @@ window.onload=function(){
 				wavesurfer.setPlaybackRate( wavesurfer.getPlaybackRate() +0.05 );
 			else
 				console.log("Max rate: 3");
+			//取消键盘的默认
+			event.preventDefault();
+			return false;
 		}
 		else if(key==40){
 			if(wavesurfer.getPlaybackRate()>0.25)
 				wavesurfer.setPlaybackRate( wavesurfer.getPlaybackRate() -0.05 );
 			else
 				console.log("Min rate: 0.25");
+			//取消键盘的默认
+			event.preventDefault();
+			return false;
 		}
 		
 		//空格32/回车13控制着暂停与否

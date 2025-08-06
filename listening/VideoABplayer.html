@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>听力王 Video ABplayer | AB视频复读机</title>
   <link href="static/xgplayer/index.min.css" rel="stylesheet">
+	<script src="static/AB_tracker.js"></script>
+
 <!--
 https://v2.h5player.bytedance.com/gettingStarted/
 <link href="https://cdn.jsdelivr.net/npm/xgplayer@3.0.19/dist/xgplayer.min.css" rel="stylesheet">
@@ -12,6 +14,7 @@ v0.2.0 基本可用; 支持使用 ?url=xx.mp4 传递参数; 按钮控制可用;
 v0.2.1 上传文件: 视频开始只有音频，没有画面; 注释掉 player.ready事件后正常
 v0.2.2 放小视频示例
 v0.2.3 上下箭头，去掉默认行为
+v0.2.4 add AB_tracker.js
 
 # 版本号需要修改2个地方：本记录，还有页面顶部
 
@@ -381,7 +384,12 @@ function initPlayer(videoUrl) {
 	}
 
 	player.src=videoUrl;
-	
+
+	// tracker resource path
+	setTimeout(function(){
+		reportVideoToMonitor(videoUrl, "load");
+	}, 100)
+
 	Mstatus['video']=videoUrl;
 
 	// 设置播放器就绪状态
