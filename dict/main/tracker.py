@@ -1,6 +1,7 @@
 # tracker module
 #
 from __init__ import *
+from urllib.parse import unquote
 
 def  add_tracker_routes(app):
     from datetime import datetime
@@ -47,11 +48,14 @@ def  add_tracker_routes(app):
             ip=data.get('ipAddress', 'unknown')
             if ip=="unknown":
                 ip=request.remote_addr;
+
+            videoName=unquote( data.get('videoName', 'unnamed') )
+
             log_entry = (
                 f"server:{timeStamp2human(time.time())}|"
                 f"bowser:{data.get('timestamp', 'NA')}|"
                 f"ip:{ip}|"
-                f"videoName:{data.get('videoName', 'unnamed')}|"
+                f"videoName:{videoName}|"
                 f"actionName:{data.get('actionName', 'unnamed')}|"
                 f"userAgent:{data.get('userAgent', 'unknown')}\n"
             )

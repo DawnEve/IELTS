@@ -1,12 +1,22 @@
-拂晓词典v0.1
-
+拂晓词典v0.2
+with tracker
 
 依赖的库:
 	$ pip3 install requests
 
 
 
+###############
+# tracker
 
+前台js: lisening/static/AB_tracker.js
+后台py: dict/main/tracker.py
+如果需要新增记录的前台hostname，需要添加到 dict/dawnDictlib.py 底部
+具体使用的页面: 复读机 mp3/mp4
+
+
+
+###############
 # 0 整体架构
 后台：采用python3 flask + mysql的方式
 前台：先用普通页面，后期考虑Vue

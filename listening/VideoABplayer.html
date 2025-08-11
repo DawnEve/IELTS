@@ -377,7 +377,7 @@ var player = new Player({
 		defaultPlaybackRate: 1.0,
     });
 
-function initPlayer(videoUrl) {
+function initPlayer(videoUrl, isReport=1) {
 	//清除定时器
 	if('timer0' in Mstatus){
 		clearInterval(Mstatus.timer0);
@@ -385,10 +385,12 @@ function initPlayer(videoUrl) {
 
 	player.src=videoUrl;
 
-	// tracker resource path
-	setTimeout(function(){
-		reportVideoToMonitor(videoUrl, "load");
-	}, 100)
+	if(isReport==1){
+		// tracker resource path
+		setTimeout(function(){
+			reportVideoToMonitor(videoUrl, "init");
+		}, 100)
+	}
 
 	Mstatus['video']=videoUrl;
 
@@ -551,6 +553,9 @@ window.onload = function () {
 		console.log("Filename: ", file.name);
 		$("VideoFileName").innerHTML="Filename: " + file.name;
 
+		//上传文件名
+		reportVideoToMonitor(file.name, "uploadFile");
+
 		// 转为链接
 		if (window.webkitURL) window.URL = window.webkitURL;
 		var objectURL = window.URL.createObjectURL(file);
@@ -559,7 +564,7 @@ window.onload = function () {
 		// 传入文件链接给播放器
 		//myAudio.src = objectURL;
 		//myAudio.play();
-		initPlayer(objectURL)
+		initPlayer(objectURL, 0)
 	}
 
 

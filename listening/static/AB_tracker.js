@@ -31,14 +31,19 @@ function formatDate(date) {
 
 // 视频名称监控上报脚本
 function reportVideoToMonitor(videoName, actionName="") {
-    const endpoint = 'http://192.168.1.3:20180/api/tracker/video-tracker';
+
+    var endpoint = 'http://127.0.0.1:20180/api/tracker/video-tracker'; //local server
+    if(location.host=="ielts.biomooc.com"){
+        endpoint = 'http://118.89.82.18:20180/api/tracker/video-tracker'; //tx server
+    }
+    console.log("Report srcName to endpoint: ", endpoint);
 
     const payload = {
         videoName: videoName,
         timestamp: formatDate(new Date()),
         userAgent: navigator.userAgent,
-		ipAddress: userIP,
-		actionName: actionName
+        ipAddress: userIP,
+        actionName: actionName
     };
 
     // 使用navigator.sendBeacon确保可靠发送，即使页面关闭

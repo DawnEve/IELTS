@@ -545,13 +545,15 @@ function repeatPlay(){
 }
 
 //刷新播放器内容和事件绑定
-function init(musicPath){
+function init(musicPath, isReport=1){
 	Mstatus['audio']=musicPath;
 
 	// tracker resource path
-	setTimeout(function(){
-		reportVideoToMonitor(musicPath, "load");
-	}, 100)
+	if(isReport==1){
+		setTimeout(function(){
+			reportVideoToMonitor(musicPath, "init");
+		}, 100)
+	}
 
 	Mstatus.ready=0;
 	show("<span style='color:red'>loading ...</span>");
@@ -664,6 +666,9 @@ window.onload=function(){
 		console.log("Filename: ", file.name);
 		$("audioFileName").innerHTML="Filename: " + file.name;
 
+		//上传文件名
+		reportVideoToMonitor(file.name, "uploadFile");
+
 		// 转为链接
 		if (window.webkitURL) window.URL = window.webkitURL;
 		var objectURL = window.URL.createObjectURL(file);
@@ -672,7 +677,7 @@ window.onload=function(){
 		// 传入文件链接给播放器
 		//myAudio.src = objectURL;
 		//myAudio.play();
-		init(objectURL)
+		init(objectURL, 0)
 	}
 
 

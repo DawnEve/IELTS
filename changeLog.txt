@@ -642,8 +642,11 @@ en0.5.7-8@picb 听力/ HP 4_16: 29%; add grey bg color; Goto Shenzhen [2025/8/1]
 @TangLangCun
 en0.5.7-9@TLC add tracker for AB player; fix: rm up/down arrow 默认行为 [2025/8/6]
 	前台js: lisening/static/AB_tracker.js
-	后天py: dict/main/tracker.py
+	后台py: dict/main/tracker.py
 	如果需要新增记录的前台hostname，需要添加到 dict/dawnDictlib.py 底部
+en0.5.8-0@TLC update tracker: IP 根据 当前 location.host 变化(127.0.0.1 or tx server IP) [2025/8/11]
+	fix: 后台记录中文，正常化：自带的库 from urllib.parse import unquote
+
 #
 // todo 小说阅读器，进度写到url，实现刷新后定位
 #
