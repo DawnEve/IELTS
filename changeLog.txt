@@ -646,6 +646,8 @@ en0.5.7-9@TLC add tracker for AB player; fix: rm up/down arrow 默认行为 [202
 	如果需要新增记录的前台hostname，需要添加到 dict/dawnDictlib.py 底部
 en0.5.8-0@TLC update tracker: IP 根据 当前 location.host 变化(127.0.0.1 or tx server IP) [2025/8/11]
 	fix: 后台记录中文，正常化：自带的库 from urllib.parse import unquote
+en0.5.8-1@TLC update version on AB html [2025/8/11]
+	ABplayer: mp3:v0.6.5, mp4:v0.2.5
 
 #
 // todo 小说阅读器，进度写到url，实现刷新后定位

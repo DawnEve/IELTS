@@ -41,6 +41,7 @@ v0.6.1 按钮悬空时手形标志；修改文件名 ABplayer.html，原位置�
 v0.6.2 add btn: 语速
 v0.6.3 add AB_tracker.js
 v0.6.4 上下箭头取消默认行为
+v0.6.5 update tracker
 #
 
 
@@ -118,7 +119,7 @@ a:hover {text-decoration: underline;}
 <body>
 <div id='topTitle'>
 	<h2><a target=_blank href="/en" title="返回首页">听力王 ABplayer</a><span class=version>
-v0.6.2
+v0.6.5
 </span></h2>
 	<div>支持AB复读 听写神器</div>
 </div>
@@ -200,7 +201,9 @@ v0.6.2
 
 
 <pre id=help>
-<h1>听力王 ABplayer v0.6.2 AB复读机播放器使用说明书</h1>
+<h1>听力王 ABplayer AB复读机播放器使用说明书</h1>
+v0.6.5
+
 鼠标单击波浪图，则从波浪图位置开始播放。但是鼠标操作容易出错，很可能没空修复。建议打开F12控制台，出现错误刷新即可。
 
 建议键盘控制：
@@ -276,7 +279,6 @@ chrome浏览器，F12快捷键，点开console
 
 
 
-
 <hr>
 <h1>回音法 - 提高英语口语，纠正口音</h1>
 熟悉的材料，有文字、有录音。
@@ -284,10 +286,6 @@ chrome浏览器，F12快捷键，点开console
 聆听脑海中刚才那句话的回音；
 然后说出来，尽可能模仿原录音。
 三个步骤：listen - echo - repeat.
-
-
-
-
 
 
 
@@ -310,20 +308,16 @@ chrome浏览器，F12快捷键，点开console
 1. 自己架设 静态服务器，比如 <a href="https://github.com/DawnEve/webPan.py">webPan.py</a>，设置好路径，放好mp3资源文件，
 在网页界面右击文件末尾的外链 - 选择复制链接。
 2. Chrome浏览器打开 <a href="http://ielts.biomooc.com/listening/ABplayer.html">在线版播放器</a>。
-3. 按F12，打开浏览器的控制台console，输入
+3. 按F12，打开浏览器的控制台console，输入资源路径，比如：
 init("http://127.0.0.1:8005/file/fry_3_01.mp3"); //回车
-就可以更新音频了。
-注意：括号内是外链音频文件链接。加载时间取决于网速和音频文件长度。
+即可更新音频。
+
+注意：括号内是外链音频文件链接。加载时间取决于网速和音频文件大小。
 
 <!--
 如果使用xampp-php版本的后端，使用 scholar: https://github.com/miostudio/DawnScholar
 输入 init('http://127.0.0.1/audio/static.php?file=xx.mp3'); //回车
 -->
-
-
-
-
-
 
 <!--
 <h1>Method3: 本地版</h1>
@@ -350,7 +344,6 @@ Serving HTTP on 0.0.0.0 port 8888 (http://0.0.0.0:8888/) ...
 把引号内部分替换成自己的音频文件，回到浏览器 shift+F5 刷新即可。
 
 -->
-
 
 <hr>
 Powered by <a target="_blank" href="https://github.com/katspaugh/wavesurfer.js">wavesurfer.js</a>
