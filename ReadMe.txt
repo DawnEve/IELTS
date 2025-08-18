@@ -62,6 +62,9 @@ http://dict.youdao.com/dictvoice?type=2&audio=repeat
 
 /en/wechat.html 报纸摘要
 
+/reading/wechat/ 微信公众号 模板/草稿
+
+
 
 2. 小说
 哈利波特
