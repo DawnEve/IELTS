@@ -639,7 +639,7 @@ en0.5.7-7@picb 大调整，规范化目录结构 [2025/7/28]
 	听力/ HP 4_16: 6%[7/21]; 12%[7/23]; 16%[7/24]; 23%[7/28];
 en0.5.7-8@picb 听力/ HP 4_16: 29%; add grey bg color; Goto Shenzhen [2025/8/1]
 	听力/ HP 4_16: 29%[7/30];
-@TangLangCun
+@TangLangCun_shenzhen
 en0.5.7-9@TLC add tracker for AB player; fix: rm up/down arrow 默认行为 [2025/8/6]
 	前台js: lisening/static/AB_tracker.js
 	后台py: dict/main/tracker.py
@@ -648,7 +648,11 @@ en0.5.8-0@TLC update tracker: IP 根据 当前 location.host 变化(127.0.0.1 or
 	fix: 后台记录中文，正常化：自带的库 from urllib.parse import unquote
 en0.5.8-1@TLC update version on AB html [2025/8/11]
 	ABplayer: mp3:v0.6.5, mp4:v0.2.5
+@PICB_shanghai
 en0.5.8-2@picb come back [2025/8/18]
+en0.5.8-3@picb 听力/ HP 4_16: 100% [2025/9/2]
+	听力/ HP 4_16: 34%[8/19]; 43%[8/21]; 50%[8/21]; 57%[8/24]; 70%[8/26]; 80%[8/27]; 87%[8/28]; 94%[8/29]; 100%[9/2]
+
 
 #
 // todo 小说阅读器，进度写到url，实现刷新后定位
