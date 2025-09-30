@@ -17,6 +17,12 @@
 url: ielts.biomooc.com
 local: ielts.dawneve.cc
 
+1.网页
+# 新文字模板 with 顶部目录 & 右下角目录: listening/words_HarryPotter4.html
+# 外联添加 class="external_link"
+
+
+
 
 ==================================== 单词基石
 背单词：英语国家13岁就达到2万单词了。
@@ -42,10 +48,19 @@ var s=document.createElement("script");s.src="https://ielts.dawneve.cc/wordKing/
 	#
 	写易错单词 /dict/recite.html
 
+(3)[季度备份] 快速备份词典sql语句的方法，主要是词典单个文件。
+	navicat 点开数据库-表；菜单 文件-导出向导；是，表类型 选sql；
+	下一步 选择 word_ms表，第二列 导出到 \dict\backup\tb_20250927-word_ms.sql;
+	下一步 默认全部栏位
+	然后sql文件保存到: 硬盘，QQ群，网盘等
+
+	数据库 how to 季度备份? dict/ReadMe.txt 6
+
 #
 单词发音 (英语单词复(ting)读(xie)机 https://github.com/onebigear/IELTS-Repeater/)
 http://dict.youdao.com/dictvoice?type=1&audio=repeat
 http://dict.youdao.com/dictvoice?type=2&audio=repeat
+
 
 
 
@@ -63,6 +78,7 @@ http://dict.youdao.com/dictvoice?type=2&audio=repeat
 /en/wechat.html 报纸摘要
 
 /reading/wechat/ 微信公众号 模板/草稿
+/reading/wechat/Eng_tpl-HP4-v5.html?text=20250930&num=91 公众号模板系统v5: md to html
 
 
 

@@ -1,0 +1,274 @@
+<meta charset="utf8">
+<link rel="stylesheet" type="text/css" href="static/style.css" />
+<title>MD2html - v5</title>
+<style>
+
+h2{
+	color: white;
+	background:#CE2A72;
+}
+/*
+background:#FFaaaa99; #42D3CB
+
+# version info
+* tpl version: v5, render markdown
+* date: 20250930
+
+
+################
+# How to use this tpl?
+################
+1. write md file 20250930.md.txt like:
+
+She was shielding her face, as though blinded by light, though the Top Box was not brightly lit.
+
+# 她用手遮着脸，好像被灯光遮住了眼睛，虽然顶层包厢里的灯光并不明亮。
+
+- blind [blaɪnd] adj. 失明的，盲的 v. 使变瞎，使失明；使眼花，使目眩；蒙蔽，使无辨别力
+- octave [ˈɒktɪv] n. 八度音阶；八行诗；十四行诗的前八行；八个一组的事物
+
+----
+其中:
+	---- 行分割 句子；
+	每个句子第一行是英文，
+	# 开头是翻译
+	然后 - 开头的是单词
+
+	可以使用**word**表示加粗，也可以直接使用<b>标签表示加粗
+	<u>标签表示下划线
+
+
+2. open url: http://ielts.dawneve.cc/reading/wechat/Eng_tpl-HP4-v5.html?text=20250930&num=91
+text=md file name with no sufix;
+num=标题编号
+
+
+################
+# Check
+################
+	1.设置标题、摘要;
+	2.设置 封面图，及其描述;
+	2.检查 标题 HP_chapter;
+	3.检查 合集 tag;
+	4.关闭广告
+*/
+</style>
+
+<div class=content>
+<h1 id="header1">英文名著 | 哈利波特 句子赏析</h1>
+
+<p class="cn center dark">哈利波特是一部七卷本儿童书，其原著用语地道、灵活多变，很多地方值得英语学习者反复阅读。</p>
+<p class="cn center dark">本系列主要摘抄一些原著句子，读到哪选到哪。必要时会对核心单词、短语及句子结构做一些讲解。</p>
+
+
+
+
+<div id="textPre"></div>
+
+<script>
+// tools ----------
+var print=console.log
+function $(s){
+	return document.getElementById(s);
+}
+
+//获取url中的参数 https://www.cnblogs.com/vicky-li/p/9145026.html
+function getUrlParam(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+
+
+
+// Markdown转HTML函数 - 使用----作为分隔符
+function markdownToHtml(markdown) {   
+    // 使用----分割成块
+    const blocks = markdown.split(/\s*----\s*/).filter(block => block.trim());
+    //console.log("分割后的块:", blocks);
+    
+    let result = '';
+    let sentenceCount = 0;
+    
+    for (let i = 0; i < blocks.length; i++) {
+        const block = blocks[i].trim();
+        const lines = block.split('\n').map(line => line.trim()).filter(line => line);
+        //console.log(`块 ${i} 有 ${lines.length} 行:`, lines);
+        
+        // 检查是否是一个有效的句子块
+        if (lines.length < 2) {
+            console.log("块行数不足，跳过");
+            continue;
+        }
+        
+        // 第一行应该是英文句子
+        const englishLine = lines[0];
+        if (!englishLine || englishLine.startsWith('#') || englishLine.startsWith('-')) {
+            console.log("第一行不是英文句子，跳过");
+            continue;
+        }
+        
+        // 第二行应该是中文翻译
+        const chineseLine = lines[1];
+        if (!chineseLine.startsWith('#')) {
+            console.log("第二行不是中文翻译，跳过");
+            continue;
+        }
+        
+        sentenceCount++;
+        
+        // 提取单词列表
+        const wordList = [];
+        let j = 2;
+        while (j < lines.length && lines[j].startsWith('-')) {
+            wordList.push(lines[j].substring(1).trim());
+            j++;
+        }
+        
+        // 剩余的是解释
+        const explanation = lines.slice(j).join('\n');
+        
+        // 构建HTML
+        result += `<h2>${sentenceCount.toString().padStart(2, '0')}</h2>\n\n`;
+        result += `<p class="english">\n${processEnglishText(englishLine, wordList)}\n</p>\n\n`;
+        result += `<p class='cn'>\n${chineseLine}\n</p>\n\n`;
+        
+        if (wordList.length > 0) {
+            result += `<ul>\n`;
+            wordList.forEach(word => {
+                result += `\t<li>${word}</li>\n`;
+            });
+            result += `</ul>\n\n`;
+        }
+        
+        result += `<p class="cn">\n${explanation}\n</p>\n\n`;
+    }
+    
+    return result;
+}
+
+
+function convertBoldMarkers(text) {
+  return text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+}
+
+// 处理英文文本，将单词列表中的单词加粗
+function processEnglishText(english, wordList) {
+    let processedText = english;
+    //把**表示的单词显示红色
+    processedText=convertBoldMarkers(processedText);
+    return processedText;
+
+
+    //以下是把显示的单词标红
+
+    // 提取单词列表中的单词（第一个单词）
+    for (const wordItem of wordList) {
+        const wordMatch = wordItem.match(/^([a-zA-Z]+)/);
+        if (wordMatch) {
+            const word = wordMatch[1];
+            // 使用正则表达式替换单词，确保是完整单词匹配
+            const regex = new RegExp(`\\b${word}\\b`, 'gi');
+            processedText = processedText.replace(regex, `<b>${word}</b>`);
+        }
+    }
+    
+    return processedText;
+}
+
+
+
+
+
+//最简单的ajax实例
+window.onload=function(){
+	//v1 传过来的是路径，v2传过来的是日期
+	function openText(fileName){
+		if( ! fileName.match('reading')){
+			fileName='/reading/wechat/'+fileName+'.md.txt'
+		}
+		var xmlhttp=new XMLHttpRequest(); //1.获取对象
+		//2.绑定回调函数
+		xmlhttp.onreadystatechange=function(){
+			if (xmlhttp.readyState==4 && xmlhttp.status==200){
+				//$("textPre").innerHTML=xmlhttp.responseText;
+				// md to html
+				$("textPre").innerHTML=markdownToHtml(xmlhttp.responseText);
+			}
+		}
+		//3.设定访问的url
+		xmlhttp.open("GET",fileName,true);
+		//4.发送请求
+		xmlhttp.send();
+	}
+
+	
+	//获取url参数
+	var date = getUrlParam('text');
+	var num = getUrlParam('num') || 0;
+	if(!date){
+		//如果没有text参数，则alert提示，并给出返回按钮，然后返回。
+		alert('No text parameter from url!')
+		$("textPre").innerHTML="<a href=/reading/wechat/index_v5.html>Back</a>"
+		location="/reading/wechat/index_v5.html";
+		//
+		return false;
+	}else{
+		openText(date)
+		$("header1").innerHTML += " " + num;
+	}
+}
+
+</script>
+
+
+
+
+
+
+
+<br>
+
+<!--
+https://mp.weixin.qq.com/s?__biz=MTg1MjI3MzY2MQ==&mid=2652241591&idx=1&sn=8d81cab38ba5dc3625b56fb363c60b6c
+-->
+<section>
+	<section style="display: flex;align-items: center;">
+		<section style="flex: 1 1 auto;height: 1px;background-color: rgb(204, 204, 204);">
+			<svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;"></svg>
+		</section>
+		
+		<section style="flex: 0 1 auto;">
+			<section style="padding-right: 15px;padding-left: 15px;">
+				<section style="text-align: center;color: rgb(204, 204, 204);font-size: 12px;line-height: 1.61;">
+					<p><span style="color: rgb(205, 204, 204);">End</span><br></p>
+				</section>
+			</section>
+		</section>
+		
+		<section style="flex: 1 1 auto;height: 1px;transform: matrix(-1, 0, 0, 1, 0, 0);background-color: rgb(204, 204, 204);">
+			<svg viewBox="0 0 1 1" style="float:left;line-height:0;width:0;vertical-align:top;"></svg>
+		</section>
+	
+	</section>
+</section>
+
+
+<section style="font-size: 12px;color: rgb(204, 204, 204);line-height: 1.5;letter-spacing: 0px;">
+	<p style="text-align: center;text-wrap: wrap;"><br /></p>
+	<p style="text-align: center;text-wrap: wrap;">欢迎关注 [ 英语读报 ] 公众号</p>
+	<p style="text-align: center;text-wrap: wrap;">From HP4_8</p>
+	<p style="text-align: center;text-wrap: wrap;">编辑：吃瓜菌</p>
+	<p style="text-align: center;text-wrap: wrap;">封面图来源：手机自拍</p>
+	<p style="text-align: center;text-wrap: wrap;">封面图说明：街拍/深圳大梅沙海滨公园</p>
+</section>
+
+
+<br>
+Put logo figure here
+<br>
+
+<p class=last>
+↓ 点赞/分享/推荐给朋友
+</p>
+</div>

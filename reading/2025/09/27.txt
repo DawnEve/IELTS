@@ -1,0 +1,55 @@
+Nature | DeepMind unveils ‘spectacular’ general-purpose science AI
+<span class=light>Sep 27, 2025 | 663 words
+By Elizabeth Gibney</span>
+
+<b>System improves chip designs and tackles unsolved maths problems, but has not been rolled out to researchers outside the company.</b>
+<span class=light>
+DeepMind says that AlphaEvolve has helped to improve the design of AI chips.Credit: Christian Ohde/IMAGO via Alamy</span>
+
+Google DeepMind has used chatbot models to come up with solutions to major problems in mathematics and computer science.
+
+The system, called AlphaEvolve, combines the creativity of a large language model (LLM) with algorithms that can scrutinize the model’s suggestions to filter and improve solutions. It was described in a white paper released by the company on 14 May.
+<span class=light>
+> DeepMind hits milestone in solving maths problems — AI’s next grand challenge</span>
+
+“The paper is quite spectacular,” says Mario Krenn, who leads the Artificial Scientist Lab at the Max Planck Institute for the Science of Light in Erlangen, Germany. “I think AlphaEvolve is the first successful demonstration of new discoveries based on general-purpose LLMs.”
+
+As well as using the system to discover solutions to open maths problems, DeepMind has already applied the artificial intelligence (AI) technique to its own practical challenges, says Pushmeet Kohli, head of science at the firm in London.
+
+AlphaEvolve has helped to improve the design of the company’s next generation of tensor processing units — computing chips developed specially for AI — and has found a way to more efficiently exploit Google’s worldwide computing capacity, saving 0.7% of total resources. “It has had substantial impact,” says Kohli.
+
+
+<b>General-purpose AI</b>
+
+Most of the successful applications of AI in science so far — including the protein-designing tool AlphaFold — have involved a learning algorithm that was hand-crafted for its task, says Krenn. But AlphaEvolve is general-purpose, tapping the abilities of LLMs to generate code to solve problems in a wide range of domains.
+
+DeepMind describes AlphaEvolve as an ‘agent’, because it involves using interacting AI models. But it targets a different point in the scientific process from many other ‘agentic’ AI science systems, which have been used to review the literature and suggest hypotheses.
+
+AlphaEvolve is based on the firm’s Gemini family of LLMs. Each task starts with the user inputting a question, criteria for evaluation and a suggested solution, for which the LLM proposes hundreds or thousands of modifications. An ‘evaluator’ algorithm then assesses the modifications against the metrics for a good solution (for example, in the task of assigning Google’s computing jobs, researchers want to waste fewer resources).
+<span class=light>
+> How does ChatGPT ‘think’? Psychology and neuroscience crack open AI large language models</span>
+
+On the basis of which solutions are judged to be the best, the LLM suggests fresh ideas and over time the system evolves a population of stronger algorithms, says Matej Balog, an AI scientist at DeepMind who co-led the research. “We explore this diverse set of possibilities of how the problem can be solved,” he says.
+
+AlphaEvolve builds on the firm’s FunSearch system, which in 2023 was shown to use a similar evolutionary approach to outdo humans in unsolved problems in maths1. Compared with FunSearch, AlphaEvolve can handle much larger pieces of code and tackle more complex algorithms across a wide range of scientific domains, says Balog.
+
+DeepMind says that AlphaEvolve has come up with a way to perform a calculation, known as matrix multiplication, that in some cases is faster than the fastest-known method, which was developed by German mathematician Volker Strassen in 19692. Such calculations involve multiplying numbers in grids and are used to train neural networks. Despite being general-purpose, AlphaEvolve outperformed AlphaTensor, an AI tool described by the firm in 2022 and designed specifically for matrix mechanics3.
+
+The approach could be used to tackle optimization problems, says Krenn, or anywhere in science where there are concrete metrics, or simulations, to evaluate what makes a good solution. This could include designing new microscopes, telescope or even materials, he adds.
+
+
+<b>Narrow applications</b>
+
+In mathematics, AlphaEvolve seems to allow significant speed-ups in tackling some problems, says Simon Frieder, a mathematician and AI researcher at the University of Oxford, UK. But it will probably be applied only to the “narrow slice” of tasks that can be presented as problems to be solved through code, he says.
+<span class=light>
+> Researchers built an ‘AI Scientist’ — what can it do?</span>
+
+Other researchers are reserving judgement about the tool’s usefulness until has been trialled outside DeepMind. “Until the systems have been tested by a broader community, I would stay sceptical and take the reported results with a grain of salt,” says Huan Sun, an AI researcher at the Ohio State University in Columbus. Frieder says he will wait until an open-source version is recreated by researchers, rather than a rely on DeepMind’s proprietary system, which could be withdrawn or changed.
+
+Although AlphaEvolve requires less computing power to run than AlphaTensor, it is still too resource-intensive to be made freely available on DeepMind’s servers, says Kohli.
+
+But the company hopes that announcing the system will encourage researchers to suggest areas of science in which to apply AlphaEvolve. “We are definitely committed to make sure that the most people in the scientific community get access to it,” says Kohli.
+<span class=light>
+Nature 641, 827-828 (2025)
+https://www.nature.com/articles/d41586-025-01523-z
+</span>

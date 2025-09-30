@@ -11,23 +11,28 @@ import os,time
 
 # 1.生成日期，表名字；开始备份为 .sql 文件；
 # $ python backup_DB_tables.py
-# 2.删掉几个不用的sql表(与单词无关的3个sql文件)，压缩 /backup 文件夹内的 sql文件 为 zip 文件; 
+# 2.删掉几个不用的sql表(与单词无关的3个sql文件)，压缩 /backup 文件夹内的 6个 sql文件 为 zip 文件; 
 # $ python get_zip.py
 # 3.核对后，手动删除 sql 文件，手动删除超过规定天数的zip备份文件
 
-# 推荐每个季度备份一次，发到邮箱 (title: IELTS 英语单词语料数据库备份文件, google and vip1@163)，发到 github 版本中
-# IELTS_tables_20220525-135332.zip 2.6M
-
+# 推荐每个季度备份一次，发到邮箱 (title: IELTS 英语单词语料数据库备份文件, google and vip1@163)
+# IELTS_tables_20220525-135332.zip 2.6M del
+# IELTS_tables_20250927-094707.zip 2793KB
+#
+# 其他备份地方：
+# * QQ 群: 英语口语交流群(1047046928) 20250927;
+# * github issue 中(https://github.com/DawnEve/IELTS/issues/9): 20250407;
+# * pan.baidu.com:
 
 
 #1. settings 
 today = time.strftime("%Y%m%d-%H%M%S", time.localtime())  #"20191127_1110" #备份时间戳 '20190517-140223'
 db_backup_dir =r"D:\xampp\htdocs\IELTS\dict\backup"; # 本地备份目录
-BACKUP_SAVE_DAYS='20'
+BACKUP_SAVE_DAYS='100' #后文没用到
 
 # 指定要备份的表名字
-tb_arr1=['word_ms', 'word_unknown', 'word_searched','word_scan', 'sentence_dawn','user', 'msg_English',]
-#tb_arr2=['cell_c1', 'feature_apa', 'feature_gene', ]
+tb_arr1=['word_ms', 'word_unknown', 'word_searched','word_scan', 'sentence_dawn', 'msg_English',]
+#tb_arr2=['cell_c1', 'feature_apa', 'feature_gene', 'user',]
 #tb_arr=tb_arr1+tb_arr2;
 
 # 表格          用途
