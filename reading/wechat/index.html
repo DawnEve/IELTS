@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英语读报 - 微信公众号 草稿列表</title>
+    <link rel="stylesheet" type="text/css" href="static/article_list.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Article List</h1>
+            <p>Order by day DESC</p>
+            <!--
+            -->
+            <p>
+                <a class="tag green" target="_blank" href="https://mp.weixin.qq.com/s/2HKWEdDDBh-o5UpDMtR7sQ">听力/听写/精听神器</a>
+                <a class="tag red" target="_blank" href="/listening/ABplayer.html">精听神器ABplayer</a>
+            </p>
+        </div>
+<!--
+模板参数:
+text: {}.md.txt
+href:https://mp.weixin.qq.com/s/{}, 参数为空则不显示wx链接
+// from here to netxt div, ctrl[+shift]+D copy and modify
+-->
+
+
+<!--模板: 最新的 on top; js生成链接
+        <div class="article-card">
+            <h2 class="article-title">英文名著 | 哈利波特 句子赏析 92</h2>
+            <p class="article-summary">The Malfoys prided themselves on being purebloods; in other words, they considered anyone of Muggle descent, like Hermione, second-class.</p>
+
+            <div class="links-container"
+                 data-text-param="20251001_92"
+                 data-href-param="lUiYJ-9u16PcLyzZOiOyiA">
+            </div>
+        </div>
+-->
+
+
+
+
+
+
+
+
+
+
+
+        <div class="article-card">
+            <h2 class="article-title">英文名著 | 哈利波特 句子赏析 97</h2>
+            <p class="article-summary">The Malfoys prided themselves on being purebloods; in other words, they considered anyone of Muggle descent, like Hermione, second-class.</p>
+
+            <div class="links-container"
+                 data-text-param="20251006_97"
+                 data-href-param="">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="article-card">
+            <h2 class="article-title">英文名著 | 哈利波特 句子赏析 96</h2>
+            <p class="article-summary">The Malfoys prided themselves on being purebloods; in other words, they considered anyone of Muggle descent, like Hermione, second-class.</p>
+
+            <div class="links-container"
+                 data-text-param="20251005_96"
+                 data-href-param="L7wt1SVkib9q08HWcbwEKg">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="article-card">
+            <h2 class="article-title">英文名著 | 哈利波特 句子赏析 95</h2>
+            <p class="article-summary">Next moment, what seemed to be a great green-and-gold comet came zooming into the stadium.</p>
+
+            <div class="links-container"
+                 data-text-param="20251004_95"
+                 data-href-param="khYAh__M0R-iyUhJmaWk8g">
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="article-card">
+            <h2 class="article-title">英文名著 | 哈利波特 句子赏析 94</h2>
+            <p class="article-summary">he wondered vaguely why he had a large green shamrock pinned to his chest.</p>
+
+            <div class="links-container"
+                 data-text-param="20251003_94"
+                 data-href-param="w_DxBSLHIkeZj7dZTO3DgA">
+            </div>
+        </div>
+
+
+
+
+
+        <div class="article-card">
+            <h2 class="article-title">英文名著 | 哈利波特 句子赏析 93</h2>
+            <p class="article-summary">He suddenly whipped off his glasses and polished them hurriedly on his robes.</p>
+
+            <div class="links-container"
+                 data-text-param="20251002_93"
+                 data-href-param="https://mp.weixin.qq.com/s/V0IBa3Cir_O45KvDqSOTQA">
+            </div>
+        </div>
+
+
+
+
+        <div class="article-card">
+            <h2 class="article-title">英文名著 | 哈利波特 句子赏析 92</h2>
+            <p class="article-summary">The Malfoys prided themselves on being purebloods; in other words, they considered anyone of Muggle descent, like Hermione, second-class.</p>
+
+            <div class="links-container"
+                 data-text-param="20251001_92"
+                 data-href-param="https://mp.weixin.qq.com/s/lUiYJ-9u16PcLyzZOiOyiA">
+            </div>
+        </div>
+
+
+
+        <div class="article-card">
+            <h2 class="article-title">英文名著 | 哈利波特 句子赏析 91</h2>
+            <p class="article-summary">The Malfoys prided themselves on being purebloods; in other words, they considered anyoHarry and Draco Malfoy had been enemies ever since their very first journey to Hogwarts.</p>
+
+            <div class="links-container"
+                 data-text-param="20250930_91"
+                 data-href-param="https://mp.weixin.qq.com/s/a9nXaRtHNQK7Z9-LVvhdbA">
+            </div>
+        </div>
+
+
+
+        <div class="footer">
+            <p>Copyright © 2008-2025 BioMooc. All Rights Reserved.</p>     
+        </div>
+
+    </div>
+
+<script>
+// tools
+function formatDate(dateStr, separator = '-') {
+  // 确保输入是字符串且长度为8
+  if (typeof dateStr !== 'string' || dateStr.length !== 8) {
+    throw new Error('请输入有效的8位日期字符串');
+  }
+
+  const year = dateStr.substring(0, 4);
+  const month = dateStr.substring(4, 6);
+  const day = dateStr.substring(6, 8);
+
+  // 验证年月日是否有效
+  if (isNaN(year) || isNaN(month) || isNaN(day)) {
+    throw new Error('日期字符串必须全为数字');
+  }
+
+  // 返回格式化后的日期
+  return `${year}${separator}${month}${separator}${day}`;
+}
+
+// 示例用法
+/*
+const dateStr = '20251001';
+console.log(formatDate(dateStr));      // 输出: 2025-10-01
+console.log(formatDate(dateStr, '/')); // 输出: 2025/10/01
+*/
+
+// 自动生成2个链接
+function generateLinksFromData(parentElement) {
+    //const parentElement = document.getElementById(parentElementId);
+    if (!parentElement) {
+        console.error('父元素未找到');
+        return;
+    }
+    
+    const textParam = parentElement.dataset.textParam || '';
+    // 公众号url，只有最后一部分才是变动的
+    let hrefParam = parentElement.dataset.hrefParam || '';
+    //第二个链接可能是空白，则返回空白
+    let wx_link="";
+    if(hrefParam!=""){
+        if( !(hrefParam.startsWith("http")) ){
+            hrefParam=`https://mp.weixin.qq.com/s/${hrefParam}`;
+        }
+        wx_link=`<a target="_blank" href="${hrefParam}">发表后</a>`
+    }
+
+    //获取日期
+    var date=textParam.split("_")[0];
+    //日期中添加分隔符
+    date=formatDate(date, "/");
+
+
+    parentElement.innerHTML = `
+        <span class="date">${date}</span>
+        <a target="_blank" href="/reading/wechat/Eng_tpl-HP4-v5.html?text=${textParam}">
+            查看草稿
+        </a>
+        ${wx_link}
+    `;
+}
+
+// 
+window.onload=function(){
+    console.log("Hello, world! JS works.")
+    // get all divs
+    var allDivs = document.querySelectorAll('.links-container');
+    // 由本身的data-元素生成2个链接
+    allDivs.forEach(function(div) {
+        generateLinksFromData(div)
+    });
+}
+</script>
+
+</body>
+</html>

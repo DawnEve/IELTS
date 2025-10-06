@@ -23,7 +23,9 @@ Harry and Draco Malfoy <u>had been</u> enemies ever since their very first journ
 # 自从哈利和德拉科·马尔福第一次来到霍格沃茨，他们就一直是敌人。
 - x
 
-# 时态："Harry and Draco Malfoy had been enemies..." 使用了‌过去完成进行时（Past Perfect Continuous）‌的结构（had been + V-ing）。 这一时态强调从过去某一时间点（"first journey to Hogwarts"）之前开始，并持续到该时间点的动作或状态。 中文可理解为“从……起一直是敌人”，突出敌对关系的长期性。
+# 时态："Harry and Draco Malfoy had been enemies..." 使用了‌过去完成进行时（Past Perfect Continuous）‌的结构（had been + V-ing）。 
+这一时态强调从过去某一时间点（"first journey to Hogwarts"）之前开始，并持续到该时间点的动作或状态。 
+中文可理解为“从……起一直是敌人”，突出敌对关系的长期性。
 
 
 ----

@@ -18,7 +18,10 @@ background:#FFaaaa99; #42D3CB
 ################
 # How to use this tpl?
 ################
-1. write md file 20250930.md.txt like:
+1. write md file 20250930_91.md.txt
+命名格式: 日期，下划线后是编号，然后后缀名.md.txt;
+
+内容示例:
 
 She was shielding her face, as though blinded by light, though the Top Box was not brightly lit.
 
@@ -38,9 +41,13 @@ She was shielding her face, as though blinded by light, though the Top Box was n
 	<u>标签表示下划线
 
 
-2. open url: http://ielts.dawneve.cc/reading/wechat/Eng_tpl-HP4-v5.html?text=20250930&num=91
-text=md file name with no sufix;
-num=标题编号
+2. open url:
+http://ielts.dawneve.cc/reading/wechat/Eng_tpl-HP4-v5.html?text=20250930_91&num=91
+http://ielts.dawneve.cc/reading/wechat/Eng_tpl-HP4-v5.html?text=20251001_92
+参数:;
+	text=md file name with no sufix(.md.txt);
+	num=标题编号
+	如果省略 num，取默认 num==0, 则从text 中拆分_后的字符，赋值给 num
 
 
 ################
@@ -95,7 +102,7 @@ function markdownToHtml(markdown) {
         const lines = block.split('\n').map(line => line.trim()).filter(line => line);
         //console.log(`块 ${i} 有 ${lines.length} 行:`, lines);
         
-        // 检查是否是一个有效的句子块
+        // 检查是否是一个有效的句子块: 至少2行，英文 + 中文，单词是可选的
         if (lines.length < 2) {
             console.log("块行数不足，跳过");
             continue;
@@ -126,7 +133,7 @@ function markdownToHtml(markdown) {
         }
         
         // 剩余的是解释
-        const explanation = lines.slice(j).join('\n');
+        const explanation = lines.slice(j).join('<br>\n');
         
         // 构建HTML
         result += `<h2>${sentenceCount.toString().padStart(2, '0')}</h2>\n\n`;
@@ -215,6 +222,11 @@ window.onload=function(){
 		return false;
 	}else{
 		openText(date)
+
+		if(num==0){
+			num=date.split("_")[1];
+			console.log("-> get num from text para: num=", num)
+		}
 		$("header1").innerHTML += " " + num;
 	}
 }
@@ -260,7 +272,7 @@ https://mp.weixin.qq.com/s?__biz=MTg1MjI3MzY2MQ==&mid=2652241591&idx=1&sn=8d81ca
 	<p style="text-align: center;text-wrap: wrap;">From HP4_8</p>
 	<p style="text-align: center;text-wrap: wrap;">编辑：吃瓜菌</p>
 	<p style="text-align: center;text-wrap: wrap;">封面图来源：手机自拍</p>
-	<p style="text-align: center;text-wrap: wrap;">封面图说明：街拍/深圳大梅沙海滨公园</p>
+	<p style="text-align: center;text-wrap: wrap;">封面图说明：上海世纪公园的荷塘</p>
 </section>
 
 

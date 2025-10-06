@@ -9,4 +9,4 @@ __pycache__
 *.sql
 
 # not wechat html
-reading/wechat/*.html
+# reading/wechat/*.html
