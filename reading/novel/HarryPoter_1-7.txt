@@ -13727,9 +13727,9 @@ we all know this is a copyright protected book....blah, blah, blah. no reproduct
 　　Rita Skeeter didn't look remotely abashed.
 　　"I was just making the point that some of your ideas are a little old-fashioned, Dumbhedore, and that many wizards in the street -"
 　　"I will be delighted to hear the reasoning behind the rudeness, Rita," said Dumbledore, with a courteous bow and a smile, "but I'm afraid we will have to discuss the matter later. The Weighing of the Wands is about to start, and it cannot take place if one of our champions is hidden in a broom cupboard."
-　　Very glad to get away from Rita Skeeter, Harry hurried back into the room. The other champions were now sitting in chairs near the door, and he sat down quickly next to Cedric, hooking up at the velvet-covered table, where four of the five judges were now sitting - Professor Karkaroff, Madame Maxime, Mr. Crouch, and Ludo Bagman. Rita Skeeter settled herself down in a corner; Harry saw her slip the parchment out of her bag again, spread it on her knee, suck the end of the Quick-Quotes Quill, and place it once more on the parchment.
+　　Very glad to get away from Rita Skeeter, Harry hurried back into the room. The other champions were now sitting in chairs near the door, and he sat down quickly next to Cedric, looking up at the velvet-covered table, where four of the five judges were now sitting - Professor Karkaroff, Madame Maxime, Mr. Crouch, and Ludo Bagman. Rita Skeeter settled herself down in a corner; Harry saw her slip the parchment out of her bag again, spread it on her knee, suck the end of the Quick-Quotes Quill, and place it once more on the parchment.
 　　"May I introduce Mr. Ollivander?" said Dumbledore, taking his place at the judges' table and talking to the champions. "He will be checking your wands to ensure that they are in good condition before the tournament."
-　　Harry hooked around, and with a jolt of surprise saw an old wizard with large, pale eyes standing quietly by the window. Harry had met Mr. Ollivander before - he was the wand-maker from whom Harry had bought his own wand over three years ago in Diagon Alley.
+　　Harry looked around, and with a jolt of surprise saw an old wizard with large, pale eyes standing quietly by the window. Harry had met Mr. Ollivander before - he was the wand-maker from whom Harry had bought his own wand over three years ago in Diagon Alley.
 　　"Mademoiselle Delacour, could we have you first, please?" said Mr. Ollivander, stepping into the empty space in the middle of the room.
 　　Fleur Delacour swept over to Mr. Olhivander and handed him her wand.
 　　"Hmm..." he said.
@@ -13738,14 +13738,13 @@ we all know this is a copyright protected book....blah, blah, blah. no reproduct
 　　"An 'air from ze 'ead of a veela," said Fleur. "One of my grandmuzzer's."
 　　So Fleur was part veela, thought Harry, making a mental note to tell Ron. . . then he remembered that Ron wasn't speaking to him.
 　　"Yes," said Mr. Ollivander, "yes, I've never used veela hair myself, of course. I find it makes for rather temperamental wands...however, to each his own, and if this suits you.."
-　　Mr. Ollivander ran his fingers along the wand, apparently checking for scratches or
-　　bumps; then he muttered, "Orchideous!" and a bunch of flowers burst from the wand tip.
+　　Mr. Ollivander ran his fingers along the wand, apparently checking for scratches or bumps; then he muttered, "Orchideous!" and a bunch of flowers burst from the wand tip.
 　　"Very well, very well, it's in fine working order," said Mr. Ollivander, scooping up the flowers and handing them to Fleur with her wand. "Mr. Diggory, you next."
 　　Fleur glided back to her seat, smiling at Cedric as he passed her.
 　　"Ah, now, this is one of mine, isn't it?" said Mr. Ollivander, with much more enthusiasm, as Cedric handed over his wand. "Yes, I remember it well. Containing a single hair from the tail of a particularly fine male unicorn. . . must have been seventeen hands; nearly gored me with his horn after I plucked his tail. Twelve and a quarter inches. . . ash. .
 　　. pleasantly springy. It's in fine condition...You treat it regularly?"
 　　"Polished it last night," said Cedric, grinning.
-　　Harry hooked down at his own wand. He could see finger marks all over it. He gathered a fistful of robe from his knee and tried to rub it clean surreptitiously. Several gold sparks shot out of the end of it. Fleur Delacour gave him a very patronizing look, and he desisted.
+　　Harry looked down at his own wand. He could see finger marks all over it. He gathered a fistful of robe from his knee and tried to rub it clean surreptitiously. Several gold sparks shot out of the end of it. Fleur Delacour gave him a very patronizing look, and he desisted.
 　　Mr. Ollivander sent a stream of silver smoke rings across the room from the tip of Cedric's wand, pronounced himself satisfied, and then said, "Mr. Krum, if you please."
 　　Viktor Krum got up and slouched, round-shouldered and duck-footed, toward Mr. Ollivander.
 　　He thrust out his wand and stood scowling, with his hands in the pockets of his robes.
@@ -13753,7 +13752,7 @@ we all know this is a copyright protected book....blah, blah, blah. no reproduct
 　　A fine wand-maker, though the styling is never quite what I. . . however. ."
 　　He lifted the wand and examined it minutely, turning it over and over before his eyes.
 　　"Yes.. . hornbeam and dragon heartstring?" he shot at Krum, who nodded. "Rather thicker than one usually sees. . . quite rigid. . . ten and a quarter inches. . . Avis!"
-　　The hornbeam wand let off a blast hike a gun, and a number of small, twittering birds flew out of the end and through the open window into the watery sunlight.
+　　The hornbeam wand let off a blast like a gun, and a number of small, twittering birds flew out of the end and through the open window into the watery sunlight.
 　　"Good," said Mr. Ollivander, handing Krum back his wand. "Which leaves. . . Mr. Potter."
 　　Harry got to his feet and walked past Krum to Mr. Ollivander. He handed over his wand.
 　　"Aaaah, yes," said Mr. Ohlivander, his pale eyes suddenly gleaming. "Yes, yes, yes. How well I remember."
@@ -13773,10 +13772,12 @@ we all know this is a copyright protected book....blah, blah, blah. no reproduct
 　　"Oh - right," said Harry.
 　　"And we've got to do our detentions tomorrow night, Snape's dungeon," said Ron.
 　　He then walked straight out of the room, not looking at Harry. For a moment, Harry considered going after him - he wasn't sure whether he wanted to talk to him or hit him, both seemed quite appealing - but the lure of Sirius's answer was too strong. Harry strode over to the barn owl, took the letter off its leg, and unrolled it.
-　　Harry - I can't say everything I would like to in a letter, it's too risky in case the owl is intercepted - we need to talk face-to-face. Can you ensure that you are alone by the fire in Gryffindor Tower at one o'clock in the morning on the 22nd ofNovember?
+　　Harry - I can't say everything I would like to in a letter, it's too risky in case the owl is intercepted - we need to talk face-to-face. Can you ensure that you are alone by the fire in Gryffindor Tower at one o'clock in the morning on the 22nd of November?
 　　I know better than anyone that you can look after yourself and while you're around Dumbledore and Moody I don't think anyone will be able to hurt you. However, someone seems to be having a good try. Entering you in that tournament would have been very risky, especially right under Dumbkdore's nose.
-　　Be on the watch, Harry. I still want to hear about anything unusual. Let me know about the 22nd ofNovember as quickly as you can.
-　　Sirius CHAPTER NINETEEN - THE HUNGARIAN HORNTAIL
+　　Be on the watch, Harry. I still want to hear about anything unusual. Let me know about the 22nd of November as quickly as you can.
+　　Sirius
+
+　　CHAPTER NINETEEN - THE HUNGARIAN HORNTAIL
 　　The prospect of talking face-to-face with Sirius was all that sustained Harry over the next fortnight, the only bright spot on a horizon that had never looked darker. The shock of finding himself school champion had worn off slightly now, and the fear of what was facing him had started to sink in. The first task was drawing steadily nearer; he felt as though it were crouching ahead of him hike some horrific monster, barring his path. He had never suffered nerves like these; they were way beyond anything he had experienced before a Quidditch match, not even his last one against Slytherin, which had decided who would win the Quidditch Cup. Harry was finding it hard to think about the future at all; he felt as though his whole life had been heading up to, and would finish with, the first task.
 　　Admittedly, he didn't see how Sirius was going to make him feel any better about having to perform an unknown piece of difficult and dangerous magic in front of hundreds of people, but the mere sight of a friendly face would be something at the moment. Harry wrote back to Sirius saying that he would be beside the common room fire at the time Sirius had suggested; and he and Hermione spent a long time going over plans for forcing any stragglers out of the common room on the night in question. If the worst came to the worst, they were going to drop a bag of Dungbombs, but they hoped they wouldn't have to resort to that - Filch would skin them alive.
 　　In the meantime, life became even worse for Harry within the confines of the castle, for Rita Skeeter had published her piece about the Triwizard Tournament, and it had turned out to be not so much a report on the tournament as a highly colored life story of Harry.
@@ -13826,7 +13827,7 @@ we all know this is a copyright protected book....blah, blah, blah. no reproduct
 　　"Come on, please just take off your cloak for a bit, no one's going to bother you here."
 　　"Oh yeah?" said Harry. "Look behind you."
 　　Rita Skeeter and her photographer friend had just emerged from the Three Broomsticks pub.
-　　Talking in low voices, they passed right by Hermione without hooking at her. Harry backed into the wall of Honeydukes to stop Rita Skeeter from hitting him with her crocodile-skin handbag. When they were gone, Harry said, "She's staying in the village.
+　　Talking in low voices, they passed right by Hermione without looking at her. Harry backed into the wall of Honeydukes to stop Rita Skeeter from hitting him with her crocodile-skin handbag. When they were gone, Harry said, "She's staying in the village.
 　　I bet she's coming to watch the first task."
 　　As he said it, his stomach flooded with a wave of molten panic. He didn't mention this; he and Hermione hadn't discussed what was coming in the first task much; he had the feeling she didn't want to think about it.
 　　"She's gone," said Hermione, looking right through Harry toward the end of the street.
@@ -13846,7 +13847,7 @@ we all know this is a copyright protected book....blah, blah, blah. no reproduct
 　　"When house-elves have decent wages and working conditions!" she hissed back. "You know, I'm starting to think it's time for more direct action. I wonder how you get into the school kitchens?"
 　　"No idea, ask Fred and George," said Harry.
 　　Hermione lapsed into thoughtful silence, while Harry drank his butterbeer, watching the people in the pub. All of them looked cheerful and relaxed. Ernie Macmillan and Hannah Abbot were swapping Chocolate Frog cards at a nearby table; both of them sporting Support Cedric Diggory! badges on their cloaks. Right over by the door he saw Cho and a large group of her Ravenclaw friends. She wasn't wearing a Cedric badge though. . . . This cheered up Harry very slightly.
-　　What wouldn't he have given to be one of these peophe, sitting around laughing and talking, with nothing to worry about but homework? He imagined how it would have felt to be here if his name hadn't come out of the Goblet of Fire. He wouldn't be wearing the Invisibility Cloak, for one thing. Ron would be sitting with him. The three of them would probably be happily imagining what deadly dangerous task the school champions would be facing on Tuesday. He'd have been really hooking forward to it, watching them do whatever it was...cheering on Cedric with everyone else, safe in a seat at the back of the stands...
+　　What wouldn't he have given to be one of these peophe, sitting around laughing and talking, with nothing to worry about but homework? He imagined how it would have felt to be here if his name hadn't come out of the Goblet of Fire. He wouldn't be wearing the Invisibility Cloak, for one thing. Ron would be sitting with him. The three of them would probably be happily imagining what deadly dangerous task the school champions would be facing on Tuesday. He'd have been really looking forward to it, watching them do whatever it was...cheering on Cedric with everyone else, safe in a seat at the back of the stands...
 　　He wondered how the other champions were feeling. Every time he had seen Cedric lately, he had been surrounded by admirers and looking nervous but excited. Harry glimpsed Fleur Delacour from time to time in the corridors; she looked exactly as she always did, haughty and unruffled. And Krum just sat in the library, poring over books.
 　　Harry thought of Sirius, and the tight, tense knot in his chest seemed to ease slightly.
 　　He would be speaking to him in just over twelve hours, for tonight was the night they were meeting at the common room fire - assuming nothing went wrong, as everything else had done lately...
@@ -14028,7 +14029,7 @@ we all know this is a copyright protected book....blah, blah, blah. no reproduct
 　　"Why are you telling me?" he asked.
 　　Harry looked at him in disbelief. He was sure Cedric wouldn't have asked that if he had seen the dragons himself. Harry wouldn't have let his worst enemy face those monsters unprepared - well, perhaps Malfoy or Snape...
 　　"It's just . . . fair, isn't it?" he said to Cedric. "We all know now. . . we're on an even footing, aren't we?"
-　　Cedric was still hooking at him in a slightly suspicious way when Harry heard a familiar clunking noise behind him. He turned around and saw Mad-Eye Moody emerging from a nearby classroom.
+　　Cedric was still looking at him in a slightly suspicious way when Harry heard a familiar clunking noise behind him. He turned around and saw Mad-Eye Moody emerging from a nearby classroom.
 　　"Come with me, Potter," he growled. "Diggory, off you go."
 　　Harry stared apprehensively at Moody. Had he overheard them?
 　　"Er - Professor, I'm supposed to be in Herbology -"

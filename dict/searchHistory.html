@@ -1,0 +1,97 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>单词检索历史 v0.1</title>
+<!--
+v0.1 
+-->
+<style>
+.data,.data textarea,.data select,.data button,.data input{margin:10px; padding:10px;}
+.data textarea{height:200px; width:80%}
+.data button{cursor:pointer;}
+#history{color:#666;}
+</style>
+
+<div class=data>
+	<span>Word search history</span>
+	<hr>
+	word: <span  id='word'></span><br>
+</div>
+
+Search History:
+<div  id='history'></div>
+
+
+<script src="/static/js/jquery.min.js"></script>
+<script>
+
+//获取url中的参数 https://www.cnblogs.com/vicky-li/p/9145026.html
+function getUrlParam(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+
+//时间戳（秒级）转换为"年月日时分秒"格式
+function formatTimestamp(timestamp) {
+    // 秒级时间戳需乘以1000转为毫秒
+    const date = new Date(timestamp * 1000);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+// 使用示例
+//console.log(formatTimestamp(1760181733)); // 输出: 2025-10-11 11:22:13
+
+
+var print=console.log
+$(document).ready(function(){
+	//获取单词
+	var word=getUrlParam('word');
+	if(word==null){
+		alert('No word found!请在url指定单词')
+		return false;
+	}
+
+	//默认显示20条历史搜索记录
+	var limit=getUrlParam('limit');
+	if(limit==null){
+		limit=20;
+	}
+	print(word, limit)
+
+	//请求数据库，填充内容
+	$.get('http://127.0.0.1:20180/api/word_searched/word/'+word+'/'+limit, function(data,status){
+		if(status=='success'){
+			console.log('OK:',data,status)
+			if(data.length==0){
+				console.log("No search history data found.")
+				$("#history").html("No search history data found.")
+				return false;
+			}
+
+			//if not empty
+			$('#word').html(data[0][1]);
+			// 逐条显示历史记录
+			var oDiv=document.createElement("div");
+			for(var i in data){
+				var humanTime=formatTimestamp( parseInt(data[i][3]) )
+				// print(i, data[i], humanTime)
+				var oItem=document.createElement("div");
+				oItem.innerHTML=humanTime;
+				oItem.setAttribute("class", "light")
+				oDiv.append(oItem);
+			}
+			$("#history").html(oDiv)
+
+		}else{
+			console.log('Error',data,status)
+		}
+	});
+
+
+});
+</script>

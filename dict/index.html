@@ -111,13 +111,24 @@ var showTrans=function(){
 			//console.log(res)
 			data=res.data
 
-			//如果是新词
 			addButtonHtml=""
+			modifyButtonHtml=""
+			searchHistoryButtonHtml=""
+			//如果是新词: 显示添加按钮
 			if(data.isNewWord){
 				addButtonHtml='<button style="color:red;cursor:pointer;" onclick=\"addWord2DB(\''+word+'\')\">添加生词到数据库</button>'
+			}else{
+				//如果不是新词：显示修改按钮
+				modifyButtonHtml='<a class="fix" target=_blank href="updateWord.html?id='+data.id+'">[修改]</a>'
+				searchHistoryButtonHtml='<a class="fix" target=_blank href="searchHistory.html?word='+data.word+'&limit=20">[搜索历史]</a>'
 			}
 
-			$('#show').html( '<b>'+data.word +'</b> <a class="fix" target=_blank href="updateWord.html?id='+data.id+'">[修改]</a>'+addButtonHtml+'<br><span class=phonetic>'+ data.phoneticSymbol +'</span><br>'+data.meaning);
+			$('#show').html( '<b>'+data.word +'</b> '+
+				modifyButtonHtml+
+				addButtonHtml+
+				searchHistoryButtonHtml+
+				'<br><span class=phonetic>'+ data.phoneticSymbol +'</span><br>'+
+				data.meaning);
 			
 			//添加其他词典的链接 悬浮显示
 			$('#show').append('<div id=otherDict>本窗口: <a target=box2 href="https://dict.youdao.com/w/eng/'+word+'/#keyfrom=dict2.index">有道词典</a> | '+

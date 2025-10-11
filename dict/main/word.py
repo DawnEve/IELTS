@@ -426,3 +426,20 @@ def  add_word_routes(app):
             'data':msg
         })
     #
+
+
+
+    ##################
+    ## 单词查询历史
+    ##################
+
+    # 获取单词检索历史记录
+    @app.route('/api/word_searched/word/<word>/<limit>')
+    def get_word_searched(word, limit):
+        #sql语句：查询单词
+        sql='select * from word_searched where word="'+word+'" order by add_time DESC limit '+limit+';'
+        print('006=================>word_searched:sql=',sql)
+        # 执行sql语句
+        results=mydb.query(sql)
+        return cors(results)
+
