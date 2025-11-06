@@ -34,6 +34,7 @@ tips:很多网页是https的，需要构建https服务器，
 #v0.4.3 长度为0或大于30的不查
 #v0.4.4 支持远端访问，只要php文件放到web服务器即可，js放到哪里都行。
 	生词本记录在web端：http://applybio.com/wordKing/backup/tmp/wordSearched_201912.txt
+#v0.4.5 fix bug: 防止source中也含有word=覆盖掉前者，所以去掉source中?及之后的部分
 #
 
 
@@ -156,7 +157,14 @@ $(document).click(function(event){
 		self.ajax({
 			method:"get",
 			//访问后台 //todo: 修改时要保证能访问到php文件
-			url:location.protocol+"//ielts.dawneve.cc/wordKing/dawnDict.php?word="+word+'&source='+window.location, 
+			url:(function(){
+				var url=location.protocol+"//ielts.dawneve.cc/wordKing/dawnDict.php?word="+word+'&source=';
+				// fix bug v0.4.5 防止source中也含有word=覆盖掉前者，所以去掉source中?及之后的部分
+				var src=window.location.href;
+				console.log(src)
+				const cleanSrc = src.split('?')[0];
+				return url+cleanSrc;
+			})(),
 			//url:location.protocol+"//applybio.com/wordKing/dawnDict.php?word="+word+'&source='+encodeURIComponent(window.location),  
 			
 			success:function(data){
