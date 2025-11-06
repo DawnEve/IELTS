@@ -420,6 +420,18 @@ G:\xampp\mysql\bin\mysqldump -h y.biomooc.com -P 7070 -u root -p wang word_unkno
 - 执行压缩脚本，把sql压缩为 zip 文件: 需要先修改路径名，然后执行 > python get_zip.py
 - dict/backup/IELTS_tables_20250407-194617.zip 上传到 https://github.com/DawnEve/IELTS/issues/9
 
+(3)怎么导入例句
+准备: 
+	txt脚本: http://ielts.dawneve.cc/reading/dawnReader.html?text=2025/05/10
+	py脚本: D:\xampp\htdocs\IELTS\dict\sql\updateBlob.py 另存为一份py脚本，粘进去除标题外的全文
+开始:
+	1.navicat 打开库wang中的表 msg_English；
+	2.在末尾主动添加一行: 点击+，输入下一个msg_id 比如619, 然后手工输入除了最后blob之外的字段;
+	3.修改py脚本: text2=英文主体句子；最后一行修改为msg_id，如: updateBlob(addHtmlTagP(text2), 619)
+	4.然后使用cmd执行: D:\xampp\htdocs\IELTS\dict\sql>python updateBlob-v2.py
+	最后看到 commit successfully
+	5.检查 navicat 的最后一个字段，检查网页效果: http://ielts.dawneve.cc/dict/sentence2.html?id=619&word=Materials
+
 
 
 
@@ -435,7 +447,10 @@ v1.1 反馈结果新增 viewed 字段，影响筛选单词时的排序;
 v1.2 备份脚本 tools/get_zip.py
 v1.3 update ReadMe
 v1.4 查单词，对新词(不在数据库)默认不保存到数据库，提供按钮手工决定是否保存
+v1.5 txt语料库的检索方案：本地SQLite表(每周预处理一次) //todo
 
 todo
 1.浏览语料库，删除质量不高的部分
 2.
+
+

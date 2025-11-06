@@ -1,5 +1,6 @@
 # sentence module
-#
+# v0.2 no letter before word
+
 from __init__ import *
 
 
@@ -24,7 +25,7 @@ def  add_sentence_routes(app):
             sql="select * from sentence_dawn order by add_time DESC, id DESC limit %d,%d;" % ( (page-1)*size, size );
         else:
             initSite=(page-1)*size
-            sql="select * from sentence_dawn where line like '%"+word+"%' order by add_time DESC, id DESC limit "+str(initSite)+","+str(size)+";";
+            sql="select * from sentence_dawn where line LIKE '"+word+"%' OR line LIKE +'% "+word+"%' order by add_time DESC, id DESC limit "+str(initSite)+","+str(size)+";";
             #sql=sql % ( (page-1)*size, size );
         #print('************>>>word=',word,sql)
         rs=mydb.query(sql)
@@ -164,7 +165,7 @@ def  add_sentence_routes(app):
             sql="select * from msg_English order by msg_date DESC, msg_id DESC limit %d,%d;" % ( (page-1)*size, size );
         else:
             initSite=(page-1)*size
-            sql="select * from msg_English where msg_content like '%"+word+"%' order by msg_date DESC, msg_id DESC limit "+str(initSite)+","+str(size)+";";
+            sql="select * from msg_English where msg_content LIKE '"+word+"%' OR msg_content LIKE +'% "+word+"%' order by msg_date DESC, msg_id DESC limit "+str(initSite)+","+str(size)+";";
             #sql=sql % ( (page-1)*size, size );
         #print('************>>>word=',word,sql)
         rs=mydb.query(sql)

@@ -2,37 +2,47 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>拂晓语料库 v0.4</title>
+<title>拂晓txt语料库</title>
 <!--
 version
-v0.1 可用
-v0.2 能url分页
-v0.3 分页按钮
-v0.4 添加句子按钮
-v0.5 匹配后大小写保持不变
+v1.1b 修改自 sentence2.html 页
 -->
 
 <script src="/static/js/jquery.min.js"></script>
 <style>
 /*
+#1AAD19#9CE99B
+body{background:#95a295;}
 */
-.wrap{margin:10px;margin:10px 0; font-size:1em;}
+h1,
 div,p,span{margin:0;padding:0;}
-.box{
-	/*
-	background:#fff;
-	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
-	border:1px solid #eee;
-    border-radius: 5px;
-	margin:5px;
-	*/
-	padding:0px 0px 10px 10px;/*top,right,b,l*/
-	border-left:3px solid #eee;
+.wrap{max-width:800px;  margin:10px auto; font-size:1em; }
+
+#boxes{}
+
+h1{color:#eee;
+	text-align: center;
 }
-.box:hover{border-left-color:#f00;}
+h1 .small{font-size: small; margin-left:10px;}
+
+.box{
+	opacity: 0.8;
+	background:rgba(255,255,255, 1);
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+    border-radius: 10px;
+	margin-bottom:10px;
+	
+	padding:0px 10px 10px 10px;/*top,right,b,l*/
+	border-left:3px solid #eee;
+	
+	box-shadow: 0 2px 10px #999;
+    -moz-box-shadow: #999 0 2px 10px;
+    -webkit-box-shadow: #999 0 2px 10px;
+}
+.box:hover{border-left-color:#f00; opacity: 1;}
 .box a{text-decoration: none;}
 .box a:hover{text-decoration: underline;}
-.even{background: rgba(239,245,221,0.6);}
+.even{background: rgba(239,245,221,1);}
 
 .light,.light a{color:#ccc; font-size:smaller;}
 
@@ -44,20 +54,62 @@ span.highlight{border-bottom:thin dotted rgba(255,0,0,0.4);}
 .pages{width:300px; margin:0 auto; padding:0; text-align:center;}
 .pages button{padding:10px;width:100px; cursor:pointer; opacity: 0.2;}
 
+
+
+
+/* button in the middle */
 .middle{width:300px; margin:30px auto; padding:0; text-align:center;}
 .middle a{ text-decoration:none; 
 	padding:5px;
-	background-color: rgba(255,206,206,0.5);
+	/*background-color: rgba(255,206,206,0.5);*/
+	border:1px solid #FD6C6C;
 	color: #FD6C6C;
 }
 .middle a:hover{color:red;}
+
+h5{margin:0;padding:0; color:#ddd;}
+
+
+
+
+/* add blur background picture */
+.blur_bj{
+/*
+	background-image:url(/static/image/bg.jpg);
+*/
+	background-image:url(/static/image/stary_night.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	
+	position: fixed;
+	/*position: absolute*/ 
+	top: 0; left:0;
+	
+	filter: blur(5px);
+	/*backdrop-filter: blur(6px); */
+	
+	z-index: -1;
+	opacity: 0.5;
+}
+
+
+/*footer*/
+.bgBlack{text-align:center; color:#666; }
+.bgBlack a{color:#666; text-decoration:none;}
+.bgBlack a:hover{color:red; text-decoration:underline;}
 </style>
 
 </head>
 
 
-
 <body>
+<h1>拂晓txt语料库<span class=small>Search /reading/*txt</span></h1>
+
+<div class='blur_bj'></div>
+
 
 <div class='pages'>
 	<button>Previous</button>
@@ -73,9 +125,20 @@ span.highlight{border-bottom:thin dotted rgba(255,0,0,0.4);}
 	<button>Next</button>
 </div>
 
+<!-- 
 <div class=middle>
-	<a href="addSentence.html">add sentence</a>
 </div>
+-->
+
+
+<div class='wrap bgBlack'>
+	&copy;2022
+	- 2025
+	<a target="_blank" href="/en/">英语读报</a> |
+	<a target="_blank" href="/">首页</a> | 
+	<a id="dict_" target="_blank" href="index.html">拂晓词典</a>
+</div>
+
 
 <script>
 print=console.log
@@ -94,7 +157,7 @@ $(document).ready(function(){
 	var word=getUrlParam('word')
 	var id=getUrlParam('id')
 	var page=getUrlParam('page')
-	var url='http://127.0.0.1:20180/api/sentence/word/'
+	var url='http://127.0.0.1:20180/api/sentence3/word/'
 	
 	if(word!=null){
 		url+=word
@@ -102,21 +165,28 @@ $(document).ready(function(){
 		url+="null2"
 	}
 	if(id!=null){
-		url='http://127.0.0.1:20180/api/sentence/id/'+id
+		//url='http://127.0.0.1:20180/api/sentence2/id/'+id;
+		url='http://127.0.0.1:20180/api/sentence3/id/'+id;
 	}
 	if(page!=null){
 		url+="?page="+page
 	}
 	console.log(url)
 	$.get(url,function(res,status){
-		//wjl=res;
+
 		if(res.length==0){
 			html="<div class=box>Nothing found.</div>"
 			$('#boxes').append(html)
 			return false;
 		}
 		for(var i in res){
-			var lineInfo=res[i], sid=lineInfo[0], line=lineInfo[1], source=lineInfo[2];
+			var lineInfo=res[i], sid=lineInfo[0], line=lineInfo[6], url=lineInfo[1], source=lineInfo[2];
+			var title=lineInfo[5], date=lineInfo[3];
+
+			//js 转义
+			//title=decodeURI(title);
+
+			
 			//一行分成多个句子
 			//var arr=line.split(/[.?!]+\s/);
 			//console.log(arr)
@@ -144,21 +214,21 @@ $(document).ready(function(){
 							//sentence=arr[j].replace(/word/ig,function(word){	
 							sentence=arr[j].replace(reg, function(keyword,index,originText){
 								const originalWord = originText.substr(index, keyword.length);
-								//console.log(reg,keyword,index,originText)//关键词  位置 原文
+								//console.log('>reg:', reg,keyword,index,originText) //关键词  位置 原文
 								return("<span class=highlight>"+originalWord+'</span>')
 							})
 							break;
 						}else if(arr[j].match(regLoose)){
 							sentence=arr[j].replace(regLoose, function(keyword,index,originText){
 								const originalWord = originText.substr(index, keyword.length);
-								//console.log(keyword,index,originText)//关键词  位置 原文
+								//console.log('>regLoose:', regLoose, keyword,index,originText) //关键词  位置 原文
 								return("<span class=highlight2>"+originalWord+'</span>')
 							})
 							break;
 						}
 					}
 				}else{//有id，则一行全部显示
-					sentence=line.replace(reg, function(keyword,index,originText){
+					sentence=line.replace(reg, function(keyword, index, originText){
 						const originalWord = originText.substr(index, keyword.length);
 						return("<span class=highlight>"+originalWord+'</span>')
 					})
@@ -168,13 +238,22 @@ $(document).ready(function(){
 			var wordPara=""
 			if(word!=null){
 				wordPara='&word='+word
+				document.getElementById('dict_').href='index.html?word='+word
 			}
 			
 			var even=i%2==0?"":" even";
+			
+			
+			//url中有id，则只显示一篇：大标题，带描述。否则小标题，不带描述
+			var html_title='<span class=light> | '+title+'</span>'
+			if(id!=null){
+				html_title='<h4>'+title+'</h4>'+'<p class=light>'+line+'</p>'
+			}
+			
 			html="<div class='box"+even+"'>"+
-				'<span class=light><a target=_blank href="?id='+sid+wordPara+'">#'+sid+'</a> ['+ source +']</span>'+
-				'<p>'+sentence+'</p>'
-			+"</div>"
+				'<span class=light><a target=_blank href="?id='+sid+wordPara+'">#'+sid+'</a> | <a href="'+url+'">['+source+', '+date+']</a></span>'+html_title+
+				'<p>'+sentence+'</p>'+
+			"</div>"
 			
 			//console.log(rs)
 			$('#boxes').append(html)
@@ -206,11 +285,24 @@ $(document).ready(function(){
 
 
 
+/* 随机替换背景图 */
+var BgObj=document.getElementsByClassName('blur_bj')[0]
+// 使用github做图床 https://github.com/DawnEve/IELTS/issues/8
+var picURLs=["/static/image/face.jpg", "/static/image/stary_night.png", //2个默认背景图
+	'/static/image/owl.png', //猫头鹰
+	//'https://user-images.githubusercontent.com/5974903/99779125-9361c100-2b4f-11eb-9e2b-76952c92d72d.jpg', //bird
+	//'https://user-images.githubusercontent.com/5974903/99779243-bd1ae800-2b4f-11eb-969f-351e59f40870.jpg', //peach
+	//'https://user-images.githubusercontent.com/5974903/99779247-bf7d4200-2b4f-11eb-8a64-74f21ff63a03.jpg', //peach-2
+]
+var picURL=picURLs[new Date().getTime() % picURLs.length] //随机选取一张
+BgObj.style['backgroundImage']='url('+picURL+')';
 
 
 
 
-var s=document.createElement("script");s.src="https://ielts.dawneve.cc/wordKing/dawnDict.js";document.body.append(s);
+
+/* 载入划词搜索：仅单个单词*/
+var s=document.createElement("script");s.src="http://ielts.dawneve.cc/wordKing/dawnDict.js";document.body.append(s);
 </script>
 
 </body>

@@ -27,6 +27,10 @@ add_word_routes(app)
 from main.sentence import *
 add_sentence_routes(app)
 
+# sentence3 模块-local file search
+from main.sentence3 import *
+add_sentence3_routes(app)
+
 # statistic 模块
 from main.statistic import *
 add_statistic_routes(app)

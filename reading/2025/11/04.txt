@@ -1,0 +1,47 @@
+CNN | Why Apple is sidestepping Silicon Valley’s AI bloodsport
+<span class=light>Nov 04, 2025 | 630 words
+Sep 10, 2025 | PUBLISHED Sep 10, 2025, 5:00 AM ET | Analysis by Allison Morrow
+
+Apple CEO Tim Cook barely mentioned AI during Tuesday's marketing event. Nic Coury/AFP/Getty Images
+A version of this story appeared in CNN Business’ Nightcap newsletter. To get it in your inbox, sign up for free here.
+</span>
+<b>New York</b> — As expected, Apple rolled out a bunch of gadget upgrades during its closely watched marketing event on Tuesday. But perhaps the most notable thing about its crisply edited, hour-and-ten-minute propaganda reel was this: Apple went really quiet when it came to artificial intelligence.
+
+The theme of the day was Apple’s bread and butter: hardware. It’s got new AirPods that can translate bilingual conversations in real time, a watch that can monitor your blood pressure and, of course, a skinny phone. There was plenty of hype, to be sure — CEO Tim Cook’s opening monologue heralded the iPhone 17 as “the biggest leap ever for iPhone.”
+
+But not once did an Apple executive grandstand about how their artificial intelligence models would upend the global economy. Heck, they barely talked about AI upending their own products. The words “Apple Intelligence,” the company’s proprietary AI, rarely came up. (I counted four passing references to it in the entire video.)
+
+Also telling: No one talked about Siri, the voice assistant feature that has become a vector of Apple’s AI ambitions. Not even once.
+
+Long story short, Apple overhauled Siri to incorporate Apple Intelligence last year, and it was a disaster. Apple had to claw back key features, including its (very funny but very inaccurate) text message and news app summaries.
+
+It was a rare stumble for the most brand-conscious tech company on the planet, and it’s not about to risk another “overpromise, underdeliver” moment.
+
+“Apple (is) sidestepping the heart of the AI arms race while positioning itself as a longtime innovator on the AI hardware front,” Emarketer analyst Gadjo Sevilla said in a note Tuesday. “It’s a reminder that Apple’s competitive advantage remains rooted in product experience rather than raw AI as a product.”
+
+
+Apple has declined to give a timeline for AI-powered Siri’s revival, though Bloomberg’s Mark Gurman has reported it’s scheduled for spring 2026.
+
+Back in June, Apple’s software lead Craig Federighi assured developers at another event that the Siri upgrade “needed more time to reach our high quality bar, and we look forward to sharing more about it in the coming year.”
+
+At the time, I wrote that the Siri pullback was a sign that — despite the tired tech narrative about Apple falling behind its rivals — it is actually the only big tech company in the Valley using its brain when it comes to AI. The past three months have only reaffirmed my theory.
+
+<span class=light>Related article
+This may not be the AI winter. But investors are certainly feeling the chill.
+The AI vibe shift is upon us</span>
+
+Because here’s the thing: Apple’s homegrown AI is not good. Its main function so far has been both underwhelming (it summarizes texts and news alerts) and unreliable (it misreads said texts and generates alarmingly inaccurate headlines, like the one where it told users that accused murderer Luigi Mangione had shot himself or that tennis star Rafael Nadal had come out as gay — neither of which was true.)
+
+But Apple’s AI is lame in the same way Google’s Gemini is lame (remember when it told us to eat rocks?) and OpenAI’s ChatGPT is really, really lame. Apple has not found a reliable use case for its AI in consumer products. And neither has anyone else — at least, not to the degree needed to justify the massive valuations and investment dollars they’re pouring into these projects.
+
+But that’s not stopping the biggest names in tech from burning through hundreds of billions of dollars to try to manifest the model that will do… something. Never mind that large language models have so far proven useless at 95% of the companies that have made their workforces try to use them, researchers from MIT recently found.
+
+Apple hasn’t abandoned AI, to be sure, but it is clearly doubling down on what it does best – making gadgets that we’re addicted to, inside an ecosystem that is rather annoying to leave.
+
+“Apple is thinking pragmatically,” Bloomberg tech columnist Dave Lee wrote Monday. “It may not make much sense to sink billions of dollars into building its own AI when, as the leading hardware maker, it has the power to go out into the marketplace and choose whatever models it considers to be well suited. It can use the dominance of the iPhone to help push for the best possible terms, playing potential partners against one another, much in the way it squeezes those responsible for its components and manufacturing.”
+
+In other words: Let the hotheads duke it out over this still-speculative technology. Apple will be there waiting, sitting on a mountain of cash, ready to partner with (or outright acquire) whichever operation cracks the code.
+
+<span class=light>
+https://edition.cnn.com/2025/09/10/business/ai-artificial-intelligence-apple-silicon-valley
+</span>

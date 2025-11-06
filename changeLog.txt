@@ -661,8 +661,9 @@ en0.5.8-6@picb 听力/ HP 4_18: 77%; [2025/10/6]
 	阅读/wechat/ xx.md.txt 公众号草稿;
 en0.5.8-7@picb Dawn 词典：新单词不应该显示 修改 按钮; 新增搜索历史功能[2025/10/11]
 	听力/ HP 4_18: 86%[10/7]; 93%[10/8]; 100%[10/11]
-
-
+en0.5.8-8@picb /dict/ 检索高亮原文单词，保持大小写不变; 可以搜索/reading/*txt的例句 [2025/11/06]
+	听力/ HP 4_19: 17%[10/30]
+	AI 编写的牛津树学习web界面: code/webPlayer4OxfordReadingTree/
 #
 #
 # commited local
