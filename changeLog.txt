@@ -667,6 +667,8 @@ en0.5.8-8@picb /dict/ 检索高亮原文单词，保持大小写不变; 可以�
 en0.5.8-9@picb fix wordKing/dawnDict.js [2025/11/06]
 en0.5.9-0@picb 转向笔记本，准备走 [2025/12/2]
 	听力/ HP 4_19: 34%[11/25];
+en0.5.9-1@hz update lis css: @media print [2026/9/29]
+	add NCE1/2; rm hujiang links; add reading tpl-HP4-v4;
 #
 #
 # commited local
