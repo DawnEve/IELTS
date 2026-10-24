@@ -2,36 +2,54 @@
 <head>
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
 <title>txtNovelReader v0.3</title>
-<script src="/static/js/tongji.js"></script>
+
+<!--
+<script async src="/static/js/tongji.js"></script>
+-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 /*
 version info: v0.1 可用
 version info: v0.2 优化界面
 version info: v0.3 优化界面2
+version info: v0.4 using AI 优化功能(计算百分比),新增右上角统计功能
 */
 
 
 #text{
-	color:#a65628; 
+	color:#a65628;
+	/*
+	#a65628（棕橙） 对比度4:1，我感觉更舒服
+	更亮的暖色 #d8a06a 或 #e0c39a，正文对比度 8:1
+	
+	color:#d8a06a;
+	*/
 	background:black;
 	
-	font-size:25px; font-family:Roboto, 'Segoe UI',Arial,'Microsoft Yahei',sans-serif;
-	line-height:40px;
-}
+	font-size:25px;
+	font-family:Roboto, 'Segoe UI',Arial,'Microsoft Yahei',sans-serif;
+    line-height: 1.6;
+	letter-spacing: 0.5px; /*中文更透气*/
 
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
 
 html, body, div, pre{margin:0; padding:0;}
 html{background-color: rgb(82, 86, 89);}
 
 #topMenu{
+	box-sizing: border-box;
+    z-index: 1000;
 	background:#333;
 	width:100%;
 	/*border-bottom:1px solid #aaa;*/
 	position:fixed;
-	padding-left:20px;
 	top:0;
+	left:0;
 	height:25px;
+	padding:2px 12px;
 }
 #topMenu span.left{
 	font-weight:bold; 
@@ -54,17 +72,17 @@ html{background-color: rgb(82, 86, 89);}
 
 #topMenu input{background:#666;}
 
-.wrap{max-width:800px; margin:25 auto;}
+.wrap{max-width:800px; margin:30px auto 10px;}
 pre{
-	word-wrap: break-word!important; 
+	box-sizing: border-box;
+	word-wrap: break-word!important;
+	overflow-wrap: anywhere;
 	white-space: pre-wrap;
-	padding-left:20px;
-	padding-right:20px;
+	padding:12px 20px;
+	margin:0;
 }
-#text{	
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-}
-#status{width:50px; height:17px; border-radius: 5px;}
+
+#status{width:70px; height:17px; border-radius: 5px;}
 
 #set{
 	height:20px; 
@@ -78,6 +96,24 @@ pre{
 #footer{background:black; color:white; text-align: center;}
 
 ::selection { background:#ff9632; color: #000; }
+
+
+@media (max-width: 600px) {
+    #text {
+        font-size: 20px;
+        line-height: 1.7;
+        letter-spacing: 0.2px;
+    }
+
+    pre {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    #topMenu span.right {
+        width: auto;
+    }
+}
 </style>
 </head>
 
@@ -85,18 +121,27 @@ pre{
 <body>
 <div id=topMenu>
 	<span class='left'>txtNovelReader</span> 
-	<span class='right'>Percent <input type='input' id=status value=0></inpyt>% <button id='set'>Go</button></span>
+	<span class='right'>
+		Percent
+		<input type='number' id=status value="0.000" min="0" max="100" step="0.001">%
+		<button id='set'>Go</button>
+		<br>
+		<span id="readStats">行 0 | 汉字 0 | 英词 0</span>
+	</span>
 </div>
 
 <div class='wrap'>
 	<pre id='text'><br><br>Loading ...</pre>
 </div>
 
-<div id='footer'>The end<br> &copy;2021 biomooc.com</div>
+<div id='footer'>The end<br> &copy;2021 -
+2027
+biomooc.com</div>
 
 
 
 <script>
+//-----------tools----------
 //get obj
 function $2(s){return document.getElementById(s)}
 
@@ -104,73 +149,183 @@ function $2(s){return document.getElementById(s)}
 function getUrlParam(name) {
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
 	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
-	if (r != null) return unescape(r[2]); return null; //返回参数值
+	if (r != null) {
+		// return unescape(r[2]);
+		return decodeURIComponent(r[2]);
+	}
+	
+	return null; //返回参数值
 }
 
 
 //get text from url
 function getText(){
-	textURI=getUrlParam('url')
+	var textURI=getUrlParam('url')
 	if(textURI==null){
 		alert('Please specify url parameter in the url!')
 		return false;
 	}
-	//document.onclick=function(e){
+
 	var xmlhttp=new XMLHttpRequest(); //1.获取对象
 	//2.绑定回调函数
 	xmlhttp.onreadystatechange=function(){
 		if (xmlhttp.readyState==4 && xmlhttp.status==200){
-			document.getElementById("text").innerHTML=xmlhttp.responseText;
+			// innerHTML 会有隐患：1.解析html标签，如<3, 2.执行js
+			document.getElementById("text").textContent=xmlhttp.responseText;
+			// 小说加载完成后更新统计：右上角
+			scheduleReadStats();
 		}
 	}
 	//3.设定访问的url
 	xmlhttp.open("GET",textURI,true);
 	//4.发送请求
 	xmlhttp.send();
-	//}
-}
-
-/*
-关于窗体高度、滚动高度的获取和设定
-https://www.cnblogs.com/xiaomili/p/6841315.html 浏览器滚动过的高度
-https://blog.csdn.net/weixin_43040026/article/details/106930858 js元素距离顶部距离
-https://blog.csdn.net/a2500397/article/details/82385468
-*/
-window.onscroll=function(e){
-	var e =e || window.event;
-	var scrolltop=document.documentElement.scrollTop||document.body.scrollTop; //IE || chrome
-	
-	var o=$2("text"); //get text box;
-	var h=-o.getBoundingClientRect().top;
-	//h=h+20
-	var total=o.offsetHeight || h
-	var windowHeight = window.innerHeight;// 视窗高度	
-	var pct=Math.round( (scrolltop+windowHeight)/total*100000)/1000;
-	$2('status').value=pct;
 }
 
 
-// 滚动到设定的百分比位置上
-function setTopct(){
-	var o=$2("text");
-	var h=-o.getBoundingClientRect().top;
-	var total=o.offsetHeight || h
-	var pct=$2('status').value/100;
-	
-	var windowHeight=window.innerHeight
-	document.body.scrollTop=pct*total-windowHeight;
+
+
+//-----------begin----------
+
+const statusInput = document.getElementById('status');
+const textBox = document.getElementById('text');
+const setButton = document.getElementById('set');
+
+const readStats = document.getElementById('readStats');
+
+// 获取文档最大滚动距离
+function getMaxScroll() {
+    return Math.max(
+        0,
+        document.documentElement.scrollHeight - window.innerHeight
+    );
 }
+
+// 更新阅读进度
+function updateProgress() {
+    const maxScroll = getMaxScroll();
+    const scrollTop = window.scrollY || 0;
+
+    const pct = maxScroll > 0
+        ? Math.round(scrollTop / maxScroll * 100000) / 1000
+        : 100;
+
+    statusInput.value = Math.min(100, Math.max(0, pct));
+}
+
+
+// 跳转到指定百分比
+function setTopct() {
+    const value = Number(statusInput.value);
+
+    if (statusInput.value.trim() === '' || !Number.isFinite(value)) {
+        return;
+    }
+
+    const pct = Math.min(100, Math.max(0, value));
+    const maxScroll = getMaxScroll();
+
+    window.scrollTo({
+        top: maxScroll * pct / 100,
+        behavior: 'auto'
+    });
+
+    statusInput.value = pct.toFixed(3);
+}
+
+
+window.addEventListener('scroll', updateProgress, { passive: true });
+window.addEventListener('resize', updateProgress);
+
+
 //点击set btn
-$2('set').onclick=setTopct
-//或者单击回车键
-$2('status').onkeydown =function(evt){
-	//获取键盘事件和数字
-	var evt = evt ||window.event;
-	var key=evt.which||evt.keyCode;
-	//回车键	
-	if (key==13){setTopct()}
-};
+setButton.addEventListener('click', setTopct);
 
+//或者单击回车键
+statusInput.addEventListener('keydown', function (evt) {
+    if (evt.key === 'Enter') {
+        setTopct();
+    }
+});
+
+
+
+
+
+
+// 更新阅读统计
+/*
+- 行数是原文行数，不是屏幕显示行数。 比如英文句子因为屏幕窄而自动折成三行，原文仍可能只算一行。统计实际排版行数需要另外测量布局，开销也更大。
+- 统计包含当前屏幕内的文字。 代码以当前视口底部作为统计位置，所以它反映的是已经滚动到并显示出来的内容，而不是视口顶部之前的内容。
+*/
+let statsTimer = null;
+
+function updateReadStats() {
+    // textContent 加载完成后，正文通常是一个文本节点
+    const node = textBox.firstChild;
+
+    if (!node || node.nodeType !== Node.TEXT_NODE) {
+        return;
+    }
+
+    const text = node.textContent;
+    const length = text.length;
+
+    // 统计当前视口底部对应的原文字符位置
+    const targetY = window.innerHeight;
+    const range = document.createRange();
+
+    let left = 0;
+    let right = length;
+
+    // 二分查找：找到视口底部附近的字符
+    while (left < right) {
+        const mid = Math.floor((left + right) / 2);
+
+        range.setStart(node, mid);
+        range.setEnd(node, Math.min(mid + 1, length));
+
+        const rect = range.getBoundingClientRect();
+
+        if (rect.top <= targetY) {
+            left = mid + 1;
+        } else {
+            right = mid;
+        }
+    }
+
+    const pos = Math.min(left, length);
+    const readText = text.slice(0, pos);
+
+    // 原文行数：按换行符计算
+    const lines = pos > 0
+        ? (readText.match(/\n/g) || []).length + 1
+        : 0;
+
+    // 汉字数：统计常见中日韩统一表意文字
+    const chinese = (readText.match(/\p{Script=Han}/gu) || []).length;
+
+    // 英文单词数：支持 don't、it's 等常见缩写
+    const words = (
+        readText.match(/[A-Za-z]+(?:['’][A-Za-z]+)*/g) || []
+    ).length;
+
+    readStats.textContent =
+        `行 ${lines} | 汉字 ${chinese} | 英词 ${words}`;
+}
+
+// 阅读统计定时任务
+function scheduleReadStats() {
+    clearTimeout(statsTimer);
+    statsTimer = setTimeout(updateReadStats, 1000);
+}
+
+window.addEventListener('scroll', scheduleReadStats, { passive: true });
+window.addEventListener('resize', scheduleReadStats);
+
+
+
+// 初始化
 window.onload=function(){
 	//尝试载入文本
 	getText()
