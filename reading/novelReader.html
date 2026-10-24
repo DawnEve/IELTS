@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
-<title>txtNovelReader v0.6</title>
+<title>txtNovelReader v0.7</title>
 
 <!--
 <script async src="/static/js/tongji.js"></script>
@@ -11,12 +11,15 @@
 
 <style>
 /*
-version info: v0.1 可用
-version info: v0.2 优化界面
-version info: v0.3 优化界面2
-version info: v0.4 using AI 优化功能(计算百分比),新增右上角统计功能
-version info: v0.5 优化右上角统计功能，新增page up/down控制
-version info: v0.6 新增记忆位置功能
+version info: 
+v0.1 可用
+v0.2 优化界面
+v0.3 优化界面2
+v0.4 using AI 优化功能(计算百分比),新增右上角统计功能
+v0.5 优化右上角统计功能，新增page up/down控制
+v0.6 新增记忆位置功能
+v0.6 新增记忆位置功能
+v0.7 优化记忆显示到顶部中间
 */
 
 
@@ -50,7 +53,7 @@ html{background-color: rgb(82, 86, 89);}
 	position:fixed;
 	top:0;
 	left:0;
-	height:25px;
+	height:28px;
 	padding:2px 12px;
 }
 #topMenu span.left{
@@ -85,6 +88,13 @@ pre{
 }
 
 #status{width:70px; height:17px; border-radius: 5px;}
+#readStats {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+	color: #6b6b6b;
+}
 
 #set{
 	height:20px; 
@@ -99,6 +109,14 @@ pre{
 
 ::selection { background:#ff9632; color: #000; }
 
+@media (max-width: 870px) {
+	/* 小屏幕隐藏阅读统计，但保留百分比和 Go 按钮 
+	停止js统计：设置 shouldUpdateReadStats()
+	*/
+    #readStats {
+        display: none;
+    }
+}
 
 @media (max-width: 600px) {
     #text {
@@ -115,6 +133,7 @@ pre{
     #topMenu span.right {
         width: auto;
     }
+	
 }
 </style>
 </head>
@@ -122,13 +141,12 @@ pre{
 
 <body>
 <div id=topMenu>
-	<span class='left'>txtNovelReader</span> 
+	<span class='left'>txtNovelReader</span>
+	<span id="readStats">Already read origin txt ...</span>
 	<span class='right'>
 		Percent
 		<input type='number' id=status value="0.000" min="0" max="100" step="0.001">%
 		<button id='set'>Go</button>
-		<br>
-		<span id="readStats">Already read(by raw txt):<br>...</span>
 	</span>
 </div>
 
@@ -245,8 +263,7 @@ function setTopct() {
 
 
 window.addEventListener('scroll', updateProgress, { passive: true });
-window.addEventListener('resize', updateProgress);
-
+window.addEventListener('resize', updateProgress)
 
 //点击set btn
 setButton.addEventListener('click', setTopct);
@@ -270,7 +287,17 @@ statusInput.addEventListener('keydown', function (evt) {
 */
 let statsTimer = null;
 
+// 小屏幕不执行阅读统计
+function shouldUpdateReadStats() {
+	// return true; // 添加这一句正常，去掉缩放就记不住了 debug
+    return window.innerWidth > 870; //设置成显示宽度小于1000，不计算行数、单词个数
+}
+
 function updateReadStats() {
+	if (!shouldUpdateReadStats()) {
+			return;
+    }
+	
     // textContent 加载完成后，正文通常是一个文本节点
     const node = textBox.firstChild;
 
@@ -321,19 +348,25 @@ function updateReadStats() {
     ).length;
 
     readStats.innerHTML =
-        `Already read(by raw txt):<br>Lines: ${lines.toLocaleString('en-US')}<br>`+
-		`Characters: ${chinese.toLocaleString('en-US')}<br>`+
+        `Already read origin txt Lines: ${lines.toLocaleString('en-US')} |`+
+		`Characters: ${chinese.toLocaleString('en-US')} |`+
 		`Words: ${words.toLocaleString('en-US')}`;
 }
 
 // 阅读统计定时任务
 function scheduleReadStats() {
     clearTimeout(statsTimer);
+	
+	// 小屏幕不安排统计任务
+    if (!shouldUpdateReadStats()) {
+        return;
+    }
+	
     statsTimer = setTimeout(updateReadStats, 1000);
 }
 
 window.addEventListener('scroll', scheduleReadStats, { passive: true });
-window.addEventListener('resize', scheduleReadStats);
+
 
 
 
@@ -488,18 +521,24 @@ window.addEventListener(
 
 
 window.addEventListener('resize', function () {
-    if (!positionReady) return;
+    if (
+        !currentBookKey ||
+        !textBox.firstChild ||
+        textBox.firstChild.nodeType !== Node.TEXT_NODE
+    ) {
+        return;
+    }
 
-    // 缩放或窗口尺寸变化时，暂停记录新的位置
+    // 一开始就暂停保存，避免缩放期间记录错误位置
     isResizing = true;
+    positionReady = false;
+
     clearTimeout(resizeTimer);
 
     resizeTimer = setTimeout(function () {
-        positionReady = false;
-
         requestAnimationFrame(function () {
             requestAnimationFrame(function () {
-                // 使用缩放前记录的原文字符位置
+                // 按缩放前保存的字符偏移量恢复位置
                 scrollToReadingOffset(currentReadingOffset);
 
                 updateProgress();
