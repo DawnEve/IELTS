@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
-<title>txtNovelReader v0.5</title>
+<title>txtNovelReader v0.6</title>
 
 <!--
 <script async src="/static/js/tongji.js"></script>
@@ -16,6 +16,7 @@ version info: v0.2 优化界面
 version info: v0.3 优化界面2
 version info: v0.4 using AI 优化功能(计算百分比),新增右上角统计功能
 version info: v0.5 优化右上角统计功能，新增page up/down控制
+version info: v0.6 新增记忆位置功能
 */
 
 
@@ -166,6 +167,10 @@ function getText(){
 		alert('Please specify url parameter in the url!')
 		return false;
 	}
+	
+	// 每本小说使用独立的阅读进度
+	currentBookKey = 'txtNovelReader:position:' + textURI;
+	positionReady = false;
 
 	var xmlhttp=new XMLHttpRequest(); //1.获取对象
 	//2.绑定回调函数
@@ -174,9 +179,7 @@ function getText(){
 
 		if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
 			textBox.textContent = xmlhttp.responseText;
-			// 小说加载完成后更新统计：右上角
-			scheduleReadStats();
-			updateProgress();
+			restoreReadingPosition();
 		} else {
 			textBox.textContent =
 				'Failed to load text. HTTP status: ' + xmlhttp.status;
@@ -360,6 +363,155 @@ document.addEventListener('keydown', function (evt) {
         top: evt.key === 'PageDown' ? step : -step,
         behavior: 'auto'
     });
+});
+
+
+
+
+
+
+/* ---------- 记忆每本小说的阅读位置 ---------- */
+
+let currentBookKey = '';
+let positionReady = false;
+let savePositionTimer = null;
+
+let currentReadingOffset = 0;
+let resizeTimer = null;
+let isResizing = false;
+// 获取屏幕指定位置对应的原文字符偏移量
+function getReadingOffset() {
+    const node = textBox.firstChild;
+    if (!node || node.nodeType !== Node.TEXT_NODE) return null;
+
+    const textRect = textBox.getBoundingClientRect();
+    const style = getComputedStyle(textBox);
+    const x = textRect.left + parseFloat(style.paddingLeft) + 2;
+    const y = Math.max(60, document.getElementById('topMenu')
+        .getBoundingClientRect().bottom + 10);
+
+    let range = null;
+
+    if (document.caretRangeFromPoint) {
+        range = document.caretRangeFromPoint(x, y);
+    }
+
+    if (!range || range.startContainer !== node) return null;
+    return range.startOffset;
+}
+
+// 将指定字符恢复到视口顶部附近
+function scrollToReadingOffset(pos) {
+    const node = textBox.firstChild;
+    if (!node || node.nodeType !== Node.TEXT_NODE) return;
+
+    pos = Math.max(0, Math.min(pos, node.length));
+
+    const range = document.createRange();
+    let rect = null;
+
+    // 换行符等字符可能没有有效矩形，向后寻找可见字符
+    for (let i = pos; i < Math.min(pos + 500, node.length); i++) {
+        range.setStart(node, i);
+        range.setEnd(node, i + 1);
+
+        const r = range.getBoundingClientRect();
+        if (r.height > 0 && r.width > 0) {
+            rect = r;
+            break;
+        }
+    }
+
+    if (rect) {
+        window.scrollTo({
+            top: Math.max(0, window.scrollY + rect.top - 60),
+            behavior: 'auto'
+        });
+    }
+}
+
+// 加载小说时恢复
+function restoreReadingPosition() {
+    const node = textBox.firstChild;
+    if (!node || node.nodeType !== Node.TEXT_NODE) return;
+
+    try {
+        currentReadingOffset =
+            Number(localStorage.getItem(currentBookKey)) || 0;
+    } catch (e) {
+        currentReadingOffset = 0;
+    }
+
+    currentReadingOffset = Math.max(
+        0, Math.min(currentReadingOffset, node.length)
+    );
+
+    positionReady = false;
+
+    requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+            scrollToReadingOffset(currentReadingOffset);
+            updateProgress();
+            scheduleReadStats();
+
+            // 等滚动事件处理完，再允许保存位置
+            setTimeout(function () {
+                positionReady = true;
+            }, 100);
+        });
+    });
+}
+
+// 保存当前位置：内存中立即更新，localStorage 延迟写入
+function saveReadingPosition() {
+    if (!positionReady || isResizing || !currentBookKey) return;
+
+    const pos = getReadingOffset();
+    if (pos === null) return;
+
+    currentReadingOffset = pos;
+
+    clearTimeout(savePositionTimer);
+    savePositionTimer = setTimeout(function () {
+        try {
+            localStorage.setItem(currentBookKey, String(currentReadingOffset));
+        } catch (e) {}
+    }, 500);
+}
+
+
+window.addEventListener(
+    'scroll',
+    saveReadingPosition,
+    { passive: true }
+);
+
+
+window.addEventListener('resize', function () {
+    if (!positionReady) return;
+
+    // 缩放或窗口尺寸变化时，暂停记录新的位置
+    isResizing = true;
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(function () {
+        positionReady = false;
+
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                // 使用缩放前记录的原文字符位置
+                scrollToReadingOffset(currentReadingOffset);
+
+                updateProgress();
+                scheduleReadStats();
+
+                setTimeout(function () {
+                    isResizing = false;
+                    positionReady = true;
+                }, 100);
+            });
+        });
+    }, 200);
 });
 
 
