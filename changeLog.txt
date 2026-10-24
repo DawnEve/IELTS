@@ -672,6 +672,7 @@ en0.5.9-1@hz update lis css: @media print [2026/9/29]
 en0.5.9-2@home update novelReader to v4 [2026/10/24]
 en0.5.9-3@home update novelReader to v5 [2026/10/24]
 	version info: v0.5 优化右上角统计功能，新增page up/down控制
+en0.5.9-4@home update novelReader: 修复小错误 [2026/10/24]
 #
 #
 # commited local

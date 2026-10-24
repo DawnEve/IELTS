@@ -170,11 +170,16 @@ function getText(){
 	var xmlhttp=new XMLHttpRequest(); //1.获取对象
 	//2.绑定回调函数
 	xmlhttp.onreadystatechange=function(){
-		if (xmlhttp.readyState==4 && xmlhttp.status==200){
-			// innerHTML 会有隐患：1.解析html标签，如<3, 2.执行js
-			document.getElementById("text").textContent=xmlhttp.responseText;
+		if (xmlhttp.readyState !== 4) return;
+
+		if (xmlhttp.status >= 200 && xmlhttp.status < 300) {
+			textBox.textContent = xmlhttp.responseText;
 			// 小说加载完成后更新统计：右上角
 			scheduleReadStats();
+			updateProgress();
+		} else {
+			textBox.textContent =
+				'Failed to load text. HTTP status: ' + xmlhttp.status;
 		}
 	}
 	//3.设定访问的url
@@ -231,6 +236,7 @@ function setTopct() {
         behavior: 'auto'
     });
 
+    updateProgress(); //跳转后立即更新进度
     statusInput.value = pct.toFixed(3);
 }
 
@@ -313,7 +319,7 @@ function updateReadStats() {
 
     readStats.innerHTML =
         `Already read(by raw txt):<br>Lines: ${lines.toLocaleString('en-US')}<br>`+
-		`Character: ${chinese.toLocaleString('en-US')}<br>`+
+		`Characters: ${chinese.toLocaleString('en-US')}<br>`+
 		`Words: ${words.toLocaleString('en-US')}`;
 }
 
