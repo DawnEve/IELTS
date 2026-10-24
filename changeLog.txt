@@ -670,6 +670,8 @@ en0.5.9-0@picb 转向笔记本，准备走 [2025/12/2]
 en0.5.9-1@hz update lis css: @media print [2026/9/29]
 	add NCE1/2; rm hujiang links; add reading tpl-HP4-v4;
 en0.5.9-2@home update novelReader to v4 [2026/10/24]
+en0.5.9-3@home update novelReader to v5 [2026/10/24]
+	version info: v0.5 优化右上角统计功能，新增page up/down控制
 #
 #
 # commited local

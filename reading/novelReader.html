@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
-<title>txtNovelReader v0.3</title>
+<title>txtNovelReader v0.5</title>
 
 <!--
 <script async src="/static/js/tongji.js"></script>
@@ -15,6 +15,7 @@ version info: v0.1 可用
 version info: v0.2 优化界面
 version info: v0.3 优化界面2
 version info: v0.4 using AI 优化功能(计算百分比),新增右上角统计功能
+version info: v0.5 优化右上角统计功能，新增page up/down控制
 */
 
 
@@ -126,7 +127,7 @@ pre{
 		<input type='number' id=status value="0.000" min="0" max="100" step="0.001">%
 		<button id='set'>Go</button>
 		<br>
-		<span id="readStats">行 0 | 汉字 0 | 英词 0</span>
+		<span id="readStats">Already read(by raw txt):<br>...</span>
 	</span>
 </div>
 
@@ -310,8 +311,10 @@ function updateReadStats() {
         readText.match(/[A-Za-z]+(?:['’][A-Za-z]+)*/g) || []
     ).length;
 
-    readStats.textContent =
-        `行 ${lines} | 汉字 ${chinese} | 英词 ${words}`;
+    readStats.innerHTML =
+        `Already read(by raw txt):<br>Lines: ${lines.toLocaleString('en-US')}<br>`+
+		`Character: ${chinese.toLocaleString('en-US')}<br>`+
+		`Words: ${words.toLocaleString('en-US')}`;
 }
 
 // 阅读统计定时任务
@@ -322,6 +325,37 @@ function scheduleReadStats() {
 
 window.addEventListener('scroll', scheduleReadStats, { passive: true });
 window.addEventListener('resize', scheduleReadStats);
+
+
+
+
+// 控制翻页效果: 翻页重复1行(html显示为准)
+document.addEventListener('keydown', function (evt) {
+    // 输入框内保留原有键盘行为
+    if (evt.target.matches('input, textarea, select, button')) {
+        return;
+    }
+
+    if (evt.key !== 'PageDown' && evt.key !== 'PageUp') {
+        return;
+    }
+
+    evt.preventDefault();
+
+    // 获取实际行高，兼容桌面和手机字号
+    const lineHeight = parseFloat(
+        getComputedStyle(textBox).lineHeight
+    ) || 36;
+
+    // 每次滚动一个视口，保留一行重叠
+    const step = Math.max(1, window.innerHeight - lineHeight);
+
+    window.scrollBy({
+        top: evt.key === 'PageDown' ? step : -step,
+        behavior: 'auto'
+    });
+});
+
 
 
 
