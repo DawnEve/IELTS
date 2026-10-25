@@ -675,6 +675,7 @@ en0.5.9-3@home update novelReader to v5 [2026/10/24]
 en0.5.9-4@home update novelReader: 修复小错误 [2026/10/24]
 en0.5.9-5@home update novelReader to version v0.6 新增记忆位置功能 [2026/10/24]
 en0.5.9-6@home update novelReader to v0.7 优化记忆显示到顶部中间 [2026/10/24]
+en0.5.9-7@home update novelReader to v0.8 微调 [2026/10/25]
 #
 #
 # commited local
