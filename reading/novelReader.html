@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
-<title>txtNovelReader v0.8</title>
+<title>txtNovelReader v0.9</title>
 
 <!--
 <script async src="/static/js/tongji.js"></script>
@@ -142,7 +142,7 @@ pre{
 <body>
 <div id=topMenu>
 	<span class='left'>txtNovelReader</span>
-	<span id="readStats">Already read origin txt | ...</span>
+	<span id="readStats">Already read txt lines: ...</span>
 	<span class='right'>
 		Percent
 		<input type='number' id=status value="0.000" min="0" max="100" step="0.001">%
@@ -348,7 +348,7 @@ function updateReadStats() {
     ).length;
 
     readStats.innerHTML =
-        `Already read origin txt | Lines: ${lines.toLocaleString('en-US')} | `+
+        `Already read txt lines: ${lines.toLocaleString('en-US')} | `+
 		`Characters: ${chinese.toLocaleString('en-US')} | `+
 		`Words: ${words.toLocaleString('en-US')}`;
 }
